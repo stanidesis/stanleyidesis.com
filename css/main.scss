@@ -3,6 +3,14 @@
 ---
 @charset "utf-8";
 
+/**
+ * A simple debug class
+ */
+.debug {
+    border: 1px dashed red;
+}
+
+// Fonts
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC:700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 
@@ -17,47 +25,26 @@ $brand-color-text:       #95A5A6;
 $base-font-family:    "Open Sans Condensed", sans-serif;
 $base-font-size:      16px;
 $base-font-weight:    300;
+$base-line-height:    1.5;
 $heading-font-family: "Amatic SC", cursive;
 $heading-font-weight: 700;
-$small-font-size:     $base-font-size * 0.875;
-$base-line-height:    1.5;
+$spacing-unit :       30px;
+$max-page-width:      970px;
 
-$spacing-unit:     30px;
-
-$text-color:       $brand-color-text;
+// Bootstrap Overrides
 $background-color: $brand-color-background;
-$brand-color:      $brand-color-base;
-
-$grey-color:       $brand-color-text;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-
+$font-family-base: $base-font-family;
+$font-size-base:   $base-font-size;
+$line-height-base: $base-line-height;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
+        "bootstrap",
         "layout",
         "syntax-highlighting"
 ;
+
+// Remove underlines on hover
+a:hover {
+   text-decoration: none;
+}
