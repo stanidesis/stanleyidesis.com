@@ -1,0 +1,38 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: "Stanley Idesis: The Man, The Myth, The Legend of Korra"
+email: stan.idesis@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Stanley Idesis is here to rock your world, blow your mind,
+  save your soul, and have you back home by ten. Enter, but please
+  take off your shoes first because we like to keep things clean here.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://stanleyidesis.com" # the base hostname & protocol for your site
+twitter_username: sisedi
+github_username: stanidesis
+permalink: pretty
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+exclude: [
+  "Gemfile",
+  "Gemfile.lock",
+  "README.md"
+  ]
+gems: [
+  jekyll-paginate
+  ]
+
+# Outputting
+timezone: America/Los_Angeles
+
+# Serving
+host: 0.0.0.0
+port: 8081
