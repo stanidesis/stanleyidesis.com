@@ -12,15 +12,37 @@
  */
 .header {
     min-height: 56px;
+    font-size: 24px;
+
+    li {
+        line-height: inherit;
+        display: inline-block;
+
+        @include media-min($screen-sm-min) {
+            line-height: 56px;
+            text-align:  right;
+            margin-left: 10px;
+        }
+    }
+
+    ul {
+        text-align: center;
+        padding:    0;
+
+        @include media-min($screen-sm-min) {
+            text-align: right;
+            float:      right !important;
+        }
+    }
 }
 
 .header-title {
     line-height: 56px;
-    text-align:  left;
-    margin: 0;
+    text-align:  center;
+    margin:      0;
 
-    @include media-query($screen-xs-min) {
-        text-align: center;
+    @include media-min($screen-sm-min) {
+        text-align: left;
     }
 }
 

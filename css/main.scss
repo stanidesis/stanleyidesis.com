@@ -29,7 +29,6 @@ $brand-color-text:       #95A5A6;
 $base-font-family:    "Open Sans Condensed", sans-serif;
 $base-font-size:      16px;
 $base-font-weight:    300;
-$base-line-height:    1.5;
 $heading-font-family: "Amatic SC", cursive;
 $heading-font-weight: 700;
 $max-page-width:      970px;
@@ -37,42 +36,25 @@ $max-page-width:      970px;
 // Bootstrap Overrides
 $font-family-base: $base-font-family;
 $font-size-base:   $base-font-size;
-$line-height-base: $base-line-height;
 $link-color:       $brand-color-highlight;
 
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
+// Global Sass Mixins
+@mixin media-max($device) {
     @media screen and (max-width: $device) {
         @content;
     }
 }
 
+@mixin media-min($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "bootstrap",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "base"
 ;
-
-// Remove underlines on hover
-a:hover {
-   text-decoration: none;
-}
-
-// Set font for headers
-h1, h2, h3, h4, h5, h6 {
-  font-family: $heading-font-family;
-  font-weight: $heading-font-weight;
-}
-
-// Set background color
-body {
-  background-color: $brand-color-background;
-}

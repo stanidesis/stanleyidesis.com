@@ -1,0 +1,23 @@
+// Establish link transitions
+a {
+    -webkit-transition: color 100ms ease-in;
+    -moz-transition:    color 100ms ease-in;
+    -o-transition:      color 100ms ease-in;
+    transition:         color 100ms ease-in;
+}
+
+// Remove underlines on hover
+a:hover {
+   text-decoration: none;
+}
+
+// Set font for headers
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+}
+
+// Set background color
+body {
+  background-color: $brand-color-background;
+}
