@@ -1,3 +1,7 @@
+.debug {
+    border: 1px dashed red;
+}
+
 /**
  * Reset some basic elements
  */
@@ -82,7 +86,8 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: $base-font-weight;
+    font-weight: $heading-font-weight;
+    font-family: $heading-font-family;
 }
 
 
@@ -100,7 +105,7 @@ a {
 
     &:hover {
         color: $text-color;
-        text-decoration: underline;
+        // text-decoration: underline;
     }
 }
 

@@ -3,22 +3,32 @@
 ---
 @charset "utf-8";
 
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 
+// Brand colors
+$brand-color-higlight:   #2ECC71;
+$brand-color-base:       #27AE60;
+$brand-color-background: #ECF0F1;
+$brand-color-light:      #BDC3C7;
+$brand-color-text:       #95A5A6;
 
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+$base-font-family:    "Open Sans Condensed", sans-serif;
+$base-font-size:      16px;
+$base-font-weight:    300;
+$heading-font-family: "Amatic SC", cursive;
+$heading-font-weight: 700;
+$small-font-size:     $base-font-size * 0.875;
+$base-line-height:    1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$text-color:       $brand-color-text;
+$background-color: $brand-color-background;
+$brand-color:      $brand-color-base;
 
-$grey-color:       #828282;
+$grey-color:       $brand-color-text;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
