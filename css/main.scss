@@ -10,12 +10,16 @@
     border: 1px dashed red;
 }
 
+@mixin media-query($size) {
+
+}
+
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC:700);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 
 // Brand colors
-$brand-color-highlight:   #2ECC71;
+$brand-color-highlight:  #2ECC71;
 $brand-color-base:       #27AE60;
 $brand-color-background: #ECF0F1;
 $brand-color-light:      #BDC3C7;
@@ -31,11 +35,24 @@ $heading-font-weight: 700;
 $max-page-width:      970px;
 
 // Bootstrap Overrides
-$background-color: $brand-color-background;
 $font-family-base: $base-font-family;
 $font-size-base:   $base-font-size;
 $line-height-base: $base-line-height;
 $link-color:       $brand-color-highlight;
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
@@ -47,4 +64,15 @@ $link-color:       $brand-color-highlight;
 // Remove underlines on hover
 a:hover {
    text-decoration: none;
+}
+
+// Set font for headers
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+}
+
+// Set background color
+body {
+  background-color: $brand-color-background;
 }

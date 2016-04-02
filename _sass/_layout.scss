@@ -1,11 +1,29 @@
-// My SASS starts here
+/**
+ * Container overrides
+ */
 .container {
     max-width: $max-page-width;
 }
 
-// /**
-//  * Site header
-//  */
+
+
+/**
+ * Site header
+ */
+.header {
+    min-height: 56px;
+}
+
+.header-title {
+    line-height: 56px;
+    text-align:  left;
+    margin: 0;
+
+    @include media-query($screen-xs-min) {
+        text-align: center;
+    }
+}
+
 // .site-header {
 //     min-height: 56px;
 
