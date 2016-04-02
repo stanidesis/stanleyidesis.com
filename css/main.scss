@@ -15,7 +15,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 
 // Brand colors
-$brand-color-higlight:   #2ECC71;
+$brand-color-highlight:   #2ECC71;
 $brand-color-base:       #27AE60;
 $brand-color-background: #ECF0F1;
 $brand-color-light:      #BDC3C7;
@@ -28,7 +28,6 @@ $base-font-weight:    300;
 $base-line-height:    1.5;
 $heading-font-family: "Amatic SC", cursive;
 $heading-font-weight: 700;
-$spacing-unit :       30px;
 $max-page-width:      970px;
 
 // Bootstrap Overrides
@@ -36,6 +35,7 @@ $background-color: $brand-color-background;
 $font-family-base: $base-font-family;
 $font-size-base:   $base-font-size;
 $line-height-base: $base-line-height;
+$link-color:       $brand-color-highlight;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
