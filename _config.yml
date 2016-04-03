@@ -14,21 +14,49 @@ description: > # this means to ignore newlines until "baseurl:"
   take off your shoes first because we like to keep things clean here.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://stanleyidesis.com" # the base hostname & protocol for your site
+rss: "/feed.xml"
+permalink: pretty
+
+# Variables
+owner: "Stanley Idesis"
+
+# Social
 twitter_username: sisedi
 github_username: stanidesis
-permalink: pretty
+facebook_username: levit.natan
+instagram_username: sisedi
+medium_username: sisedi
+youtube_username: stanidesis
+google_plus_username: StanIdesis
+linkedin_username: stanleyidesis
+
+base_twitter: "https://twitter.com/$s"
+base_github: "https://github.com/$s"
+base_facebook: "https://www.facebook.com/$s"
+base_instagram: "https://instagram.com/$s/"
+base_medium: "https://medium.com/@$s"
+base_youtube: "https://www.youtube.com/user/$s/featured"
+base_google_plus: "https://plus.google.com/u/1/+$s/"
+base_linkedin: "https://www.linkedin.com/in/$s"
+
 
 # Build settings
 markdown: kramdown
+
 highlighter: rouge
+
 exclude: [
   "Gemfile",
   "Gemfile.lock",
   "README.md"
   ]
+
 gems: [
   jekyll-paginate
   ]
+
+sass:
+  style: compressed
 
 # Outputting
 timezone: America/Los_Angeles

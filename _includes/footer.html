@@ -1,38 +1,20 @@
-<!--<footer class="site-footer">-->
-
-<!--  <div class="wrapper">-->
-
-<!--    <h2 class="footer-heading">{{ site.title }}</h2>-->
-
-<!--    <div class="footer-col-wrapper">-->
-<!--      <div class="footer-col footer-col-1">-->
-<!--        <ul class="contact-list">-->
-<!--          <li>{{ site.title }}</li>-->
-<!--          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>-->
-<!--        </ul>-->
-<!--      </div>-->
-
-<!--      <div class="footer-col footer-col-2">-->
-<!--        <ul class="social-media-list">-->
-<!--          {% if site.github_username %}-->
-<!--          <li>-->
-<!--            {% include icon-github.html username=site.github_username %}-->
-<!--          </li>-->
-<!--          {% endif %}-->
-
-<!--          {% if site.twitter_username %}-->
-<!--          <li>-->
-<!--            {% include icon-twitter.html username=site.twitter_username %}-->
-<!--          </li>-->
-<!--          {% endif %}-->
-<!--        </ul>-->
-<!--      </div>-->
-
-<!--      <div class="footer-col footer-col-3">-->
-<!--        <p>{{ site.description }}</p>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--  </div>-->
-
-<!--</footer>-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="social-icons col-xs-12 col-sm-6">
+        <ul>
+          <li><a href="{{ site.base_facebook | replace: '$s', site.facebook_username }}"><img src="/images/handdrawn-icons/svg-handdrawn-facebook.svg"/></a></li>
+          <li><a href="{{ site.base_github | replace: '$s', site.github_username }}"><img src="/images/handdrawn-icons/svg-handdrawn-github.svg"/></a></li>
+          <li><a href="{{ site.base_instagram | replace: '$s', site.instagram_username }}"><img src="/images/handdrawn-icons/svg-handdrawn-instagram.svg"/></a></li>
+          <li><a href="{{ site.base_linkedin | replace: '$s', site.linkedin_username }}"><img src="/images/handdrawn-icons/svg-handdrawn-linkedin.svg"/></a></li>
+          <li><a href="{{ site.base_twitter | replace: '$s', site.twitter_username }}"><img src="/images/handdrawn-icons/svg-handdrawn-twitter.svg"/></a></li>
+          <li><a href="{{ site.rss }}"><img src="/images/handdrawn-icons/svg-handdrawn-rss.svg"/></a></li>
+          <li><a href="{{ site.base_youtube | replace: '$s', site.youtube_username }}"><img src="/images/handdrawn-icons/svg-handdrawn-youtube.svg"/></a></li>
+        </ul>
+      </div>
+      <div class="copyright col-xs-12 col-sm-6">
+        <small>{{ site.owner | prepend: '© '}}</small>
+      </div>
+    </div>
+  </div>
+</footer>
