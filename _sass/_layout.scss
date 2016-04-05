@@ -12,8 +12,9 @@
  * Site header
  */
 .header {
-    min-height: 56px;
-    font-size: 24px;
+    min-height:       56px;
+    font-size:        24px;
+    background-color: $brand-color-background;
 
     li {
         line-height: inherit;
@@ -35,19 +36,19 @@
             float:      right !important;
         }
     }
-}
 
-.header-title {
-    line-height: 56px;
-    text-align:  center;
-    margin:      0;
+    .header-title {
+        line-height: 56px;
+        text-align:  center;
+        margin:      0;
 
-    @include media-min($screen-sm-min) {
-        text-align: left;
-    }
+        @include media-min($screen-sm-min) {
+            text-align: left;
+        }
 
-    a, a:hover {
-        color: inherit;
+        a, a:hover {
+            color: inherit;
+        }
     }
 }
 
@@ -56,7 +57,7 @@
  */
 $footer-size: 40px;
 $footer-size-alt: 28px;
-footer {
+.footer {
 
     .container {
         padding: $vertical-spacing $vertical-spacing;
@@ -117,8 +118,8 @@ footer {
  ******************************/
 
 /**
-* Blurb
-*/
+ * Blurb
+ */
 blurb {
     text-align:       center;
     background-color: $brand-color-text;
@@ -126,5 +127,47 @@ blurb {
     .container {
         padding:          (2 * $vertical-spacing) 14px;
         background-color: $brand-color-text;
+    }
+
+    h1 {
+        font-size: 28px;
+
+        @include media-min($screen-sm-min) {
+            // Bootstrap's h1 size
+            font-size: 41px;
+        }
+    }
+}
+
+/**
+ * Hero
+ */
+hero {
+    .jumbotron {
+        height:        100%;
+        margin-bottom: 0;
+
+        background-repeat:       no-repeat;
+        background-attachment:   scroll;
+        background-position:     center center;
+        -webkit-background-size: cover;
+        -moz-background-size:    cover;
+        -o-background-size:      cover;
+        background-size:         cover;
+
+        text-align:     left;
+        padding-top:    (3 * $vertical-spacing);
+        padding-bottom: (5 * $vertical-spacing);
+        padding-right:  (2 * $vertical-spacing);
+        padding-left:   (2 * $vertical-spacing);
+
+        @include media-min($screen-sm-min) {
+            height: 500px;
+        }
+
+        .container {
+            max-width:        $max-page-width;
+            background-color: transparent;
+        }
     }
 }

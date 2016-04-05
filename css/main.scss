@@ -10,9 +10,7 @@
     border: 1px dashed red;
 }
 
-@mixin media-query($size) {
 
-}
 
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC:700);
@@ -40,6 +38,10 @@ $font-size-base:   $base-font-size;
 $link-color:       $brand-color-highlight;
 
 // Global Sass Mixins
+@mixin media-query($size) {
+
+}
+
 @mixin media-max($device) {
     @media screen and (max-width: $device) {
         @content;
