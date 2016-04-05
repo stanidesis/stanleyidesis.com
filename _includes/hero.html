@@ -1,5 +1,11 @@
 <hero>
-  <div class="jumbotron" style="background-image: url({{ include.hero_bg }});">
+  <script type="text/javascript" src="/js/chrome-android-fix.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(event) {
+      greedyJumbotron(document.getElementById("jumbotron"));
+    })
+  </script>
+  <div class="jumbotron" id="jumbotron" style="background-image: url({{ include.hero_bg }});">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
