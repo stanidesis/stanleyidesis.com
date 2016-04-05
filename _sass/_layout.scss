@@ -2,7 +2,8 @@
  * Container overrides
  */
 .container {
-    max-width: $max-page-width;
+    max-width:        $max-page-width;
+    background-color: $brand-color-background;
 }
 
 
@@ -55,7 +56,12 @@
  */
 $footer-size: 40px;
 $footer-size-alt: 28px;
-.footer {
+footer {
+
+    .container {
+        padding: $vertical-spacing $vertical-spacing;
+    }
+
     // Social icons
     img {
         height:  $footer-size;
@@ -103,5 +109,22 @@ $footer-size-alt: 28px;
             text-align: right;
             line-height: $footer-size-alt;
         }
+    }
+}
+
+/******************************
+ * Includes
+ ******************************/
+
+/**
+* Blurb
+*/
+blurb {
+    text-align:       center;
+    background-color: $brand-color-text;
+
+    .container {
+        padding:          (2 * $vertical-spacing) 14px;
+        background-color: $brand-color-text;
     }
 }

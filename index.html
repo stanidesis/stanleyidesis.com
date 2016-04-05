@@ -1,23 +1,6 @@
 ---
 layout: default
+blurb_headline: "He does it all, and he gives 110%. Where does that extra 10% come from? Who cares."
 ---
 
-<div>
-
-  <h1>Posts</h1>
-
-  <ul>
-    {% for post in site.posts %}
-      <li>
-        <span>{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p>subscribe <a href="{{ site.rss | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+{% include blurb.html blurb_headline=page.blurb_headline %}
