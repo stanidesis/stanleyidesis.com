@@ -60,3 +60,8 @@ sass:
 
 # Outputting
 timezone: America/Los_Angeles
+
+# Instagram
+INSTAGRAM_USER_ID:  "182831931"
+TEMP_INSTAGRAM_API_KEY: "467ede5a6b9b48ae8e03f4e2582aeeb3"
+INSTAGRAM_API_KEY:  "34aca56159d545e693674ccc1560dce3"
