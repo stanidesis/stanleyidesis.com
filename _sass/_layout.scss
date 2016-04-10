@@ -194,27 +194,38 @@ recent {
         }
     }
 
-    p:first-child {
-        font-size:          28px;
-        padding-bottom:     28px;
-        border-bottom:      3px solid transparent;
-        -webkit-transition: border-bottom 100ms ease-in;
-        -moz-transition:    border-bottom 100ms ease-in;
-        -o-transition:      border-bottom 100ms ease-in;
-        transition:         border-bottom 100ms ease-in;
+    a, a:hover {
+        color: $brand-color-text;
     }
 
-    p:first-child:hover {
-        border-bottom:  3px solid $brand-color-text;
+    p {
+        font-size:          20px;
+        height:             126px;
+        border-bottom:      3px solid transparent;
+        -webkit-transition: all 100ms ease-in;
+        -moz-transition:    all 100ms ease-in;
+        -o-transition:      all 100ms ease-in;
+        transition:         all 100ms ease-in;
+
+        @include media-min($screen-sm-min) {
+            height: 148px;
+        }
+    }
+
+    p:hover {
+        border-bottom: 3px solid $brand-color-text;
+    }
+
+    p span {
+        color: $gray;
     }
 
     .recent_blurb {
-        padding:       0 8px;
         margin-bottom: 16px;
-    }
 
-    a:first-child {
-        font-size: 36px;
+        @include media-min($screen-sm-min) {
+            margin-bottom: 0px;
+        }
     }
 }
 
