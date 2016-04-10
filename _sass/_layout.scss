@@ -246,6 +246,8 @@ hero {
             -moz-transition:    all 100ms ease-in;
             -o-transition:      all 100ms ease-in;
             transition:         all 100ms ease-in;
+            // Here because: http://stackoverflow.com/questions/3461441/prevent-flicker-on-webkit-transition-of-webkit-transform
+            -webkit-backface-visibility:   hidden;
 
             @include media-min($screen-sm-min) {
                 width: 104px;
