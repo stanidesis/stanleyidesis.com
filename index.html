@@ -1,20 +1,22 @@
 ---
 layout: default
 hero_bg: "https://images.unsplash.com/photo-1429594801156-2c53a0d4f96e?crop=entropy&fit=crop&fm=jpg"
-hero_headline: "Meet Stanley..."
+hero_headline: "Meet Stanley"
 hero_lead: "You're welcome."
 blurb_headline: "Stan gives 110%. Where does that extra 10% come from?<br>Who cares."
 ---
 {% include hero.html hero_bg=page.hero_bg hero_headline=page.hero_headline hero_lead=page.hero_lead %}
 {% include blurb.html blurb_headline=page.blurb_headline %}
-<div class="container">
-  <h2>Laugh now!</h2>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      {% include twitter_timeline.html %}
-    </div>
-    <div class="col-xs-12 col-sm-6">
-      {% include instagram_feed.html %}
+<recent>
+  <div class="container">
+    <h2>Recent</h2>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        {% include recent_posts.html %}
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        {% include twitter_timeline.html %}
+      </div>
     </div>
   </div>
-</div>
+</recent>

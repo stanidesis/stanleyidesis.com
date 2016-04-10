@@ -1,0 +1,9 @@
+<div class="recent_posts">
+  {% for post in site.posts limit:3 %}
+  <div>
+    <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+    <small>{{ post.date | date_to_string }}</small>
+    <p>{{ post.excerpt | markdownify }}</p>
+  </div>
+  {% endfor %}
+</div>
