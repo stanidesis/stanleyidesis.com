@@ -176,21 +176,45 @@ hero {
  * Maybe not?
  */
 recent {
-    .container {
-        @include media-min($screen-sm-min) {
-            height: 500px;
-            overflow: auto;
-        }
-    }
+    // .container {
+    //     @include media-min($screen-sm-min) {
+    //         height: 500px;
+    //         overflow: auto;
+    //     }
+    // }
 }
 
 .recent_posts {
-    p {
-        max-height:    ($line-height-computed * 3);
-        overflow:      hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
+
+    div:first-child {
+        margin-top: 28px;
+
+        @include media-min($screen-sm-min) {
+            margin-top: 0;
+        }
+    }
+
+    p:first-child {
+        font-size:          28px;
+        padding-bottom:     28px;
+        border-bottom:      3px solid transparent;
+        -webkit-transition: border-bottom 100ms ease-in;
+        -moz-transition:    border-bottom 100ms ease-in;
+        -o-transition:      border-bottom 100ms ease-in;
+        transition:         border-bottom 100ms ease-in;
+    }
+
+    p:first-child:hover {
+        border-bottom:  3px solid $brand-color-text;
+    }
+
+    .recent_blurb {
+        padding:       0 8px;
+        margin-bottom: 16px;
+    }
+
+    a:first-child {
+        font-size: 36px;
     }
 }
 
@@ -198,7 +222,29 @@ recent {
 /**
  * Twitter Timelines
  */
-.twitter-timeline {
+.timeline-Widget {
     display: inline-block;
     width: 100%;
+
+    .SandboxRoot.env-bp-330 .timeline-Tweet-text,
+    .timeline-Tweet-text {
+        font-family: $base-font-family;
+        font-size:   $base-font-size;
+        line-height: $line-height-computed;
+    }
+
+    .timeline-Tweet-media,
+    .timeline-Tweet-author,
+    .timeline-Tweet-brand,
+    .timeline-Tweet-actions {
+        display: none;
+    }
+
+    .timeline-TweetList, .timeline-Tweet {
+        padding: 0;
+    }
+
+    .timeline-Tweet-text {
+        margin: 0;
+    }
 }

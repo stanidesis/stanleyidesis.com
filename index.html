@@ -9,14 +9,9 @@ blurb_headline: "Stan gives 110%. Where does that extra 10% come from?<br>Who ca
 {% include blurb.html blurb_headline=page.blurb_headline %}
 <recent>
   <div class="container">
-    <h2>Recent</h2>
+    <h1>Recent</h1>
     <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        {% include recent_posts.html %}
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        {% include twitter_timeline.html %}
-      </div>
+      {% include recent_posts.html %}
     </div>
   </div>
 </recent>
