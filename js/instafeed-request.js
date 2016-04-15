@@ -1,3 +1,8 @@
+var onUserFeedError = new function() {
+    document.getElementById("instagram-tiles-row").style.display = "none";
+    document.getElementById("instagram-tiles-header").style.display = "none";
+};
+
 var userFeed = new Instafeed({
     get: 'user',
     userId: '182831931',
@@ -6,6 +11,7 @@ var userFeed = new Instafeed({
     sortBy: 'most-recent',
     limit: 9 * 2,
     target: 'instagram-tiles',
-    template: '<div class="instagram-tile"><div class="instagram-overlay"></div><a href="{{link}}"><img src="{{image}}"/></a></div>'
+    template: '<div class="instagram-tile"><div class="instagram-overlay"></div><a href="{{link}}"><img src="{{image}}"/></a></div>',
+    error: onUserFeedError
   });
 userFeed.run();
