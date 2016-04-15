@@ -6,7 +6,28 @@
     background-color: $brand-color-background;
 }
 
+/**
+ * Button class, apply to <a></a>
+ */
+.btn {
+    color:              $gray-dark;
+    background-color:   $brand-color-highlight;
+    border-radius:      3px;
+    padding:            8px 12px;
+    -webkit-transition: background-color $default-anim-length ease-in-out,
+        color $default-anim-length ease-in-out;
+    -moz-transition:    background-color $default-anim-length ease-in-out,
+        color $default-anim-length ease-in-out;
+    -o-transition:      background-color $default-anim-length ease-in-out,
+        color $default-anim-length ease-in-out;
+    transition:         background-color $default-anim-length ease-in-out,
+        color $default-anim-length ease-in-out;
 
+    &:hover {
+        color:            $brand-color-background;
+        background-color: darken($brand-color-highlight, 25%);
+    }
+}
 
 /**
  * Site header
@@ -172,6 +193,26 @@ hero {
     }
 }
 
+/**
+ * Sidekick
+ */
+.sidekick {
+
+    .container {
+        padding:                 (2 * $vertical-spacing) 14px;
+        background-repeat:       no-repeat;
+        background-attachment:   scroll;
+        background-position:     center center;
+        -webkit-background-size: cover;
+        -moz-background-size:    cover;
+        -o-background-size:      cover;
+        background-size:         cover;
+    }
+}
+
+/**
+ * Recent Posts
+ */
 .recent_posts {
 
     div:first-child {
@@ -255,10 +296,14 @@ hero {
             }
         }
 
-        img:hover {
+        &:hover {
+            position: absolute;
             z-index: 555555 !important;
             transform: scale(1.2);
-            opacity: 1.0;
+            overflow: visible;
+            img {
+                opacity: 1.0;
+            }
         }
 
         &:nth-child(n+10):nth-child(-n+18) {

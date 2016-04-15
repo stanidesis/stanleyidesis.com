@@ -1,9 +1,9 @@
 // Establish link transitions
 a {
-    -webkit-transition: color 100ms ease-in;
-    -moz-transition:    color 100ms ease-in;
-    -o-transition:      color 100ms ease-in;
-    transition:         color 100ms ease-in;
+    -webkit-transition: color $default-anim-length ease;
+    -moz-transition:    color $default-anim-length ease;
+    -o-transition:      color $default-anim-length ease;
+    transition:         color $default-anim-length ease;
 }
 
 // Remove underlines on hover

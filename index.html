@@ -4,6 +4,9 @@ hero_bg: "https://images.unsplash.com/photo-1429594801156-2c53a0d4f96e?crop=entr
 hero_headline: "Meet Stanley"
 hero_lead: "You're welcome."
 blurb_headline: "Stan gives 110%. Where does that extra 10% come from?<br>Who cares."
+sidekick_bg: "https://images.unsplash.com/photo-1424819989622-273212130f7b?ixlib=rb-0.3.5&q=80&fm=jpg"
+sidekick_headline: "Make your own Stanley at home: blend a galon of skim milk and one pound raw carbon atoms. Garnish with Voldemort blood."
+sidekick_cta: "Contact Stanley"
 ---
 {% include hero.html hero_bg=page.hero_bg hero_headline=page.hero_headline hero_lead=page.hero_lead %}
 {% include blurb.html blurb_headline=page.blurb_headline %}
@@ -13,9 +16,14 @@ blurb_headline: "Stan gives 110%. Where does that extra 10% come from?<br>Who ca
     <div class="row">
       {% include recent_posts.html %}
     </div>
-    <h1>Instagram</h1>
-    <div class="row">
+    <h1 id="instagram-tiles-header">Instagram</h1>
+    <div class="row" id="instagram-tiles-row">
       {% include instagram_tiles.html %}
     </div>
   </div>
 </recent>
+{% include sidekick.html
+  sidekick_bg=page.sidekick_bg
+  sidekick_headline=page.sidekick_headline
+  sidekick_cta=page.sidekick_cta
+%}
