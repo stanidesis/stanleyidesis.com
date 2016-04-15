@@ -175,6 +175,9 @@ hero {
         -moz-background-size:    cover;
         -o-background-size:      cover;
         background-size:         cover;
+        // http://stackoverflow.com/a/24084708/372884
+        box-shadow:              inset 0 0 0 1000px
+            rgba($brand-color-background, .3);
 
         text-align:     left;
         padding-top:    (3 * $vertical-spacing);
@@ -207,6 +210,9 @@ hero {
         -moz-background-size:    cover;
         -o-background-size:      cover;
         background-size:         cover;
+        // http://stackoverflow.com/a/24084708/372884
+        box-shadow:              inset 0 0 0 1000px
+            rgba($brand-color-background, .3);
     }
 }
 
