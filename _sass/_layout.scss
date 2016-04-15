@@ -141,12 +141,13 @@ $footer-size-alt: 28px;
 /**
  * Blurb
  */
-blurb {
+.blurb {
     text-align:       center;
     background-color: $brand-color-text;
 
     .container {
-        padding:          (2 * $vertical-spacing) 14px;
+        padding-top:      (2 * $vertical-spacing);
+        padding-bottom:   (2 * $vertical-spacing);
         background-color: $brand-color-text;
     }
 
@@ -182,8 +183,6 @@ hero {
         text-align:     left;
         padding-top:    (3 * $vertical-spacing);
         padding-bottom: (5 * $vertical-spacing);
-        padding-right:  (2 * $vertical-spacing);
-        padding-left:   (2 * $vertical-spacing);
 
         @include media-min($screen-sm-min) {
             height: 500px;
@@ -202,7 +201,8 @@ hero {
 .sidekick {
 
     .container {
-        padding:                 (2 * $vertical-spacing) 14px;
+        padding-top:             (2 * $vertical-spacing);
+        padding-bottom:          (2 * $vertical-spacing);
         background-repeat:       no-repeat;
         background-attachment:   scroll;
         background-position:     center center;
