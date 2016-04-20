@@ -17,6 +17,8 @@ url: "http://stanleyidesis.com" # the base hostname & protocol for your site
 rss: "/feed.xml"
 permalink: pretty
 excerpt_separator: "<!--more-->"
+paginate: 9
+paginate_path: "/writes/page:num/"
 
 # Variables
 owner: "Stanley Idesis"

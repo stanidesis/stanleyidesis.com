@@ -90,10 +90,10 @@ $footer-size-alt: 28px;
         width:   $footer-size;
         opacity: 0.7;
 
-        -webkit-transition: opacity 100ms ease-in;
-        -moz-transition:    opacity 100ms ease-in;
-        -o-transition:      opacity 100ms ease-in;
-        transition:         opacity 100ms ease-in;
+        -webkit-transition: opacity $default-anim-length ease-in-out;
+        -moz-transition:    opacity $default-anim-length ease-in-out;
+        -o-transition:      opacity $default-anim-length ease-in-out;
+        transition:         opacity $default-anim-length ease-in-out;
 
         @include media-min($screen-sm-min) {
             height: $footer-size-alt;
@@ -133,6 +133,44 @@ $footer-size-alt: 28px;
         }
     }
 }
+
+
+/******************************
+ * /writes
+ ******************************/
+post-item {
+
+    p {
+        @include media-min($screen-sm-min) {
+            font-size: 22px;
+        }
+    }
+
+    ul {
+        padding: 0px 0px;
+        margin: 0px 0px;
+    }
+
+    li {
+        padding: 0px 8px;
+        border: 1px solid $brand-color-highlight;
+        border-radius: 3px;
+        display: inline-block;
+        margin-right: 6px;
+        margin-bottom: 6px;
+
+        -webkit-transition: all $default-anim-length ease-in-out;
+        -moz-transition:    all $default-anim-length ease-in-out;
+        -o-transition:      all $default-anim-length ease-in-out;
+        transition:         all $default-anim-length ease-in-out;
+
+        &:hover {
+            color: white;
+            background-color: $brand-color-highlight;
+        }
+    }
+}
+
 
 /******************************
  * Includes
