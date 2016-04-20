@@ -1,15 +1,22 @@
 ---
 layout: default
 ---
-<article itemscope itemtype="http://schema.org/BlogPosting">
+<div class="container">
+  <article itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header>
-    <h1 itemprop="name headline">{{ page.title }}</h1>
-    <p><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
 
-  <div itemprop="articleBody">
-    {{ content }}
-  </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <a href="{{ page.url }}"><h1 itemprop="name headline">{{ page.title }}</h1></a>
+        <p class="small"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+      </div>
+    </div>
 
-</article>
+    <div class="row">
+      <div itemprop="articleBody" class="col-xs-12 col-sm-7">
+        {{ content }}
+      </div>
+    </div>
+
+  </article>
+</div>

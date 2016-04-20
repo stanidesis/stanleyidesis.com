@@ -3,7 +3,7 @@
  */
 .container {
     max-width:        $max-page-width;
-    background-color: $brand-color-background;
+    background-color: transparent;
 }
 
 /**
@@ -36,6 +36,7 @@
     min-height:       56px;
     font-size:        24px;
     background-color: $brand-color-background;
+    border-bottom: 1px solid $brand-color-highlight;
 
     li {
         line-height: inherit;
@@ -169,6 +170,14 @@ post-item {
             background-color: $brand-color-highlight;
         }
     }
+}
+
+/******************************
+ * Article
+ ******************************/
+article {
+    font-family: "serif";
+    font-size: 18px;
 }
 
 

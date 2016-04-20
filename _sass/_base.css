@@ -1,0 +1,73 @@
+/*
+Error: Undefined variable: "$default-anim-length".
+        on line 3 of /home/ubuntu/workspace/stanidesis.github.io/_sass/_base.scss
+
+1: // Establish link transitions
+2: a {
+3:     -webkit-transition: color $default-anim-length ease;
+4:     -moz-transition:    color $default-anim-length ease;
+5:     -o-transition:      color $default-anim-length ease;
+6:     transition:         color $default-anim-length ease;
+7: }
+8: 
+
+Backtrace:
+/home/ubuntu/workspace/stanidesis.github.io/_sass/_base.scss:3
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/script/tree/variable.rb:49:in `_perform'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/script/tree/list_literal.rb:63:in `map'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/script/tree/list_literal.rb:63:in `_perform'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `map'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/plugin.rb:82:in `update_stylesheets'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
+/usr/local/rvm/gems/ruby-2.3.0/gems/sass-3.4.22/bin/scss:13:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.3.0/bin/scss:23:in `load'
+/usr/local/rvm/gems/ruby-2.3.0/bin/scss:23:in `<main>'
+/usr/local/rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$default-anim-length\".\A         on line 3 of /home/ubuntu/workspace/stanidesis.github.io/_sass/_base.scss\A \A 1: // Establish link transitions\A 2: a {\A 3:     -webkit-transition: color $default-anim-length ease;\A 4:     -moz-transition:    color $default-anim-length ease;\A 5:     -o-transition:      color $default-anim-length ease;\A 6:     transition:         color $default-anim-length ease;\A 7: }\A 8: "; }
