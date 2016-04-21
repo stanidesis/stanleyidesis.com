@@ -35,7 +35,7 @@ $image-screen-alpha:  .4;
 // Bootstrap Overrides
 $font-family-base: $base-font-family;
 $font-size-base:   $base-font-size;
-$link-color:       $brand-color-highlight;
+$link-color:       $brand-color-base;
 
 // Global Sass Mixins
 @mixin media-query($size) {

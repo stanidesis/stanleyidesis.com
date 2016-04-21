@@ -6,15 +6,26 @@ layout: default
 
 
     <div class="row">
-      <div class="col-xs-12">
-        <a href="{{ page.url }}"><h1 itemprop="name headline">{{ page.title }}</h1></a>
+      <div class="col-xs-12 col-sm-7">
+        <a href="{{ page.url }}"><h1 itemprop="name headline" class="text-uppercase">{{ page.title }}</h1></a>
         <p class="small"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+        <div itemprop="articleBody">
+          {{ content }}
+        </div>
       </div>
-    </div>
-
-    <div class="row">
-      <div itemprop="articleBody" class="col-xs-12 col-sm-7">
-        {{ content }}
+      <div class="share-post col-xs-6 col-sm-4 pull-right">
+        <h2 class="text=uppercase">like it? then you should <s>put a ring on</s> share it</h2>
+      </div>
+      <div class="related-posts col-xs-6 col-sm-4 pull-right">
+        <h2 class="text=uppercase">you may also like</h2>
+        <ul>
+          {% for post in site.related_posts limit:3 %}
+            <li>
+                <a href="{{ site.url }}">{{ post.title }}</a><br>
+                <time datetime="{{ page.date | date_to_xmlschema }}" class="small">{{ page.date | date: "%b %-d, %Y" }}</time>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
 

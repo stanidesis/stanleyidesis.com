@@ -36,7 +36,7 @@
     min-height:       56px;
     font-size:        24px;
     background-color: $brand-color-background;
-    border-bottom: 1px solid rgba($gray, .5);;
+    border-bottom: 1px solid rgba($gray, .5);
 
     li {
         line-height: inherit;
@@ -80,6 +80,9 @@
 $footer-size: 40px;
 $footer-size-alt: 28px;
 .footer {
+
+    margin-top: 80px;
+    border-top: 1px solid rgba($gray, .5);
 
     .container {
         padding: $vertical-spacing $vertical-spacing;
@@ -176,8 +179,47 @@ post-item {
  * Article
  ******************************/
 article {
-    font-family: "serif";
-    font-size: 18px;
+    line-height: 1.65;
+    font-size:   20px;
+}
+
+
+/******************************
+ * Article:related-posts
+ ******************************/
+.related-posts {
+
+    border-top: 1px solid rgba($gray, .5);
+
+    ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+    @include media-min($screen-sm-min) {
+        border-top: none;
+        border-left: 1px solid rgba($gray, .5);
+    }
+}
+
+/******************************
+ * Article:share-post
+ ******************************/
+.share-post {
+
+    border-top: 1px solid rgba($gray, .5);
+
+    ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+    @include media-min($screen-sm-min) {
+        border-top: none;
+        border-left: 1px solid rgba($gray, .5);
+    }
 }
 
 
