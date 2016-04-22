@@ -8,8 +8,8 @@ sidekick_bg: "https://images.unsplash.com/photo-1424819989622-273212130f7b?ixlib
 sidekick_headline: "Make your own Stanley at home: stir one galon of skim milk into 156 pounds of raw carbon atoms.<br>Add Voldemort blood for taste."
 sidekick_cta: "Contact me"
 ---
-<recent>
-  <div class="container">
+<div class="container">
+  <recent>
     <h1>Recent Posts</h1>
     <div class="row">
       {% include recent_posts.html %}
@@ -18,10 +18,10 @@ sidekick_cta: "Contact me"
     <div class="row" id="instagram-tiles-row">
       {% include instagram_tiles.html %}
     </div>
-  </div>
-</recent>
-{% include sidekick.html
-  sidekick_bg=page.sidekick_bg
-  sidekick_headline=page.sidekick_headline
-  sidekick_cta=page.sidekick_cta
-%}
+  </recent>
+  {% include sidekick.html
+    sidekick_bg=page.sidekick_bg
+    sidekick_headline=page.sidekick_headline
+    sidekick_cta=page.sidekick_cta
+  %}
+</div>

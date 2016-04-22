@@ -54,6 +54,21 @@ $link-color:       $brand-color-base;
     }
 }
 
+@mixin hover-float($scale, $alpha) {
+    box-shadow: initial;
+    opacity: $alpha;
+    -webkit-transition: all $default-anim-length ease-in-out;
+    -moz-transition:    all $default-anim-length ease-in-out;
+    -o-transition:      all $default-anim-length ease-in-out;
+    transition:         all $default-anim-length ease-in-out;
+
+    &:hover {
+        opacity: 1.0;
+        transform: scale($scale);
+        box-shadow: 0px 0px 24px 2px rgba(black, .5);
+    }
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "bootstrap",

@@ -4,10 +4,14 @@ hero_bg: "https://images.unsplash.com/photo-1424223022789-26fd8f34bba2?ixlib=rb-
 hero_headline: "Are You Not Entertained?"
 hero_lead: "That's a rhetorical question."
 blurb_headline: "Entertaining is in my blood.<br>The doctor gives me 3 months."
+sidekick_bg: "https://images.unsplash.com/photo-1454023989775-79520f04322c?ixlib=rb-0.3.5&q=80&fm=jpg"
+sidekick_headline: "you can't spell 'teamwork' without 'stanley,' not if I'm in charge. let's work together and spell teamwork right."
+sidekick_cta: "Contact me"
 ---
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/social-share-kit.css" type="text/css">
 <div class="container">
+  {% if site.videos.size > 2 %}
   <videos>
     <div class="row">
       <div class="col-xs-6">
@@ -41,6 +45,7 @@ blurb_headline: "Entertaining is in my blood.<br>The doctor gives me 3 months."
       {% endfor %}
     </div>
   </videos>
+  {% endif %}
   <credentials>
     <div class="row">
       <div class="col-xs-12">
@@ -75,4 +80,9 @@ blurb_headline: "Entertaining is in my blood.<br>The doctor gives me 3 months."
       </div>
     </div>
   </credentials>
+  {% include sidekick.html
+    sidekick_bg=page.sidekick_bg
+    sidekick_headline=page.sidekick_headline
+    sidekick_cta=page.sidekick_cta
+  %}
 </div>

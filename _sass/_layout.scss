@@ -92,7 +92,6 @@ $footer-size-alt: 28px;
     .social-icons {
         @include media-min($screen-sm-min) {
             padding-left: 0px;
-            margin-left: -10px;
         }
     }
 
@@ -142,9 +141,6 @@ $footer-size-alt: 28px;
             text-align: right;
             line-height: $footer-size-alt;
             padding-right: 0px;
-            small {
-                margin-right: -15px;
-            }
         }
     }
 }
@@ -237,7 +233,7 @@ article {
 videos {
     #subscribe-youtube {
         text-align: right;
-        margin-top: 28px;
+        margin-top: 34px;
     }
 
     a {
@@ -245,18 +241,7 @@ videos {
     }
 
     iframe {
-        box-shadow: initial;
-        opacity: 0.7;
-        -webkit-transition: all $default-anim-length ease-in-out;
-        -moz-transition:    all $default-anim-length ease-in-out;
-        -o-transition:      all $default-anim-length ease-in-out;
-        transition:         all $default-anim-length ease-in-out;
-    }
-
-    iframe:hover {
-        opacity: 1.0;
-        transform: scale(1.01);
-        box-shadow: 0px 0px 24px 2px rgba(black, .5);
+        @include hover-float(1.01, .7)
     }
 }
 
@@ -265,19 +250,22 @@ videos {
  ******************************/
 credentials {
     #headshot {
-        box-shadow: initial;
-        opacity: 0.7;
-        -webkit-transition: all $default-anim-length ease-in-out;
-        -moz-transition:    all $default-anim-length ease-in-out;
-        -o-transition:      all $default-anim-length ease-in-out;
-        transition:         all $default-anim-length ease-in-out;
+        @include hover-float(1.01, .7)
     }
+    // #headshot {
+    //     box-shadow: initial;
+    //     opacity: 0.7;
+    //     -webkit-transition: all $default-anim-length ease-in-out;
+    //     -moz-transition:    all $default-anim-length ease-in-out;
+    //     -o-transition:      all $default-anim-length ease-in-out;
+    //     transition:         all $default-anim-length ease-in-out;
+    // }
 
-    #headshot:hover {
-        opacity: 1.0;
-        transform: scale(1.01);
-        box-shadow: 0px 0px 24px 2px rgba(black, .5);
-    }
+    // #headshot:hover {
+    //     opacity: 1.0;
+    //     transform: scale(1.01);
+    //     box-shadow: 0px 0px 24px 2px rgba(black, .5);
+    // }
 
     td:nth-child(2) {
         text-align: right;
@@ -349,21 +337,18 @@ hero {
  * Sidekick
  */
 .sidekick {
-
-    .container {
-        padding-top:             (2 * $vertical-spacing);
-        padding-bottom:          (2 * $vertical-spacing);
-        background-repeat:       no-repeat;
-        background-attachment:   scroll;
-        background-position:     center center;
-        -webkit-background-size: cover;
-        -moz-background-size:    cover;
-        -o-background-size:      cover;
-        background-size:         cover;
-        // http://stackoverflow.com/a/24084708/372884
-        box-shadow:              inset 0 0 0 1000px
+    margin-top:              (2 * $vertical-spacing);
+    padding: (2 * $vertical-spacing) $vertical-spacing;
+    background-repeat:       no-repeat;
+    background-attachment:   scroll;
+    background-position:     center center;
+    -webkit-background-size: cover;
+    -moz-background-size:    cover;
+    -o-background-size:      cover;
+    background-size:         cover;
+    // http://stackoverflow.com/a/24084708/372884
+    box-shadow:              inset 0 0 0 1000px
             rgba($brand-color-background, $image-screen-alpha);
-    }
 }
 
 /**
