@@ -1,10 +1,10 @@
 ---
 layout: default
 ---
+<link rel="stylesheet" href="/css/social-share-kit.css" type="text/css">
+<script type="text/javascript" src="/js/social-share-kit.min.js"></script>
 <div class="container">
   <article itemscope itemtype="http://schema.org/BlogPosting">
-
-
     <div class="row">
       <div class="col-xs-12 col-sm-7">
         <a href="{{ page.url }}"><h1 itemprop="name headline" class="text-uppercase">{{ page.title }}</h1></a>
@@ -15,6 +15,16 @@ layout: default
       </div>
       <div class="share-post col-xs-6 col-sm-4 pull-right">
         <h2 class="text=uppercase">like it? then you should <s>put a ring on</s> share it</h2>
+        <div class="ssk-group ssk-large {% if jekyll.environment == "development" %}ssk-count{% endif %}">
+          <a href="" class="ssk ssk-facebook"></a>
+          <a href="" class="ssk ssk-twitter"></a>
+          <a href="" class="ssk ssk-google-plus"></a>
+          <a href="" class="ssk ssk-linkedin"></a>
+          <a href="" class="ssk ssk-email"></a>
+        </div>
+        <script type="text/javascript">
+          SocialShareKit.init();
+        </script>
       </div>
       <div class="related-posts col-xs-6 col-sm-4 pull-right">
         <h2 class="text=uppercase">you may also like</h2>

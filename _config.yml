@@ -51,11 +51,13 @@ highlighter: rouge
 exclude: [
   "Gemfile",
   "Gemfile.lock",
-  "README.md"
+  "README.md",
+  "travis.yml",
   ]
 
 gems: [
-  jekyll-paginate
+  jekyll-paginate,
+  jekyll-sitemap
   ]
 
 sass:

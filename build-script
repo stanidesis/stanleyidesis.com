@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+jekyll serve --config _config.yml -w --port $PORT --host $IP -t JEKYLL_ENV=development
+source script/post-build-script

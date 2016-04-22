@@ -199,7 +199,6 @@ article {
 
     @include media-min($screen-sm-min) {
         border-top: none;
-        border-left: 1px solid rgba($gray, .5);
     }
 }
 
@@ -218,7 +217,6 @@ article {
 
     @include media-min($screen-sm-min) {
         border-top: none;
-        border-left: 1px solid rgba($gray, .5);
     }
 }
 
