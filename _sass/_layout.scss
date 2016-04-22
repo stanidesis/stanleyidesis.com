@@ -231,6 +231,33 @@ article {
     }
 }
 
+/******************************
+ * Entertains:videos
+ ******************************/
+videos {
+    #subscribe-youtube {
+        text-align: right;
+        margin-top: 28px;
+    }
+
+    a {
+        font-size: 24px;
+    }
+
+    iframe {
+        box-shadow: initial;
+        -webkit-transition: all $default-anim-length ease-in-out;
+        -moz-transition:    all $default-anim-length ease-in-out;
+        -o-transition:      all $default-anim-length ease-in-out;
+        transition:         all $default-anim-length ease-in-out;
+    }
+
+    iframe:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 24px 4px rgba(black, .7);
+    }
+}
+
 
 /******************************
  * Includes

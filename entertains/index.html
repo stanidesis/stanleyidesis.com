@@ -1,0 +1,43 @@
+---
+layout: page
+hero_bg: "https://images.unsplash.com/photo-1424223022789-26fd8f34bba2?ixlib=rb-0.3.5&q=80&fm=jpg"
+hero_headline: "Are You Not Entertained?"
+hero_lead: "That's a rhetorical question."
+blurb_headline: "Entertaining is in my blood.<br>The doctor gives me 3 months."
+---
+<link rel="stylesheet" href="/css/social-share-kit.css" type="text/css">
+<videos>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <h1>video</h1>
+      </div>
+      <div id="subscribe-youtube" class="col-xs-6 pull-right">
+        <a href="{{ site.base_youtube | replace: '$s', site.youtube_username }}" class="ssk ssk-text ssk-youtube">Subscribe</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <p>I write, direct, edit, and occasionally star in sketches found all over the internet. I prefer to stay behind the camera because I'm shy (ugly).</p>
+      </div>
+    </div>
+    <div class="row">
+      {% for video in site.videos limit:2 %}
+      <div class="col-xs-12 col-sm-6">
+        <iframe width="100%" height="215px" src="https://www.youtube.com/embed/{{video.id}}" frameborder="0" allowfullscreen></iframe>
+        <a href="https://www.youtube.com/watch?v={{video.id}}">{{video.title}}</a>
+        <p>{{ video.summary }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      {% for video in site.videos limit:1 offset:2 %}
+      <div class="col-xs-12 col-sm-6">
+        <iframe width="100%" height="215px" src="https://www.youtube.com/embed/{{video.id}}" frameborder="0" allowfullscreen></iframe>
+        <a href="https://www.youtube.com/watch?v={{video.id}}">{{video.title}}</a>
+        <p>{{ video.summary }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</videos>
