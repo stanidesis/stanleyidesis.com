@@ -89,6 +89,13 @@ $footer-size-alt: 28px;
     }
 
     // Social icons
+    .social-icons {
+        @include media-min($screen-sm-min) {
+            padding-left: 0px;
+            margin-left: -10px;
+        }
+    }
+
     img {
         height:  $footer-size;
         width:   $footer-size;
@@ -134,6 +141,10 @@ $footer-size-alt: 28px;
         @include media-min($screen-sm-min) {
             text-align: right;
             line-height: $footer-size-alt;
+            padding-right: 0px;
+            small {
+                margin-right: -15px;
+            }
         }
     }
 }
