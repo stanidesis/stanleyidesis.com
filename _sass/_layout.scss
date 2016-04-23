@@ -252,23 +252,19 @@ credentials {
     #headshot {
         @include hover-float(1.01, .7)
     }
-    // #headshot {
-    //     box-shadow: initial;
-    //     opacity: 0.7;
-    //     -webkit-transition: all $default-anim-length ease-in-out;
-    //     -moz-transition:    all $default-anim-length ease-in-out;
-    //     -o-transition:      all $default-anim-length ease-in-out;
-    //     transition:         all $default-anim-length ease-in-out;
-    // }
-
-    // #headshot:hover {
-    //     opacity: 1.0;
-    //     transform: scale(1.01);
-    //     box-shadow: 0px 0px 24px 2px rgba(black, .5);
-    // }
 
     td:nth-child(2) {
         text-align: right;
+    }
+}
+
+/******************************
+ * Codes:apps
+ ******************************/
+
+apps {
+    .app-promo {
+        @include hover-float(1.01, .7)
     }
 }
 

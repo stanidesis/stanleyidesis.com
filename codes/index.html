@@ -1,0 +1,50 @@
+---
+layout: page
+hero_bg: "https://images.unsplash.com/photo-1429051883746-afd9d56fbdaf?ixlib=rb-0.3.5&q=80&fm=jpg"
+hero_headline: "you've never seen 1337 haxx like this"
+hero_lead: "01101100 01101111 01101100."
+blurb_headline: "I code in my sleep. That sounds cool, but actually it's a problem.<br>please send help."
+sidekick_bg: "https://images.unsplash.com/photo-1437957146754-f6377debe171?ixlib=rb-0.3.5&q=80&fm=jpg"
+sidekick_headline: "hackers never sleep, cause sleep is for the weak. I'm pretty weak, actually."
+sidekick_cta: "Contact me"
+---
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/social-share-kit.css" type="text/css">
+<div class="container">
+  <apps>
+    <div class="row">
+      <div class="col-xs-6">
+        <h1>built</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <p>I build passion products when I'm not busy grinding away at my other passion projects.</p>
+      </div>
+    </div>
+    <div class="row">
+      {% for app in site.apps %}
+        {% if app.built == true %}
+          <div class="col-xs-12 col-sm-6">
+            <img class="img-responsive app-promo" src="{{app.promo_img}}" height="135px"/>
+            <a href="{{app.url}}" class="lead">{{app.name}}</a>
+            <div class="ssk-group ssk-lg pull-right">
+              {% if app.play_store_url %}
+                <a href="{{app.play_store_url}}" class="ssk ssk-icon ssk-android"></a>
+              {% endif %}
+              {% if app.github_url %}
+                <a href="{{app.github_url}}" class="ssk ssk-icon ssk-github"></a>
+              {% endif %}
+            </div>
+            <p>{{ app.summary }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </apps>
+  {% include sidekick.html
+    sidekick_bg=page.sidekick_bg
+    sidekick_headline=page.sidekick_headline
+    sidekick_cta=page.sidekick_cta
+  %}
+</div>
