@@ -26,8 +26,10 @@ sidekick_cta: "Contact me"
       {% for app in site.apps %}
         {% if app.built == true %}
           <div class="col-xs-12 col-sm-6">
-            <img class="img-responsive app-promo" src="{{app.promo_img}}" height="135px"/>
-            <a href="{{app.url}}" class="lead">{{app.name}}</a>
+            <a href="{{app.url}}">
+              <img class="img-responsive app-promo" src="{{app.promo_img}}"/>
+            </a>
+            <a href="{{app.url}}" target="_blank" class="lead">{{app.name}}</a>
             <div class="ssk-group ssk-lg pull-right">
               {% if app.play_store_url %}
                 <a href="{{app.play_store_url}}" class="ssk ssk-icon ssk-android"></a>
@@ -36,7 +38,7 @@ sidekick_cta: "Contact me"
                 <a href="{{app.github_url}}" class="ssk ssk-icon ssk-github"></a>
               {% endif %}
             </div>
-            <p>{{ app.summary }}</p>
+            <p class="app-summary">{{ app.summary }}</p>
           </div>
         {% endif %}
       {% endfor %}

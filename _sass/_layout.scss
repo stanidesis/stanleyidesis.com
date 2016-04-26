@@ -264,8 +264,18 @@ credentials {
 
 apps {
     .app-promo {
-        @include hover-float(1.01, .7)
+      max-height: 256px;
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 12px;
+      border: 1px solid $brand-color-text;
+      @include hover-float(1.01, .7);
     }
+
+  .app-summary {
+    height: $line-height-computed * 2;
+    margin-bottom: 24px;
+  }
 }
 
 /******************************

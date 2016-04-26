@@ -5,5 +5,5 @@ built: true
 promo_img: "/images/quotograph-promo-image.jpg"
 play_store_url: "https://play.google.com/store/apps/details?id=com.stanleyidesis.quotograph"
 github_url: "https://github.com/stanidesis/quotograph"
-url: "#"
+url: "https://play.google.com/store/apps/details?id=com.stanleyidesis.quotograph"
 ---
