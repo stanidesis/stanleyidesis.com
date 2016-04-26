@@ -259,22 +259,35 @@ credentials {
 }
 
 /******************************
- * Codes:apps
+ * /codes
  ******************************/
 
-apps {
-    .app-promo {
-      max-height: 256px;
-      width: 100%;
-      overflow: hidden;
-      margin-bottom: 12px;
-      border: 1px solid $brand-color-text;
-      @include hover-float(1.01, .7);
-    }
+apps,experience {
+  .codes-promo {
+    max-height: 256px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border: 1px solid $brand-color-text;
+    @include hover-float(1.01, .7);
+  }
 
-  .app-summary {
+  .codes-summary {
     height: $line-height-computed * 2;
     margin-bottom: 24px;
+  }
+
+  .codes-article {
+    font-size: 28px;
+    margin-left: 4px;
+    color: #757575;
+    &:hover {
+      color: darken(#757575, 20%);
+    }
+  }
+
+  .lead, .fa {
+    line-height: 42px;
   }
 }
 

@@ -27,23 +27,70 @@ sidekick_cta: "Contact me"
         {% if app.built == true %}
           <div class="col-xs-12 col-sm-6">
             <a href="{{app.url}}">
-              <img class="img-responsive app-promo" src="{{app.promo_img}}"/>
+              <img class="img-responsive codes-promo" src="{{app.promo_img}}"/>
             </a>
-            <a href="{{app.url}}" target="_blank" class="lead">{{app.name}}</a>
-            <div class="ssk-group ssk-lg pull-right">
-              {% if app.play_store_url %}
-                <a href="{{app.play_store_url}}" class="ssk ssk-icon ssk-android"></a>
-              {% endif %}
-              {% if app.github_url %}
-                <a href="{{app.github_url}}" class="ssk ssk-icon ssk-github"></a>
-              {% endif %}
+            <div>
+              <a href="{{app.url}}" target="_blank" class="lead">{{app.name}}</a>
+              <div class="pull-right">
+                {% if app.play_store_url %}
+                <a href="{{app.play_store_url}}" class="codes-article"><i class="fa fa-android"></i></a>
+                {% endif %}
+                {% if app.app_store_url %}
+                <a href="{{app.app_store_url}}" class="codes-article"><i class="fa fa-apple"></i></a>
+                {% endif %}
+                {% if app.github_url %}
+                <a href="{{app.github_url}}" class="codes-article"><i class="fa fa-github"></i></a>
+                {% endif %}
+                {% if app.article %}
+                <a href="{{app.article}}" class="codes-article"><i class="fa fa-newspaper-o"></i></a>
+                {% endif %}
+              </div>
             </div>
-            <p class="app-summary">{{ app.summary }}</p>
+            <p class="codes-summary">{{ app.summary }}</p>
           </div>
         {% endif %}
       {% endfor %}
     </div>
   </apps>
+  <experience>
+    <div class="row">
+      <div class="col-xs-6">
+        <h1>experience</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <p>I've learned and grown immensely thanks to these amazing organizations.</p>
+      </div>
+    </div>
+    <div class="row">
+      {% for emp in site.employers %}
+      <div class="col-xs-12 col-sm-6">
+        <a href="{{emp.url}}">
+          <img class="img-responsive codes-promo" src="{{emp.promo_img}}"/>
+        </a>
+        <div>
+          <a href="{{emp.url}}" target="_blank" class="lead">{{emp.name}}</a>
+          <div class="pull-right">
+            {% if emp.play_store_url %}
+            <a href="{{emp.article}}" class="codes-article"><i class="fa fa-android"></i></a>
+            {% endif %}
+            {% if emp.app_store_url %}
+            <a href="{{emp.article}}" class="codes-article"><i class="fa fa-apple"></i></a>
+            {% endif %}
+            {% if emp.github_url %}
+            <a href="{{emp.article}}" class="codes-article"><i class="fa fa-github"></i></a>
+            {% endif %}
+            {% if emp.article %}
+            <a href="{{emp.article}}" class="codes-article"><i class="fa fa-newspaper-o"></i></a>
+            {% endif %}
+          </div>
+        </div>
+        <p class="codes-summary">{{ emp.summary }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </experience>
   {% include sidekick.html
     sidekick_bg=page.sidekick_bg
     sidekick_headline=page.sidekick_headline
