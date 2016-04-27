@@ -1,4 +1,7 @@
 ---
+title: "writes"
+url: "/writes"
+production: true
 layout: page
 hero_bg: "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-0.3.5&q=80&fm=jpg"
 hero_headline: "Words are Powerful"
@@ -12,7 +15,7 @@ blurb_headline: "I write, but whether anyones reads is up for debate.<br>Debate 
       <div class="row">
         <div class="col-xs-12 col-sm-9">
           <post-item>
-            <h2><a href="{{ post.url }}">{{ post.title }}</h2></a>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
             <p>{{ post.excerpt }}</p>
             {% if post.tags %}
             <ul>

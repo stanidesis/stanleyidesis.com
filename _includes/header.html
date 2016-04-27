@@ -7,10 +7,15 @@
         </div>
         <div class="col-sm-6 col-xs-12" role="navigation">
           <ul>
-            <li role="presentation"><a href="/writes">writes</a>,</li>
-            <li role="presentation"><a href="/entertains">entertains</a>,</li>
-            <li role="presentation"><a href="/codes">codes</a>,</li>
-            <li role="presentation">and <a href="#">responds</a>.</li>
+            {% assign pages = site.pages | where:"production","true" %}
+            {% assign length = pages | size %}
+            {% for page in pages %}
+              {% if forloop.last == true %}
+                <li role="presentation">{% if length > 1 %}and {% endif %}<a href="{{page.url}}">{{ page.title }}</a>.</li>
+              {% else %}
+                <li role="presentation"><a href="{{page.url}}">{{ page.title }}</a>{% if length > 2 %},{% endif %}</li>
+              {% endif %}
+            {% endfor %}
           </ul>
         </div>
       </div>
