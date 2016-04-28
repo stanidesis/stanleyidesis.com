@@ -38,6 +38,10 @@
     background-color: $brand-color-background;
     border-bottom: 1px solid rgba($gray, .5);
 
+    .row {
+        padding: 6px 0px;
+    }
+
     li {
         line-height: inherit;
         display: inline-block;
@@ -51,6 +55,7 @@
     ul {
         text-align: center;
         padding:    0;
+        margin: 0;
 
         @include media-min($screen-sm-min) {
             text-align: right;
@@ -59,6 +64,8 @@
     }
 
     .header-title {
+        font-family: $heading-font-family;
+        font-weight: $heading-font-weight;
         line-height: 56px;
         text-align:  center;
         margin:      0;
@@ -187,8 +194,16 @@ post-item {
 article {
     line-height: 1.65;
     font-size:   20px;
-}
 
+    .article-title {
+        font-family: $heading-font-family;
+        font-weight: $heading-font-weight;
+    }
+
+    .article-date-author {
+        color: lighten($gray-light, 15%);
+    }
+}
 
 /******************************
  * Article:related-posts
@@ -347,6 +362,11 @@ hero {
         .container {
             max-width:        $max-page-width;
             background-color: transparent;
+        }
+
+        h1 {
+            font-family: $heading-font-family;
+            font-weight: $heading-font-weight;
         }
     }
 }
