@@ -306,6 +306,23 @@ apps,experience {
 }
 
 /******************************
+ * /responds
+ ******************************/
+
+contact {
+  .row {
+    margin-bottom: $vertical-spacing;
+  }
+  
+  .btn-primary {
+    border: none;
+    &:hover, &:active, &:focus, &:visited {
+      border: none;
+    }
+  }
+}
+
+/******************************
  * Includes
  ******************************/
 

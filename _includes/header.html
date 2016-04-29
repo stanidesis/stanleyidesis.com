@@ -7,7 +7,7 @@
         </div>
         <div class="col-sm-6 col-xs-12" role="navigation">
           <ul>
-            {% assign pages = site.pages | where:"production","true" %}
+            {% assign pages = site.pages | where:"in_header","true" %}
             {% assign length = pages | size %}
             {% for page in pages %}
               {% if forloop.last == true %}
