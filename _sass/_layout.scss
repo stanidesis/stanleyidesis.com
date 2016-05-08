@@ -156,6 +156,9 @@ $footer-size-alt: 28px;
  * /writes
  ******************************/
 post-item {
+    h2 {
+        margin-top: 0px;
+    }
     p {
         @include media-min($screen-sm-min) {
             font-size: 22px;
