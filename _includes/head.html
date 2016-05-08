@@ -21,22 +21,55 @@
   <!-- iOS Safari -->
   <meta name="apple-mobile-web-app-status-bar-style" content="#2ECC71">
 
-  <!-- Twitter -->
-  <meta name="twitter:site" content="{{site.twitter_username}}">
+  <!-- Setup SEO Variables Up Top -->
+  {% if page.title %}
+    {% assign title = page.title | escape %}
+  {% else %}
+    {% assign title = site.title | escape %}
+  {% endif %}
+  {% if page.excerpt %}
+    {% assign description = page.excerpt | strip_html | strip_newlines | truncate: 160 %}
+  {% else %}
+    {% assign description = site.description %}
+  {% endif %}
+  {% if page.promo-thumb %}
+    {% assign image = page.promo-thumb | prepend: site.url %}
+  {% else %}
+    {% assign image = "images/ico_64.jpg" | prepend: site.url %}
+  {% endif %}
+  {% assign url = page.url | prepend: site.url %}
 
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <!-- Important SEO Stuff -->
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
   {% if page.keywords %}
-  <meta name="keywords" content="{{page.keywords}}">
+  <meta name="keywords" content="{{ page.keywords }}">
   {% endif %}
   <meta name="author" content="Stanley Idesis">
 
-  <!-- OpenGraph -->
-  <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
-  {% if page.promo-thumb %}
-  <!-- Promo must be a sharable thumbnail, generally a square image no larger than 300x300 -->
-  <meta property="og:image" content="{{page.promo-thumb}}">
-  {% endif %}
+  <!-- Twitter -->
+  <meta name="twitter:creator" content="{{ site.twitter_username | prepend: '@' }}">
+  <meta name="twitter:url" content="{{ url }}">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ image }}">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ url }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="{{ image }}">
+
+  <!-- Google+ -->
+  <meta itemprop="name" content="{{ title }}">
+  <meta itemprop="description" content="{{ description }}">
+  <meta itemprop="image" content="{{ image }}">
+
+  <!-- Apple/iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
 
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
