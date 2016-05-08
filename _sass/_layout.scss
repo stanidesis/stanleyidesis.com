@@ -206,20 +206,40 @@ article {
 }
 
 /******************************
+ * Article:Social/Related
+ ******************************/
+.social-related-wrapper {
+    @include media-min($screen-sm-min) {
+        text-align: right;
+        position: fixed;
+        width: 17%;
+    }
+}
+
+/******************************
+ * Article:body
+ ******************************/
+.article-body {
+    img {
+        @include hover-float(1.01, .7);
+        width: 100%;
+    }
+
+/*     @include media-min($screen-sm-min) {
+        float: left;
+        width: 58.33333333%;
+    } */
+}
+
+/******************************
  * Article:related-posts
  ******************************/
 .related-posts {
-
     border-top: 1px solid rgba($gray, .5);
-
     ul {
         margin: 0px;
         padding: 0px;
         list-style: none;
-    }
-
-    @include media-min($screen-sm-min) {
-        border-top: none;
     }
 }
 
@@ -227,17 +247,11 @@ article {
  * Article:share-post
  ******************************/
 .share-post {
-
     border-top: 1px solid rgba($gray, .5);
-
     ul {
         margin: 0px;
         padding: 0px;
         list-style: none;
-    }
-
-    @include media-min($screen-sm-min) {
-        border-top: none;
     }
 }
 
@@ -313,7 +327,7 @@ contact {
   .row {
     margin-bottom: $vertical-spacing;
   }
-  
+
   .btn-primary {
     border: none;
     &:hover, &:active, &:focus, &:visited {

@@ -3,6 +3,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+  <!-- Favicon -->
+  <!-- For IE 11, Chrome, Firefox, Safari, Opera -->
+  <link rel="icon" href="/images/ico_16.jpg" sizes="16x16" type="image/jpg">
+  <link rel="icon" href="/images/ico_32.jpg" sizes="32x32" type="image/jpg">
+  <link rel="icon" href="/images/ico_48.jpg" sizes="48x48" type="image/jpg">
+  <link rel="icon" href="/images/ico_64.jpg" sizes="62x62" type="image/jpg">
+
   <!--
     Mobile window themeing
   -->
@@ -19,19 +26,21 @@
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  {% if page.keywords %}
+  <meta name="keywords" content="{{page.keywords}}">
+  {% endif %}
+  <meta name="author" content="Stanley Idesis">
 
-  <!--
-    OpenGraph title/image
-  -->
+  <!-- OpenGraph -->
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
-  <!-- sharenail must be a sharable thumbnail, generally a square image no larger than 300x300 -->
-  {% if page.sharenail %}
-  <meta property="og:image" content="{{page.sharenail}}">
+  {% if page.promo-thumb %}
+  <!-- Promo must be a sharable thumbnail, generally a square image no larger than 300x300 -->
+  <meta property="og:image" content="{{page.promo-thumb}}">
   {% endif %}
 
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.rss | prepend: site.url }}">
 
   {% if JEKYLL.ENVIRONMENT != "development" %}
   <!-- Google Analytics -->

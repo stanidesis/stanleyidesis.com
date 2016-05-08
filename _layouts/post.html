@@ -6,38 +6,41 @@ layout: default
 <div class="container">
   <article itemscope itemtype="http://schema.org/BlogPosting">
     <div class="row">
-      <div class="col-xs-12 col-sm-7">
+      <div class="col-xs-12 col-sm-8 article-body pull-right">
         <a href="{{ page.url }}"><h1 itemprop="name headline" class="article-title">{{ page.title }}</h1></a>
         <p class="small article-date-author"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
         <div itemprop="articleBody">
           {{ content }}
         </div>
       </div>
-      <div class="share-post col-xs-6 col-sm-4 pull-right">
-        <h3>Like it? Then you should <s>put a ring on</s> share it</h3>
-        <div class="ssk-group ssk-large {% if jekyll.environment == "development" %}ssk-count{% endif %}">
-          <a href="" class="ssk ssk-facebook"></a>
-          <a href="" class="ssk ssk-twitter"></a>
-          <a href="" class="ssk ssk-google-plus"></a>
-          <a href="" class="ssk ssk-linkedin"></a>
-          <a href="" class="ssk ssk-email"></a>
+      <div class="social-related-wrapper col-xs-12 col-sm-3">
+        <div class="social">
+            <h3>Like it? Then you should <s>put a ring on it</s> share it</h3>
+            <div class="ssk-group ssk-large {% if jekyll.environment == "development" %}ssk-count{% endif %}">
+              <a href="" class="ssk ssk-facebook"></a>
+              <a href="" class="ssk ssk-twitter"></a>
+              <a href="" class="ssk ssk-google-plus"></a>
+              <a href="" class="ssk ssk-linkedin"></a>
+              <a href="" class="ssk ssk-email"></a>
+            </div>
+            <script type="text/javascript">
+              SocialShareKit.init();
+            </script>
         </div>
-        <script type="text/javascript">
-          SocialShareKit.init();
-        </script>
-      </div>
-      <div class="related-posts col-xs-6 col-sm-4 pull-right">
-        <h3>You may also enjoy</h3>
-        <ul>
-          {% for post in site.related_posts limit:3 %}
-            <li>
-                <a href="{{ site.url }}">{{ post.title }}</a><br>
-                <time datetime="{{ page.date | date_to_xmlschema }}" class="small">{{ page.date | date: "%b %-d, %Y" }}</time>
-            </li>
-          {% endfor %}
-        </ul>
+        {% if site.related_posts.size > 0 %}
+        <div class="related">
+            <h3>You may also enjoy</h3>
+            <ul>
+              {% for post in site.related_posts limit:3 %}
+                <li>
+                    <a href="{{ site.url }}">{{ post.title }}</a><br>
+                    <time datetime="{{ page.date | date_to_xmlschema }}" class="small">{{ page.date | date: "%b %-d, %Y" }}</time>
+                </li>
+              {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
       </div>
     </div>
-
   </article>
 </div>

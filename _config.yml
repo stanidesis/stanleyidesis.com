@@ -6,12 +6,12 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: "Stanley Idesis..."
+title: "Stanley Idesis: The Website"
 email: stan.idesis@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Stanley Idesis is here to rock your world, blow your mind,
-  save your soul, and have you back home by ten. Enter, but please
-  take off your shoes first because we like to keep things clean here.
+  save your soul, and have you back home by 10. Enter, but please
+  take off your shoes first because we keep things clean here.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://stanleyidesis.com" # the base hostname & protocol for your site
 rss: "/feed.xml"
