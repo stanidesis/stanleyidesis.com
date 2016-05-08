@@ -9,7 +9,7 @@ keywords: "stanley idesis,friendship,selflessness,personal story,blog post,kidne
 promo: "/images/vegeta-training.png"
 promo-thumb: "/images/vegeta-training-thumb.png"
 ---
-As a fact, many of my friends have displayed instances of selflessness for which I am eternally grateful. But I regret to inform you, and *them*, that my poor memory has let slip into the abyss the majority of these acts.
+As a fact, many of my friends have displayed instances of selflessness for which I am eternally grateful. But I regret to inform you, and *them*, that my poor memory has let slip into the abyss the majority of these acts.<!--more-->
 
 However, there is one that comes to mind I won't soon forget. Back in some month, 2012, I diligently clicked and clacked away at my keyboard at work, fixing a bug in Words with Friends. Rather abruptly, a pain overcame my lower-back. This was unlike pain I had ever felt; to this day I imagine this is what getting stabbed feels like. I remained in my chair, waiting diligently for this pain to leave, hoping it was a stomach cramp or something of the sort.
 

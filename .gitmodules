@@ -4,6 +4,3 @@
 [submodule "_modules/instafeed"]
 	path = _modules/instafeed
 	url = https://github.com/stevenschobert/instafeed.js.git
-[submodule "_modules/bootstrap-sass"]
-	path = _modules/bootstrap-sass
-	url = git@github.com:twbs/bootstrap-sass.git
