@@ -12,21 +12,28 @@ blurb_headline: "I write, but whether anyones reads is up for debate.<br>Debate 
   <div class="container">
     <h1>Must-Reads</h1>
     {% for post in paginator.posts %}
+    <post-item>
       <div class="row">
+        {% if post.promo-thumb %}
+        <div class="col-xs-12 col-sm-3">
+          <a href="{{ post.url }}">
+            <img class="img-responsive" src="{{ post.promo-thumb | prepend: site.url }}"/>
+          </a>
+        </div>
+        {% endif %}
         <div class="col-xs-12 col-sm-9">
-          <post-item>
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            <p>{{ post.excerpt }}</p>
-            {% if post.tags %}
-            <ul>
-              {% for tag in post.tags %}
-                <li>{{ tag }}</li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-          </post-item>
+          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <p>{{ post.excerpt }}</p>
+          {% if post.tags %}
+          <ul>
+            {% for tag in post.tags %}
+            <li>{{ tag }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
         </div>
       </div>
+    </post-item>
     {% endfor %}
     <div class="row">
     </div>
