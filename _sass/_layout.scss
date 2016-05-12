@@ -560,3 +560,48 @@ hero {
         margin: 0;
     }
 }
+
+/**
+ * Subscribe Banner
+ */
+.subscribe-banner {
+  background-color: #333;
+  color: $gray-light;
+  padding: 15px 0;
+
+  #mc_embed_signup_scroll {
+    background: transparent;
+    clear:left;
+    text-align: center;
+
+    .email {
+      font-family: $base-font-family;
+      font-size: 14px;
+      background-color: $brand-color-background;
+    }
+
+    .clear {
+      width: 100%;
+      display: inline-block;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0px 12px;
+      height: 32px;
+      font-size: 14px
+    }
+
+    @include media-min($screen-sm-min) {
+      text-align: right;
+
+      .email {
+        width: 70%;
+      }
+
+      .clear {
+        width: 20%;
+      }
+    }
+  }
+}

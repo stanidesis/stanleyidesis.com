@@ -1,0 +1,36 @@
+<subscribe-banner>
+  {% if include.subscribe_leadin %}
+    {% assign leadin = inclde.subscribe_leadin %}
+  {% else %}
+    {% assign leadin = "Want Stanley in your inbox? Of course you do." %}
+  {% endif %}
+  {% if include.subscribe_cta %}
+    {% assign cta = inclde.subscribe_cta %}
+  {% else %}
+    {% assign cta = "Subscribe" %}
+  {% endif %}
+  <div class="subscribe-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <h4>{{leadin}}</h4>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <!-- Begin MailChimp Signup Form -->
+          <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+          <div id="mc_embed_signup">
+            <form action="//stanleyidesis.us13.list-manage.com/subscribe/post?u=5b5293b8764c91d4d89663072&amp;id=9227f155af" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5b5293b8764c91d4d89663072_9227f155af" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="{{cta}}" name="subscribe" id="mc-embedded-subscribe" class="btn"></div>
+              </div>
+            </form>
+          </div>
+            <!--End mc_embed_signup-->
+        </div>
+      </div>
+    </div>
+  </div>
+</subscribe-banner>
