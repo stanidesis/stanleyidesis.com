@@ -1,4 +1,4 @@
-<subscribe-banner>
+<subscribe-box>
   {% if include.subscribe_leadin %}
     {% assign leadin = include.subscribe_leadin %}
   {% else %}
@@ -24,16 +24,12 @@
       });
     }
   </script>
-  <div class="subscribe-banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6">
-          <h4>{{leadin}}</h4>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-          {% include subscribe_form.html cta=cta %}
-        </div>
-      </div>
+  <div class="subscribe-box">
+    <div style="float:left">
+      <h4>{{leadin}}</h4>
+    </div>
+    <div>
+      {% include subscribe_form.html cta=cta %}
     </div>
   </div>
-</subscribe-banner>
+</subscribe-box>

@@ -214,9 +214,9 @@ article {
  ******************************/
 .social-related-wrapper {
     @include media-min($screen-sm-min) {
-        text-align: right;
-        position: fixed;
-        width: 17%;
+/*         text-align: right; */
+/*         position: fixed; */
+/*         width: 17%; */
     }
 }
 
@@ -562,16 +562,16 @@ hero {
 }
 
 /**
- * Subscribe Banner
+ * Subscribe
  */
-.subscribe-banner {
+.subscribe-banner, .subscribe-box {
   background-color: #333;
   color: $gray-light;
   padding: 15px 0;
 
   #mc_embed_signup_scroll {
     background: transparent;
-    clear:left;
+    clear: left;
     text-align: center;
 
     .email {
@@ -592,8 +592,11 @@ hero {
       height: 38px;
       font-size: 18px;
     }
+  }
+}
 
-    @include media-min($screen-sm-min) {
+.subscribe-banner {
+  @include media-min($screen-sm-min) {
       text-align: right;
 
       .email, .btn {
@@ -609,5 +612,32 @@ hero {
         width: 20%;
       }
     }
+}
+
+.subscribe-box {
+  padding: 15px 15px;
+  margin-top: 15px;
+
+  h4 {
+    margin-top: 0;
+  }
+
+  #mc_embed_signup_scroll {
+    .email, .btn {
+      height: 32px;
+      font-size: 14px;
+    }
+
+    .email {
+      width: 100%;
+    }
+
+    .clear {
+      display: inline;
+      width: 100%;
+    }
+  }
+  @include media-min($screen-sm-min) {
+    margin-top: 0;
   }
 }
