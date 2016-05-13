@@ -1,9 +1,12 @@
-<div class="recent_posts">
+<div class="recent-posts">
   {% for post in site.posts limit:3 %}
-    <div class="col-xs-12 col-sm-4 recent_blurb">
+    <div class="col-xs-12 col-sm-4 recent-blurb">
       <a href="{{ post.url }}">
-      <p class="text-justify"><span>{{ post.title }}</span> "{{  post.excerpt | markdownify | strip_html | truncatewords: 15 }}"</p>
+        <img class="img-responsive" src="{{ post.promo-thumb }}"/>
       </a>
+      <p>
+        <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
+        {{ post.excerpt | markdownify | strip_html | truncatewords: 25 }}</p>
     </div>
   {% endfor %}
 </div>

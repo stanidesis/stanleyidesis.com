@@ -427,49 +427,29 @@ hero {
 /**
  * Recent Posts
  */
-.recent_posts {
-
-    div:first-child {
-        margin-top: 28px;
-
-        @include media-min($screen-sm-min) {
-            margin-top: 0;
-        }
+.recent-posts {
+  div {
+    margin-top: 28px;
+    @include media-min($screen-sm-min) {
+      margin-top: 0;
     }
+  }
 
-    a, a:hover {
-        color: $brand-color-text;
+  .recent-blurb {
+    a {
+      width: 100%;
     }
-
+    img {
+      width: 100%;
+      @include hover-float(1.01, .7);
+    }
     p {
-        font-size:          20px;
-        height:             126px;
-        border-bottom:      3px solid transparent;
-        -webkit-transition: all 100ms ease-in;
-        -moz-transition:    all 100ms ease-in;
-        -o-transition:      all 100ms ease-in;
-        transition:         all 100ms ease-in;
-
-        @include media-min($screen-sm-min) {
-            height: 148px;
-        }
+      margin-top: 8px;
     }
-
-    p:hover {
-        border-bottom: 3px solid $brand-color-text;
+    .post-title {
+      font-size: 22px;
     }
-
-    p span {
-        color: $gray;
-    }
-
-    .recent_blurb {
-        margin-bottom: 16px;
-
-        @include media-min($screen-sm-min) {
-            margin-bottom: 0px;
-        }
-    }
+  }
 }
 
 /**
