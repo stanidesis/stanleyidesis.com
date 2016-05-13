@@ -10,6 +10,7 @@ blurb_headline: "Entertaining is in my blood.<br>The doctor gives me 3 months."
 sidekick_bg: "https://images.unsplash.com/photo-1454023989775-79520f04322c?ixlib=rb-0.3.5&q=80&fm=jpg"
 sidekick_headline: "You can't spell 'teamwork' without 'Stanley,' not if I'm in charge."
 sidekick_cta: "Contact me"
+subscribe_leadin: "Want more antics? Subscribe of course!"
 ---
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/social-share-kit.css" type="text/css">
@@ -74,9 +75,9 @@ sidekick_cta: "Contact me"
       </div>
     </div>
   </credentials>
-  {% include sidekick.html
-    sidekick_bg=page.sidekick_bg
-    sidekick_headline=page.sidekick_headline
-    sidekick_cta=page.sidekick_cta
-  %}
 </div>
+{% include sidekick.html
+  sidekick_bg=page.sidekick_bg
+  sidekick_headline=page.sidekick_headline
+  sidekick_cta=page.sidekick_cta
+%}

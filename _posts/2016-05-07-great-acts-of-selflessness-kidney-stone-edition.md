@@ -8,6 +8,7 @@ tags: friendship selflessness
 keywords: "stanley idesis,friendship,selflessness,personal story,blog post,kidney stone,friends,selfless"
 promo: "/images/vegeta-training.png"
 promo-thumb: "/images/vegeta-training-thumb.png"
+subscribe_leadin: "Your selfless act for the day? Subscribing to my #blessed newsletter"
 ---
 As a fact, many of my friends have displayed instances of selflessness for which I am eternally grateful. But I regret to inform you, and *them*, that my poor memory has let slip into the abyss the majority of these acts.<!--more-->
 

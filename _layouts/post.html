@@ -31,7 +31,9 @@ layout: default
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        {% include subscribe_box.html %}
+        {% include subscribe_box.html
+          subscribe_leadin=page.subscribe_leadin
+        %}
       </div>
     </div>
     <div class="row">

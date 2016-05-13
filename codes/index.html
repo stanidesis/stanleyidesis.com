@@ -10,6 +10,7 @@ blurb_headline: "I code in my sleep. That sounds cool, but actually it's a probl
 sidekick_bg: "https://images.unsplash.com/photo-1437957146754-f6377debe171?ixlib=rb-0.3.5&q=80&fm=jpg"
 sidekick_headline: "I never sleep, 'cause you miss 100% of the shots you don't code."
 sidekick_cta: "Contact me"
+subscribe_leadin: "Ooh my code's compiling, time to write a newsletter!"
 ---
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/social-share-kit.css" type="text/css">
@@ -94,9 +95,9 @@ sidekick_cta: "Contact me"
       {% endfor %}
     </div>
   </experience>
-  {% include sidekick.html
-    sidekick_bg=page.sidekick_bg
-    sidekick_headline=page.sidekick_headline
-    sidekick_cta=page.sidekick_cta
-  %}
 </div>
+{% include sidekick.html
+  sidekick_bg=page.sidekick_bg
+  sidekick_headline=page.sidekick_headline
+  sidekick_cta=page.sidekick_cta
+%}
