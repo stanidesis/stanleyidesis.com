@@ -576,8 +576,9 @@ hero {
 
     .email {
       font-family: $base-font-family;
-      font-size: 14px;
       background-color: $brand-color-background;
+      font-size: 18px;
+      height: 38px;
     }
 
     .clear {
@@ -588,12 +589,17 @@ hero {
     .btn {
       width: 100%;
       padding: 0px 12px;
-      height: 32px;
-      font-size: 14px
+      height: 38px;
+      font-size: 18px;
     }
 
     @include media-min($screen-sm-min) {
       text-align: right;
+
+      .email, .btn {
+        height: 32px;
+        font-size: 14px;
+      }
 
       .email {
         width: 70%;
