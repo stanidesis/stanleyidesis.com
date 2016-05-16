@@ -60,7 +60,7 @@ Disgusting. On the surface, it's a collection of beautiful quotes from famous pe
 <br><br>
 ![@quotograph_app Instagram Post](http://stanleyidesis.com/images/posts/2016-05-15-instagram/instagram-quotograph-post.png "Still not an ad, I swear")
 <br><br>
-If the unbearable self-promotion and shameless number of hashtags clawing desperately for attention doesn't sicken you, then maybe you should download this app, my app, called [Quotograph](https://play.google.com/store/apps/details?id=com.stanleyidesis.quotograph). Quotograph combines stupid beautiful stock photographs with dumb inspirational quotes to make motivational wallpapers for your Android phone; and I find the my marketing tactics deplorable.
+If the unbearable self-promotion and shameless number of hashtags clawing desperately for attention doesn't sicken you, then maybe you should download this app, my app, called [Quotograph](https://play.google.com/store/apps/details?id=com.stanleyidesis.quotograph). Quotograph combines stupid beautiful stock photographs with dumb inspirational quotes to make motivational wallpapers for your Android phone; and I find my marketing tactics deplorable.
 
 ---
 
