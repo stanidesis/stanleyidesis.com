@@ -30,7 +30,7 @@ Alright, well, that wasn't surprising, nor unexpected. But there's still a chanc
 <br><br>
 After watching this 15 second video for an hour and 38 minutes, I spotted this:
 <br><br>
-![@fitness.r.us Squat Post Tip](http://stanleyidesis.com/images/posts/2016-05-15-instagram/instagram-fitness-r-us-squat-tip.png "A tiny comment that mentions how people should focus on form and not weight")
+![@fitness.r.us Squat Post Tip](http://stanleyidesis.com/images/posts/2016-05-15-instagram/instagram-fitness-r-us-squats-tip.png "A tiny comment that mentions how people should focus on form and not weight")
 
 > Nailed it.
 
