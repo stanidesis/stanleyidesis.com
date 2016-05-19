@@ -10,8 +10,9 @@ promo: "/images/posts/2016-05-15-instagram/instagram-garbage.png"
 promo-thumb: "/images/posts/2016-05-15-instagram/instagram-garbage-thumb.png"
 subscribe_leadin: "You know what's better than Instagram? Subscribing to my site! #notdesperate #pleasesubscribe #hashtag"
 ---
-One month ago I started to use Instagram in a serious manner: as a business person who meant *business*. I shied from Instagram for years because dedicating that much time to building your social presence is wasteful, anti-societal, and self-centered… But I have a brand to build, so forget all that crap! I disrobed my morality, slipped into a Coachella bikini, and dove butt-first into Instagram - eww?<!-- more -->
+One month ago I started to use Instagram in a serious manner: as a business person who meant *business*. I shied from Instagram for years because dedicating that much time to building your social presence is wasteful, anti-societal, and self-centered… But I have a brand to build, so forget all that crap! I disrobed my morality, slipped into a Coachella bikini, and dove butt-first into Instagram - eww?
 
+<!--more-->
 After a month of *insta-ing*, *grammin'*, and *sinking-to-new-lows-ing*, I learned that Instagram is a disgusting place teeming with liars, ugliness, and scam artists. These are the garbage accounts of Instagram.
 
 ## Fitness
