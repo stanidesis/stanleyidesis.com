@@ -13,7 +13,7 @@ subscribe_leadin: "Missing a post is terrifying! Avoid those fears by subscribin
   <div class="container">
     <h1>Must-Reads</h1>
     {% for post in paginator.posts %}
-    <post-item>
+    <div class="post-item">
       <div class="row">
         {% if post.promo-thumb %}
         <div class="col-xs-12 col-sm-3">
@@ -34,9 +34,7 @@ subscribe_leadin: "Missing a post is terrifying! Avoid those fears by subscribin
           {% endif %}
         </div>
       </div>
-    </post-item>
-    {% endfor %}
-    <div class="row">
     </div>
+    {% endfor %}
   </div>
 </posts>

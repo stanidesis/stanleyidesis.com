@@ -152,7 +152,8 @@ $footer-size-alt: 28px;
 /******************************
  * /writes
  ******************************/
-post-item {
+.post-item {
+  margin-bottom: 12px;
     h2 {
         margin-top: 0px;
     }
