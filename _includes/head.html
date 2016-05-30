@@ -33,7 +33,7 @@
     {% assign description = site.description %}
   {% endif %}
   {% if page.promo-thumb %}
-    {% assign image = page.promo-thumb | prepend: site.url %}
+    {% assign image = page.promo-thumb %}
   {% else %}
     {% assign image = "images/ico_64.jpg" | prepend: site.url %}
   {% endif %}
