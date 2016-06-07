@@ -1,0 +1,42 @@
+// Fontsizes in REM, defaults set here.
+// Import fonts
+@import url(https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+// This is the baseline height
+$lineHeight-base: 2.2;
+// Font-weight base
+$fontWeight-base: 300;
+// Font-weight headings
+$fontWeight-headings: 400;
+// Font-family
+$fontFamily-base: "Open Sans Condensed", sans-serif;
+// Heading font-family
+$fontFamily-headings: "Sue Ellen Francisco", cursive;
+// All font-sizes
+$fontSize-micro: .4;
+$fontSize-smallest: .8;
+$fontSize-smaller: 1;
+$fontSize-small: 1.2;
+$fontSize-base: 1.6;
+$fontSize-large: 2.0;
+$fontSize-larger: 2.8;
+$fontSize-largest: 3.2;
+$fontSize-jumbo: 4.8;
+// Establish base font-size (defaults to 10px)
+html {
+  font-size: 62.5%;
+}
+// Use rem fallback to set a 16px base font-size, or 1.6rem
+body {
+  @include m-fontSize($fontSize-base);
+}
+// This is the base font class
+.f-baseFont {
+  @include m-fontSize($fontSize-base);
+  @include m-lineHeight($lineHeight-base);
+  @include m-marginBottom($lineHeight-base);
+  font-family: "Open Sans Condensed", sans-serif;
+}
+.f-heading1 {
+  @include m-fontSize()
+}

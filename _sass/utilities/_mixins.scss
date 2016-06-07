@@ -1,0 +1,29 @@
+// All mixins live here
+
+// This mixin supports IE8 font-size with a 'px' fallback
+@mixin m-fontSize($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+// This mixin supports IE8 line-height with a 'px' fallback
+@mixin m-lineHeight($heightValue: 2.2) {
+  line-height: ($heightValue * 10) + px;
+  line-height: $heightValue + rem;
+}
+// This mixin supports IE8 margin-bottom with a 'px' fallback
+@mixin m-marginBottom($heightValue: 2.2) {
+  margin-bottom: ($heightValue * 10) + px;
+  margin-bottom: $heightValue + rem;
+}
+// Max screen size given this device width
+@mixin media-max($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+// Minimum screen size given this device width
+@mixin media-min($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}

@@ -1,5 +1,5 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# Only the main SASS file needs front matter
 ---
 @charset "utf-8";
 
@@ -9,10 +9,6 @@
 .debug {
     border: 1px dashed red;
 }
-
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 
 // Brand colors
 $brand-color-highlight:  #2ECC71;
@@ -37,7 +33,7 @@ $font-family-base: $base-font-family;
 $font-size-base:   $base-font-size;
 $link-color:       $brand-color-base;
 
-// Global Sass Mixins
+// Global SASS Mixins
 @mixin media-query($size) {
 
 }
