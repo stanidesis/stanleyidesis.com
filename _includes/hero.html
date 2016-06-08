@@ -1,10 +1,4 @@
-<hero>
-  <script type="text/javascript" src="/js/chrome-android-fix.js"></script>
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function(event) {
-      greedyJumbotron(document.getElementById("jumbotron"));
-    });
-  </script>
+<div class="hero">
   <div class="jumbotron" id="jumbotron" style="background-image: url({{ include.hero_bg }});">
     <div class="container">
       <div class="row">
@@ -15,4 +9,10 @@
       </div>
     </div>
   </div>
-</hero>
+</div>
+<script type="text/javascript" src="/js/chrome-android-fix.js"></script>
+<script type="text/javascript">
+  (function() {
+    greedyJumbotron(document.getElementById("jumbotron"));
+  })();
+</script>

@@ -1,24 +1,26 @@
-<header>
+<div class="header-wrapper">
   <div class="header">
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-xs-12">
-          <h3 class="header-title"><a href="/">{{ site.title }}</a></h3>
+          <h3 class="header-title u-alignChildrenCenter f-heading3 fontN7 u-noCushion">
+            <a class="header-titleLink" href="/">{{ site.title }}</a>
+          </h3>
         </div>
-        <div class="col-sm-6 col-xs-12" role="navigation">
-          <ul>
+        <div class="col-sm-6 col-xs-12">
+          <ul class="header-navList u-flattenListRTL u-noCushion u-alignChildrenCenter">
             {% assign pages = site.pages | where:"in_header","true" %}
             {% assign length = pages | size %}
             {% for page in pages %}
-              {% if forloop.last == true %}
-                <li role="presentation">{% if length > 1 %}and {% endif %}<a href="{{page.url}}">{{ page.title }}</a>.</li>
-              {% else %}
-                <li role="presentation"><a href="{{page.url}}">{{ page.title }}</a>{% if length > 2 %},{% endif %}</li>
-              {% endif %}
+            {% if forloop.last == true %}
+            <li class="header-navListItem">{% if length > 1 %}and {% endif %}<a href="{{page.url}}">{{ page.title }}</a>.</li>
+            {% else %}
+            <li ><a href="{{page.url}}">{{ page.title }}</a>{% if length > 2 %},{% endif %}</li>
+            {% endif %}
             {% endfor %}
           </ul>
         </div>
       </div>
     </div>
   </div>
-</header>
+</div>

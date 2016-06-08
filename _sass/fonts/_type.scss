@@ -8,6 +8,10 @@ $lineHeight-smallest: 1.1;
 $lineHeight-smaller: 1.365;
 $lineHeight-small: 1.65;
 $lineHeight-base: 2.2;
+$lineHeight-large: 2.75;
+$lineHeight-larger: 3.4;
+$lineHeight-largest: 4.4;
+$lineHeight-jumbo: 6.6;
 // Font-weight base
 $fontWeight-base: 300;
 // Font-weight headlines
@@ -40,6 +44,14 @@ body {
   font-weight: $fontWeight-base;
   font-family: $fontFamily-base;
 }
+.fontN3 {
+  font-family: $fontFamily-base;
+  font-weight: $fontWeight-base;
+}
+.fontN7 {
+  font-family: $fontFamily-headlines;
+  font-weight: $fontWeight-headlines;
+}
 .f-microFont {
   @include m-fontSize($fontSize-micro);
   @include m-lineHeight($lineHeight-micro);
@@ -63,11 +75,17 @@ body {
 }
 .f-heading1 {
   @include m-fontSize($fontSize-jumbo);
-  @include m-lineHeight(5);
-  font-weight: $fontWeight-headlines;
+  @include m-lineHeight($lineHeight-jumbo);
 }
 .f-heading2 {
   @include m-fontSize($fontSize-largest);
-  @include m-lineHeight(3.4);
-  font-weight: $fontWeight-headlines;
+  @include m-lineHeight($lineHeight-largest);
+}
+.f-heading3 {
+  @include m-fontSize($fontSize-larger);
+  @include m-lineHeight($lineHeight-larger);
+}
+.f-heading4 {
+  @include m-fontSize($fontSize-large);
+  @include m-lineHeight($lineHeight-large);
 }

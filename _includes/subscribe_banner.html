@@ -1,39 +1,38 @@
-<subscribe-banner>
-  {% if include.subscribe_leadin %}
-    {% assign leadin = include.subscribe_leadin %}
-  {% else %}
-    {% assign leadin = "Want Stanley in your inbox? Of course you do." %}
-  {% endif %}
-  {% if include.subscribe_cta %}
-    {% assign cta = include.subscribe_cta %}
-  {% else %}
-    {% assign cta = "Subscribe" %}
-  {% endif %}
-  {% if page.title %}
-    {% assign title = page.title | escape %}
-  {% else %}
-    {% assign title = site.title | escape %}
-  {% endif %}
-  <script type="text/javascript">
-    function onSubscribeClick(event) {
-      ga('send', 'event', {
-        eventCategory: 'subscribe_button',
-        eventAction: 'click',
-        eventLabel: '{{ title }}',
-        transport: 'beacon'
-      });
-    }
-  </script>
-  <div class="subscribe-banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6">
-          <h4>{{leadin}}</h4>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-          {% include subscribe_form.html cta=cta %}
-        </div>
+
+{% if include.subscribe_leadin %}
+{% assign leadin = include.subscribe_leadin %}
+{% else %}
+{% assign leadin = "Want Stanley in your inbox? Of course you do." %}
+{% endif %}
+{% if include.subscribe_cta %}
+{% assign cta = include.subscribe_cta %}
+{% else %}
+{% assign cta = "Subscribe" %}
+{% endif %}
+{% if page.title %}
+{% assign title = page.title | escape %}
+{% else %}
+{% assign title = site.title | escape %}
+{% endif %}
+<script type="text/javascript">
+  function onSubscribeClick(event) {
+    ga('send', 'event', {
+      eventCategory: 'subscribe_button',
+      eventAction: 'click',
+      eventLabel: '{{ title }}',
+      transport: 'beacon'
+    });
+  }
+</script>
+<div class="subscribe-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <h4>{{leadin}}</h4>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        {% include subscribe_form.html cta=cta %}
       </div>
     </div>
   </div>
-</subscribe-banner>
+</div>
