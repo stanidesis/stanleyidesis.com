@@ -1,151 +1,114 @@
 /**
- * Container overrides
- */
-.container {
-    max-width:        $max-page-width;
-    background-color: transparent;
-}
-
-/**
- * Button class, apply to <a></a>
- */
-.btn {
-    color:              $gray-dark;
-    background-color:   $brand-color-highlight;
-    border-radius:      3px;
-    padding:            8px 12px;
-    -webkit-transition: background-color $default-anim-length ease-in-out,
-        color $default-anim-length ease-in-out;
-    -moz-transition:    background-color $default-anim-length ease-in-out,
-        color $default-anim-length ease-in-out;
-    -o-transition:      background-color $default-anim-length ease-in-out,
-        color $default-anim-length ease-in-out;
-    transition:         background-color $default-anim-length ease-in-out,
-        color $default-anim-length ease-in-out;
-
-    &:hover {
-        color:            $brand-color-background;
-        background-color: darken($brand-color-highlight, 25%);
-    }
-}
-
-/**
  * Site header
  */
 .header {
-    min-height:       56px;
-    font-size:        24px;
-    background-color: $brand-color-background;
-    border-bottom: 1px solid rgba($gray, .5);
+  min-height: 56px;
+  font-size: 24px;
+  background-color: $color-brandBackground;
+  border-bottom: 1px solid rgba($gray, .5);
 
-    .row {
-        padding: 6px 0px;
+  .row {
+    padding: 6px 0px;
+  }
+
+  li {
+    line-height: inherit;
+    display: inline-block;
+
+    @include media-min($screen-sm-min) {
+      line-height: 56px;
+      text-align: right;
+    }
+  }
+
+  ul {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+    @include media-min($screen-sm-min) {
+      text-align: right;
+      float: right !important;
+    }
+  }
+
+  .header-title {
+    font-family: $fontFamily-headlines;
+    font-weight: $fontWeight-headlines;
+    line-height: 56px;
+    text-align: center;
+    margin: 0;
+
+    @include media-min($screen-sm-min) {
+      text-align: left;
     }
 
-    li {
-        line-height: inherit;
-        display: inline-block;
-
-        @include media-min($screen-sm-min) {
-            line-height: 56px;
-            text-align:  right;
-        }
+    a, a:hover {
+      color: inherit;
     }
-
-    ul {
-        text-align: center;
-        padding:    0;
-        margin: 0;
-
-        @include media-min($screen-sm-min) {
-            text-align: right;
-            float:      right !important;
-        }
-    }
-
-    .header-title {
-        font-family: $heading-font-family;
-        font-weight: $heading-font-weight;
-        line-height: 56px;
-        text-align:  center;
-        margin:      0;
-
-        @include media-min($screen-sm-min) {
-            text-align: left;
-        }
-
-        a, a:hover {
-            color: inherit;
-        }
-    }
+  }
 }
 
 /**
  * Site footer
  */
-$footer-size: 40px;
-$footer-size-alt: 28px;
 .footer {
   margin-top: 8px;
-    border-top: 1px solid rgba($gray, .5);
-    .container {
-        padding: $vertical-spacing $vertical-spacing;
+  border-top: 1px solid rgba($gray, .5);
+  .container {
+    padding: 20px 20px;
+  }
+  // Social icons
+  .social-icons {
+    @include media-min($screen-sm-min) {
+      padding-left: 0px;
     }
-    // Social icons
-    .social-icons {
-        @include media-min($screen-sm-min) {
-            padding-left: 0px;
-        }
+  }
+
+  img {
+    @include m-transition(opacity $seconds-defaultAnimLength ease-in-out);
+    @include m-opacity(0.7);
+    height:  $height-footer;
+    width:   $height-footer;
+
+    @include media-min($screen-sm-min) {
+      height: $height-footerAlt;
+      width: $height-footerAlt;
     }
+  }
 
-    img {
-        height:  $footer-size;
-        width:   $footer-size;
-        opacity: 0.7;
+  img:hover {
+    @include m-opacity(1.0);
+  }
 
-        -webkit-transition: opacity $default-anim-length ease-in-out;
-        -moz-transition:    opacity $default-anim-length ease-in-out;
-        -o-transition:      opacity $default-anim-length ease-in-out;
-        transition:         opacity $default-anim-length ease-in-out;
+  ul {
+    text-align: center;
+    padding: 0;
+    margin: 0;
 
-        @include media-min($screen-sm-min) {
-            height: $footer-size-alt;
-            width: $footer-size-alt;
-        }
+    @include media-min($screen-sm-min) {
+      text-align: left;
     }
+  }
 
-    img:hover {
-        opacity: 1.0;
+  li {
+    display: inline-block;
+  }
+
+  li:not(:first-child) {
+    margin-left: 12px;
+  }
+
+  .copyright {
+    line-height: $height-footer;
+    text-align: center;
+
+    @include media-min($screen-sm-min) {
+      text-align: right;
+      line-height: $height-footerAlt;
+      padding-right: 0px;
     }
-
-    ul {
-        text-align: center;
-        padding:    0;
-        margin:     0;
-
-        @include media-min($screen-sm-min) {
-            text-align: left;
-        }
-    }
-
-    li {
-        display: inline-block;
-    }
-
-    li:not(:first-child) {
-        margin-left: 12px;
-    }
-
-    .copyright {
-        line-height: $footer-size;
-        text-align: center;
-
-        @include media-min($screen-sm-min) {
-            text-align: right;
-            line-height: $footer-size-alt;
-            padding-right: 0px;
-        }
-    }
+  }
 }
 
 
@@ -154,68 +117,53 @@ $footer-size-alt: 28px;
  ******************************/
 .post-item {
   margin-bottom: 12px;
-    h2 {
-        margin-top: 0px;
+  h2 {
+    margin-top: 0px;
+  }
+  p {
+    @include media-min($screen-sm-min) {
+      font-size: 22px;
     }
-    p {
-        @include media-min($screen-sm-min) {
-            font-size: 22px;
-        }
-    }
-    ul {
-        padding: 0px 0px;
-        margin: 0px 0px;
-    }
-    li {
-        padding: 0px 8px;
-        border: 1px solid $brand-color-highlight;
-        border-radius: 3px;
-        display: inline-block;
-        margin-right: 6px;
-        margin-bottom: 6px;
+  }
+  ul {
+    padding: 0px 0px;
+    margin: 0px 0px;
+  }
+  li {
+    @include m-transition(all $seconds-defaultAnimLength ease-in-out);
+    padding: 0px 8px;
+    border: 1px solid $color-brandHighlight;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: 6px;
 
-        -webkit-transition: all $default-anim-length ease-in-out;
-        -moz-transition:    all $default-anim-length ease-in-out;
-        -o-transition:      all $default-anim-length ease-in-out;
-        transition:         all $default-anim-length ease-in-out;
-
-        &:hover {
-            color: white;
-            background-color: $brand-color-highlight;
-        }
+    &:hover {
+      color: white;
+      background-color: $color-brandHighlight;
     }
-    img {
-      width: 100%;
-      @include hover-float(1.01, .7);
-    }
+  }
+  img {
+    width: 100%;
+    @include m-hoverFloat(1.01, .7);
+  }
 }
 
 /******************************
  * Article
  ******************************/
 article {
-    line-height: 1.65;
-    font-size:   20px;
+  line-height: 1.65;
+  font-size:   20px;
 
-    .article-title {
-        font-family: $heading-font-family;
-        font-weight: $heading-font-weight;
-    }
+  .article-title {
+    font-family: $fontFamily-headlines;
+    font-weight: $fontWeight-headlines;
+  }
 
-    .article-date-author {
-        color: lighten($gray-light, 15%);
-    }
-}
-
-/******************************
- * Article:Social/Related
- ******************************/
-.social-related-wrapper {
-    @include media-min($screen-sm-min) {
-/*         text-align: right; */
-/*         position: fixed; */
-/*         width: 17%; */
-    }
+  .article-date-author {
+    color: lighten($gray-light, 15%);
+  }
 }
 
 /******************************
@@ -223,14 +171,9 @@ article {
  ******************************/
 .article-body {
     img {
-        @include hover-float(1.01, .7);
+        @include m-hoverFloat(1.01, .7);
         width: 100%;
     }
-
-/*     @include media-min($screen-sm-min) {
-        float: left;
-        width: 58.33333333%;
-    } */
 }
 
 /******************************
@@ -249,43 +192,43 @@ article {
  * Article:share-post
  ******************************/
 .share-post {
-    border-top: 1px solid rgba($gray, .5);
-    ul {
-        margin: 0px;
-        padding: 0px;
-        list-style: none;
-    }
+  border-top: 1px solid rgba($gray, .5);
+  ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+  }
 }
 
 /******************************
  * Entertains:videos
  ******************************/
 videos {
-    #subscribe-youtube {
-        text-align: right;
-        margin-top: 34px;
-    }
+  #subscribe-youtube {
+    text-align: right;
+    margin-top: 34px;
+  }
 
-    a {
-        font-size: 24px;
-    }
+  a {
+    font-size: 24px;
+  }
 
-    iframe {
-        @include hover-float(1.01, .7)
-    }
+  iframe {
+    @include m-hoverFloat(1.01, .7);
+  }
 }
 
 /******************************
  * Entertains:credentials
  ******************************/
 credentials {
-    #headshot {
-        @include hover-float(1.01, .7)
-    }
+  #headshot {
+    @include m-hoverFloat(1.01, .7);
+  }
 
-    td:nth-child(2) {
-        text-align: right;
-    }
+  td:nth-child(2) {
+    text-align: right;
+  }
 }
 
 /******************************
@@ -298,12 +241,12 @@ apps,experience {
     width: 100%;
     overflow: hidden;
     margin-bottom: 12px;
-    border: 1px solid $brand-color-text;
-    @include hover-float(1.01, .7);
+    border: 1px solid $color-brandText;
+    @include m-hoverFloat(1.01, .7);
   }
 
   .codes-summary {
-    height: $line-height-computed * 2;
+    @include m-lineHeight($lineHeight-base * 2);
     margin-bottom: 24px;
   }
 
@@ -327,7 +270,7 @@ apps,experience {
 
 contact {
   .row {
-    margin-bottom: $vertical-spacing;
+    margin-bottom: 20px;
   }
 
   .btn-primary {
@@ -346,82 +289,79 @@ contact {
  * Blurb
  */
 .blurb {
-    text-align:       center;
-    background-color: $brand-color-text;
+  text-align:       center;
+  background-color: $color-brandText;
 
-    .container {
-        padding-top:      (2 * $vertical-spacing);
-        padding-bottom:   (2 * $vertical-spacing);
-        background-color: $brand-color-text;
+  .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: $color-brandText;
+  }
+
+  h1 {
+    font-size: 28px;
+
+    @include media-min($screen-sm-min) {
+      // Bootstrap's h1 size
+      font-size: 41px;
     }
-
-    h1 {
-        font-size: 28px;
-
-        @include media-min($screen-sm-min) {
-            // Bootstrap's h1 size
-            font-size: 41px;
-        }
-    }
+  }
 }
 
 /**
  * Hero
  */
 hero {
-    .jumbotron {
-        height:        100%;
-        margin-bottom: 0;
+  .jumbotron {
+    height:        100%;
+    margin-bottom: 0;
 
-        background-repeat:       no-repeat;
-        background-attachment:   scroll;
-        background-position:     center center;
-        -webkit-background-size: cover;
-        -moz-background-size:    cover;
-        -o-background-size:      cover;
-        background-size:         cover;
-        // http://stackoverflow.com/a/24084708/372884
-        box-shadow:              inset 0 0 0 1000px
-            rgba($brand-color-background, $image-screen-alpha);
+    background-repeat:       no-repeat;
+    background-attachment:   scroll;
+    background-position:     center center;
+    -webkit-background-size: cover;
+    -moz-background-size:    cover;
+    -o-background-size:      cover;
+    background-size:         cover;
+    // http://stackoverflow.com/a/24084708/372884
+    box-shadow:              inset 0 0 0 1000px
+      rgba($color-brandBackground, $alpha-imageScreen);
 
-        text-align:     left;
-        padding-top:    (3 * $vertical-spacing);
-        padding-bottom: (5 * $vertical-spacing);
+    text-align:     left;
+    padding-top:    (3 * 20px);
+    padding-bottom: (5 * 20px);
 
-        @include media-min($screen-sm-min) {
-            height: 500px;
-        }
-
-        .container {
-            max-width:        $max-page-width;
-            background-color: transparent;
-        }
-
-        h1 {
-            font-family: $heading-font-family;
-            font-weight: $heading-font-weight;
-        }
+    @include media-min($screen-sm-min) {
+      height: 500px;
     }
+
+    .container {
+      @include m-maxWidth($width-pageMax);
+      background-color: transparent;
+    }
+
+    h1 {
+      font-family: $fontFamily-headlines;
+      font-weight: $fontWeight-headlines;
+    }
+  }
 }
 
 /**
  * Sidekick
  */
 .sidekick {
+  @include m-backgroundSize(cover);
   /*  To compensate for when it's right above the footer  */
   margin-bottom: -8px;
-  margin-top:              (2 * $vertical-spacing);
-  padding: (2 * $vertical-spacing) $vertical-spacing;
+  margin-top: (2 * 20px);
+  padding: (2 * 20px) 20px;
   background-repeat:       no-repeat;
   background-attachment:   scroll;
   background-position:     center center;
-  -webkit-background-size: cover;
-  -moz-background-size:    cover;
-  -o-background-size:      cover;
-  background-size:         cover;
   // http://stackoverflow.com/a/24084708/372884
   box-shadow:              inset 0 0 0 1000px
-    rgba($brand-color-background, $image-screen-alpha);
+    rgba($color-brandBackground, $alpha-imageScreen);
 }
 
 /**
@@ -441,7 +381,7 @@ hero {
     }
     img {
       width: 100%;
-      @include hover-float(1.01, .7);
+      @include m-hoverFloat(1.01, .7);
     }
     p {
       margin-top: 8px;
@@ -456,89 +396,55 @@ hero {
  * Instagram Tiles
  */
 .instagram-tiles {
-    text-align: center;
-    margin-top: 28px;
-    font-size: 0px;
+  text-align: center;
+  margin-top: 28px;
+  font-size: 0px;
+
+  @include media-min($screen-sm-min) {
+    margin-top: 0;
+  }
+
+  .instagram-tile {
+    display: inline-block;
+    width: 33.33%;
+    overflow: hidden;
 
     @include media-min($screen-sm-min) {
-        margin-top: 0;
+      width: auto;
     }
 
-    .instagram-tile {
+    img {
+      @include m-transition(all 100ms ease-in);
+      @include m-opacity(0.7);
+      width: 100%;
+      height: 100%;
+      // Here because: http://stackoverflow.com/questions/3461441/prevent-flicker-on-webkit-transition-of-webkit-transform
+      -webkit-backface-visibility:   hidden;
+
+      @include media-min($screen-sm-min) {
+        width: 104px;
+        height: 104px;
+      }
+    }
+
+    &:hover {
+      position: absolute;
+      z-index: 555555 !important;
+      transform: scale(1.2);
+      overflow: visible;
+      img {
+        @include m-opacity(1.0);
+      }
+    }
+
+    &:nth-child(n+10):nth-child(-n+18) {
+      display: none;
+
+      @include media-min($screen-sm-min) {
         display: inline-block;
-        width: 33.33%;
-        overflow: hidden;
-
-        @include media-min($screen-sm-min) {
-            width: auto;
-        }
-
-        img {
-            opacity: 0.7;
-            width: 100%;
-            height: 100%;
-            -webkit-transition: all 100ms ease-in;
-            -moz-transition:    all 100ms ease-in;
-            -o-transition:      all 100ms ease-in;
-            transition:         all 100ms ease-in;
-            // Here because: http://stackoverflow.com/questions/3461441/prevent-flicker-on-webkit-transition-of-webkit-transform
-            -webkit-backface-visibility:   hidden;
-
-            @include media-min($screen-sm-min) {
-                width: 104px;
-                height: 104px;
-            }
-        }
-
-        &:hover {
-            position: absolute;
-            z-index: 555555 !important;
-            transform: scale(1.2);
-            overflow: visible;
-            img {
-                opacity: 1.0;
-            }
-        }
-
-        &:nth-child(n+10):nth-child(-n+18) {
-            display: none;
-
-            @include media-min($screen-sm-min) {
-                display: inline-block;
-            }
-        }
+      }
     }
-}
-
-
-/**
- * Twitter Timelines
- */
-.timeline-Widget {
-    display: inline-block;
-    width: 100%;
-
-    .SandboxRoot.env-bp-330 .timeline-Tweet-text,
-    .timeline-Tweet-text {
-        font-family: $base-font-family;
-        font-size:   $base-font-size;
-        line-height: $line-height-computed;
-    }
-
-    .timeline-Tweet-media,
-    .timeline-Tweet-author,
-    .timeline-Tweet-brand,
-    .timeline-Tweet-actions {
-        display: none;
-    }
-
-    .timeline-TweetList, .timeline-Tweet {
-        padding: 0;
-    }
-
-    .timeline-Tweet-text {
-        margin: 0;
-    }
+  }
 }
 
 /**
@@ -555,8 +461,8 @@ hero {
     text-align: center;
 
     .email {
-      font-family: $base-font-family;
-      background-color: $brand-color-background;
+      font-family: $fontFamily-base;
+      background-color: $color-brandBackground;
       font-size: 18px;
       height: 38px;
     }
@@ -578,20 +484,20 @@ hero {
 .subscribe-banner {
   #mc_embed_signup_scroll {
     @include media-min($screen-sm-min) {
-        text-align: right;
+      text-align: right;
 
-        .email, .btn {
-          height: 32px;
-          font-size: 14px;
-        }
+      .email, .btn {
+        height: 32px;
+        font-size: 14px;
+      }
 
-        .email {
-          width: 70%;
-        }
+      .email {
+        width: 70%;
+      }
 
-        .clear {
-          width: 20%;
-        }
+      .clear {
+        width: 20%;
+      }
     }
   }
 }
