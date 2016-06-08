@@ -2,7 +2,8 @@
 // Import fonts
 @import url(https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
-// This is the baseline height
+// These are the baseline height
+$lineHeight-small: 1.65;
 $lineHeight-base: 2.2;
 // Font-weight base
 $fontWeight-base: 300;
@@ -22,14 +23,17 @@ $fontSize-large: 2.0;
 $fontSize-larger: 2.8;
 $fontSize-largest: 3.2;
 $fontSize-jumbo: 4.8;
-// Establish base font-size (defaults to 10px)
+// Establish base font-size (defaults to 8px mobile, 10px desktop)
 html {
-  font-size: 62.5%;
+  font-size: 50%;
+  @include m-mediaMin($screen-sm-min) {
+    font-size: 62.5%;
+  }
 }
 // Use rem fallback to set a 16px base font-size, or 1.6rem
 body {
-  @include m-fontSize($fontSize-base);
-  @include m-lineHeight($lineHeight-base);
+  @include m-fontSize($fontSize-small);
+  @include m-lineHeight($lineHeight-small);
   font-family: $fontFamily-base;
 }
 // This is the base font class
@@ -40,6 +44,9 @@ body {
 }
 .f-heading1 {
   @include m-fontSize($fontSize-jumbo);
-  @include m-lineHeight($lineHeight-base);
-  @include m-marginBottom($lineHeight-base);
+  @include m-lineHeight(5);
+}
+.f-heading2 {
+  @include m-fontSize($fontSize-largest);
+  @include m-lineHeight(3.4);
 }

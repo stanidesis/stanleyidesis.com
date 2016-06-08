@@ -21,13 +21,13 @@
   max-width: $maxWidth + rem;
 }
 // Max screen size given this device width
-@mixin media-max($device) {
+@mixin m-mediaMax($device) {
     @media screen and (max-width: $device) {
         @content;
     }
 }
 // Minimum screen size given this device width
-@mixin media-min($device) {
+@mixin m-mediaMin($device) {
     @media screen and (min-width: $device) {
         @content;
     }

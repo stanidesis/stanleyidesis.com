@@ -7,9 +7,11 @@
   "variables/variables",
   "utilities/mixins",
   "utilities/extensions",
+  "utilities/utilities",
   "bootstrap",
   "bootstrap-overrides",
   "fonts/type",
+  "components/blurb",
   "layout",
   "syntax-highlighting"
 ;
@@ -31,6 +33,6 @@ body {
   background-color: $color-brandBackground;
 }
 // Set html and body height to 100%
-html,body {
+html, body {
   height: 100%;
 }

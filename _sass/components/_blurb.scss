@@ -1,0 +1,13 @@
+/**
+ * The blurb is a page-wide headline found below
+ * the jumbotron. It holds a centered one-liner.
+ */
+.blurb {
+  background-color: $color-brandText;
+}
+// The container class within blurb
+.blurb-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: $color-brandText;
+}
