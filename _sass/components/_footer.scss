@@ -1,0 +1,47 @@
+/**
+ * Site footer
+ */
+.footer {
+  margin-top: 8px;
+  border-top: 1px solid rgba($gray, .5);
+}
+// Footer container
+.footer-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+// Social icon image
+.footer-socialIconImage {
+  @include m-transition(opacity $seconds-defaultAnimLength ease-in-out);
+  @include m-opacity(0.6);
+  @include m-mediaMin($screen-sm-min) {
+    height: $height-footerAlt;
+    width: $height-footerAlt;
+  }
+  &:hover {
+    @include m-opacity(1.0);
+  }
+  height:  $height-footer;
+  width:   $height-footer;
+}
+// Icon list
+.footer-socialIconList {
+  @include m-mediaMin($screen-sm-min) {
+    text-align: left;
+  }
+}
+// Icon list item
+.footer-socialIconListItem {
+  &:not(:first-child) {
+    margin-left: 12px;
+  }
+}
+// Copyright line
+.footer-copyright {
+  @include m-mediaMin($screen-sm-min) {
+    text-align: right;
+    line-height: $height-footerAlt;
+    padding-right: 0px;
+  }
+  line-height: $height-footer;
+}
