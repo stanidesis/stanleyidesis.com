@@ -4,7 +4,10 @@
   {% include head.html %}
 
   <body>
-
+    <!-- Lazyload CSS if possible -->
+    <!--[if !IE]> -->
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" lazyload>
+    <!-- <![endif]-->
     {% include header.html %}
 
     {{ content }}

@@ -2,7 +2,7 @@
 layout: default
 ---
 <link rel="stylesheet" href="/css/social-share-kit.css" type="text/css">
-<script type="text/javascript" src="/js/social-share-kit.min.js"></script>
+<script async type="text/javascript" src="/js/social-share-kit.min.js"></script>
 <div class="container">
   <article itemscope itemtype="http://schema.org/BlogPosting">
     <div class="row">
@@ -26,7 +26,13 @@ layout: default
               <a href="" class="ssk ssk-email"></a>
             </div>
             <script type="text/javascript">
-              SocialShareKit.init();
+              var fileInterval = setInterval(function(){
+                if (SocialShareKit) {
+                  console.log("Initializing SSK");
+                  SocialShareKit.init();
+                  clearInterval(fileInterval); // clear interval
+                }
+              }, 100); // check every 100ms
             </script>
         </div>
       </div>
