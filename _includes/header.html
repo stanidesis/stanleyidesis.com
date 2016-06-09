@@ -13,9 +13,9 @@
             {% assign length = pages | size %}
             {% for page in pages %}
             {% if forloop.last == true %}
-            <li class="header-navListItem">{% if length > 1 %}and {% endif %}<a href="{{page.url}}">{{ page.title }}</a>.</li>
+            <li class="header-navListItem">{% if length > 1 %}and {% endif %}<a href="{{page.url}}">{{ page.nav_title }}</a>.</li>
             {% else %}
-            <li ><a href="{{page.url}}">{{ page.title }}</a>{% if length > 2 %},{% endif %}</li>
+            <li><a href="{{page.url}}">{{ page.nav_title }}</a>{% if length > 2 %},{% endif %}</li>
             {% endif %}
             {% endfor %}
           </ul>
