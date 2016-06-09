@@ -73,19 +73,19 @@ body {
   @include m-fontSize($fontSize-base);
   @include m-lineHeight($lineHeight-base);
 }
-.f-heading1 {
-  @include m-fontSize($fontSize-jumbo);
-  @include m-lineHeight($lineHeight-jumbo);
-}
-.f-heading2 {
-  @include m-fontSize($fontSize-largest);
-  @include m-lineHeight($lineHeight-largest);
+.f-heading4 {
+  @include m-fontSize($fontSize-large);
+  @include m-lineHeight($lineHeight-large);
 }
 .f-heading3 {
   @include m-fontSize($fontSize-larger);
   @include m-lineHeight($lineHeight-larger);
 }
-.f-heading4 {
-  @include m-fontSize($fontSize-large);
-  @include m-lineHeight($lineHeight-large);
+.f-heading2 {
+  @include m-fontSize($fontSize-largest);
+  @include m-lineHeight($lineHeight-largest);
+}
+.f-heading1 {
+  @include m-fontSize($fontSize-jumbo);
+  @include m-lineHeight($lineHeight-jumbo);
 }

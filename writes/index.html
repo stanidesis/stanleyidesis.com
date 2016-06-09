@@ -14,22 +14,25 @@ subscribe_leadin: "Missing a post is terrifying! Avoid those fears by subscribin
   <div class="container">
     <h1>Must-Reads</h1>
     {% for post in paginator.posts %}
-    <div class="post-item">
+    <div class="postThumb">
       <div class="row">
         {% if post.promo-thumb %}
         <div class="col-xs-12 col-sm-3">
           <a href="{{ post.url }}">
-            <img class="img-responsive" src="{{ post.promo-thumb }}"/>
+            <img class="postThumb-thumbnail img-responsive"
+                 src="{{ post.promo-thumb }}"/>
           </a>
         </div>
         {% endif %}
         <div class="col-xs-12 col-sm-9">
-          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-          <p>{{ post.excerpt | markdownify | strip_html }}</p>
+          <h2 class="postThumb-title f-heading2 fontN3">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </h2>
+          <p class="f-heading4">{{ post.excerpt | markdownify | strip_html }}</p>
           {% if post.tags %}
-          <ul>
+          <ul class="u-flattenListLTR u-noCushion">
             {% for tag in post.tags %}
-            <li>{{ tag }}</li>
+            <li class="postThumb-tag">{{ tag }}</li>
             {% endfor %}
           </ul>
           {% endif %}

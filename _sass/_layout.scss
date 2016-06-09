@@ -1,41 +1,4 @@
 /******************************
- * /writes
- ******************************/
-.post-item {
-  margin-bottom: 12px;
-  h2 {
-    margin-top: 0px;
-  }
-  p {
-    @include m-mediaMin($screen-sm-min) {
-      font-size: 22px;
-    }
-  }
-  ul {
-    padding: 0px 0px;
-    margin: 0px 0px;
-  }
-  li {
-    @include m-transition(all $seconds-defaultAnimLength ease-in-out);
-    padding: 0px 8px;
-    border: 1px solid $color-brandHighlight;
-    border-radius: 3px;
-    display: inline-block;
-    margin-right: 6px;
-    margin-bottom: 6px;
-
-    &:hover {
-      color: white;
-      background-color: $color-brandHighlight;
-    }
-  }
-  img {
-    width: 100%;
-    @include m-hoverFloat(1.01, .7);
-  }
-}
-
-/******************************
  * Article
  ******************************/
 article {
