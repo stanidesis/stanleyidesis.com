@@ -23,7 +23,7 @@ subscribe_leadin: "Want more antics? Subscribe of course!"
       <!-- Headshot -->
       <div class="col-xs-12 col-sm-6">
         <a href="https://drive.google.com/open?id=0BzbMf3OHLbFYQUZWWV80RU5kd2s">
-          <img id="headshot" class="img-responsive" src="/images/commercial-no-name.jpg"/>
+          <img class="img-responsive u-defaultHoverFloat" src="/images/commercial-no-name.jpg"/>
         </a>
       </div>
       <!-- Stats table -->
@@ -31,25 +31,33 @@ subscribe_leadin: "Want more antics? Subscribe of course!"
         <table class="table">
           <tr>
             <td>Commercial Rep</td>
-            <td>
+            <td class="u-alignChildrenRight">
               <a target="_blank" href="mailto:actor@dpmtalent.com?subject=Booking Stanley Idesis">DPM Talent Agency</a>
             </td>
           </tr>
           <tr>
             <td>Commercial Training</td>
-            <td><a href="http://killians-workshop.myshopify.com/">Killian's Workshop</a></td>
+            <td class="u-alignChildrenRight">
+              <a href="http://killians-workshop.myshopify.com/">Killian's Workshop</a>
+            </td>
           </tr>
           <tr>
             <td>Meisner Training</td>
-            <td><a href="http://www.waynedvorak.com/">Wayne Dvorak</a></td>
+            <td class="u-alignChildrenRight">
+              <a href="http://www.waynedvorak.com/">Wayne Dvorak</a>
+            </td>
           </tr>
           <tr>
             <td>Improv Training</td>
-            <td><a href="https://losangeles.ucbtrainingcenter.com/">UCB Los Angeles</a></td>
+            <td class="u-alignChildrenRight">
+              <a href="https://losangeles.ucbtrainingcenter.com/">UCB Los Angeles</a>
+            </td>
           </tr>
           <tr>
             <td>Resume</td>
-            <td><a href="https://drive.google.com/file/d/0BzbMf3OHLbFYSWZtSmk0VUtaTms/view?usp=sharing">View <span class="fa fa-file-pdf-o" aria-hidden="true"></span></a></td>
+            <td class="u-alignChildrenRight">
+              <a href="https://drive.google.com/file/d/0BzbMf3OHLbFYSWZtSmk0VUtaTms/view?usp=sharing">View <span class="fa fa-file-pdf-o" aria-hidden="true"></span></a>
+            </td>
           </tr>
         </table>
       </div>
@@ -69,7 +77,7 @@ subscribe_leadin: "Want more antics? Subscribe of course!"
   <div class="row">
     {% for video in site.videos %}
     <div class="col-xs-12 col-sm-6">
-      <iframe class="video" width="100%" height="215px" src="https://www.youtube.com/embed/{{video.id}}" frameborder="0" allowfullscreen></iframe>
+      <iframe class="u-defaultHoverFloat" width="100%" height="215px" src="https://www.youtube.com/embed/{{video.id}}" frameborder="0" allowfullscreen></iframe>
       <a class="f-heading3" href="https://www.youtube.com/watch?v={{video.id}}">{{video.title}}</a>
       <p>{{ video.summary }}</p>
     </div>

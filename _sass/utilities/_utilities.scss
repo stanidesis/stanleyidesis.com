@@ -39,3 +39,6 @@
   padding: 0;
   margin: 0;
 }
+.u-defaultHoverFloat {
+  @include m-hoverFloat(1.01, .7);
+}
