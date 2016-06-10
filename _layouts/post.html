@@ -16,46 +16,44 @@ layout: default
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <div class="social">
-            <h3>Like it? Then you should <s>put a ring on it</s> share it</h3>
-            <div class="ssk-group ssk-large {% if jekyll.environment == "development" %}ssk-count{% endif %}">
-              <a href="" class="ssk ssk-facebook"></a>
-              <a href="" class="ssk ssk-twitter"></a>
-              <a href="" class="ssk ssk-google-plus"></a>
-              <a href="" class="ssk ssk-linkedin"></a>
-              <a href="" class="ssk ssk-email"></a>
-            </div>
-            <script type="text/javascript">
-              var fileInterval = setInterval(function(){
-                if (SocialShareKit) {
-                  console.log("Initializing SSK");
-                  SocialShareKit.init();
-                  clearInterval(fileInterval); // clear interval
-                }
-              }, 100); // check every 100ms
-            </script>
+          <h3>Like it? Then you should <s>put a ring on it</s> share it</h3>
+          <div class="ssk-group ssk-large {% if jekyll.environment == "development" %}ssk-count{% endif %}">
+            <a href="" class="ssk ssk-facebook"></a>
+            <a href="" class="ssk ssk-twitter"></a>
+            <a href="" class="ssk ssk-google-plus"></a>
+            <a href="" class="ssk ssk-linkedin"></a>
+            <a href="" class="ssk ssk-email"></a>
+          </div>
+          <script type="text/javascript">
+            var fileInterval = setInterval(function(){
+              if (SocialShareKit) {
+                console.log("Initializing SSK");
+                SocialShareKit.init();
+                clearInterval(fileInterval); // clear interval
+              }
+            }, 100); // check every 100ms
+          </script>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        {% include subscribe_box.html
-          subscribe_leadin=page.subscribe_leadin
-        %}
+        {% if site.related_posts.size > 0 %}
+        <h3>You may also enjoy</h3>
+        <ul class="u-removeListStyle u-noCushion">
+          {% for post in site.related_posts limit:3 %}
+          <li>
+            <a class="f-heading4" href="{{ post.url }}">{{ post.title }}</a>
+            <!--time datetime="{{ page.date | date_to_xmlschema }}" class="small">{{ page.date | date: "%b %-d, %Y" }}</time> -->
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-sm-8">
-        {% if site.related_posts.size > 0 %}
-        <div class="related">
-            <h3>You may also enjoy</h3>
-            <ul>
-              {% for post in site.related_posts limit:3 %}
-                <li>
-                    <a href="{{ post.url }}">{{ post.title }}</a><br>
-                    <time datetime="{{ page.date | date_to_xmlschema }}" class="small">{{ page.date | date: "%b %-d, %Y" }}</time>
-                </li>
-              {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
+      <div class="col-xs-12 col-sm-4">
+        {% include subscribe_box.html
+        subscribe_leadin=page.subscribe_leadin
+        %}
       </div>
     </div>
   </article>

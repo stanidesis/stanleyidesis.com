@@ -27,12 +27,12 @@
 }
 // Establish link colors transitions
 a {
-  color: $color-brandBase;
   @include m-transition(color $seconds-defaultAnimLength ease);
-}
-// Remove underlines on hover
-a:hover {
-  text-decoration: none;
+  color: $color-brandBase;
+  &:hover {
+    color: darken($color-brandBase, 25%);
+    text-decoration: none;
+  }
 }
 // Set background color
 body {
