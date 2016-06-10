@@ -1,21 +1,6 @@
 /******************************
  * Entertains:videos
  ******************************/
-videos {
-  #subscribe-youtube {
-    text-align: right;
-    margin-top: 34px;
-  }
-
-  a {
-    font-size: 24px;
-  }
-
-  iframe {
-    @include m-hoverFloat(1.01, .7);
-  }
-}
-
 /******************************
  * Entertains:credentials
  ******************************/
