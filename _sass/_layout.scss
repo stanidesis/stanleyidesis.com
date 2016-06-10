@@ -1,31 +1,4 @@
 /******************************
- * Article
- ******************************/
-article {
-  line-height: 1.65;
-  font-size:   20px;
-
-  .article-title {
-    font-family: $fontFamily-headlines;
-    font-weight: $fontWeight-headlines;
-  }
-
-  .article-date-author {
-    color: lighten($gray-light, 15%);
-  }
-}
-
-/******************************
- * Article:body
- ******************************/
-.article-body {
-    img {
-        @include m-hoverFloat(1.01, .7);
-        width: 100%;
-    }
-}
-
-/******************************
  * Article:related-posts
  ******************************/
 .related-posts {

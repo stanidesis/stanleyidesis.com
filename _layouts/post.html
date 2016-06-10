@@ -1,15 +1,14 @@
 ---
 layout: default
 ---
-<link rel="stylesheet" href="/css/social-share-kit.css" type="text/css">
 <script async type="text/javascript" src="/js/social-share-kit.min.js"></script>
 <div class="container">
   <article itemscope itemtype="http://schema.org/BlogPosting">
     <div class="row">
       <div class="col-xs-12 col-sm-8 article-body">
-        <a href="{{ page.url }}"><h1 itemprop="name headline" class="article-title">{{ page.title }}</h1></a>
-        <p class="small article-date-author"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-        <div itemprop="articleBody">
+        <a href="{{ page.url }}"><h1 itemprop="name headline" class="fontN7 f-heading1">{{ page.title }}</h1></a>
+        <p class="post-dateAndAuthor f-smallerFont"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+        <div itemprop="articleBody" class="post-body f-heading4">
           {{ content }}
         </div>
       </div>
