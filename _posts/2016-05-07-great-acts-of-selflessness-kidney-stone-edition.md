@@ -23,6 +23,7 @@ If it wouldn't leave on its own, I would force the obstruction out: toilet style
 Excruciating, that's how. It was like being forced to watch a non-celebrity give an Oscar speech, probably for Best Secondary Microphone Handling. Each step killed me a little inside. I traveled to the bathroom in slow-motion. Co-workers passed by, greeting me as they did, oblivious to the fact that I looked like Goku after turning up gravity to 400x.
 
 ![Goku: not pictured here](/images/vegeta-training.png "Technically, that's Vegeta")
+
 > Vegeta pictured here, blame Google image search.
 
 An eternity passed before I arrived. The moment my butt landed on the toilet seat, I prayed. I didn't believe in any specific gods then, so I hedged my bets and BCC'd all of them. None replied, the pain remained, and raised my situation from a stage-one to a stage-five meltdown: I was dying. I slow-mo'd my way to the employee lounge because it was 25 feet away and featured couches: perfect for chatting, relaxing, and sobbing quietly face-down into a pillow.
