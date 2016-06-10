@@ -14,88 +14,105 @@ sidekick_cta: "Contact me"
 subscribe_leadin: "Ooh my code's compiling, time to write a newsletter!"
 ---
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/social-share-kit.css" type="text/css">
 <div class="container">
-  <apps>
-    <div class="row">
-      <div class="col-xs-6">
-        <h1>Projects</h1>
-      </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <h1>Projects</h1>
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <p>I build passion projects when I'm not busy grinding away at my other passion projects.</p>
-      </div>
+  </div>
+  <!--  Apps  -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <p>I build passion projects when I'm not busy grinding away at my other passion projects.</p>
     </div>
-    <div class="row">
-      {% for app in site.apps %}
-        {% if app.built == true %}
-          <div class="col-xs-12 col-sm-6">
-            <a href="{{app.url}}">
-              <img class="img-responsive codes-promo" src="{{app.promo_img}}"/>
+  </div>
+  <div class="row">
+    {% for app in site.apps %}
+    {% if app.built == true %}
+    <div class="col-xs-12 col-sm-6">
+      <a href="{{app.url}}">
+        <img class="img-responsive codePromo-thumb u-defaultHoverFloat"
+             src="{{app.promo_img}}"/>
+      </a>
+      <div>
+        <p>
+          <a href="{{app.url}}" target="_blank" class="lead">{{app.name}}</a>
+          <span class="pull-right">
+            {% if app.play_store_url %}
+            <a href="{{app.play_store_url}}" class="codePromo-link">
+              <i class="codePromo-linkSymbol fa fa-android"></i>
             </a>
-            <div>
-              <a href="{{app.url}}" target="_blank" class="lead">{{app.name}}</a>
-              <div class="pull-right">
-                {% if app.play_store_url %}
-                <a href="{{app.play_store_url}}" class="codes-article"><i class="fa fa-android"></i></a>
-                {% endif %}
-                {% if app.app_store_url %}
-                <a href="{{app.app_store_url}}" class="codes-article"><i class="fa fa-apple"></i></a>
-                {% endif %}
-                {% if app.github_url %}
-                <a href="{{app.github_url}}" class="codes-article"><i class="fa fa-github"></i></a>
-                {% endif %}
-                {% if app.article %}
-                <a href="{{app.article}}" class="codes-article"><i class="fa fa-newspaper-o"></i></a>
-                {% endif %}
-              </div>
-            </div>
-            <p class="codes-summary">{{ app.summary }}</p>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </apps>
-  <experience>
-    <div class="row">
-      <div class="col-xs-6">
-        <h1>Experience</h1>
+            {% endif %}
+            {% if app.app_store_url %}
+            <a href="{{app.app_store_url}}" class="codePromo-link">
+              <i class="codePromo-linkSymbol fa fa-apple"></i>
+            </a>
+            {% endif %}
+            {% if app.github_url %}
+            <a href="{{app.github_url}}" class="codePromo-link">
+              <i class="codePromo-linkSymbol fa fa-github"></i>
+            </a>
+            {% endif %}
+            {% if app.article %}
+            <a href="{{app.article}}" class="codePromo-link">
+              <i class="codePromo-linkSymbol fa fa-newspaper-o"></i>
+            </a>
+            {% endif %}
+          </span>
+        </p>
       </div>
+      <p>{{ app.summary }}</p>
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <p>I've learned and grown immensely thanks to these amazing organizations.</p>
-      </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <h1>Experience</h1>
     </div>
-    <div class="row">
-      {% for emp in site.employers %}
-      <div class="col-xs-12 col-sm-6">
-        <a href="{{emp.url}}">
-          <img class="img-responsive codes-promo" src="{{emp.promo_img}}"/>
-        </a>
-        <div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <p>I've learned and grown immensely thanks to these amazing organizations.</p>
+    </div>
+  </div>
+  <div class="row">
+    {% for emp in site.employers %}
+    <div class="col-xs-12 col-sm-6">
+      <a href="{{emp.url}}">
+        <img class="img-responsive codePromo-thumb u-defaultHoverFloat" src="{{emp.promo_img}}"/>
+      </a>
+      <div>
+        <p>
           <a href="{{emp.url}}" target="_blank" class="lead">{{emp.name}}</a>
-          <div class="pull-right">
+          <span class="pull-right">
             {% if emp.play_store_url %}
-            <a href="{{emp.article}}" class="codes-article"><i class="fa fa-android"></i></a>
+            <a href="{{emp.article}}" class="codePromo-link">
+              <i class="codePromo-linkSymbol fa fa-android"></i>
+            </a>
             {% endif %}
             {% if emp.app_store_url %}
-            <a href="{{emp.article}}" class="codes-article"><i class="fa fa-apple"></i></a>
+            <a href="{{emp.article}}" class="codePromo-link">
+              <i class="codePromo-linkSymbol fa fa-apple"></i>
+            </a>
             {% endif %}
             {% if emp.github_url %}
-            <a href="{{emp.article}}" class="codes-article"><i class="fa fa-github"></i></a>
+            <a href="{{emp.article}}" class="codePromo-link">
+              <i class="codePromo-linkSymbol fa fa-github"></i>
+            </a>
             {% endif %}
             {% if emp.article %}
-            <a href="{{emp.article}}" class="codes-article"><i class="fa fa-newspaper-o"></i></a>
+            <a href="{{emp.article}}" class="codePromo-link">
+              <i class="codePromo-linkSymbol fa fa-newspaper-o"></i>
+            </a>
             {% endif %}
-          </div>
-        </div>
-        <p class="codes-summary">{{ emp.summary }}</p>
+          </span>
+        </p>
       </div>
-      {% endfor %}
+      <p>{{ emp.summary }}</p>
     </div>
-  </experience>
+    {% endfor %}
+  </div>
 </div>
 {% include sidekick.html
   sidekick_bg=page.sidekick_bg

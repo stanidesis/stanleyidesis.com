@@ -1,6 +1,6 @@
 ---
 name: "Kwarter"
-summary: "I was contracted to work on Kwarter's second-screen iOS/Android apps, later I joined full-time as Mobile Applications Developer."
+summary: "Contracted to work on Kwarter's second-screen iOS/Android apps, later I joined full-time as Mobile Applications Developer."
 promo_img: "/images/kwarter-promo-image.jpg"
 url: "http://kwarter.com/"
 app_store_url: "https://itunes.apple.com/us/app/fan-zone-dont-just-watch./id659737732"
