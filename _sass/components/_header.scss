@@ -1,0 +1,47 @@
+/**
+ * Site header
+ */
+// Wraps the header content, lets it float
+.header-wrapper {
+  z-index: $zIndex-9;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+// Header content
+.header {
+  min-height: $minHeight-header;
+  background-color: $color-brandBackground;
+  border-bottom: 1px solid rgba($gray, .5);
+  padding: 6px 0px;
+}
+// List of nav items
+.header-navList {
+  @include m-mediaMin($screen-sm-min) {
+    text-align: right;
+    float: right !important;
+  }
+}
+// Nav item list
+.header-navListItem {
+  @include m-mediaMin($screen-sm-min) {
+    line-height: $minHeight-header;
+    text-align: right;
+  }
+  line-height: inherit;
+}
+// Title of the site!
+.header-title {
+  @include m-mediaMin($screen-sm-min) {
+    text-align: left;
+  }
+  line-height: $minHeight-header;
+}
+// Title link
+.header-titleLink {
+  color: $gray;
+  &:hover {
+    color: $gray;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,18 @@
+/******************************
+ * Sidekick
+ *
+ * This is the image at the bottom of pages that adds a CTA
+ * that asks people to contact me.
+ ******************************/
+.sidekick {
+  @include m-backgroundSize(cover);
+  /*  To compensate for when it's right above the footer  */
+  margin-bottom: -.5rem;
+  margin-top: 3rem;
+  padding: 3rem 2rem;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  // http://stackoverflow.com/a/24084708/372884
+  box-shadow: inset 0 0 0 1000px rgba($color-brandBackground, $alpha-imageScreen);
+}

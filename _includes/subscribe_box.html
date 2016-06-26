@@ -1,35 +1,58 @@
-<subscribe-box>
-  {% if include.subscribe_leadin %}
-    {% assign leadin = include.subscribe_leadin %}
-  {% else %}
-    {% assign leadin = "Want Stanley in your inbox? Of course you do." %}
-  {% endif %}
-  {% if include.subscribe_cta %}
-    {% assign cta = include.subscribe_cta %}
-  {% else %}
-    {% assign cta = "Subscribe" %}
-  {% endif %}
-  {% if page.title %}
-    {% assign title = page.title | escape %}
-  {% else %}
-    {% assign title = site.title | escape %}
-  {% endif %}
-  <script type="text/javascript">
-    function onSubscribeClick(event) {
-      ga('send', 'event', {
-        eventCategory: 'subscribe_button',
-        eventAction: 'click',
-        eventLabel: '{{ title }}',
-        transport: 'beacon'
-      });
-    }
-  </script>
-  <div class="subscribe-box">
-    <div style="float:left">
-      <h4>{{ leadin }}</h4>
-    </div>
-    <div>
-      {% include subscribe_form.html cta=cta %}
+{% if include.subscribe_leadin %}
+  {% assign leadin = include.subscribe_leadin %}
+{% else %}
+  {% assign leadin = "Want Stanley in your inbox? Of course you do." %}
+{% endif %}
+{% if include.subscribe_cta %}
+  {% assign cta = include.subscribe_cta %}
+{% else %}
+  {% assign cta = "Subscribe" %}
+{% endif %}
+{% if page.title %}
+  {% assign title = page.title | escape %}
+{% else %}
+  {% assign title = site.title | escape %}
+{% endif %}
+<script type="text/javascript">
+  function onSubscribeClick(event) {
+    ga('send', 'event', {
+      eventCategory: 'subscribe_button',
+      eventAction: 'click',
+      eventLabel: '{{ title }}',
+      transport: 'beacon'
+    });
+  }
+</script>
+<div class="subscribeBox">
+  <div style="float:left">
+    <h3 class="f-heading3">Subscribe</h3>
+    <p class="f-heading4">{{ leadin }}</p>
+  </div>
+  <div>
+    <!-- Begin MailChimp Signup Form -->
+    <div id="subscribeBox-form">
+      <form action="//stanleyidesis.us13.list-manage.com/subscribe/post?u=5b5293b8764c91d4d89663072&amp;id=9227f155af"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            target="_blank"
+            novalidate>
+        <input type="email"
+               value=""
+               name="EMAIL"
+               class="subscribeBox-email form-control"
+               id="mce-EMAIL"
+               placeholder="email address"
+               required>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5b5293b8764c91d4d89663072_9227f155af" tabindex="-1" value=""></div>
+        <input onclick="onSubscribeClick(this)"
+               type="submit"
+               value="{{cta}}"
+               name="subscribe"
+               id="mc-embedded-subscribe"
+               class="btn btn-primary subscribeBox-subscribeBtn">
+      </form>
     </div>
   </div>
-</subscribe-box>
+</div>

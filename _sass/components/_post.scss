@@ -1,0 +1,17 @@
+/******************************
+ * A post
+ ******************************/
+// This is the best way to do this without
+// re-writing the markdown parser (if possible)
+.post-body img {
+  @include m-hoverFloat(1.01, .7);
+  width: 100%;
+}
+.post-body blockquote {
+  border-left: 5px solid $color-brandHighlight;
+  font-style: italic;
+}
+// Explicitly for the date/author
+.post-dateAndAuthor {
+  color: lighten($gray-light, 15%);
+}

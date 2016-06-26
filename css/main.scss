@@ -1,78 +1,49 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# Only the main SASS file needs front matter
 ---
 @charset "utf-8";
-
-/**
- * A simple debug class
- */
-.debug {
-    border: 1px dashed red;
-}
-
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
-
-// Brand colors
-$brand-color-highlight:  #2ECC71;
-$brand-color-base:       #27AE60;
-$brand-color-background: #ECF0F1;
-$brand-color-light:      #BDC3C7;
-$brand-color-text:       #95A5A6;
-
-// Our variables
-$base-font-family:    "Open Sans Condensed", sans-serif;
-$base-font-size:      18px;
-$base-font-weight:    300;
-$heading-font-family: "Sue Ellen Francisco", cursive;
-$heading-font-weight: 400;
-$max-page-width:      970px;
-$vertical-spacing:    20px;
-$default-anim-length: 200ms;
-$image-screen-alpha:  .4;
-
-// Bootstrap Overrides
-$font-family-base: $base-font-family;
-$font-size-base:   $base-font-size;
-$link-color:       $brand-color-base;
-
-// Global Sass Mixins
-@mixin media-query($size) {
-
-}
-
-@mixin media-max($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-@mixin media-min($device) {
-    @media screen and (min-width: $device) {
-        @content;
-    }
-}
-
-@mixin hover-float($scale, $alpha) {
-    box-shadow: initial;
-    opacity: $alpha;
-    -webkit-transition: all $default-anim-length ease-in-out;
-    -moz-transition:    all $default-anim-length ease-in-out;
-    -o-transition:      all $default-anim-length ease-in-out;
-    transition:         all $default-anim-length ease-in-out;
-
-    &:hover {
-        opacity: 1.0;
-        transform: scale($scale);
-        box-shadow: 0px 0px 24px 2px rgba(black, .5);
-    }
-}
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "bootstrap",
-        "layout",
-        "syntax-highlighting",
-        "base"
+  "variables/variables",
+  "utilities/mixins",
+  "utilities/extensions",
+  "utilities/utilities",
+  "utilities/zindex",
+  "bootstrap",
+  "bootstrap-overrides",
+  "fonts/type",
+  "components/blurb",
+  "components/code-promo",
+  "components/contact-form",
+  "components/footer",
+  "components/header",
+  "components/hero",
+  "components/post",
+  "components/post-thumb",
+  "components/recent-posts",
+  "components/sidekick",
+  "components/subscribe-box",
+  "social-share-kit",
+  "syntax-highlighting"
 ;
+// A simple debug class
+.debug {
+  border: 1px dashed red;
+}
+// Establish link colors transitions
+a {
+  @include m-transition(color $seconds-defaultAnimLength ease);
+  color: $color-brandBase;
+  &:hover {
+    color: darken($color-brandBase, 25%);
+    text-decoration: none;
+  }
+}
+// Set background color
+body {
+  background-color: $color-brandBackground;
+}
+// Set html and body height to 100%
+html, body {
+  height: 100%;
+}

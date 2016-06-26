@@ -4,7 +4,10 @@
   {% include head.html %}
 
   <body>
-
+    <!-- Lazyload CSS if possible -->
+    <!--[if !IE]> -->
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" lazyload>
+    <!-- <![endif]-->
     {% include header.html %}
 
     {{ content }}
@@ -12,5 +15,15 @@
     {% include footer.html %}
 
   </body>
-
+  <!--  This function shifts the content to fit below the fixed header  -->
+  <script type="text/javascript">
+  (function() {
+    var header = document.getElementsByClassName("header-wrapper")[0];
+    var sibling = header.nextElementSibling;
+    while (sibling.nextElementSibling && sibling.tagName !== "DIV") {
+      sibling = sibling.nextElementSibling;
+    }
+    sibling.style.marginTop = header.offsetHeight + "px";
+  })();
+</script>
 </html>

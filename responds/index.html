@@ -1,52 +1,51 @@
 ---
-title: "responds"
+title: "Stanley Responds"
+nav_title: "responds"
 url: "/responds"
 in_header: true
 layout: default
-blurb_headline: "You made the right call.<br>Let's do this, <em>best friend</em>."
+blurb_headline: "You're making the right call,<br><em>best friend</em>."
 ---
 {% include blurb.html
   blurb_headline=page.blurb_headline
 %}
-<contact>
-  <div class="container">
-    <h1>Contact me</h1>
-    <form method="POST" action="https://formspree.io/contact@stanleyidesis.com">
-      <input type="hidden" name="_next" value="http://stanleyidesis.com/thank-you" />
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <input type="text" name="name" class="form-control" placeholder="Your name">
-          <!-- This is for security purposes -->
-          <input type="text" name="_gotcha" style="display:none" />
-        </div>
+<div class="container contactForm">
+  <h1>Contact me</h1>
+  <form method="POST" action="https://formspree.io/contact@stanleyidesis.com">
+    <input type="hidden" name="_next" value="http://stanleyidesis.com/thank-you" />
+    <div class="row contactForm-element">
+      <div class="col-xs-12 col-sm-5">
+        <input type="text" name="name" class="form-control" placeholder="Your name">
+        <!-- This is for security purposes -->
+        <input type="text" name="_gotcha" style="display:none" />
       </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <input type="email" name="_replyto" class="form-control" placeholder="your@email.com">
-        </div>
+    </div>
+    <div class="row contactForm-element">
+      <div class="col-xs-12 col-sm-5">
+        <input type="email" name="_replyto" class="form-control" placeholder="your@email.com">
       </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <select id="reason" name="_subject" class="form-control">
-            <option>Please choose...</option>
-            <option>Comedy</option>
-            <option>Software</option>
-            <option>Acting or Voiceover</option>
-            <option>Writing</option>
-            <option>Other</option>
-          </select>
-        </div>
+    </div>
+    <div class="row contactForm-element">
+      <div class="col-xs-12 col-sm-5">
+        <select id="reason" name="_subject" class="form-control">
+          <option>Please choose...</option>
+          <option>Comedy</option>
+          <option>Software</option>
+          <option>Acting or Voiceover</option>
+          <option>Writing</option>
+          <option>Other</option>
+        </select>
       </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <textarea name="content" class="form-control" rows="4" placeholder="Your message"></textarea>
-        </div>
+    </div>
+    <div class="row contactForm-element">
+      <div class="col-xs-12 col-sm-5">
+        <textarea name="content" class="form-control" rows="4" placeholder="Your message"></textarea>
       </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+    </div>
+    <div class="row contactForm-element">
+      <div class="col-xs-12 col-sm-4">
+        <button type="submit" class="btn btn-primary contactForm-submitButton">Submit</button>
       </div>
-    </form>
-  </div>
-</contact>
+    </div>
+  </form>
+</div>
