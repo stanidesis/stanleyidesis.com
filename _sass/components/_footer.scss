@@ -2,7 +2,7 @@
  * Site footer
  */
 .footer {
-  margin-top: 8px;
+  margin-top: .5rem;
   border-top: 1px solid rgba($gray, .5);
 }
 // Footer container
@@ -29,6 +29,7 @@
   @include m-mediaMin($screen-sm-min) {
     text-align: left;
   }
+  text-align: center;
 }
 // Icon list item
 .footer-socialIconListItem {

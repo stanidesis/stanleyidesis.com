@@ -7,7 +7,7 @@
 .sidekick {
   @include m-backgroundSize(cover);
   /*  To compensate for when it's right above the footer  */
-  margin-bottom: -5rem;
+  margin-bottom: -.5rem;
   margin-top: 3rem;
   padding: 3rem 2rem;
   background-repeat: no-repeat;
