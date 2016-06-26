@@ -1,0 +1,28 @@
+/******************************
+ * Hero
+ ******************************/
+.hero {
+}
+.hero-jumbotron {
+  @include m-mediaMin($screen-sm-min) {
+    height: 500px;
+  }
+  height: 100%;
+  margin-bottom: 0;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  // http://stackoverflow.com/a/24084708/372884
+  box-shadow: inset 0 0 0 1000px rgba($color-brandBackground, $alpha-imageScreen);
+  text-align: left;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.hero-content {
+  @include m-maxWidth($width-pageMax);
+  background-color: transparent;
+}

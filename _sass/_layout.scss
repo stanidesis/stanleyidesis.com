@@ -3,45 +3,6 @@
  ******************************/
 
 /**
- * Hero
- */
-.hero {
-  .jumbotron {
-    height:        100%;
-    margin-bottom: 0;
-
-    background-repeat:       no-repeat;
-    background-attachment:   scroll;
-    background-position:     center center;
-    -webkit-background-size: cover;
-    -moz-background-size:    cover;
-    -o-background-size:      cover;
-    background-size:         cover;
-    // http://stackoverflow.com/a/24084708/372884
-    box-shadow:              inset 0 0 0 1000px
-      rgba($color-brandBackground, $alpha-imageScreen);
-
-    text-align:     left;
-    padding-top:    (3 * 20px);
-    padding-bottom: (5 * 20px);
-
-    @include m-mediaMin($screen-sm-min) {
-      height: 500px;
-    }
-
-    .container {
-      @include m-maxWidth($width-pageMax);
-      background-color: transparent;
-    }
-
-    h1 {
-      font-family: $fontFamily-headlines;
-      font-weight: $fontWeight-headlines;
-    }
-  }
-}
-
-/**
  * Sidekick
  */
 .sidekick {
