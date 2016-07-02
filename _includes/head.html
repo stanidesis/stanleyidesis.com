@@ -71,9 +71,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
 
-  <!--[if IE]>
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <![endif]-->
+  <!-- loadCSS -->
+  <link rel="preload" href="{{ '/css/main.css' | prepend: site.baseurl }}" as="style" onload="this.rel='stylesheet'; shiftContentUnderHeader();">
+  <noscript><link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}"></noscript>
+  {% include shift_content_under_header.html %}
+
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.rss | prepend: site.url }}">
 
@@ -81,4 +83,7 @@
   <!-- Google Analytics -->
   <script async type="text/javascript" src="/js/google-analytics.js"></script>
   {% endif %}
+
+  <!-- loadCSS -->
+  {% include load_css_inline.html %}
 </head>

@@ -20,3 +20,11 @@
   margin-right: 6px;
   margin-bottom: 6px;
 }
+.postThumb-thumbnail {
+  @include m-mediaMin($screen-sm-min) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  margin-left: auto;
+  margin-right: auto;
+}
