@@ -77,8 +77,8 @@ subscribe_leadin: "Want more antics? Subscribe of course!"
   <div class="row">
     {% for video in site.videos %}
     <div class="col-xs-12 col-sm-6">
-      <iframe class="u-defaultHoverFloat" width="100%" height="215px" src="https://www.youtube.com/embed/{{video.id}}" frameborder="0" allowfullscreen></iframe>
-      <a class="f-heading3" href="https://www.youtube.com/watch?v={{video.id}}">{{video.title}}</a>
+      <iframe class="u-defaultHoverFloat" width="100%" height="215px" src="https://www.youtube.com/embed/{{video.yt_id}}" frameborder="0" allowfullscreen></iframe>
+      <a class="f-heading3" href="https://www.youtube.com/watch?v={{video.yt_id}}">{{video.title}}</a>
       <p>{{ video.summary }}</p>
     </div>
     {% endfor %}
