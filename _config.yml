@@ -13,7 +13,7 @@ description: > # this means to ignore newlines until "baseurl:"
   save your soul, and have you back home by 10. Enter, but please
   take off your shoes first because we keep things clean here.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://stanleyidesis.com" # the base hostname & protocol for your site
+url: "http://www.stanleyidesis.com" # the base hostname & protocol for your site
 rss: "/feed.xml"
 permalink: pretty
 excerpt_separator: "<!--more-->"
