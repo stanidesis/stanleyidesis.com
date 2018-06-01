@@ -35,6 +35,17 @@ plugins:
 # Outputting
 timezone: America/Chicago
 
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  blanklines: false
+  profile: true
+  startings: [html, head, body]
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
