@@ -16,7 +16,7 @@
 
 title: "Stanley Idesis: Content Strategist, Author, & Gift From Below"
 email: stan.idesis@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
+description: >-
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
@@ -28,7 +28,6 @@ github_username:  stanidesis
 
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
 
@@ -43,7 +42,7 @@ compress_html:
   comments: all
   endings: all
   blanklines: false
-  profile: true
+  profile: false
   startings: [html, head, body]
 
 # Exclude from processing.
