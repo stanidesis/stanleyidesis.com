@@ -34,6 +34,15 @@ plugins:
 # Outputting
 timezone: America/Chicago
 
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      tawk_to: true
+
+
+
 sass:
   style: compressed
 

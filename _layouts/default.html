@@ -7,8 +7,9 @@ layout: compress
   <body>
     {%- include navbar.html -%}
     {{ content }}
-    <script>
-      loadjs('/js/tawk.to.js')
-    </script>
+    <!-- Tawk.To API on every page -->
+    {%- if page.tawk_to == true -%}
+      {%- include tawk.to.html -%}
+    {%- endif -%}
   </body>
 </html>
