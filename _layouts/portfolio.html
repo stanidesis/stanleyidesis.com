@@ -28,7 +28,7 @@ layout: default
           </div>
           <div class="dropdown-menu" id="dropdown-menu1" role="menu">
             <div class="dropdown-content">
-            {% for role in roles %}
+            {% for role in site.roles %}
               <a data-choice="{{ role.id }}" class="dropdown-item">
                 {{ role.name }}
               </a>

@@ -42,6 +42,12 @@ defaults:
       tawk_to: true
 
 collections_dir: collections
+collections:
+- clients
+- posts
+- roles
+- topics
+- works
 
 sass:
   style: compressed
