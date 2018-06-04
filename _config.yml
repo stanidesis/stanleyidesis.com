@@ -41,7 +41,7 @@ defaults:
     values:
       tawk_to: true
 
-
+collections_dir: collections
 
 sass:
   style: compressed

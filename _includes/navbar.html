@@ -13,7 +13,7 @@
 
     <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="{{ site.url }}">
+        <a class="navbar-item" href="/portfolio">
           Portfolio
         </a>
         <div class="navbar-item has-dropdown is-hoverable">
@@ -63,6 +63,4 @@
   </nav>
 </div>
 <!-- Activate the hamburger menu after loading the nav bar -->
-<script>
-  loadjs('/js/navbar.js');
-</script>
+{% include navbar.js.html %}

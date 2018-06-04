@@ -1,0 +1,11 @@
+<script type="text/javascript">
+  window.dependenciesReady = function() {
+    $('.dropdown button').click(function() {
+      var $activeDropdown = $('.dropdown.is-active').first();
+      if ($activeDropdown[0] && $(this)[0] != $activeDropdown.find('button').first()[0]) {
+        $activeDropdown.removeClass('is-active');
+      }
+      $(this).parents('.dropdown').toggleClass('is-active');
+    });
+  }
+</script>
