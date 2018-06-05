@@ -1,22 +1,171 @@
 <script type="text/javascript">
+  /* Parse a query string */
+  function parse_query_string(query) {
+    var vars = query.split("&");
+    var query_string = {};
+    for (var i = 0; i < vars.length; i++) {
+      var pair = vars[i].split("=");
+      var key = decodeURIComponent(pair[0]);
+      var value = decodeURIComponent(pair[1]);
+      /* If first entry with this name */
+      if (typeof query_string[key] === "undefined") {
+        query_string[key] = decodeURIComponent(value);
+        /* If second entry with this name */
+      } else if (typeof query_string[key] === "string") {
+        var arr = [query_string[key], decodeURIComponent(value)];
+        query_string[key] = arr;
+        /* If third or later entry with this name */
+      } else {
+        query_string[key].push(decodeURIComponent(value));
+      }
+    }
+    return query_string;
+  };
+  /* Parse int using RegEx */
+  function paraseIntFromData(data) {
+    return parseInt(data.match(/\d+/g));
+  };
   /* Returns an array where index is the unique identifier, value is the name */
-  var pullDataFromDropdown = function(selector) {
+  function pullDataFromDropdown(selector) {
     var $dropdowns = $(selector);
     var array = new Array($dropdowns.length);
     $dropdowns.each(function() {
-      array[parseInt($(this).attr('data-choice').match(/\d+/g))] = $(this).text();
+      array[paraseIntFromData($(this).attr('data-choice'))] = $(this).text();
     });
     return array;
   };
 
-  /* Hides/reveals the button in the modal, assigns URL if present */
-  var showHideModalButton = function($modal, id, url) {
+  /* Hides/reveals a single action button in the modal, assigns URL if present */
+  function showHideModalButton($modal, id, url) {
     var $button = $modal.find(id);
     if (!url) {
       $button.hide();
       return;
     }
     $button.show().attr('href', url);
+  };
+
+  /* Reveal the modal with a specific work */
+  function revealModalWith(work) {
+    var $modal = $('.modal').first();
+    $modal.find('figure > img').attr('src', work.banner);
+    $modal.find('h1').first().text(work.title);
+    $modal.find('h2').first().text(work.subtitle);
+    $modal.find('.content').html(work.content);
+    /* Handle buttons */
+    showHideModalButton($modal, '#modal-button-play', work.urlPlay);
+    showHideModalButton($modal, '#modal-button-read', work.urlRead);
+    showHideModalButton($modal, '#modal-button-visit', work.urlVisit);
+    showHideModalButton($modal, '#modal-button-install-android', work.urlAndroidInstall);
+    showHideModalButton($modal, '#modal-button-install-ios', work.urliOSInstall);
+    showHideModalButton($modal, '#modal-button-install-chrome', work.urlChromeInstall);
+    showHideModalButton($modal, '#modal-button-download', work.urlDownloadPDF);
+    showHideModalButton($modal, '#modal-button-source', work.urlSource);
+    $modal.toggleClass('is-active');
+  };
+
+  /* Use current filters to create a new URL state */
+  function pushNewURL() {
+    var newUrl = '?';
+    if (window.filteredRole > -1) {
+      newUrl += '&role=' + window.filteredRole;
+    }
+    if (window.filteredClient > -1) {
+      newUrl += '&client=' + window.filteredClient;
+    }
+    if (window.filteredTopic > -1) {
+      newUrl += '&topic=' + window.filteredTopic;
+    }
+    if (window.filteredWork > -1) {
+      newUrl += '$work=' + window.filteredWork;
+    }
+    window.history.pushState('', '', newUrl);
+  };
+
+  /* Uses the current URL to update stored filters */
+  function updateFilterFromURL() {
+    var query = window.location.search.substring(1);
+    var paramsFromURL = parse_query_string(query);
+    if (paramsFromURL.role && paramsFromURL.role < window.allRoles.length) {
+      window.filteredRole = Math.max(-1, paramsFromURL.role);
+    }
+    if (paramsFromURL.topic && paramsFromURL.topic < window.allTopics.length) {
+      window.filteredTopic = Math.max(-1, paramsFromURL.topic);
+    }
+    if (paramsFromURL.client && paramsFromURL.client < window.allClients.length) {
+      window.filteredClient = Math.max(-1, paramsFromURL.client);
+    }
+    if (paramsFromURL.work && paramsFromURL.work < window.allWorks.length) {
+      window.filteredWork = Math.max(-1, paramsFromURL.work);
+    }
+    updateActiveDropdownItems();
+    revealClearFilterButtonIfNecessary();
+    filterWorks();
+  };
+
+  function updateActiveDropdownItems() {
+    if (window.filteredRole < 0) {
+      $(`[data-type='role']`).removeClass('is-active');
+    } else if (window.filteredRole < window.allRoles.length) {
+      $(`[data-type='role'][data-choice*='${window.filteredRole.toString().padStart(3,'0')}']`).addClass('is-active');
+    }
+    if (window.filteredTopic < 0) {
+      $(`[data-type='topic']`).removeClass('is-active');
+    } else if (window.filteredTopic < window.allTopics.length) {
+      $(`[data-type='topic'][data-choice*='${window.filteredTopic.toString().padStart(3,'0')}']`).addClass('is-active');
+    }
+    if (window.filteredClient < 0) {
+      $(`[data-type='client']`).removeClass('is-active');
+    } else if (window.filteredClient < window.allClients.length) {
+      $(`[data-type='client'][data-choice*='${window.filteredClient.toString().padStart(3,'0')}']`).addClass('is-active');
+    }
+  }
+
+  function revealClearFilterButtonIfNecessary() {
+    if (window.filteredRole > -1 || window.filteredWork > -1 ||
+       window.filteredTopic > -1 || window.filteredClient > -1) {
+      $('#clear-filter-button').fadeIn();
+      return;
+    }
+  };
+
+  /* Pulled from window.filteredRole, ... */
+  function filterWorks() {
+    if (window.filteredWork < 0 && window.filteredRole < 0 &&
+       window.filteredTopic < 0 && window.filteredClient < 0) {
+      /* Nothing to hide */
+      $('.column.is-one-quarter').show();
+      return;
+    }
+    /* Hide all at first */
+    $('.column.is-one-quarter').hide();
+
+    /* If a filtered work is present, it takes precedent */
+    if (window.filteredWork > -1 && window.filteredWork < window.allWorks.length) {
+      var idToFilter = window.allWorks[window.filteredWork].id;
+      $(`.column.is-one-quarter[data-id*='${idToFilter}']`).fadeIn();
+      return;
+    }
+
+    /* Filter by the remainder */
+    var query = '';
+    if (window.filteredRole > -1 && window.filteredRole < window.allRoles.length) {
+      query += `[data-roles*='${window.filteredRole.toString().padStart(3, '0')}']`;
+    }
+    if (window.filteredClient > -1 && window.filteredClient < window.allClients.length) {
+      query += `[data-client*='${window.filteredClient.toString().padStart(3, '0')}']`;
+    }
+    if (window.filteredTopic > -1 && window.filteredTopic < window.allTopics.length) {
+      query += `[data-topics*='${window.filteredTopic.toString().padStart(3, '0')}']`;
+    }
+
+    if (query !== '') {
+      $(query).fadeIn();
+      return;
+    }
+
+    /* If we make it down here, the filters are bad, reveal everything */
+    $('.column.is-one-quarter').show();
   };
 
   window.dependenciesReady = function() {
@@ -41,7 +190,7 @@
 
     /* Browji direct link */
     $('a.browji-link').click(function() {
-      // TODO: correct this to the right work
+      /* TODO: correct this to the right work */
       revealModalWith(window.allWorks[0]);
     });
 
@@ -49,8 +198,40 @@
     window.filteredRole = -1;
     window.filteredClient = -1;
     window.filteredTopic = -1;
-    $('a.dropdown-item').click(function() {
+    window.filteredWork = -1;
 
+    $('a.dropdown-item').click(function() {
+      /* Deactivate all dropdown item peers */
+      $(this).siblings().removeClass('is-active');
+      /* Set current selection active */
+      $(this).addClass('is-active');
+      /* Discover type */
+      var type = $(this).attr('data-type');
+      if (type === 'role') {
+        window.filteredRole = paraseIntFromData($(this).attr('data-choice'));
+      } else if (type === 'client') {
+        window.filteredClient = paraseIntFromData($(this).attr('data-choice'));
+      } else {
+        window.filteredTopic = paraseIntFromData($(this).attr('data-choice'));
+      }
+      pushNewURL();
+      revealClearFilterButtonIfNecessary();
+      filterWorks();
+    });
+
+    var $clearFilterButton = $('#clear-filter-button');
+    $clearFilterButton.hide();
+    /* Clear the filter */
+    $clearFilterButton.click(function() {
+      window.filteredRole = -1;
+      window.filteredClient = -1;
+      window.filteredTopic = -1;
+      window.filteredWork = -1;
+
+      pushNewURL();
+      updateActiveDropdownItems();
+      filterWorks();
+      $(this).fadeOut();
     });
 
     /* Load all works */
@@ -81,27 +262,11 @@
 
     /* On Click for each work */
     $workEntries.click(function() {
-      var work = window.allWorks[parseInt($(this).attr('data-id').match(/\d+/g))];
+      var work = window.allWorks[paraseIntFromData($(this).attr('data-id'))];
       revealModalWith(work);
     });
 
-    var revealModalWith = function(work) {
-      var $modal = $('.modal').first();
-      $modal.find('figure > img').attr('src', work.banner);
-      $modal.find('h1').first().text(work.title);
-      $modal.find('h2').first().text(work.subtitle);
-      $modal.find('.content').html(work.content);
-      /* Handle buttons */
-      showHideModalButton($modal, '#modal-button-play', work.urlPlay);
-      showHideModalButton($modal, '#modal-button-read', work.urlRead);
-      showHideModalButton($modal, '#modal-button-visit', work.urlVisit);
-      showHideModalButton($modal, '#modal-button-install-android', work.urlAndroidInstall);
-      showHideModalButton($modal, '#modal-button-install-ios', work.urliOSInstall);
-      showHideModalButton($modal, '#modal-button-install-chrome', work.urlChromeInstall);
-      showHideModalButton($modal, '#modal-button-download', work.urlDownloadPDF);
-      showHideModalButton($modal, '#modal-button-source', work.urlSource);
-      $modal.toggleClass('is-active');
-    }
-
+    /* Run this once per page load to incorporate a pre-filtered URL */
+    updateFilterFromURL();
   }
 </script>

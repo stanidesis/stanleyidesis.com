@@ -15,7 +15,7 @@ layout: default
 <section class="section hero is-light">
   <div class="hero-body">
     <div class="container">
-      <div class="columns is-vcentered is-mobile">
+      <div class="columns is-vcentered is-mobile is-multiline">
         <!-- Roles -->
         <div id="dropdown-roles" class="dropdown column is-1-desktop is-one-third-mobile">
           <div class="dropdown-trigger">
@@ -30,7 +30,7 @@ layout: default
             <div class="dropdown-content">
             {% assign sorted_roles = site.roles | sort: "name" %}
             {% for role in sorted_roles %}
-              <a data-choice="{{ role.id }}" class="dropdown-item">
+              <a data-choice="{{ role.id }}" data-type="role" class="dropdown-item">
                 {{ role.name }}
               </a>
             {% endfor %}
@@ -40,18 +40,18 @@ layout: default
         <!-- Clients -->
         <div id="dropdown-clients" class="dropdown column is-1-desktop is-one-third-mobile">
           <div class="dropdown-trigger">
-            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
               <span>Clients</span>
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
               </span>
             </button>
           </div>
-          <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+          <div class="dropdown-menu" id="dropdown-menu2" role="menu">
             <div class="dropdown-content">
               {% assign sorted_clients = site.clients | sort: "name" %}
               {% for client in sorted_clients %}
-              <a data-choice="{{ client.id }}" class="dropdown-item">
+              <a data-choice="{{ client.id }}" data-type="client" class="dropdown-item">
                 {{client.name}}
               </a>
               {% endfor %}
@@ -61,22 +61,32 @@ layout: default
         <!-- Topics -->
         <div id="dropdown-topics" class="dropdown column is-1-desktop is-one-third-mobile">
           <div class="dropdown-trigger">
-            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu1">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
               <span>Topics</span>
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
               </span>
             </button>
           </div>
-          <div class="dropdown-menu" id="dropdown-menu1" role="menu">
+          <div class="dropdown-menu" id="dropdown-menu3" role="menu">
             <div class="dropdown-content">
               {% assign sorted_topics = site.topics | sort: "name" %}
               {% for topic in sorted_topics %}
-                <a data-choice="{{ topic.id }}" class="dropdown-item">
+                <a data-choice="{{ topic.id }}" data-type="topic" class="dropdown-item">
                   {{ topic.name }}
                 </a>
               {% endfor %}
             </div>
+          </div>
+        </div>
+        <div class="column is-1-desktop is-one-third-mobile">
+          <div class="container">
+            <a id="clear-filter-button" class="button is-danger is-outlined is-rounded">
+              <span>Clear Filter</span>
+              <span class="icon is-small">
+                <i class="fas fa-times"></i>
+              </span>
+            </a>
           </div>
         </div>
       </div>
