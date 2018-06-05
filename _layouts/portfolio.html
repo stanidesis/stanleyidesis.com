@@ -98,11 +98,17 @@ layout: default
         data-client="{{work.client}}"
         data-roles="{{work.roles | join: ","}}"
         data-topics="{{work.topics | join: ","}}"
+        data-url-play="{{work.url_play}}"
+        data-url-read="{{work.url_read}}"
         data-url-visit="{{work.url_visit}}"
+        data-url-android-install="{{work.url_android_install}}"
+        data-url-ios-install="{{work.url_ios_install}}"
+        data-url-chrome-install="{{work.url_chrome_install}}"
+        data-url-download-pdf="{{work.url_download_pdf}}"
         data-url-source="{{work.url_source}}">
         <article class="box portfolio-item">
           <figure class="image is-3by2">
-            <img src="{{work.thumbnail_3x2}}">
+            <img src="{{work.thumbnail_3x2}}" class="portfolio-item-thumbnail">
           </figure>
           <br \>
           <h1 class="title is-4">{{ work.title }}</h1>
@@ -125,6 +131,56 @@ layout: default
       <br \>
       <h1 class="title is-3"></h1>
       <h2 class="subtitle is-5"></h2>
+      <div class="buttons">
+        <a id="modal-button-play" class="button" target="_blank">
+          <span class="icon is-small">
+            <i class="fas fa-play"></i>
+          </span>
+          <span>Play</span>
+        </a>
+        <a id="modal-button-read" class="button" target="_blank">
+          <span class="icon is-small">
+            <i class="fas fa-glasses"></i>
+          </span>
+          <span>Read</span>
+        </a>
+        <a id="modal-button-visit" class="button" target="_blank">
+          <span class="icon is-small">
+            <i class="fas fa-globe"></i>
+          </span>
+          <span>Visit</span>
+        </a>
+        <a id="modal-button-install-ios" class="button" target="_blank">
+          <span class="icon is-small">
+            <i class="fab fa-app-store-ios"></i>
+          </span>
+          <span>Install</span>
+        </a>
+        <a id="modal-button-install-android" class="button" target="_blank">
+          <span class="icon is-small">
+            <i class="fab fa-android"></i>
+          </span>
+          <span>Install</span>
+        </a>
+        <a id="modal-button-install-chrome" class="button" target="_blank">
+          <span class="icon is-small">
+            <i class="fab fa-chrome"></i>
+          </span>
+          <span>Install</span>
+        </a>
+        <a id="modal-button-source" class="button" target="_blank">
+          <span class="icon is-small">
+            <i class="fas fa-code-branch"></i>
+          </span>
+          <span>View Source</span>
+        </a>
+        <a id="modal-button-download" class="button">
+          <span class="icon is-small">
+            <i class="fas fa-file-pdf"></i>
+          </span>
+          <span>Download PDF</span>
+        </a>
+      </div>
       <div class="content"></div>
     </article>
   </div>

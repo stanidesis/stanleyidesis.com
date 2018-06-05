@@ -9,6 +9,16 @@
     return array;
   };
 
+  /* Hides/reveals the button in the modal, assigns URL if present */
+  var showHideModalButton = function($modal, id, url) {
+    var $button = $modal.find(id);
+    if (!url) {
+      $button.hide();
+      return;
+    }
+    $button.show().attr('href', url);
+  };
+
   window.dependenciesReady = function() {
     /* Drop-down filter activate/deactivate */
     $('.dropdown button').on('click', function(e) {
@@ -39,7 +49,13 @@
       work.subtitle = $work.attr('data-subtitle');
       work.content = $work.attr('data-output');
       work.banner = $work.attr('data-banner');
+      work.urlPlay = $work.attr('data-url-play');
+      work.urlRead = $work.attr('data-url-read');
       work.urlVisit = $work.attr('data-url-visit');
+      work.urlAndroidInstall = $work.attr('data-url-android-install');
+      work.urliOSInstall = $work.attr('data-url-ios-install');
+      work.urlChromeInstall = $work.attr('data-url-chrome-install');
+      work.urlDownloadPDF = $work.attr('data-url-download-pdf');
       work.urlSource = $work.attr('data-url-source');
       window.allWorks[parseInt(work.id.match(/\d+/g))] = work;
     });
@@ -56,9 +72,16 @@
       $modal.find('h1').first().text(work.title);
       $modal.find('h2').first().text(work.subtitle);
       $modal.find('.content').html(work.content);
+      /* Handle buttons */
+      showHideModalButton($modal, '#modal-button-play', work.urlPlay);
+      showHideModalButton($modal, '#modal-button-read', work.urlRead);
+      showHideModalButton($modal, '#modal-button-visit', work.urlVisit);
+      showHideModalButton($modal, '#modal-button-install-android', work.urlAndroidInstall);
+      showHideModalButton($modal, '#modal-button-install-ios', work.urliOSInstall);
+      showHideModalButton($modal, '#modal-button-install-chrome', work.urlChromeInstall);
+      showHideModalButton($modal, '#modal-button-download', work.urlDownloadPDF);
+      showHideModalButton($modal, '#modal-button-source', work.urlSource);
       $modal.toggleClass('is-active');
     });
-
-    console.log(window.allWorks);
   }
 </script>
