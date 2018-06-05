@@ -1,6 +1,6 @@
 <script type="text/javascript">
   /* Returns an array where index is the unique identifier, value is the name */
-  var pullFromDropdown = function(selector) {
+  var pullDataFromDropdown = function(selector) {
     var $dropdowns = $(selector);
     var array = new Array($dropdowns.length);
     $dropdowns.each(function() {
@@ -35,9 +35,24 @@
     });
 
     /* Load all roles, clients, and topics into objects */
-    window.allRoles = pullFromDropdown('#dropdown-roles a.dropdown-item');
-    window.allClients = pullFromDropdown('#dropdown-clients a.dropdown-item');
-    window.allTopics = pullFromDropdown('#dropdown-topics a.dropdown-item');
+    window.allRoles = pullDataFromDropdown('#dropdown-roles a.dropdown-item');
+    window.allClients = pullDataFromDropdown('#dropdown-clients a.dropdown-item');
+    window.allTopics = pullDataFromDropdown('#dropdown-topics a.dropdown-item');
+
+    /* Browji direct link */
+    $('a.browji-link').click(function() {
+      // TODO: correct this to the right work
+      revealModalWith(window.allWorks[0]);
+    });
+
+    /* Let's get filters working */
+    window.filteredRole = -1;
+    window.filteredClient = -1;
+    window.filteredTopic = -1;
+    $('a.dropdown-item').click(function() {
+
+    });
+
     /* Load all works */
     var $workEntries = $('.column.is-one-quarter');
     window.allWorks = new Array($workEntries.length);
@@ -64,9 +79,13 @@
       $(this).parent().toggleClass('is-active');
     });
 
-    /* On Click for works */
+    /* On Click for each work */
     $workEntries.click(function() {
       var work = window.allWorks[parseInt($(this).attr('data-id').match(/\d+/g))];
+      revealModalWith(work);
+    });
+
+    var revealModalWith = function(work) {
       var $modal = $('.modal').first();
       $modal.find('figure > img').attr('src', work.banner);
       $modal.find('h1').first().text(work.title);
@@ -82,6 +101,7 @@
       showHideModalButton($modal, '#modal-button-download', work.urlDownloadPDF);
       showHideModalButton($modal, '#modal-button-source', work.urlSource);
       $modal.toggleClass('is-active');
-    });
+    }
+
   }
 </script>
