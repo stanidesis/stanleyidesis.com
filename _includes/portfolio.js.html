@@ -1,5 +1,16 @@
 <script type="text/javascript">
+  /* Returns an array where index is the unique identifier, value is the name */
+  var pullFromDropdown = function(selector) {
+    var $dropdowns = $(selector);
+    var array = new Array($dropdowns.length);
+    $dropdowns.each(function() {
+      array[parseInt($(this).attr('data-choice').match(/\d+/g))] = $(this).text();
+    });
+    return array;
+  };
+
   window.dependenciesReady = function() {
+    /* Drop-down filter activate/deactivate */
     $('.dropdown button').on('click', function(e) {
       var $activeDropdown = $('.dropdown.is-active').first();
       if ($activeDropdown[0] && $(this)[0] != $activeDropdown.find('button').first()[0]) {
@@ -8,8 +19,15 @@
       $(this).parents('.dropdown').toggleClass('is-active');
       e.stopPropagation();
     });
+    /* Click outside closes all dropdowns */
     $('html').on('click', function(e) {
       $('.dropdown.is-active').toggleClass('is-active');
-    })
+    });
+
+    /* Load all roles, clients, and topics into objects */
+    window.allRoles = pullFromDropdown('#dropdown-roles a.dropdown-item');
+    window.allClients = pullFromDropdown('#dropdown-clients a.dropdown-item');
+    window.allTopics = pullFromDropdown('#dropdown-topics a.dropdown-item');
+    console.log(window.allClients);
   }
 </script>

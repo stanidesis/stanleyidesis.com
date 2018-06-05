@@ -17,7 +17,7 @@ layout: default
     <div class="container">
       <div class="columns is-vcentered is-mobile">
         <!-- Roles -->
-        <div class="dropdown column is-1-desktop is-one-third-mobile">
+        <div id="dropdown-roles" class="dropdown column is-1-desktop is-one-third-mobile">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu1">
               <span>Roles</span>
@@ -28,7 +28,8 @@ layout: default
           </div>
           <div class="dropdown-menu" id="dropdown-menu1" role="menu">
             <div class="dropdown-content">
-            {% for role in site.roles %}
+            {% assign sorted_roles = site.roles | sort: "name" %}
+            {% for role in sorted_roles %}
               <a data-choice="{{ role.id }}" class="dropdown-item">
                 {{ role.name }}
               </a>
@@ -37,7 +38,7 @@ layout: default
           </div>
         </div>
         <!-- Clients -->
-        <div class="dropdown column is-1-desktop is-one-third-mobile">
+        <div id="dropdown-clients" class="dropdown column is-1-desktop is-one-third-mobile">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
               <span>Clients</span>
@@ -48,35 +49,17 @@ layout: default
           </div>
           <div class="dropdown-menu" id="dropdown-menu3" role="menu">
             <div class="dropdown-content">
-              <a href="#" class="dropdown-item">
-                Overview
+              {% assign sorted_clients = site.clients | sort: "name" %}
+              {% for client in sorted_clients %}
+              <a data-choice="{{ client.id }}" class="dropdown-item">
+                {{client.name}}
               </a>
-              <a href="#" class="dropdown-item">
-                Modifiers
-              </a>
-              <a href="#" class="dropdown-item">
-                Grid
-              </a>
-              <a href="#" class="dropdown-item">
-                Form
-              </a>
-              <a href="#" class="dropdown-item">
-                Elements
-              </a>
-              <a href="#" class="dropdown-item">
-                Components
-              </a>
-              <a href="#" class="dropdown-item">
-                Layout
-              </a>
-              <a href="#" class="dropdown-item">
-                More
-              </a>
+              {% endfor %}
             </div>
           </div>
         </div>
         <!-- Topics -->
-        <div class="dropdown column is-1-desktop is-one-third-mobile">
+        <div id="dropdown-topics" class="dropdown column is-1-desktop is-one-third-mobile">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu1">
               <span>Topics</span>
@@ -87,30 +70,12 @@ layout: default
           </div>
           <div class="dropdown-menu" id="dropdown-menu1" role="menu">
             <div class="dropdown-content">
-              <a href="#" class="dropdown-item">
-                Overview
-              </a>
-              <a href="#" class="dropdown-item">
-                Modifiers
-              </a>
-              <a href="#" class="dropdown-item">
-                Grid
-              </a>
-              <a href="#" class="dropdown-item">
-                Form
-              </a>
-              <a href="#" class="dropdown-item">
-                Elements
-              </a>
-              <a href="#" class="dropdown-item">
-                Components
-              </a>
-              <a href="#" class="dropdown-item">
-                Layout
-              </a>
-              <a href="#" class="dropdown-item">
-                More
-              </a>
+              {% assign sorted_topics = site.topics | sort: "name" %}
+              {% for topic in sorted_topics %}
+                <a data-choice="{{ topic.id }}" class="dropdown-item">
+                  {{ topic.name }}
+                </a>
+              {% endfor %}
             </div>
           </div>
         </div>
@@ -118,5 +83,13 @@ layout: default
     </div>
   </div>
 </section>
+<!-- Modal -->
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <!-- Any other Bulma elements you want -->
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
 <!-- Activate the js that powers the portfolio -->
 {% include portfolio.js.html %}
