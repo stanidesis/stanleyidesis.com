@@ -28,6 +28,37 @@
     window.allRoles = pullFromDropdown('#dropdown-roles a.dropdown-item');
     window.allClients = pullFromDropdown('#dropdown-clients a.dropdown-item');
     window.allTopics = pullFromDropdown('#dropdown-topics a.dropdown-item');
-    console.log(window.allClients);
+    /* Load all works */
+    var $workEntries = $('.column.is-one-quarter');
+    window.allWorks = new Array($workEntries.length);
+    $workEntries.each(function() {
+      var work = {};
+      var $work = $(this);
+      work.id = $work.attr('data-id');
+      work.title = $work.attr('data-title');
+      work.subtitle = $work.attr('data-subtitle');
+      work.content = $work.attr('data-output');
+      work.banner = $work.attr('data-banner');
+      work.urlVisit = $work.attr('data-url-visit');
+      work.urlSource = $work.attr('data-url-source');
+      window.allWorks[parseInt(work.id.match(/\d+/g))] = work;
+    });
+
+    $('.modal-background, .modal-close').click(function() {
+      $(this).parent().toggleClass('is-active');
+    });
+
+    /* On Click for works */
+    $workEntries.click(function() {
+      var work = window.allWorks[parseInt($(this).attr('data-id').match(/\d+/g))];
+      var $modal = $('.modal').first();
+      $modal.find('figure > img').attr('src', work.banner);
+      $modal.find('h1').first().text(work.title);
+      $modal.find('h2').first().text(work.subtitle);
+      $modal.find('.content').html(work.content);
+      $modal.toggleClass('is-active');
+    });
+
+    console.log(window.allWorks);
   }
 </script>

@@ -12,7 +12,7 @@ layout: default
   </div>
 </section>
 <!-- Filter Section -->
-<section class="hero is-light">
+<section class="section hero is-light">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-vcentered is-mobile">
@@ -83,11 +83,50 @@ layout: default
     </div>
   </div>
 </section>
+<br \><br \>
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      {% assign sorted_works = site.works | sort: "title" %}
+      {% for work in sorted_works %}
+      <div class="column is-one-quarter"
+        data-id="{{ work.id }}"
+        data-title="{{work.title}}"
+        data-subtitle="{{work.subtitle}}"
+        data-output="{{work.output}}"
+        data-banner="{{work.banner_16x9}}"
+        data-client="{{work.client}}"
+        data-roles="{{work.roles | join: ","}}"
+        data-topics="{{work.topics | join: ","}}"
+        data-url-visit="{{work.url_visit}}"
+        data-url-source="{{work.url_source}}">
+        <article class="box portfolio-item">
+          <figure class="image is-3by2">
+            <img src="{{work.thumbnail_3x2}}">
+          </figure>
+          <br \>
+          <h1 class="title is-4">{{ work.title }}</h1>
+          <h2 class="subtitle is-6">{{ work.subtitle }}</h2>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 <!-- Modal -->
 <div class="modal">
   <div class="modal-background"></div>
   <div class="modal-content">
     <!-- Any other Bulma elements you want -->
+    <article class="box">
+      <figure class="image is-16by9">
+        <img class="portfolio-banner">
+      </figure>
+      <br \>
+      <h1 class="title is-3"></h1>
+      <h2 class="subtitle is-5"></h2>
+      <div class="content"></div>
+    </article>
   </div>
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
