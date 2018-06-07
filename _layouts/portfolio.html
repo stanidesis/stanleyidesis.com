@@ -100,11 +100,11 @@ layout: default
     <div class="columns is-multiline">
       {% assign sorted_works = site.works | sort: "title" %}
       {% for work in sorted_works %}
-      <div class="column is-one-quarter"
+      <div class="portfolio-column column is-one-third"
         data-id="{{ work.id }}"
         data-title="{{work.title}}"
         data-subtitle="{{work.subtitle}}"
-        data-output="{{work.output}}"
+        data-output="{{work.output | escape}}"
         data-banner="{{work.banner_16x9}}"
         data-client="{{work.client}}"
         data-roles="{{work.roles | join: ","}}"
@@ -112,6 +112,7 @@ layout: default
         data-url-play="{{work.url_play}}"
         data-url-read="{{work.url_read}}"
         data-url-visit="{{work.url_visit}}"
+        data-url-product-hunt="{{work.url_product_hunt}}"
         data-url-android-install="{{work.url_android_install}}"
         data-url-ios-install="{{work.url_ios_install}}"
         data-url-chrome-install="{{work.url_chrome_install}}"
@@ -185,7 +186,13 @@ layout: default
           </span>
           <span>View Source</span>
         </a>
-        <a id="modal-button-download" class="button">
+        <a id="modal-button-product-hunt" class="button" target="_blank">
+          <span class="icon is-small">
+            <i class="fab fa-product-hunt"></i>
+          </span>
+          <span>Product Hunt</span>
+        </a>
+        <a id="modal-button-download" class="button" target="_blank">
           <span class="icon is-small">
             <i class="fas fa-file-pdf"></i>
           </span>

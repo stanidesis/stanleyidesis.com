@@ -1,4 +1,5 @@
 <script type="text/javascript">
+  const PORTFOLIO_COLUMN_SELECTOR = '.portfolio-column';
   /* Parse a query string */
   function parse_query_string(query) {
     var vars = query.split("&");
@@ -61,6 +62,7 @@
     showHideModalButton($modal, '#modal-button-install-chrome', work.urlChromeInstall);
     showHideModalButton($modal, '#modal-button-download', work.urlDownloadPDF);
     showHideModalButton($modal, '#modal-button-source', work.urlSource);
+    showHideModalButton($modal, '#modal-button-product-hunt', work.urlProductHunt);
     $modal.toggleClass('is-active');
   };
 
@@ -156,16 +158,16 @@
     if (window.filteredWork < 0 && window.filteredRole < 0 &&
        window.filteredTopic < 0 && window.filteredClient < 0) {
       /* Nothing to hide */
-      $('.column.is-one-quarter').show();
+      $(PORTFOLIO_COLUMN_SELECTOR).show();
       return;
     }
     /* Hide all at first */
-    $('.column.is-one-quarter').hide();
+    $(PORTFOLIO_COLUMN_SELECTOR).hide();
 
     /* If a filtered work is present, it takes precedent */
     if (window.filteredWork > -1 && window.filteredWork < window.allWorks.length) {
       var idToFilter = window.allWorks[window.filteredWork].id;
-      $(`.column.is-one-quarter[data-id*='${idToFilter}']`).fadeIn();
+      $(`${PORTFOLIO_COLUMN_SELECTOR}[data-id*='${idToFilter}']`).fadeIn();
       return;
     }
 
@@ -219,8 +221,7 @@
 
     /* Browji direct link */
     $('a.browji-link').click(function() {
-      /* TODO: correct this to the right work */
-      revealModalWith(window.allWorks[0]);
+      revealModalWith(window.allWorks[1]);
     });
 
     /* Handle all dropdown item selections */
@@ -260,7 +261,7 @@
     });
 
     /* Load all works */
-    var $workEntries = $('.column.is-one-quarter');
+    var $workEntries = $(PORTFOLIO_COLUMN_SELECTOR);
     window.allWorks = new Array($workEntries.length);
     $workEntries.each(function() {
       var work = {};
@@ -273,6 +274,7 @@
       work.urlPlay = $work.attr('data-url-play');
       work.urlRead = $work.attr('data-url-read');
       work.urlVisit = $work.attr('data-url-visit');
+      work.urlProductHunt = $work.attr('data-url-product-hunt');
       work.urlAndroidInstall = $work.attr('data-url-android-install');
       work.urliOSInstall = $work.attr('data-url-ios-install');
       work.urlChromeInstall = $work.attr('data-url-chrome-install');
