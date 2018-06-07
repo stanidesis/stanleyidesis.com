@@ -119,6 +119,28 @@
     } else if (window.filteredClient < window.allClients.length) {
       $(`[data-type='client'][data-choice*='${window.filteredClient.toString().padStart(3,'0')}']`).addClass('is-active');
     }
+    updateActiveDropdownButtons();
+  }
+
+  function updateActiveDropdownButtons() {
+    var $span = $(`#dropdown-roles span[data-preset]`);
+    if (window.filteredRole > -1 && window.filteredRole < window.allRoles.length) {
+      $span.text(`${$span.attr('data-preset')}: ${window.allRoles[window.filteredRole]}`);
+    } else {
+      $span.text($span.attr('data-preset'));
+    }
+    $span = $(`#dropdown-clients span[data-preset]`);
+    if (window.filteredClient > -1 && window.filteredClient < window.allClients.length) {
+      $span.text(`${$span.attr('data-preset')}: ${window.allClients[window.filteredClient]}`);
+    } else {
+      $span.text($span.attr('data-preset'));
+    }
+    $span = $(`#dropdown-topics span[data-preset]`);
+    if (window.filteredTopic > -1 && window.filteredTopic < window.allTopics.length) {
+      $span.text(`${$span.attr('data-preset')}: ${window.allTopics[window.filteredTopic]}`);
+    } else {
+      $span.text($span.attr('data-preset'));
+    }
   }
 
   function revealClearFilterButtonIfNecessary() {
@@ -169,6 +191,17 @@
   };
 
   window.dependenciesReady = function() {
+    /* Let's get filters working */
+    window.filteredRole = -1;
+    window.filteredClient = -1;
+    window.filteredTopic = -1;
+    window.filteredWork = -1;
+
+    /* Load all roles, clients, and topics into objects */
+    window.allRoles = pullDataFromDropdown('#dropdown-roles a.dropdown-item');
+    window.allClients = pullDataFromDropdown('#dropdown-clients a.dropdown-item');
+    window.allTopics = pullDataFromDropdown('#dropdown-topics a.dropdown-item');
+
     /* Drop-down filter activate/deactivate */
     $('.dropdown button').on('click', function(e) {
       var $activeDropdown = $('.dropdown.is-active').first();
@@ -178,15 +211,11 @@
       $(this).parents('.dropdown').toggleClass('is-active');
       e.stopPropagation();
     });
+
     /* Click outside closes all dropdowns */
     $('html').on('click', function(e) {
       $('.dropdown.is-active').toggleClass('is-active');
     });
-
-    /* Load all roles, clients, and topics into objects */
-    window.allRoles = pullDataFromDropdown('#dropdown-roles a.dropdown-item');
-    window.allClients = pullDataFromDropdown('#dropdown-clients a.dropdown-item');
-    window.allTopics = pullDataFromDropdown('#dropdown-topics a.dropdown-item');
 
     /* Browji direct link */
     $('a.browji-link').click(function() {
@@ -194,12 +223,7 @@
       revealModalWith(window.allWorks[0]);
     });
 
-    /* Let's get filters working */
-    window.filteredRole = -1;
-    window.filteredClient = -1;
-    window.filteredTopic = -1;
-    window.filteredWork = -1;
-
+    /* Handle all dropdown item selections */
     $('a.dropdown-item').click(function() {
       /* Deactivate all dropdown item peers */
       $(this).siblings().removeClass('is-active');
@@ -215,6 +239,7 @@
         window.filteredTopic = paraseIntFromData($(this).attr('data-choice'));
       }
       pushNewURL();
+      updateActiveDropdownButtons();
       revealClearFilterButtonIfNecessary();
       filterWorks();
     });
