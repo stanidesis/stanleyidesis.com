@@ -1,8 +1,8 @@
 ---
 title: "Continuous Mobile Deployment: A Real Thing That Exists for Real"
 subtitle: "Proof that Developers Can Deploy Continuously with OutSystems"
-thumbnail_3x2: "/assets/images/collections/works/continuous-mobile-development-a-real-thing-that-exists-for-real/3x2.jpeg"
-banner_16x9: "/assets/images/collections/works/continuous-mobile-development-a-real-thing-that-exists-for-real/16x9.jpeg"
+thumbnail_3x2: "/assets/images/collections/works/003-continuous-mobile-development-a-real-thing-that-exists-for-real/3x2.jpeg"
+banner_16x9: "/assets/images/collections/works/003-continuous-mobile-development-a-real-thing-that-exists-for-real/16x9.jpeg"
 client: "001"
 roles: ["000","011","005"]
 topics: ["003"]

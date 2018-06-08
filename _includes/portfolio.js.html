@@ -52,7 +52,7 @@
     $modal.find('figure > img').attr('src', work.banner);
     $modal.find('h1').first().text(work.title);
     $modal.find('h2').first().text(work.subtitle);
-    $modal.find('.content').html(work.content);
+    $modal.find('.portfolio-story').html(work.content);
     /* Handle buttons */
     showHideModalButton($modal, '#modal-button-play', work.urlPlay);
     showHideModalButton($modal, '#modal-button-read', work.urlRead);
@@ -63,6 +63,16 @@
     showHideModalButton($modal, '#modal-button-download', work.urlDownloadPDF);
     showHideModalButton($modal, '#modal-button-source', work.urlSource);
     showHideModalButton($modal, '#modal-button-product-hunt', work.urlProductHunt);
+
+    /* Convert roles to single string */
+    var roleArray = [];
+    work.roles.forEach(function(current, index, array) {
+      roleArray.push(window.allRoles[current]);
+    });
+    roleArray.sort();
+
+    $modal.find('.portfolio-details-client').text(window.allClients[work.client]);
+    $modal.find('.portfolio-details-roles').text(` ${roleArray.join(', ')}`);
     $modal.toggleClass('is-active');
   };
 
@@ -271,6 +281,11 @@
       work.subtitle = $work.attr('data-subtitle');
       work.content = $work.attr('data-output');
       work.banner = $work.attr('data-banner');
+      work.client = parseInt($work.attr('data-client'));
+      work.roles = $work.attr('data-roles').split(',');
+      work.roles.forEach(function(current, index, arr) {
+        arr[index] = parseInt(current);
+      });
       work.urlPlay = $work.attr('data-url-play');
       work.urlRead = $work.attr('data-url-read');
       work.urlVisit = $work.attr('data-url-visit');

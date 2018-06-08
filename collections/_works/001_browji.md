@@ -1,10 +1,10 @@
 ---
 title: "Browji"
 subtitle: "Use Emojis on the Internet. Fast 🏁"
-thumbnail_3x2: "/assets/images/collections/works/browji/3x2.png"
-banner_16x9: "/assets/images/collections/works/browji/16x9.jpg"
+thumbnail_3x2: "/assets/images/collections/works/002-browji/3x2.png"
+banner_16x9: "/assets/images/collections/works/002-browji/16x9.jpg"
 client: "000"
-roles: ["001","002","000","003","006","007","005","007","008","009"]
+roles: ["001","002","000","003","006","007","005","008","009"]
 topics: ["000","002","004"]
 url_play: "https://youtu.be/ysybYMkqsek"
 url_visit: "http://www.browji.com/"

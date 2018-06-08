@@ -1,3 +1,3 @@
 ---
-name: "Voiceover"
+name: "Voiceover Artist"
 ---

@@ -1,8 +1,8 @@
 ---
 title: "How to Fill a Gaping Hole with 2,304 LEDs"
 subtitle: "A Short Story About Fun with IoT"
-thumbnail_3x2: "/assets/images/collections/works/how-to-fill-gaping-hole-leds/3x2.png"
-banner_16x9: "/assets/images/collections/works/how-to-fill-gaping-hole-leds/16x9.png"
+thumbnail_3x2: "/assets/images/collections/works/002-how-to-fill-gaping-hole-leds/3x2.png"
+banner_16x9: "/assets/images/collections/works/002-how-to-fill-gaping-hole-leds/16x9.png"
 client: "001"
 roles: ["000","010"]
 topics: ["008"]

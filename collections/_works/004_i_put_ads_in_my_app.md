@@ -1,8 +1,8 @@
 ---
 title: "I Put Ads in My App — This is What Losing Looks Like"
 subtitle: "A Piece of Content Marketing for Frustrated App Developers"
-thumbnail_3x2: "/assets/images/collections/works/i-put-ads-in-my-app/3x2.png"
-banner_16x9: "/assets/images/collections/works/i-put-ads-in-my-app/16x9.png"
+thumbnail_3x2: "/assets/images/collections/works/004-i-put-ads-in-my-app/3x2.png"
+banner_16x9: "/assets/images/collections/works/004-i-put-ads-in-my-app/16x9.png"
 client: "000"
 roles: ["000","007","004"]
 topics: ["003"]

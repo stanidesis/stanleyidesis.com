@@ -31,9 +31,7 @@ layout: default
             <div class="dropdown-content">
             {% assign sorted_roles = site.roles | sort: "name" %}
             {% for role in sorted_roles %}
-              <a data-choice="{{ role.id }}" data-type="role" class="dropdown-item">
-                {{ role.name }}
-              </a>
+              <a data-choice="{{ role.id }}" data-type="role" class="dropdown-item">{{role.name}}</a>
             {% endfor %}
             </div>
           </div>
@@ -52,9 +50,7 @@ layout: default
             <div class="dropdown-content">
               {% assign sorted_clients = site.clients | sort: "name" %}
               {% for client in sorted_clients %}
-              <a data-choice="{{ client.id }}" data-type="client" class="dropdown-item">
-                {{client.name}}
-              </a>
+              <a data-choice="{{ client.id }}" data-type="client" class="dropdown-item">{{client.name}}</a>
               {% endfor %}
             </div>
           </div>
@@ -73,9 +69,7 @@ layout: default
             <div class="dropdown-content">
               {% assign sorted_topics = site.topics | sort: "name" %}
               {% for topic in sorted_topics %}
-                <a data-choice="{{ topic.id }}" data-type="topic" class="dropdown-item">
-                  {{ topic.name }}
-                </a>
+                <a data-choice="{{ topic.id }}" data-type="topic" class="dropdown-item">{{topic.name}}</a>
               {% endfor %}
             </div>
           </div>
@@ -199,7 +193,13 @@ layout: default
           <span>Download PDF</span>
         </a>
       </div>
-      <div class="content"></div>
+      <div class="content portfolio-details is-size-7">
+        <ul style="list-style-type:circle">
+          <li><strong>Client: </strong><span class="portfolio-details-client"></span></li>
+          <li><strong>Role:</strong><span class="portfolio-details-roles"></span></li>
+        </ul>
+      </div>
+      <div class="content portfolio-story"></div>
     </article>
   </div>
   <button class="modal-close is-large" aria-label="close"></button>
