@@ -60,7 +60,8 @@
     showHideModalButton($modal, '#modal-button-install-android', work.urlAndroidInstall);
     showHideModalButton($modal, '#modal-button-install-ios', work.urliOSInstall);
     showHideModalButton($modal, '#modal-button-install-chrome', work.urlChromeInstall);
-    showHideModalButton($modal, '#modal-button-download', work.urlDownloadPDF);
+    showHideModalButton($modal, '#modal-button-download-pdf', work.urlDownloadPDF);
+    showHideModalButton($modal, '#modal-button-download-ppt', work.urlDownloadPPT);
     showHideModalButton($modal, '#modal-button-source', work.urlSource);
     showHideModalButton($modal, '#modal-button-product-hunt', work.urlProductHunt);
 
@@ -73,7 +74,12 @@
 
     $modal.find('.portfolio-details-client').text(window.allClients[work.client]);
     $modal.find('.portfolio-details-roles').text(` ${roleArray.join(', ')}`);
+    $modal.find(`.portfolio-story [data-resource='work']`).click(function() {
+      $modal.toggleClass('is-active');
+      revealModalWith(window.allWorks[parseInt($(this).attr('data-work'))]);
+    });
     $modal.toggleClass('is-active');
+
   };
 
   /* Use current filters to create a new URL state */
@@ -294,6 +300,7 @@
       work.urliOSInstall = $work.attr('data-url-ios-install');
       work.urlChromeInstall = $work.attr('data-url-chrome-install');
       work.urlDownloadPDF = $work.attr('data-url-download-pdf');
+      work.urlDownloadPPT = $work.attr('data-url-download-ppt');
       work.urlSource = $work.attr('data-url-source');
       window.allWorks[parseInt(work.id.match(/\d+/g))] = work;
     });

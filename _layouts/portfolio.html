@@ -111,6 +111,7 @@ layout: default
         data-url-ios-install="{{work.url_ios_install}}"
         data-url-chrome-install="{{work.url_chrome_install}}"
         data-url-download-pdf="{{work.url_download_pdf}}"
+        data-url-download-ppt="{{work.url_download_ppt}}"
         data-url-source="{{work.url_source}}">
         <article class="box portfolio-item">
           <figure class="image is-3by2">
@@ -138,6 +139,12 @@ layout: default
       <h1 class="title is-3"></h1>
       <h2 class="subtitle is-5"></h2>
       <div class="buttons">
+        <a id="modal-button-download-pdf" class="button" target="_blank">
+          <span class="icon is-small">
+            <i class="fas fa-file-pdf"></i>
+          </span>
+          <span>PDF</span>
+        </a>
         <a id="modal-button-play" class="button" target="_blank">
           <span class="icon is-small">
             <i class="fas fa-play"></i>
@@ -174,6 +181,12 @@ layout: default
           </span>
           <span>Install</span>
         </a>
+        <a id="modal-button-download-ppt" class="button" target="_blank">
+          <span class="icon is-small">
+            <i class="fas fa-file-powerpoint"></i>
+          </span>
+          <span>PowerPoint</span>
+        </a>
         <a id="modal-button-source" class="button" target="_blank">
           <span class="icon is-small">
             <i class="fas fa-code-branch"></i>
@@ -185,12 +198,6 @@ layout: default
             <i class="fab fa-product-hunt"></i>
           </span>
           <span>Product Hunt</span>
-        </a>
-        <a id="modal-button-download" class="button" target="_blank">
-          <span class="icon is-small">
-            <i class="fas fa-file-pdf"></i>
-          </span>
-          <span>Download PDF</span>
         </a>
       </div>
       <div class="content portfolio-details is-size-7">
