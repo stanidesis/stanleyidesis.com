@@ -43,11 +43,12 @@ defaults:
 
 collections_dir: collections
 collections:
-- clients
 - posts
-- roles
-- topics
 - works
+- work-clients
+- work-roles
+- work-topics
+- work-types
 
 sass:
   style: compressed
