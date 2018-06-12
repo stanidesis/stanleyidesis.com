@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/005-3-wizards-baby-deliver-magica
 client: "001"
 roles: ["000","010"]
 topics: ["001","003"]
+types: ["000","013"]
 url_download_pdf: "https://drive.google.com/file/d/1bmTU6uGsMLCAHTspIbEgtiWDM0UKwGsZ/view"
 url_read: "https://www.outsystems.com/blog/deliver-native-app-publishing.html"
 ---

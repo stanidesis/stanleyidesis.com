@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/011-what-is-rapid-application-dev
 client: "001"
 roles: ["001","004"]
 topics: ["010","011"]
+types: ["000","013"]
 url_download_pdf: "https://drive.google.com/file/d/17JFdx0FbbbcN3NtydWEb6qVmW8Cogedd/view?usp=sharing"
 url_visit: "https://www.outsystems.com/blog/rapid-application-development.html"
 ---

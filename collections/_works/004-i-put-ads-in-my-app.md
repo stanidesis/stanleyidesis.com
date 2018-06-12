@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/004-i-put-ads-in-my-app/16x9.png"
 client: "000"
 roles: ["000","007","004"]
 topics: ["003"]
+types: ["000","013"]
 url_download_pdf: "https://drive.google.com/open?id=139EDduq99uzqOdJEgLBejOy-qha0JJI6"
 url_read: "https://medium.com/@stanleyidesis/i-put-ads-in-my-app-this-is-what-losing-looks-like-3249d34364f8"
 ---

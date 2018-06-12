@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/012-free-cross-platform-madp-tool
 client: "001"
 roles: ["001","004"]
 topics: ["003","004"]
+types: ["000","013"]
 url_download_pdf: "https://drive.google.com/file/d/1lvzlE2KtiAuwDtWKYObvkvVTby5PpkCv/view?usp=sharing"
 url_visit: "https://www.outsystems.com/blog/free-cross-platform-mobile-app-development-tools-compared.html"
 ---

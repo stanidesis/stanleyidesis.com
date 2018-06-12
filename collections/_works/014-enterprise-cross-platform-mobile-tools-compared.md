@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/014-enterprise-cross-platform-mad
 client: "001"
 roles: ["001","004"]
 topics: ["003","004"]
+types: ["000","013"]
 url_download_pdf: "https://drive.google.com/file/d/1JkDPlADFIenm5LoKmPdO6pxPXH6-EHJm/view?usp=sharing"
 url_visit: "https://www.outsystems.com/blog/posts/enterprise-cross-platform-mobile-app-development-tools-compared/"
 ---

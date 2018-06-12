@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/008-why-developers-fear-low-code-
 client: "001"
 roles: ["000","004"]
 topics: ["001"]
+types: ["000","013"]
 url_download_pdf: "https://drive.google.com/file/d/1zD8FHJf15lDfWVNtZwtCFfBuL0Y59il_/view?usp=sharing"
 url_read: "https://www.outsystems.com/blog/developers-fear-low-code-its-not-code.html"
 ---

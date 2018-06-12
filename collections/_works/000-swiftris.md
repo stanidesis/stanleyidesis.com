@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/000-swiftris/16x9.jpg"
 client: "004"
 roles: ["000","001","004"]
 topics: ["003","005","006","007"]
+types: ["007","008","012"]
 url_visit: "https://www.bloc.io/swiftris-build-your-first-ios-game-with-swift"
 url_source: "https://github.com/Bloc/swiftris"
 ---

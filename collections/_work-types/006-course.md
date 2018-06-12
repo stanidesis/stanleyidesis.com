@@ -1,3 +1,3 @@
 ---
-name: "Press Release"
+name: "Course"
 ---

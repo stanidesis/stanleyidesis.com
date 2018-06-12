@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/013-small-budget-cross-platform-m
 client: "001"
 roles: ["001","004"]
 topics: ["003","004"]
+types: ["000","013"]
 url_download_pdf: "https://drive.google.com/file/d/1QjoeSwltN35hQjbQZAMJQU7tSwpKo18M/view"
 url_visit: "https://www.outsystems.com/blog/small-budget-cross-platform-mobile-app-development-tools-compared.html"
 ---

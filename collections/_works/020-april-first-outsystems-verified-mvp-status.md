@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/work-document-16x9.png"
 client: "001"
 roles: ["000","010"]
 topics: ["015"]
+types: ["015"]
 url_download_pdf: "https://drive.google.com/file/d/1JIhcr9qh0PAMIFHYj-Vlvf0yuVHiWvH5/view?usp=sharing"
 url_read: "https://www.outsystems.com/forums/discussion/35019/introducing-verified-mvp-status/"
 ---

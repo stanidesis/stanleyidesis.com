@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/010-hackathon-kit/16x9.jpg"
 client: "001"
 roles: ["002","006"]
 topics: ["009"]
+types: ["002","014"]
 url_download_pdf: "https://drive.google.com/open?id=0BzbMf3OHLbFYcXZPUzFxcHpZWDQ"
 url_visit: "https://www.outsystems.com/hackathon-kit/"
 ---

@@ -16,6 +16,10 @@ layout: default
   <div class="hero-body">
     <div class="container">
       <h2 class="subtitle is-3">Filter</h2>
+      <div id="portfolio-types" class="is-invisible"
+        {% assign sorted_types = site.work-types | sort: "id" %}
+        data-types="{% for type in sorted_types %}{{type.name}},{% endfor %}">
+      </div>
       <div class="columns is-vcentered is-mobile is-multiline">
         <!-- Roles -->
         <div id="dropdown-roles" class="dropdown column is-narrow-desktop is-11-mobile">
@@ -29,7 +33,7 @@ layout: default
           </div>
           <div class="dropdown-menu" id="dropdown-menu1" role="menu">
             <div class="dropdown-content">
-            {% assign sorted_roles = site.roles | sort: "name" %}
+            {% assign sorted_roles = site.work-roles | sort: "name" %}
             {% for role in sorted_roles %}
               <a data-choice="{{ role.id }}" data-type="role" class="dropdown-item">{{role.name}}</a>
             {% endfor %}
@@ -48,7 +52,7 @@ layout: default
           </div>
           <div class="dropdown-menu" id="dropdown-menu2" role="menu">
             <div class="dropdown-content">
-              {% assign sorted_clients = site.clients | sort: "name" %}
+              {% assign sorted_clients = site.work-clients | sort: "name" %}
               {% for client in sorted_clients %}
               <a data-choice="{{ client.id }}" data-type="client" class="dropdown-item">{{client.name}}</a>
               {% endfor %}
@@ -67,7 +71,7 @@ layout: default
           </div>
           <div class="dropdown-menu" id="dropdown-menu3" role="menu">
             <div class="dropdown-content">
-              {% assign sorted_topics = site.topics | sort: "name" %}
+              {% assign sorted_topics = site.work-topics | sort: "name" %}
               {% for topic in sorted_topics %}
                 <a data-choice="{{ topic.id }}" data-type="topic" class="dropdown-item">{{topic.name}}</a>
               {% endfor %}
@@ -103,6 +107,7 @@ layout: default
         data-client="{{work.client}}"
         data-roles="{{work.roles | join: ","}}"
         data-topics="{{work.topics | join: ","}}"
+        data-types="{{work.types | join: ","}}"
         data-url-play="{{work.url_play}}"
         data-url-read="{{work.url_read}}"
         data-url-visit="{{work.url_visit}}"
@@ -203,7 +208,8 @@ layout: default
       <div class="content portfolio-details is-size-7">
         <ul style="list-style-type:circle">
           <li><strong>Client: </strong><span class="portfolio-details-client"></span></li>
-          <li><strong>Role:</strong><span class="portfolio-details-roles"></span></li>
+          <li><strong>Role: </strong><span class="portfolio-details-roles"></span></li>
+          <li><strong>Produced: </strong><span class="portfolio-details-types"></span></li>
         </ul>
       </div>
       <div class="content portfolio-story"></div>
@@ -212,4 +218,6 @@ layout: default
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
 <!-- Activate the js that powers the portfolio -->
-{% include portfolio.js.html %}
+<script type="text/javascript">
+{% include portfolio.js %}
+</script>

@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/019-low-code-mobile-basics-with-o
 client: "001"
 roles: ["000","001","004"]
 topics: ["001","003"]
+types: ["013","004","007"]
 url_download_pdf: "https://drive.google.com/file/d/1nd4lVr7wp93kfwXUHIvSRpMwa-ScOg9d/view?usp=sharing"
 url_read: "https://www.sitepoint.com/low-code-mobile-basics-with-outsystems/"
 ---

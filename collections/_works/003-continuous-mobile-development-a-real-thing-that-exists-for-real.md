@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/003-continuous-mobile-development
 client: "001"
 roles: ["000","011","005"]
 topics: ["003"]
+types: ["000","004","013"]
 url_download_pdf: "https://drive.google.com/open?id=1t96yMOZwj2nKGFutdTDl_F1QFhggwnYm"
 url_read: "https://hackernoon.com/continuous-mobile-deployment-a-real-thing-that-exists-for-real-ce148b403a7c"
 ---

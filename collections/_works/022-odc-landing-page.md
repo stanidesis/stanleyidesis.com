@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/022-odc-landing-page/16x9.png"
 client: "001"
 roles: ["006"]
 topics: ["016"]
+types: ["002"]
 url_download_pdf: "https://drive.google.com/file/d/1nWHnT1SaYubUEoGREPvbqJiBQAPw57-3/view?usp=sharing"
 url_visit: "https://www.outsystems.com/nextstep-2018/odc/"
 ---

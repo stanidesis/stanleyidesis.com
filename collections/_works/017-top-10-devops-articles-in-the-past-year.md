@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/017-top-10-devops-articles-in-the
 client: "001"
 roles: ["000"]
 topics: ["013"]
+types: ["000","013"]
 url_download_pdf: "https://drive.google.com/file/d/1Cep2mKrqfzy-kqY1fkWMtxpiXWsrvRBd/view?usp=sharing"
 url_read: "https://www.outsystems.com/blog/posts/top-10-devops-articles-past-year/"
 ---

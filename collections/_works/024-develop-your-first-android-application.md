@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/024-develop-your-first-android-ap
 client: "002"
 roles: ["000","003","005","008","009","011"]
 topics: ["003","018"]
+types: ["006","004"]
 url_play: "https://drive.google.com/file/d/1nONDlBQQlXcz4CBTH789ZdH8VnCjn_A_/view?usp=sharing"
 url_visit: "https://openclassrooms.com/courses/develop-your-first-android-application"
 ---

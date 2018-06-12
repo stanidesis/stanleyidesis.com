@@ -6,6 +6,7 @@ banner_16x9: "/assets/images/collections/works/002-how-to-fill-gaping-hole-leds/
 client: "001"
 roles: ["000","010"]
 topics: ["008"]
+types: ["000","013"]
 url_download_pdf: "https://drive.google.com/file/d/1tL40_yoJeisebOtWI7KdlPqX5KWQ1asS/view"
 url_read: "https://www.outsystems.com/blog/how-to-fill-a-gaping-hole-with-2304-leds.html"
 ---
