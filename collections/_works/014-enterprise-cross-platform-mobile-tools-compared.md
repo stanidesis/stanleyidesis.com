@@ -23,6 +23,6 @@ I generated a long list of tools and researched each one. I summarized how each 
 
 ## The Result
 
-Against my wishes, the post was ultimately split into three: free, small-budget, and enterprise mobile development tools. Despite the significant draw-back of limiting each list to a budget ('small-budget' and 'enterprise' were not associated with searches for cross-platform mobile development), the free piece performed exceptionally well.
+Against my wishes, the post was ultimately split into three: <a data-resource="work" data-work="012">free</a>, <a data-resource="work" data-work="013">small-budget</a>, and enterprise mobile development tools. Despite the significant draw-back of limiting each list to a budget ('small-budget' and 'enterprise' were not associated with searches for cross-platform mobile development), the free piece performed exceptionally well.
 
 As of this writing, the free comparison piece [ranks 5th for 'cross-platform mobile development,'](/assets/images/collections/works/012-free-cross-platform-madp-tools-compared/cross-platform-mobile-results.png) a term which receives 2,900+ monthly searches.
