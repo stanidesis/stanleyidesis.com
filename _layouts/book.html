@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{% for current_book in site.books %}
+  {% if current_book.id == page.book_id %}
+  {% assign book = current_book %}
+  {% break %}
+  {% endif %}
+{% endfor %}
+<!-- Hero Section -->
+<section class="section hero is-light is-bold">
+  <div class="container">
+  <div class="columns is-vcentered">
+    <div class="column is-one-quarter">
+      <figure class="image is-2by3">
+        <img src="{{book.url_cover_2x3}}">
+      </figure>
+    </div>
+    <div class="column is-three-quarters">
+      <h1 class="title is-1">{{book.title}}</h1>
+      <h2 class="subtitle is-4">{{book.subtitle}}</h2>
+    </div>
+  </div>
+</div>
+</section>
