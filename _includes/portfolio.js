@@ -86,7 +86,6 @@ function revealModalWith(work) {
     revealModalWith(window.allWorks[parseInt($(this).attr('data-work'))]);
   });
   $modal.toggleClass('is-active');
-
 };
 
 /* Use current filters to create a new URL state */

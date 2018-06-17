@@ -43,6 +43,7 @@ defaults:
 
 collections_dir: collections
 collections:
+- books
 - posts
 - works
 - work-clients

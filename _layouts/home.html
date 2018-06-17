@@ -95,8 +95,16 @@ layout: default
   <div class="hero-body">
     <div class="container">
       <div class="columns is-vcentered">
-        <div class="column is-2 is-offset-one-third">
-          <a href="/">
+        <div class="column is-3 is-offset-one-quarter">
+          {% assign good_content = site.books | first %}
+          <a data-target="book-modal"
+            data-url-cover-2x3="{{good_content.url_cover_2x3}}"
+            data-url-kindle="{{good_content.url_kindle}}"
+            data-url-google-play="{{good_content.url_google_play}}"
+            data-url-kobo="{{good_content.url_kobo}}"
+            data-url-bn="{{good_content.url_bn}}"
+            data-url-paperback="{{good_content.url_paperback}}"
+          >
             <figure id="home-good-content-cover" class="image is-2by3">
               <img src="/assets/images/collections/books/good-content/good-content-cover-thumbnail.png">
             </figure>
@@ -109,7 +117,14 @@ layout: default
           <br />
           <div class="buttons">
             <p class="control">
-              <a class="button is-primary is-rounded">
+              <a class="button is-primary is-rounded" data-target="book-modal"
+                data-url-cover-2x3="{{good_content.url_cover_2x3}}"
+                data-url-kindle="{{good_content.url_kindle}}"
+                data-url-google-play="{{good_content.url_google_play}}"
+                data-url-kobo="{{good_content.url_kobo}}"
+                data-url-bn="{{good_content.url_bn}}"
+                data-url-paperback="{{good_content.url_paperback}}"
+              >
                 Read Now
               </a>
             </p>
@@ -122,3 +137,7 @@ layout: default
     </div>
   </div>
 </section>
+{%- include book-modal.html -%}
+<script type="text/javascript">
+{% include home.js %}
+</script>
