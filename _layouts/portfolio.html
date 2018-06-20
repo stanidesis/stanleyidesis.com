@@ -5,22 +5,21 @@ layout: default
 <section class="section hero is-medium has-background-primary">
   <div class="hero-body">
     <div class="container">
-      <h1 class="title has-text-white">Portfolio</h1>
+      <h1 class="title is-1 has-text-white">Portfolio</h1>
       <!-- TODO: connect that link to reveal the Browji modal -->
-      <h3 class="subtitle has-text-light">A collection of my work: I'm proud of some, happy with others, ashamed of <a class="has-text-white browji-link" title="Oh boy">this one</a>. Enjoy.</h3>
+      <h3 class="subtitle is-3 has-text-light">A collection of my work: I'm proud of some, happy with others, and ashamed of <a class="has-text-white browji-link" title="Oh boy">this one</a>.<br />Enjoy.</h3>
     </div>
   </div>
 </section>
 <!-- Filter Section -->
-<section class="section hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
+<section class="section">
+  <div class="container">
       <h2 class="subtitle is-3">Filter</h2>
       <div id="portfolio-types" class="is-invisible"
         {% assign sorted_types = site.work-types | sort: "id" %}
         data-types="{% for type in sorted_types %}{{type.name}},{% endfor %}">
       </div>
-      <div class="columns is-vcentered is-mobile is-multiline">
+      <div class="columns is-vcentered is-multiline">
         <!-- Roles -->
         <div id="dropdown-roles" class="dropdown column is-narrow-desktop is-11-mobile">
           <div class="dropdown-trigger">
@@ -90,7 +89,6 @@ layout: default
         </div>
       </div>
     </div>
-  </div>
 </section>
 <br \>
 <section class="section">

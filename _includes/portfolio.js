@@ -174,7 +174,9 @@ function revealClearFilterButtonIfNecessary() {
   if (window.filteredRole > -1 || window.filteredWork > -1 ||
      window.filteredTopic > -1 || window.filteredClient > -1 ||
      window.filteredType > -1) {
-    $('#clear-filter-button').fadeIn();
+    var $clearFilterButton = $('#clear-filter-button');
+    /* Reveal it, then hide it with jQuery, then fade it in baby. Yes, thsi works */
+    $clearFilterButton.removeClass('is-invisible').hide(0, function() {$clearFilterButton.fadeIn()});
     return;
   }
 };
@@ -219,7 +221,7 @@ function filterWorks() {
   }
 
   /* If we make it down here, the filters are bad, reveal everything */
-  $('.column.is-one-quarter').show();
+  $(PORTFOLIO_COLUMN_SELECTOR).show();
 };
 
 window.dependenciesReady = function() {
@@ -278,7 +280,7 @@ window.dependenciesReady = function() {
   });
 
   var $clearFilterButton = $('#clear-filter-button');
-  $clearFilterButton.hide();
+  $clearFilterButton.addClass('is-invisible');
   /* Clear the filter */
   $clearFilterButton.click(function() {
     window.filteredRole = -1;
@@ -290,7 +292,10 @@ window.dependenciesReady = function() {
     pushNewURL();
     updateActiveDropdownItems();
     filterWorks();
-    $(this).fadeOut();
+    $(this).fadeOut(function() {
+      $(this).addClass('is-invisible');
+      $(this).show();
+    });
   });
 
   /* Load all works */
