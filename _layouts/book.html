@@ -7,19 +7,89 @@ layout: default
   {% break %}
   {% endif %}
 {% endfor %}
-<!-- Hero Section -->
-<section class="section hero is-light is-bold">
+<main class="book-main">
+  <div class="book-nav-background"></div>
+  <!-- Content -->
   <div class="container">
-  <div class="columns is-vcentered">
-    <div class="column is-one-quarter">
-      <figure class="image is-2by3">
-        <img src="{{book.url_cover_2x3}}">
+    <!-- This class wraps the two content panes -->
+    <div class="book-duo">
+      <!-- Left Nav -->
+      <aside class="book-nav">
+        <div class="book-nav-content">
+          <figure class="image is-2x3 book-nav-cover">
+            <img src="{{book.url_cover_2x3}}">
+          </figure>
+          <div>
+            <h2 class="title is-5">{{book.title}}</h2>
+            <h3 class="subtitle is-6 has-text-weight-light">{{book.subtitle}}</h3>
+          </div>
+          <hr>
+          <a class="button is-primary is-rounded book-nav-button" data-target="book-modal"
+            data-url-cover-2x3="{{book.url_cover_2x3}}"
+            data-url-kindle="{{book.url_kindle}}"
+            data-url-google-play="{{book.url_google_play}}"
+            data-url-kobo="{{book.url_kobo}}"
+            data-url-bn="{{book.url_bn}}"
+            data-url-paperback="{{book.url_paperback}}">
+            <span class="icon is-small">
+              <i class="fas fa-book-open"></i>
+            </span>
+            <span>Read</span>
+          </a>
+          <a class="button is-primary is-rounded is-outlined book-nav-button">
+            <span class="icon is-small">
+              <i class="fas fa-file-pdf"></i>
+            </span>
+            <span>Sample</span>
+          </a>
+        </div>
+      </aside>
+      <div class="book-content">
+        <h1 class="title is-2">{{book.title}}</h1>
+        <h3 class="subtitle is-5">{{book.subtitle}}</h3>
+        <div class="content">
+          {{book.content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="container">
+<div class="book-nav-mobile">
+  <div class="columns is-mobile is-vcentered is-variable is-2">
+    <div class="column is-one-fifth">
+      <figure class="image is-2x3">
+        <img src="{{book.url_cover_thumb_2x3}}">
       </figure>
     </div>
-    <div class="column is-three-quarters">
-      <h1 class="title is-1">{{book.title}}</h1>
-      <h2 class="subtitle is-4">{{book.subtitle}}</h2>
+    <div class="column is-two-fifths">
+      <h2 class="title is-7">{{book.title}}</h2>
+      <h3 class="subtitle is-7">{{book.subtitle}}</h3>
+    </div>
+    <div class="column">
+      <a class="button is-primary is-rounded is-small book-nav-mobile-button" data-target="book-modal"
+        data-url-cover-2x3="{{book.url_cover_2x3}}"
+        data-url-kindle="{{book.url_kindle}}"
+        data-url-google-play="{{book.url_google_play}}"
+        data-url-kobo="{{book.url_kobo}}"
+        data-url-bn="{{book.url_bn}}"
+        data-url-paperback="{{book.url_paperback}}">
+        <span class="icon is-small">
+          <i class="fas fa-book-open"></i>
+        </span>
+        <span>Read</span>
+      </a>
+      <a class="button is-primary is-rounded is-outlined is-small book-nav-mobile-button">
+        <span class="icon is-small">
+          <i class="fas fa-file-pdf"></i>
+        </span>
+        <span>Sample</span>
+      </a>
     </div>
   </div>
 </div>
-</section>
+</div>
+{%- include book-modal.html -%}
+<script type="text/javascript">
+{% include book.js %}
+</script>
