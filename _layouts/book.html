@@ -44,12 +44,16 @@ layout: default
           </a>
         </div>
       </aside>
-      <div class="book-content">
-        <h1 class="title is-2">{{book.title}}</h1>
-        <h3 class="subtitle is-5">{{book.subtitle}}</h3>
-        <div class="content">
-          {{book.content}}
+      <div class="book-content columns">
+        <div class="column">
+          <h1 class="title is-2">{{book.title}}</h1>
+          <h3 class="subtitle is-5">{{book.subtitle}}</h3>
+          <div class="content">
+            {{book.content}}
+          </div>
         </div>
+        <!-- Gutter -->
+        <div class="column is-4 is-hidden-mobile"></div>
       </div>
     </div>
   </div>
