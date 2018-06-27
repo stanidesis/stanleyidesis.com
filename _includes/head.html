@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {%- assign favicon_url = site.url -%}
-  {%- if jekyll.environment == 'development' -%}
+  {%- if site.environment == 'dev' -%}
     {%- assign favicon_url = '' -%}
   {%- endif -%}
 
@@ -23,7 +23,7 @@
   <!-- Loadjs: the only embedded js dependency -->
   <script src="/js/loadjs.min.js"></script>
   <!-- Load Js Dependencies -->
-  {%- if jekyll.environment == 'production' -%}
+  {%- if site.environment == 'prod' -%}
   <script>
     loadjs('https://www.googletagmanager.com/gtag/js?id=UA-37480432-6');
     window.dataLayer = window.dataLayer || [];

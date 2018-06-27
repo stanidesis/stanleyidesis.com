@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+environment: prod
 title: "Stanley Idesis: Content Strategist, Author, & Gift From Below"
 email: stan.idesis@gmail.com
 description: >-
@@ -21,7 +22,7 @@ description: >-
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.stanleyidesis.com" # the base hostname & protocol for your site, e.g.  http://example.com
+url: "http://www.stanleyidesis.com" # the base hostname & protocol for your site, e.g.  http://example.com
 rss: "/feed.xml"
 twitter_username: stanleyidesis
 github_username:  stanidesis
