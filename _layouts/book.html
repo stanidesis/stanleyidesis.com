@@ -7,6 +7,78 @@ layout: default
   {% break %}
   {% endif %}
 {% endfor %}
+
+{% assign all_offers = "" %}
+{% if book.url_kindle %}
+  {% capture offer %}
+    {
+      "@type": "Offer",
+      "price": "{{book.price_kindle}}",
+      "priceCurrency": "USD",
+      "url": "{{book.url_kindle}}",
+      "itemOffered": "{{book.full_title}}"
+    }
+  {% endcapture %}
+  {% assign all_offers = all_offers | append: offer | append: "|||" %}
+{% endif %}
+{% if book.url_kindle %}
+  {% capture offer %}
+    {
+      "@type": "Offer",
+      "price": "{{book.price_google_play}}",
+      "priceCurrency": "USD",
+      "url": "{{book.url_google_play}}",
+      "itemOffered": "{{book.full_title}}"
+    }
+  {% endcapture %}
+  {% assign all_offers = all_offers | append: offer | append: "|||" %}
+{% endif %}
+{% if book.url_kobo %}
+  {% capture offer %}
+    {
+      "@type": "Offer",
+      "price": "{{book.price_kobo}}",
+      "priceCurrency": "USD",
+      "url": "{{book.url_kobo}}",
+      "itemOffered": "{{book.full_title}}"
+    }
+  {% endcapture %}
+  {% assign all_offers = all_offers | append: offer | append: "|||" %}
+{% endif %}
+{% if book.url_bn %}
+  {% capture offer %}
+    {
+      "@type": "Offer",
+      "price": "{{book.price_bn}}",
+      "priceCurrency": "USD",
+      "url": "{{book.url_bn}}",
+      "itemOffered": "{{book.full_title}}"
+    }
+  {% endcapture %}
+  {% assign all_offers = all_offers | append: offer | append: "|||" %}
+{% endif %}
+{% if book.url_paperback %}
+  {% capture offer %}
+    {
+      "@type": "Offer",
+      "price": "{{book.price_paperback}}",
+      "priceCurrency": "USD",
+      "url": "{{book.url_paperback}}",
+      "itemOffered": "{{book.full_title}}"
+    }
+  {% endcapture %}
+  {% assign all_offers = all_offers | append: offer | append: "|||" %}
+{% endif %}
+{% assign all_offers = all_offers | split: "|||" | join: ',' %}
+
+{%
+  include book.schema.html
+  full_title=book.full_title
+  description=page.description
+  url_cover=book.url_cover_2x3
+  isbn=book.isbn
+  offers=all_offers
+%}
 <main class="book-main">
   <div class="book-nav-background"></div>
   <!-- Content -->
@@ -17,7 +89,7 @@ layout: default
       <aside class="book-nav">
         <div class="book-nav-content">
           <figure class="image is-2x3 book-nav-cover">
-            <img src="{{book.url_cover_2x3}}">
+            <img src="{{book.url_cover_2x3}}" alt="{{book.title}} Cover">
           </figure>
           <div>
             <h2 class="title is-5">{{book.title}}</h2>
@@ -67,7 +139,7 @@ layout: default
   <div class="columns is-mobile is-vcentered is-variable is-2">
     <div class="column is-one-fifth">
       <figure class="image is-2x3">
-        <img src="{{book.url_cover_thumb_2x3}}">
+        <img src="{{book.url_cover_thumb_2x3}}" alt="{{book.title}} Cover Thumbnail">
       </figure>
     </div>
     <div class="column is-two-fifths">

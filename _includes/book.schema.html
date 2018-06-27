@@ -1,0 +1,46 @@
+<script type="application/ld+json">
+{ "@context": "http://schema.org",
+ "primaryImageOfPage": {
+   "@type": "ImageObject",
+   "caption": "{{include.full_title}} Cover",
+   "representativeOfPage": "True",
+   "contentUrl": "{{include.url_cover}}"
+ },
+ "@type": "Book",
+ "additionalType": "Product",
+ "name": "{{include.full_title}}",
+ "image": "{{include.url_cover}}",
+ "description": "{{include.description}}",
+ "brand": "Stanley Idesis",
+ "gtin13": "{{include.isbn}}",
+ "offers": [
+   {{include.offers}}
+ ],
+ "bookEdition": "{{include.edition}}",
+ "bookFormat": "{{include.book_format}}",
+ "copyrightYear": "{{include.copyright}}",
+ "copyrightHolder": {
+   "@type": "Person",
+   "name": "Stanley Idesis"
+ },
+ "genre": "{{include.genre}}",
+ "inLanguage": "en-US",
+ "isbn": "{{include.isbn}}",
+ "numberOfPages": "{{include.number_of_pages}}",
+ "thumbnailUrl": "{{include.url_cover_2x3_thumbnail}}",
+ "keywords": "{{include.keywords}}",
+ "datePublished": "{{include.date_published}}",
+ "publisher": {
+   "@type": "Person",
+   "name": "Stanley Idesis"
+ },
+ "author": {
+    "@type": "Person",
+    "name": "Stanley Idesis",
+    "sameAs": [
+        "https://twitter.com/stanleyidesis",
+        "https://github.com/stanidesis"
+    ]
+  }
+ }
+</script>
