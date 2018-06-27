@@ -20,6 +20,6 @@ window.setupBookModal = function() {
     showHideStore($bookModal.find('a.book-modal-kobo-btn'), $link.attr('data-url-kobo'));
     showHideStore($bookModal.find('a.book-modal-paperback-btn'), $link.attr('data-url-paperback'));
     showHideStore($bookModal.find('a.book-modal-bn-btn'), $link.attr('data-url-bn'));
-    $('#book-modal').toggleClass('is-active');
+    $bookModal.toggleClass('is-active');
   });
 }

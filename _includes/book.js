@@ -1,5 +1,6 @@
 window.dependenciesReady = function() {
   window.setupBookModal();
+  window.setupSampleModal();
 
   /* Setup scroll tracking, might move this to nav.js if necessary */
   var $navbar = $('.navbar').first();

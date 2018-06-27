@@ -36,7 +36,11 @@ layout: default
             </span>
             <span>Read</span>
           </a>
-          <a class="button is-primary is-rounded is-outlined book-nav-button">
+          <a class="button is-primary is-rounded is-outlined book-nav-button"
+            data-target="sample-modal"
+            data-url-img-2x3="{{book.url_cover_2x3}}"
+            data-title="{{book.title}}"
+            data-type="book">
             <span class="icon is-small">
               <i class="fas fa-file-pdf"></i>
             </span>
@@ -71,7 +75,8 @@ layout: default
       <h3 class="subtitle is-7">{{book.subtitle}}</h3>
     </div>
     <div class="column">
-      <a class="button is-primary is-rounded is-small book-nav-mobile-button" data-target="book-modal"
+      <a class="button is-primary is-rounded is-small book-nav-mobile-button"
+        data-target="book-modal"
         data-url-cover-2x3="{{book.url_cover_2x3}}"
         data-url-kindle="{{book.url_kindle}}"
         data-url-google-play="{{book.url_google_play}}"
@@ -83,7 +88,11 @@ layout: default
         </span>
         <span>Read</span>
       </a>
-      <a class="button is-primary is-rounded is-outlined is-small book-nav-mobile-button">
+      <a class="button is-primary is-rounded is-outlined is-small book-nav-mobile-button"
+        data-target="sample-modal"
+        data-url-img-2x3="{{book.url_cover_2x3}}"
+        data-title="{{book.title}}"
+        data-type="book">
         <span class="icon is-small">
           <i class="fas fa-file-pdf"></i>
         </span>
@@ -94,6 +103,7 @@ layout: default
 </div>
 </div>
 {%- include book-modal.html -%}
+{%- include sample-modal.html -%}
 <script type="text/javascript">
 {% include book.js %}
 </script>
