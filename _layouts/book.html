@@ -1,0 +1,109 @@
+---
+layout: default
+---
+{% for current_book in site.books %}
+  {% if current_book.id == page.book_id %}
+  {% assign book = current_book %}
+  {% break %}
+  {% endif %}
+{% endfor %}
+<main class="book-main">
+  <div class="book-nav-background"></div>
+  <!-- Content -->
+  <div class="container">
+    <!-- This class wraps the two content panes -->
+    <div class="book-duo">
+      <!-- Left Nav -->
+      <aside class="book-nav">
+        <div class="book-nav-content">
+          <figure class="image is-2x3 book-nav-cover">
+            <img src="{{book.url_cover_2x3}}">
+          </figure>
+          <div>
+            <h2 class="title is-5">{{book.title}}</h2>
+            <h3 class="subtitle is-6 has-text-weight-light">{{book.subtitle}}</h3>
+          </div>
+          <hr>
+          <a class="button is-primary is-rounded book-nav-button" data-target="book-modal"
+            data-url-cover-2x3="{{book.url_cover_2x3}}"
+            data-url-kindle="{{book.url_kindle}}"
+            data-url-google-play="{{book.url_google_play}}"
+            data-url-kobo="{{book.url_kobo}}"
+            data-url-bn="{{book.url_bn}}"
+            data-url-paperback="{{book.url_paperback}}">
+            <span class="icon is-small">
+              <i class="fas fa-book-open"></i>
+            </span>
+            <span>Read</span>
+          </a>
+          <a class="button is-primary is-rounded is-outlined book-nav-button"
+            data-target="sample-modal"
+            data-url-img-2x3="{{book.url_cover_2x3}}"
+            data-title="{{book.title}}"
+            data-type="book">
+            <span class="icon is-small">
+              <i class="fas fa-file-pdf"></i>
+            </span>
+            <span>Sample</span>
+          </a>
+        </div>
+      </aside>
+      <div class="book-content columns">
+        <div class="column">
+          <h1 class="title is-2">{{book.title}}</h1>
+          <h3 class="subtitle is-5">{{book.subtitle}}</h3>
+          <div class="content">
+            {{book.content}}
+          </div>
+        </div>
+        <!-- Gutter -->
+        <div class="column is-4 is-hidden-mobile"></div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="container">
+<div class="book-nav-mobile">
+  <div class="columns is-mobile is-vcentered is-variable is-2">
+    <div class="column is-one-fifth">
+      <figure class="image is-2x3">
+        <img src="{{book.url_cover_thumb_2x3}}">
+      </figure>
+    </div>
+    <div class="column is-two-fifths">
+      <h2 class="title is-7">{{book.title}}</h2>
+      <h3 class="subtitle is-7">{{book.subtitle}}</h3>
+    </div>
+    <div class="column">
+      <a class="button is-primary is-rounded is-small book-nav-mobile-button"
+        data-target="book-modal"
+        data-url-cover-2x3="{{book.url_cover_2x3}}"
+        data-url-kindle="{{book.url_kindle}}"
+        data-url-google-play="{{book.url_google_play}}"
+        data-url-kobo="{{book.url_kobo}}"
+        data-url-bn="{{book.url_bn}}"
+        data-url-paperback="{{book.url_paperback}}">
+        <span class="icon is-small">
+          <i class="fas fa-book-open"></i>
+        </span>
+        <span>Read</span>
+      </a>
+      <a class="button is-primary is-rounded is-outlined is-small book-nav-mobile-button"
+        data-target="sample-modal"
+        data-url-img-2x3="{{book.url_cover_2x3}}"
+        data-title="{{book.title}}"
+        data-type="book">
+        <span class="icon is-small">
+          <i class="fas fa-file-pdf"></i>
+        </span>
+        <span>Sample</span>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+{%- include book-modal.html -%}
+{%- include sample-modal.html -%}
+<script type="text/javascript">
+{% include book.js %}
+</script>

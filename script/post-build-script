@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-cp ../_modules/social-share-kit/dist/js/social-share-kit.min.js ../_site/js/
-cp ../_modules/social-share-kit/dist/css/social-share-kit.css ../_site/css/
-cp -r ../_modules/social-share-kit/dist/fonts ../_site/

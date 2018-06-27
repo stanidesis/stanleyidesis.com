@@ -1,9 +1,15 @@
+---
+layout: compress
+---
 <!DOCTYPE html>
-<html lang="en">
-  {% include head.html %}
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {%- include head.html -%}
   <body>
-    {% include header.html %}
+    {%- include navbar.html -%}
     {{ content }}
-    {% include footer.html %}
+    <!-- Tawk.To API on every page -->
+    {%- if page.tawk_to == true -%}
+      {%- include tawk.to.html -%}
+    {%- endif -%}
   </body>
 </html>

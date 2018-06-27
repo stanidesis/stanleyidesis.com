@@ -1,0 +1,71 @@
+<div class="container">
+  <nav class="navbar is-transparent is-spaced">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/" title="Stanley Idesis: The Out-of-Boxer-Thinker-Er">
+        <img src="/assets/images/stanley-idesis-logo-256x256.png" alt="Stanley Idesis: The Out-of-Boxer-Thinker-Er..." width="28" height="28">
+      </a>
+      <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/portfolio">
+          Portfolio
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Courses
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="/">
+              <p>Coming Soon!</p>
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Workshops
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="/">
+              <p>Coming Soon!</p>
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Books
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            {% for book in site.books | sort %}
+            <a class="navbar-item" href="{{book.id}}">
+              <p><em>{{book.title}}: {{book.subtitle}}</em></p>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% if page.tawk_to == true %}
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <p class="control">
+            <a class="button is-primary" href="javascript:void(Tawk_API.toggle())">
+              <span class="icon">
+                <i class="far fa-comment"></i>
+              </span>
+              <span>Chat with Stanley</span>
+            </a>
+          </p>
+        </div>
+      </div>
+      {% endif %}
+  </nav>
+</div>
+<!-- Activate the hamburger menu after loading the nav bar -->
+<script type="text/javascript">
+{%- include navbar.js -%}
+</script>

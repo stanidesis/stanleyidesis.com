@@ -1,73 +1,76 @@
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: "Stanley Idesis: The Website"
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+environment: prod
+title: "Stanley Idesis: Content Strategist, Author, & Gift From Below"
 email: stan.idesis@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Stanley Idesis is here to rock your world, blow your mind,
-  save your soul, and have you back home by 10. Enter, but please
-  take off your shoes first because we keep things clean here.
+description: >-
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.stanleyidesis.com" # the base hostname & protocol for your site
+url: "http://www.stanleyidesis.com" # the base hostname & protocol for your site, e.g.  http://example.com
 rss: "/feed.xml"
-permalink: pretty
-excerpt_separator: "<!--more-->"
-paginate: 9
-paginate_path: "/writes/page:num/"
-
-# Variables
-owner: "Stanley Idesis"
-
-# Social
-twitter_username: sisedi
-github_username: stanidesis
-facebook_username: levit.natan
-instagram_username: sisedi
-medium_username: sisedi
-youtube_username: stanidesis
-google_plus_username: StanIdesis
-linkedin_username: stanleyidesis
-
-base_twitter: "https://twitter.com/$s"
-base_github: "https://github.com/$s"
-base_facebook: "https://www.facebook.com/$s"
-base_instagram: "https://instagram.com/$s/"
-base_medium: "https://medium.com/@$s"
-base_youtube: "https://www.youtube.com/user/$s/featured"
-base_google_plus: "https://plus.google.com/u/1/+$s/"
-base_linkedin: "https://www.linkedin.com/in/$s"
-
+twitter_username: stanleyidesis
+github_username:  stanidesis
 
 # Build settings
 markdown: kramdown
+plugins:
+  - jekyll-feed
 
-highlighter: rouge
+# Outputting
+timezone: America/Chicago
 
-exclude: [
-  "Gemfile",
-  "Gemfile.lock",
-  "README.md",
-  "travis.yml",
-  ]
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      tawk_to: true
 
-gems: [
-  jekyll-paginate,
-  jekyll-sitemap
-  ]
+collections_dir: collections
+collections:
+- books
+- posts
+- works
+- work-clients
+- work-roles
+- work-topics
+- work-types
 
 sass:
   style: compressed
 
-# Outputting
-timezone: America/Los_Angeles
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  blanklines: false
+  profile: false
+  startings: [html, head, body]
 
-# Colletions
-collections:
-  - videos
-  - apps
-  - employers
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

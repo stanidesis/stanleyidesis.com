@@ -1,6 +1,0 @@
-[submodule "_modules/social-share-kit"]
-	path = _modules/social-share-kit
-	url = https://github.com/darklow/social-share-kit.git
-[submodule "_modules/loadCSS"]
-	path = _modules/loadCSS
-	url = https://github.com/filamentgroup/loadCSS.git

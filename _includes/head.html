@@ -1,89 +1,43 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Favicon -->
-  <!-- For IE 11, Chrome, Firefox, Safari, Opera -->
-  <link rel="icon" href="/images/ico_16.jpg" sizes="16x16" type="image/jpg">
-  <link rel="icon" href="/images/ico_32.jpg" sizes="32x32" type="image/jpg">
-  <link rel="icon" href="/images/ico_48.jpg" sizes="48x48" type="image/jpg">
-  <link rel="icon" href="/images/ico_64.jpg" sizes="62x62" type="image/jpg">
+  {%- assign favicon_url = site.url -%}
+  {%- if site.environment == 'dev' -%}
+    {%- assign favicon_url = '' -%}
+  {%- endif -%}
 
-  <!--
-    Mobile window themeing
-  -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{favicon_url}}/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{favicon_url}}/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="{{favicon_url}}/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{{favicon_url}}/favicon-16x16.png" sizes="16x16" />
+  <meta name="application-name" content="Stanley Idesis"/>
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="{{favicon_url}}/mstile-144x144.png" />
 
-  <!-- Chrome, Firefox OS, Opera and Vivaldi -->
-  <meta name="theme-color" content="#2ECC71">
-  <!-- Windows Phone -->
-  <meta name="msapplication-navbutton-color" content="#2ECC71">
-  <!-- iOS Safari -->
-  <meta name="apple-mobile-web-app-status-bar-style" content="#2ECC71">
+  {%- include seo.html -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {%- feed_meta -%}
 
-  <!-- Setup SEO Variables Up Top -->
-  {% if page.title %}
-    {% assign title = page.title | escape %}
-  {% else %}
-    {% assign title = site.title | escape %}
-  {% endif %}
-  {% if page.excerpt %}
-    {% assign description = page.excerpt | strip_html | strip_newlines | truncate: 160 %}
-  {% else %}
-    {% assign description = site.description %}
-  {% endif %}
-  {% if page.promo-thumb %}
-    {% assign image = page.promo-thumb %}
-  {% else %}
-    {% assign image = "images/ico_64.jpg" | prepend: site.url %}
-  {% endif %}
-  {% assign url = page.url | prepend: site.url %}
-
-  <!-- Important SEO Stuff -->
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}">
-  {% if page.keywords %}
-  <meta name="keywords" content="{{ page.keywords }}">
-  {% endif %}
-  <meta name="author" content="Stanley Idesis">
-
-  <!-- Twitter -->
-  <meta name="twitter:creator" content="{{ site.twitter_username | prepend: '@' }}">
-  <meta name="twitter:url" content="{{ url }}">
-  <meta name="twitter:title" content="{{ title }}">
-  <meta name="twitter:description" content="{{ description }}">
-  <meta name="twitter:image" content="{{ image }}">
-
-  <!-- Facebook OpenGraph -->
-  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-  <meta property="og:url" content="{{ url }}">
-  <meta property="og:title" content="{{ title }}">
-  <meta property="og:description" content="{{ description }}">
-  <meta property="og:image" content="{{ image }}">
-
-  <!-- Google+ -->
-  <meta itemprop="name" content="{{ title }}">
-  <meta itemprop="description" content="{{ description }}">
-  <meta itemprop="image" content="{{ image }}">
-
-  <!-- Apple/iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
-
-  <!-- loadCSS -->
-  <link rel="preload" href="{{ '/css/main.css' | prepend: site.baseurl }}" as="style" onload="this.rel='stylesheet'; shiftContentUnderHeader();">
-  <noscript><link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}"></noscript>
-  {% include shift_content_under_header.html %}
-
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.rss | prepend: site.url }}">
-
-  {% if JEKYLL.ENVIRONMENT != "development" %}
-  <!-- Google Analytics -->
-  <script async type="text/javascript" src="/js/google-analytics.js"></script>
-  {% endif %}
-
-  <!-- loadCSS -->
-  {% include load_css_inline.html %}
+  <!-- Loadjs: the only embedded js dependency -->
+  <script src="/js/loadjs.min.js"></script>
+  <!-- Load Js Dependencies -->
+  {%- if site.environment == 'prod' -%}
+  <script>
+    loadjs('https://www.googletagmanager.com/gtag/js?id=UA-37480432-6');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-37480432-6');
+  </script>
+  {%- endif -%}
+  <script>
+    loadjs(['https://use.fontawesome.com/releases/v5.0.13/js/all.js',
+            'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'], function() {
+              if (window.dependenciesReady) {
+                window.dependenciesReady();
+              }
+            });
+  </script>
 </head>
