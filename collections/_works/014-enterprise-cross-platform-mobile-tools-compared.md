@@ -4,7 +4,7 @@ subtitle: "A Comparison of Enterprise Mobile Cross-Platform Tools"
 thumbnail_3x2: "/assets/images/collections/works/014-enterprise-cross-platform-madp-tools-compared/3x2.png"
 banner_16x9: "/assets/images/collections/works/014-enterprise-cross-platform-madp-tools-compared/16x9.png"
 client: "001"
-roles: ["001","004"]
+roles: ["000","004"]
 topics: ["003","004"]
 types: ["000","013"]
 url_download_pdf: "https://drive.google.com/file/d/1JkDPlADFIenm5LoKmPdO6pxPXH6-EHJm/view?usp=sharing"

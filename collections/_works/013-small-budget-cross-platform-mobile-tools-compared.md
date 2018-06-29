@@ -4,7 +4,7 @@ subtitle: "A Comparison of Small Budget Mobile Cross-Platform Tools"
 thumbnail_3x2: "/assets/images/collections/works/013-small-budget-cross-platform-madp-tools-compared/3x2.png"
 banner_16x9: "/assets/images/collections/works/013-small-budget-cross-platform-madp-tools-compared/16x9.png"
 client: "001"
-roles: ["001","004"]
+roles: ["000","004"]
 topics: ["003","004"]
 types: ["000","013"]
 url_download_pdf: "https://drive.google.com/file/d/1QjoeSwltN35hQjbQZAMJQU7tSwpKo18M/view"
