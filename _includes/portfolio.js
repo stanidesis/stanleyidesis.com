@@ -86,6 +86,8 @@ function revealModalWith(work) {
     revealModalWith(window.allWorks[parseInt($(this).attr('data-work'))]);
   });
   $modal.toggleClass('is-active');
+  window.activeWork = work.index;
+  pushNewURL();
 };
 
 /* Use current filters to create a new URL state */
@@ -101,13 +103,16 @@ function pushNewURL() {
     newUrl += '&topic=' + window.filteredTopic;
   }
   if (window.filteredWork > -1) {
-    newUrl += '$work=' + window.filteredWork;
+    newUrl += '&work=' + window.filteredWork;
+  }
+  if (window.activeWork > -1) {
+    newUrl += '&active=' + window.activeWork;
   }
   window.history.pushState('', '', newUrl);
 };
 
 /* Uses the current URL to update stored filters */
-function updateFilterFromURL() {
+function initFromURL() {
   var query = window.location.search.substring(1);
   var paramsFromURL = parse_query_string(query);
   if (paramsFromURL.role && paramsFromURL.role < window.allRoles.length) {
@@ -125,9 +130,16 @@ function updateFilterFromURL() {
   if (paramsFromURL.work && paramsFromURL.work < window.allWorks.length) {
     window.filteredWork = Math.max(-1, paramsFromURL.work);
   }
+  if (paramsFromURL.active && paramsFromURL.active < window.allWorks.length) {
+    window.activeWork = Math.max(-1, paramsFromURL.active);
+  }
   updateActiveDropdownItems();
   revealClearFilterButtonIfNecessary();
   filterWorks();
+
+  if (window.activeWork > -1) {
+    revealModalWith(window.allWorks[window.activeWork]);
+  }
 };
 
 function updateActiveDropdownItems() {
@@ -179,7 +191,7 @@ function revealClearFilterButtonIfNecessary() {
     $clearFilterButton.removeClass('is-invisible').hide(0, function() {$clearFilterButton.fadeIn()});
     return;
   }
-};
+}
 
 /* Pulled from window.filteredRole, ... */
 function filterWorks() {
@@ -231,6 +243,7 @@ window.dependenciesReady = function() {
   window.filteredTopic = -1;
   window.filteredWork = -1;
   window.filteredType = -1;
+  window.activeWork = -1;
 
   /* Load all roles, clients, and topics into objects */
   window.allRoles = pullDataFromDropdown('#dropdown-roles a.dropdown-item');
@@ -305,6 +318,7 @@ window.dependenciesReady = function() {
     var work = {};
     var $work = $(this);
     work.id = $work.attr('data-id');
+    work.index = parseInt(work.id.match(/\d+/g));
     work.title = $work.attr('data-title');
     work.subtitle = $work.attr('data-subtitle');
     work.content = $work.attr('data-output');
@@ -328,11 +342,13 @@ window.dependenciesReady = function() {
     work.urlDownloadPDF = $work.attr('data-url-download-pdf');
     work.urlDownloadPPT = $work.attr('data-url-download-ppt');
     work.urlSource = $work.attr('data-url-source');
-    window.allWorks[parseInt(work.id.match(/\d+/g))] = work;
+    window.allWorks[work.index] = work;
   });
 
   $('.modal-background, .modal-close').click(function() {
     $(this).parent().toggleClass('is-active');
+    window.activeWork = -1;
+    pushNewURL();
   });
 
   /* On Click for each work */
@@ -342,5 +358,5 @@ window.dependenciesReady = function() {
   });
 
   /* Run this once per page load to incorporate a pre-filtered URL */
-  updateFilterFromURL();
+  initFromURL();
 }
