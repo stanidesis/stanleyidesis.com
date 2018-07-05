@@ -15,13 +15,9 @@ layout: default
 <section class="section">
   <div class="container">
       <h2 class="subtitle is-3">Filter</h2>
-      <div id="portfolio-types" class="is-invisible"
-        {% assign sorted_types = site.work-types | sort: "id" %}
-        data-types="{% for type in sorted_types %}{{type.name}},{% endfor %}">
-      </div>
       <div class="columns is-vcentered is-multiline">
         <!-- Roles -->
-        <div id="dropdown-roles" class="dropdown column is-narrow-desktop is-11-mobile">
+        <div id="dropdown-roles" class="dropdown column is-narrow-desktop is-11-mobile is-hidden">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu1">
               <span data-preset="Role">Role</span>
@@ -55,6 +51,25 @@ layout: default
               {% for client in sorted_clients %}
               <a data-choice="{{ client.id }}" data-type="client" class="dropdown-item">{{client.name}}</a>
               {% endfor %}
+            </div>
+          </div>
+        </div>
+        <!-- Types -->
+        <div id="dropdown-types" class="dropdown column is-narrow-desktop is-11-mobile">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+              <span data-preset="Type">Type</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+            <div class="dropdown-content">
+            {% assign sorted_types = site.work-types | sort: "name" %}
+            {% for type in sorted_types %}
+              <a data-choice="{{ type.id }}" data-type="type" class="dropdown-item">{{type.name}}</a>
+            {% endfor %}
             </div>
           </div>
         </div>

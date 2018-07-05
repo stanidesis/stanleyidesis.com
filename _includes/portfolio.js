@@ -102,6 +102,9 @@ function pushNewURL() {
   if (window.filteredTopic > -1) {
     newUrl += '&topic=' + window.filteredTopic;
   }
+  if (window.filteredType > -1) {
+    newUrl += '&type=' + window.filteredType;
+  }
   if (window.filteredWork > -1) {
     newUrl += '&work=' + window.filteredWork;
   }
@@ -153,6 +156,11 @@ function updateActiveDropdownItems() {
   } else if (window.filteredTopic < window.allTopics.length) {
     $(`[data-type='topic'][data-choice*='${window.filteredTopic.toString().padStart(3,'0')}']`).addClass('is-active');
   }
+  if (window.filteredType < 0) {
+    $(`[data-type='type']`).removeClass('is-active');
+  } else if (window.filteredType < window.allTypes.length) {
+    $(`[data-type='type'][data-choice*='${window.filteredType.toString().padStart(3,'0')}']`).addClass('is-active');
+  }
   if (window.filteredClient < 0) {
     $(`[data-type='client']`).removeClass('is-active');
   } else if (window.filteredClient < window.allClients.length) {
@@ -177,6 +185,12 @@ function updateActiveDropdownButtons() {
   $span = $(`#dropdown-topics span[data-preset]`);
   if (window.filteredTopic > -1 && window.filteredTopic < window.allTopics.length) {
     $span.text(`${$span.attr('data-preset')}: ${window.allTopics[window.filteredTopic]}`);
+  } else {
+    $span.text($span.attr('data-preset'));
+  }
+  $span = $(`#dropdown-types span[data-preset]`);
+  if (window.filteredType > -1 && window.filteredType < window.allTypes.length) {
+    $span.text(`${$span.attr('data-preset')}: ${window.allTypes[window.filteredType]}`);
   } else {
     $span.text($span.attr('data-preset'));
   }
@@ -249,7 +263,7 @@ window.dependenciesReady = function() {
   window.allRoles = pullDataFromDropdown('#dropdown-roles a.dropdown-item');
   window.allClients = pullDataFromDropdown('#dropdown-clients a.dropdown-item');
   window.allTopics = pullDataFromDropdown('#dropdown-topics a.dropdown-item');
-  window.allTypes = $('#portfolio-types').attr('data-types').split(',');
+  window.allTypes = pullDataFromDropdown('#dropdown-types a.dropdown-item');
 
   /* Drop-down filter activate/deactivate */
   $('.dropdown button').on('click', function(e) {
@@ -283,6 +297,8 @@ window.dependenciesReady = function() {
       window.filteredRole = paraseIntFromData($(this).attr('data-choice'));
     } else if (type === 'client') {
       window.filteredClient = paraseIntFromData($(this).attr('data-choice'));
+    } else if (type === 'type') {
+      window.filteredType = paraseIntFromData($(this).attr('data-choice'));
     } else {
       window.filteredTopic = paraseIntFromData($(this).attr('data-choice'));
     }
