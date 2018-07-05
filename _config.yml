@@ -24,8 +24,6 @@ github_username:  stanidesis
 
 # Build settings
 markdown: kramdown
-plugins:
-  - jekyll-feed
 
 # Outputting
 timezone: America/Chicago

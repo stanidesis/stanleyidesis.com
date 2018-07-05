@@ -1,10 +1,20 @@
 {%- if page.title -%}
-<title>{{ page.title }}</title>
+  {%- assign title = page.title -%}
 {%- else -%}
-<title>{{ site.title }}</title>
+  {%- assign title = site.title -%}
 {%- endif -%}
+<title>{{site.title}}</title>
+
 {%- if page.description -%}
-<meta name="description" content="{{ page.description }}">
+  {%- assign description = page.description -%}
 {%- else -%}
-<meta name="description" content="{{ site.description }}">
+  {%- assign description = site.description -%}
 {%- endif -%}
+<meta name="description" content="{{description}}">
+
+{%- if page.canonical -%}
+  {%- assign canonical = page.canonical -%}
+{%- else -%}
+  {%- assign canonical = page.url -%}
+{%- endif -%}
+<link rel="canonical" href="{{site.url | append: canonical}}"/>
