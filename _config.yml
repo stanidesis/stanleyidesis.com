@@ -16,7 +16,6 @@
 
 environment: prod
 email: stan.idesis@gmail.com
-baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.stanleyidesis.com" # the base hostname & protocol for your site, e.g.  http://example.com
 rss: "/feed.xml"
 twitter_username: stanleyidesis
