@@ -1,6 +1,6 @@
 ---
 title: "Building an Ethereum Wallet with OutSystems"
-subtitle: "Bitcoin... he's so 🔥 right now"
+subtitle: "Bitcoin... He's So 🔥 Right Now"
 thumbnail_3x2: "/assets/images/collections/works/037-build-an-ethereum-wallet-with-outsystems/3x2.png"
 banner_16x9: "/assets/images/collections/works/037-build-an-ethereum-wallet-with-outsystems/16x9.png"
 client: "001"
