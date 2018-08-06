@@ -43,6 +43,7 @@ collections:
 - work-roles
 - work-topics
 - work-types
+- courses
 
 sass:
   style: compressed
