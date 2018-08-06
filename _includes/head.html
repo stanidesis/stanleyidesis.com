@@ -33,11 +33,21 @@
   </script>
   {%- endif -%}
   <script>
+    window.dependencyCallbacks = [];
+    window.addDependencyCallback = function(callback) {
+      window.dependencyCallbacks.push(callback);
+    };
     loadjs(['https://use.fontawesome.com/releases/v5.0.13/js/all.js',
-            'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'], function() {
-              if (window.dependenciesReady) {
-                window.dependenciesReady();
-              }
-            });
+            'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'],
+            /* Load Animate jQuery Plugin after jQuery */
+            function() {
+              loadjs('/js/animate.css.jquery.js', function() {
+                if (window.dependencyCallbacks.length > 0) {
+                  for (var i = 0; i < window.dependencyCallbacks.length; i++) {
+                    window.dependencyCallbacks[i]();
+                  }
+                }
+              });
+          });
   </script>
 </head>

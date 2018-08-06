@@ -250,7 +250,7 @@ function filterWorks() {
   $(PORTFOLIO_COLUMN_SELECTOR).show();
 };
 
-window.dependenciesReady = function() {
+var initPortfolio = function() {
   /* Let's get filters working */
   window.filteredRole = -1;
   window.filteredClient = -1;
@@ -376,3 +376,5 @@ window.dependenciesReady = function() {
   /* Run this once per page load to incorporate a pre-filtered URL */
   initFromURL();
 }
+
+window.addDependencyCallback(initPortfolio);

@@ -1,3 +1,3 @@
-window.dependenciesReady = function() {
+window.addDependencyCallback(function() {
   window.setupBookModal();
-}
+});

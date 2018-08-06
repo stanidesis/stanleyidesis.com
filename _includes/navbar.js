@@ -1,3 +1,28 @@
+window.addDependencyCallback(function() {
+  var $tawkToButton = $('#navbar-talk-to-stanley');
+  if ($tawkToButton.length) {
+    animateChatButton();
+  }
+});
+
+var animateChatButton = function() {
+  var attentionGetters = [
+    'bounce',
+    'flash',
+    'pulse',
+    'rubberBand',
+    'shake',
+    'swing',
+    'swing',
+    'tada',
+    'wobble',
+    'jello',
+  ];
+  setTimeout(function() {
+     $('#navbar-talk-to-stanley').animateCss(attentionGetters[Math.floor(Math.random() * attentionGetters.length)], animateChatButton);
+  }, 4000);
+};
+
 /* Get all "navbar-burger" elements */
 var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 

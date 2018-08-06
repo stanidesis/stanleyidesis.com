@@ -1,4 +1,4 @@
-window.dependenciesReady = function() {
+window.addDependencyCallback(function() {
   window.setupBookModal();
   window.setupSampleModal();
 
@@ -24,4 +24,4 @@ window.dependenciesReady = function() {
     /* We're on Mobile */
     $('main').css('padding-bottom', $bookNavMobile.outerHeight());
   }
-}
+});
