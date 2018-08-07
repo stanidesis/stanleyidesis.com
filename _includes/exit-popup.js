@@ -1,12 +1,17 @@
+/** When using, remember to supply exitPopupCookie and exitPopupExp */
 window.addDependencyCallback(function() {
   loadjs('/js/glio.min.js', function() {
-    window.exitPopupShown = false;
+    window.exitPopupShown = exitPopupCookie &&
+      Cookies.get(exitPopupCookie);
     var revealExitPopup = function() {
       if (window.exitPopupShown) {
         return;
       }
       /* TODO: Cookie that saves this for a bit... */
       window.exitPopupShown = true;
+      if (exitPopupCookie && exitPopupExp) {
+        Cookies.set(exitPopupCookie, 'shown', {expires: exitPopupExp});
+      }
       setTimeout(function() {
         var $exitPopup = $('#exit-popup');
         $exitPopup.addClass('is-active');

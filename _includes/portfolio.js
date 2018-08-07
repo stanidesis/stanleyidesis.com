@@ -248,9 +248,9 @@ function filterWorks() {
 
   /* If we make it down here, the filters are bad, reveal everything */
   $(PORTFOLIO_COLUMN_SELECTOR).show();
-};
+}
 
-var initPortfolio = function() {
+function initPortfolio() {
   /* Let's get filters working */
   window.filteredRole = -1;
   window.filteredClient = -1;

@@ -38,7 +38,9 @@
       window.dependencyCallbacks.push(callback);
     };
     loadjs(['https://use.fontawesome.com/releases/v5.0.13/js/all.js',
-            'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'],
+            'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+            '/js/js.cookie.js'
+          ],
             /* Load Animate jQuery Plugin after jQuery */
             function() {
               loadjs('/js/animate.css.jquery.js', function() {
