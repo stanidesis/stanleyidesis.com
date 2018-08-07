@@ -16,6 +16,30 @@ $primary-invert: $pink-invert
 
 $link: $pink
 
+.wallpaper
+  background-repeat: no-repeat
+  background-attachment: local
+  background-position: center
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+
+// Empty class required to use background-image.js
+.has-js-background-image
+
+// This class has a big background image and we're going to wait for it before
+// changing opacity
+.js-background-image
+  @extend .wallpaper
+  width: 100%
+  position: absolute
+  opacity: 0
+  -webkit-transition: opacity 1.5s ease-out
+  -moz-transition: opacity 1.5s ease-out
+  -o-transition: opacity 1.5s ease-out
+  transition: opacity 1.5s ease-out
+
 @import "animate"
 @import "bulma"
 @import "base"
@@ -25,3 +49,4 @@ $link: $pink
 @import "sample-modal"
 @import "book"
 @import "navbar"
+@import "post"

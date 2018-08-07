@@ -1,9 +1,8 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
+<article>
+  <!-- <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -11,17 +10,36 @@ layout: default
         {{ page.date | date: date_format }}
       </time>
       {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
-  </div>
-
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
-
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  </div> -->
+  <!-- Header -->
+  <section class="post-hero has-js-background-image" data-js-bg-source="https://images.unsplash.com/photo-1533615807284-cfb6df497523?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=057b629b14c80d148f163e855f1deab1&auto=format&fit=crop&w=2602&q=80" data-js-target-opacity="1">
+    <div class="post-hero-body">
+      <div class="post-hero-container">
+        <a href="{{page.url}}"><h1 class="subtitle is-2 has-text-white-ter post-hero-headline">{{page.headline}}</h1></a>
+      </div>
+    </div>
+  </section>
+  <!-- Byline and Date -->
+  <section class="section">
+    <div class="container">
+      <p class="has-text-weight-light has-text-grey-light">{{page.author}}</p>
+    </div>
+  </section>
+  <!-- Begin Content -->
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        {{content}}
+      </div>
+    </div>
+  </section>
 </article>
+<script>
+{% include post.js %}
+</script>
