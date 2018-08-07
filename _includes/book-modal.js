@@ -6,10 +6,24 @@ function showHideStore($btn, url) {
   }
 }
 
+function showHideBookModal(show) {
+  var $bookModal = $('#book-modal');
+  if (show) {
+    $bookModal.addClass('is-active');
+    $bookModal.children('.modal-background').animateCss('fadeIn');
+    $bookModal.children('.modal-content').animateCss('fadeInUp');
+  } else {
+    $bookModal.children('.modal-content').animateCss('fadeOutDown');
+    $bookModal.children('.modal-background').animateCss('fadeOut', function() {
+      $bookModal.removeClass('is-active');
+    });
+  }
+}
+
 window.setupBookModal = function() {
   /* Hide Book-modal when necessary */
   $('#book-modal').find('.modal-background, .modal-close').click(function() {
-    $(this).parent().toggleClass('is-active');
+    showHideBookModal(false);
   });
   $(`a[data-target='book-modal']`).click(function() {
     var $link = $(this);
@@ -20,6 +34,6 @@ window.setupBookModal = function() {
     showHideStore($bookModal.find('a.book-modal-kobo-btn'), $link.attr('data-url-kobo'));
     showHideStore($bookModal.find('a.book-modal-paperback-btn'), $link.attr('data-url-paperback'));
     showHideStore($bookModal.find('a.book-modal-bn-btn'), $link.attr('data-url-bn'));
-    $bookModal.toggleClass('is-active');
+    showHideBookModal(true);
   });
 }

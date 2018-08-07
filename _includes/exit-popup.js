@@ -16,13 +16,13 @@ window.addDependencyCallback(function() {
         var $exitPopup = $('#exit-popup');
         $exitPopup.addClass('is-active');
         $exitPopup.find('.modal-background').animateCss('fadeIn');
-        $exitPopup.find('.modal-content').animateCss('zoomIn');
+        $exitPopup.find('.modal-content').animateCss('fadeInUp');
       }, 500);
     };
     /* Hide on click/tap outside */
-    $('#exit-popup').find('.modal-background').click(function() {
+    $('#exit-popup').find('.modal-background .modal-close').click(function() {
       $exitPopup = $(this).parent();
-      $exitPopup.find('.modal-content').animateCss('zoomOut');
+      $exitPopup.find('.modal-content').animateCss('fadeOutDown');
       $exitPopup.find('.modal-background').animateCss('fadeOut', function() {
         $exitPopup.removeClass('is-active');
       });

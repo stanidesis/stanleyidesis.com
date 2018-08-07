@@ -86,6 +86,9 @@ function revealModalWith(work) {
     revealModalWith(window.allWorks[parseInt($(this).attr('data-work'))]);
   });
   $modal.toggleClass('is-active');
+  /* Animate */
+  $modal.children('.modal-background').animateCss('fadeIn');
+  $modal.children('.modal-content').animateCss('fadeInUp');
   window.activeWork = work.index;
   pushNewURL();
 };
@@ -362,7 +365,11 @@ function initPortfolio() {
   });
 
   $('.modal-background, .modal-close').click(function() {
-    $(this).parent().toggleClass('is-active');
+    var $modal = $(this).parent();
+    $modal.children('.modal-content').animateCss('fadeOutDown');
+    $modal.children('.modal-background').animateCss('fadeOut', function() {
+        $modal.removeClass('is-active');
+    });
     window.activeWork = -1;
     pushNewURL();
   });

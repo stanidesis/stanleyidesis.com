@@ -3,10 +3,24 @@ function validateEmail(email) {
   return re.test(email);
 }
 
+function showHideSampleModal(show) {
+  var $modal = $('#sample-modal');
+  if (show) {
+    $modal.addClass('is-active');
+    $modal.children('.modal-background').animateCss('fadeIn');
+    $modal.children('.modal-content').animateCss('fadeInUp');
+  } else {
+    $modal.children('.modal-content').animateCss('fadeOutDown');
+    $modal.children('.modal-background').animateCss('fadeOut', function() {
+      $modal.removeClass('is-active');
+    });
+  }
+}
+
 window.setupSampleModal = function() {
   /* Hide Book-modal when necessary */
   $('#sample-modal').find('.modal-background, .modal-close').click(function() {
-    $(this).parent().toggleClass('is-active');
+    showHideSampleModal(false)
   });
 
   $(`a[data-target='sample-modal']`).click(function() {
@@ -48,6 +62,6 @@ window.setupSampleModal = function() {
       }
       $sampleModal.find('button').prop('disabled', !enableSubmit);
     });
-    $sampleModal.toggleClass('is-active');
+    showHideSampleModal(true)
   });
 }
