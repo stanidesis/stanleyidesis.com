@@ -26,15 +26,16 @@ layout: default
     </div>
   </section>
   <!-- Byline and Date -->
+  {%- assign date_format = "%b %-d, %Y" -%}
   <section class="section">
     <div class="container">
-      <p class="has-text-weight-light has-text-grey-light">{{page.author}}</p>
+      <p class="has-text-weight-light has-text-grey-light">{{page.author}} • {{ page.date | date: date_format }}</p>
     </div>
-  </section>
-  <!-- Begin Content -->
-  <section class="section">
+    <br />
+    <br />
+    <!-- Begin Content -->
     <div class="container">
-      <div class="content">
+      <div class="post-content">
         {{content}}
       </div>
     </div>

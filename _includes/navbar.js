@@ -1,11 +1,13 @@
 window.addDependencyCallback(function() {
   var $tawkToButton = $('#navbar-talk-to-stanley');
   if ($tawkToButton.length) {
-    animateChatButton();
+    setTimeout(function() {
+      $tawkToButton.css('opacity', '1').animateCss('jackInTheBox', animateChatButton);
+    },2000);
   }
 });
 
-var animateChatButton = function() {
+function animateChatButton() {
   var attentionGetters = [
     'bounce',
     'flash',
