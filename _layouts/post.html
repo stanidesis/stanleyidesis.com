@@ -18,7 +18,7 @@ layout: default
     {{ content }}
   </div> -->
   <!-- Header -->
-  <section class="post-hero has-js-background-image" data-js-bg-source="https://images.unsplash.com/photo-1533615807284-cfb6df497523?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=057b629b14c80d148f163e855f1deab1&auto=format&fit=crop&w=2602&q=80" data-js-target-opacity="1">
+  <section class="post-hero has-js-background-image" data-js-bg-source="{{page.feature-image-url}}" data-js-target-opacity="1">
     <div class="post-hero-body">
       <div class="post-hero-container">
         <a href="{{page.url}}"><h1 class="subtitle is-2 has-text-white-ter post-hero-headline">{{page.headline}}</h1></a>
@@ -29,18 +29,25 @@ layout: default
   {%- assign date_format = "%b %-d, %Y" -%}
   <section class="section">
     <div class="container">
-      <p class="has-text-weight-light has-text-grey-light">{{page.author}} • {{ page.date | date: date_format }}</p>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • {{ page.date | date: date_format }}</p>
+        </div>
+      </div>
     </div>
     <br />
     <br />
     <!-- Begin Content -->
     <div class="container">
-      <div class="post-content">
-        {{content}}
+      <div class="columns">
+        <div class="column is-8 is-offset-2 post-content">
+          {{content}}
+        </div>
       </div>
     </div>
   </section>
 </article>
+{% include image-modal.html %}
 <script>
 {% include post.js %}
 </script>
