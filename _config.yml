@@ -17,6 +17,10 @@
 environment: prod
 email: stan.idesis@gmail.com
 url: "http://www.stanleyidesis.com" # the base hostname & protocol for your site, e.g.  http://example.com
+# All 3 Required for Blog Postings
+logo_url: "/mstile-144x144.png"
+logo_width: "144"
+logo_height: "144"
 rss: "/feed.xml"
 twitter_username: stanleyidesis
 github_username:  stanidesis

@@ -15,6 +15,6 @@
 {%- if page.canonical -%}
   {%- assign canonical = page.canonical -%}
 {%- else -%}
-  {%- assign canonical = page.url -%}
+  {%- assign canonical = page.url | prepend: site.url -%}
 {%- endif -%}
-<link rel="canonical" href="{{site.url | append: canonical}}"/>
+<link rel="canonical" href="{{canonical}}"/>
