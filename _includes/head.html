@@ -43,7 +43,7 @@
           ],
             /* Load Animate jQuery Plugin after jQuery */
             function() {
-              loadjs('/js/animate.css.jquery.js', function() {
+              loadjs(['/js/animate.css.jquery.js'], function() {
                 if (window.dependencyCallbacks.length > 0) {
                   for (var i = 0; i < window.dependencyCallbacks.length; i++) {
                     window.dependencyCallbacks[i]();

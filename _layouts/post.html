@@ -67,15 +67,26 @@ layout: default
     <br />
     <!-- Begin Content -->
     <div class="container">
-      <div class="columns">
+      <div class="columns is-multiline">
         <div class="column is-8 is-offset-2 post-content">
           {{content}}
+          <hr>
+        </div>
+        <div class="column is-8 is-offset-2 post-share-footer has-text-centered">
+          <a id="share-button"
+             data-target="share-modal"
+             data-share-url="{{page.url | prepend: site.url}}"
+             data-share-title="{{page.title}}"
+             data-share-description="{{page.description}}"
+             data-share-image="{{page.social_image_url}}"
+             class="button is-primary is-large is-rounded">Sharing Is…?</a>
         </div>
       </div>
     </div>
   </section>
 </article>
-{%-include image-modal.html -%}
+{%- include image-modal.html -%}
+{%- include share-modal.html -%}
 <script>
 {%-include post.js -%}
 </script>

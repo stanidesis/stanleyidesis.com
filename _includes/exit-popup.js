@@ -20,7 +20,7 @@ window.addDependencyCallback(function() {
       }, 500);
     };
     /* Hide on click/tap outside */
-    $('#exit-popup').find('.modal-background .modal-close').click(function() {
+    $('#exit-popup').find('.modal-background, .modal-close').click(function() {
       $exitPopup = $(this).parent();
       $exitPopup.find('.modal-content').animateCss('fadeOutDown');
       $exitPopup.find('.modal-background').animateCss('fadeOut', function() {
