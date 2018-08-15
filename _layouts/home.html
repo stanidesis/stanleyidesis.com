@@ -92,8 +92,44 @@ layout: default
     </nav>
   </div>
 </section>
+<!-- The course, of course...  -->
+{%- assign content_that_attracts = site.courses | first -%}
+<section class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-4 is-offset-2">
+          <a href="{{content_that_attracts.course_url}}">
+            <figure class="image is-16by9 shadow-large">
+              <img src="{{content_that_attracts.cover_photo_url}}" alt="Content That Attracts Cover Photo">
+            </figure>
+          </a>
+          <p class="is-size-7 has-text-weight-bold has-text-white-ter">
+            <br />
+            <a href="{{content_that_attracts.course_url}}">
+              <span class="skillshare-pill">A Skillshare Staff Pick!</span>
+            </a>
+          </p>
+        </div>
+        <div class="column is-4">
+          <h2 class="subtitle is-5">A Brand New Course for Marketers</h2>
+          <p class="has-text-weight-light">Skillshare approached me in June with an opportunity to create a course for their platform. Two months later, we released <a href="{{content_that_attracts.course_url}}"><em>{{content_that_attracts.title}}</em></a>, a course designed to help marketers and small-business owners generate content ideas.
+            <br /><br />
+          I'm proud of what we were able to put into this 45-minute class and I think as a student, you will appreciate the abundant use of emojis. 😉🦄</p>
+          <br />
+          <a class="button is-rounded" href="{{content_that_attracts.course_url}}">
+            <span class="icon is-small">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </span>
+            <span>Learn More</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- The book, of course... -->
-<section class="section hero is-light is-bold">
+<section class="hero is-light is-bold">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-vcentered">
@@ -107,13 +143,13 @@ layout: default
             data-url-bn="{{good_content.url_bn}}"
             data-url-paperback="{{good_content.url_paperback}}"
           >
-            <figure id="home-good-content-cover" class="image is-2by3">
+            <figure class="image is-2by3 shadow-large">
               <img src="/assets/images/collections/books/good-content/good-content-cover-thumbnail.png" alt="Good Content cover thumbnail">
             </figure>
           </a>
         </div>
         <div class="column is-one-quarter has-text-justified">
-          <p class="title is-5">I Wrote a Book</p>
+          <h2 class="title is-5">I Wrote a Book</h2>
           <p class="has-text-weight-light">Whoopty-frikkin-do, am I right? <em>Good Content</em> presents a content strategy for people who prefer an honest approach to marketing, content, and human interaction.
           <br /><br />I've put quite a bit of my soul into this book (it's a horcrux), so it has everything you expect from Stanley: insight, zero bullshit, and dad jokes. Mostly dad jokes.</p>
           <br />
