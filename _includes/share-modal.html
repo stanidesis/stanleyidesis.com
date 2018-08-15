@@ -1,0 +1,54 @@
+<!--
+ Provide url to share
+-->
+<div id="share-modal" class="modal">
+  <div class="modal-background faster"></div>
+  <div class="modal-content faster">
+    <article class="box">
+      <figure class="image">
+        <img class="share-modal-gif" src="/assets/images/share-modal/sharing-is-caring.gif">
+      </figure>
+      <br />
+      <div>
+        <p class="subtitle is-size-5 is-size-4-tablet">Share “<a href="{{page.url}}">{{page.title}}</a>” with your friends!
+          <span class="is-size-7 has-text-weight-light"><br /><br />you do <strong>care</strong> about your friends, right…?</span>
+        </p>
+      </div>
+      <br />
+      <div class="columns is-mobile is-multiline">
+        <div class="column is-one-fourth has-text-centered">
+          <a id="share-modal-facebook-btn" class="button is-fullwidth is-rounded is-medium share-modal-facebook-btn" target="_blank">
+            <span class="icon is-medium">
+              <i class="fab fa-facebook"></i>
+            </span>
+          </a>
+        </div>
+        <div class="column is-one-fourth has-text-centered">
+          <a id="share-modal-twitter-btn" class="button is-fullwidth is-rounded is-medium share-modal-twitter-btn" target="_blank">
+            <span class="icon is-medium">
+              <i class="fab fa-twitter"></i>
+            </span>
+          </a>
+        </div>
+        <div class="column is-one-fourth has-text-centered">
+          <a id="share-modal-linkedin-btn" class="button is-fullwidth is-rounded is-medium share-modal-linkedin-btn" target="_blank">
+            <span class="icon is-medium">
+              <i class="fab fa-linkedin"></i>
+            </span>
+          </a>
+        </div>
+        <div class="column is-one-fourth has-text-centered">
+          <a id="share-modal-email-btn" class="button is-fullwidth is-rounded is-medium share-modal-email-btn" target="_blank">
+            <span class="icon is-medium">
+              <i class="fas fa-at"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+<script type="text/javascript">
+{% include share-modal.js %}
+</script>

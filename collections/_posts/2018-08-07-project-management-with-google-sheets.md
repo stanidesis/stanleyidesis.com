@@ -1,13 +1,25 @@
 ---
 layout: post
+
 date_modified: "2018-08-09"
-title: "Easy Project Management with Google Sheets (template included)"
+
+title: "Easy Project Management with Google Sheets (Template Included)"
+
+description: "ProSheets is a free DIY project management template that combines Google Sheets, Google Calendar, and Google Contacts into a project management solution and todo list that you can use on your phone, desktop, tablet, or any device with Calendar access."
 headline: "Manage Your Personal Projects in Google Sheets with this Template"
+
 alt_headline: "Free Template: Project Management with Google Sheets, Calendar, and Contacts"
+
 feature_image_url: "/assets/images/collections/posts/2018-08-07-project-management-with-google-sheets/cover-art.png"
+
+social_image_url: "/assets/images/collections/posts/2018-08-07-project-management-with-google-sheets/prosheets-social-image.png"
+
 author: "Stanley Idesis"
+
 genre: "Project Management"
-permalink: /test/
+
+permalink: /project-management-with-google-sheets-free-template
+
 keywords: "google calendar daily tasks, google calendar tasks list, google tasks google calendar, tasks for google calendar, using tasks in google calendar, diy task, diy tasks, diy things to do, diy to do list, diy to do list template, diy todo list, project management google sheets, project management google sheets template, project management in google sheets, project management using google sheets, project management with google sheets, google tasks on calendar, google sheets task list, google sheets task list template, google sheets task management template, google sheets task manager, google sheets tasks, google sheets todo list, google sheets todo list template"
 ---
 It all began with money problems. I went from juggling a handful of consistently well-paying tasks to suddenly working on several potentially worthless projects overnight, projects I needed to track immediately. But if you’re anything like me, your problem with project management tools and to-do list apps is that you can’t stick to any of them. Sooner or later, you grow weary of upkeep and you forget about ticking off boxes or dragging tiles along your little Kanban board.

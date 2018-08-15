@@ -17,7 +17,7 @@ window.setupImageModal = function() {
   $('#image-modal').find('.modal-background, .modal-close').click(function() {
     showHideImageModal(false);
   });
-  $(`a[data-target='image-modal']`).click(function() {
+  $(`a[data-target="image-modal"]`).click(function() {
     var $link = $(this);
     var $imageModal = $('#image-modal');
     $imageModal.find('img').attr('src', $link.attr('data-image-modal-url'));

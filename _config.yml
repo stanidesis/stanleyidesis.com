@@ -15,6 +15,8 @@
 # in the templates via {{ site.myvariable }}.
 
 environment: prod
+name: "Stanley Idesis: Content Strategist, Author, & Gift From Below"
+description: "Congratulations are in order, visitor, because you have just stumbled across the greatest website description on Earth [citation needed]. What makes Stanley so great? His boundless humility, of course."
 email: stan.idesis@gmail.com
 url: "http://www.stanleyidesis.com" # the base hostname & protocol for your site, e.g.  http://example.com
 # All 3 Required for Blog Postings
