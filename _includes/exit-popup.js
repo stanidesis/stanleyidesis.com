@@ -7,7 +7,6 @@ window.addDependencyCallback(function() {
       if (window.exitPopupShown) {
         return;
       }
-      /* TODO: Cookie that saves this for a bit... */
       window.exitPopupShown = true;
       if (exitPopupCookie && exitPopupExp) {
         Cookies.set(exitPopupCookie, 'shown', {expires: exitPopupExp});
@@ -20,7 +19,7 @@ window.addDependencyCallback(function() {
       }, 500);
     };
     /* Hide on click/tap outside */
-    $('#exit-popup').find('.modal-background .modal-close').click(function() {
+    $('#exit-popup').find('.modal-background, .modal-close').click(function() {
       $exitPopup = $(this).parent();
       $exitPopup.find('.modal-content').animateCss('fadeOutDown');
       $exitPopup.find('.modal-background').animateCss('fadeOut', function() {

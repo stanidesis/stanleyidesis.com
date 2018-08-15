@@ -1,0 +1,28 @@
+
+{% assign exitCourse = site.courses | first %}
+<div id="exit-popup" class="modal">
+  <div class="modal-background fast"></div>
+  <div class="modal-content fast">
+    <article class="box">
+      <h2 class="subtitle is-3 has-text-centered">My Course Is A <strong>Staff Pick</strong>!?</h2>
+      <p>The Skillshare editorial staff has selected my new course as a staff pick, what an honor. Shout-out to Jessica McNavich!<br /><br />
+      <em><a href="{{exitCourse.course_url}}">{{exitCourse.title}}: {{exitCourse.subtitle}}</a></em> is a 45-minute course for small-business owners and marketers who want to increase organic inbound leads through content. 📈🎯👍</p>
+      <br />
+      <div class="has-text-centered">
+        <a class="button is-primary is-rounded is-medium" href="{{exitCourse.course_url}}">
+          <span class="icon is-medium">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </span>
+          <span>Learn More</span>
+        </a>
+      </div>
+    </article>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+<script type="text/javascript">
+/* This merely provides the key and expiration date for this specific popup */
+var exitPopupCookie = 'staff-pick-exit-popup-08-2018';
+var exitPopupExp = 7;
+{% include exit-popup.js %}
+</script>
