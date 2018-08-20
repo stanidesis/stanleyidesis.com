@@ -1,7 +1,7 @@
 ---
 layout: post
 
-date_modified: "2018-08-09"
+date_modified: "2018-08-20"
 
 title: "Easy Project Management with Google Sheets (Template Included)"
 
@@ -141,3 +141,12 @@ The menu doesn’t always appear immediately when you copy and open ProSheets fo
 Thank you for trying out ProSheets and feel free to contact me if you have issues during installation, feature requests, or you want to talk about project management for hours over the phone like a couple of school girls gushing over the cutest boy in class.
 
 The cutest boy is Kevin, btw, Todd is hideous and I can’t believe you like him.
+
+---
+
+#### Changelog
+
+| **Date** | **Update** |
+| :--: | :-- |
+| August 8, 2018 | * Bug Fix: Now catches an error if you delete a Project+Milestone contact from your contacts.<br /><br />* Bug Fix: Deleting a task event that does not exist now supported |
+| August 20, 2018 | * New: Delete Projects and Milestones safely using the new 'Delete' dropdown option.<br /><br />This removes the generated contact info for Project+Milestones when you no longer want to work on them. Use this method rather than deleting the row yourself to keep your contact info accurate.

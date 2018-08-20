@@ -54,12 +54,16 @@ layout: default
     </div>
   </section>
   <!-- Byline and Date -->
-  {%- assign date_format = "%b %-d, %Y" -%}
+  {%- assign date_format = "%B %-d, %Y" -%}
   <section class="section">
     <div class="container">
       <div class="columns">
         <div class="column is-8 is-offset-2">
-          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • {{ page.date | date: date_format }}</p>
+        {%- if page.date_modified -%}
+          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Updated {{ page.date_modified | date: date_format }}</p>
+        {%- else -%}
+          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Published {{ page.date | date: date_format }}</p>
+        {%- endif -%}
         </div>
       </div>
     </div>
