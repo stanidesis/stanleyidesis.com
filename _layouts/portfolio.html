@@ -28,7 +28,7 @@ layout: default
           </div>
           <div class="dropdown-menu" id="dropdown-menu1" role="menu">
             <div class="dropdown-content">
-            {% assign sorted_roles = site.work-roles | sort: "name" %}
+            {% assign sorted_roles = site.work-roles | sort_natural: "name" %}
             {% for role in sorted_roles %}
               <a data-choice="{{ role.id }}" data-type="role" class="dropdown-item">{{role.name}}</a>
             {% endfor %}
@@ -47,7 +47,7 @@ layout: default
           </div>
           <div class="dropdown-menu" id="dropdown-menu2" role="menu">
             <div class="dropdown-content">
-              {% assign sorted_clients = site.work-clients | sort: "name" %}
+              {% assign sorted_clients = site.work-clients | sort_natural: "name" %}
               {% for client in sorted_clients %}
               <a data-choice="{{ client.id }}" data-type="client" class="dropdown-item">{{client.name}}</a>
               {% endfor %}
@@ -66,7 +66,7 @@ layout: default
           </div>
           <div class="dropdown-menu" id="dropdown-menu4" role="menu">
             <div class="dropdown-content">
-            {% assign sorted_types = site.work-types | sort: "name" %}
+            {% assign sorted_types = site.work-types | sort_natural: "name" %}
             {% for type in sorted_types %}
               <a data-choice="{{ type.id }}" data-type="type" class="dropdown-item">{{type.name}}</a>
             {% endfor %}
@@ -85,7 +85,7 @@ layout: default
           </div>
           <div class="dropdown-menu" id="dropdown-menu3" role="menu">
             <div class="dropdown-content">
-              {% assign sorted_topics = site.work-topics | sort: "name" %}
+              {% assign sorted_topics = site.work-topics | sort_natural: "name" %}
               {% for topic in sorted_topics %}
                 <a data-choice="{{ topic.id }}" data-type="topic" class="dropdown-item">{{topic.name}}</a>
               {% endfor %}
