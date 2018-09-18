@@ -46,9 +46,9 @@ layout: default
 -%}
 <article>
   <!-- Header -->
-  <section class="post-hero has-js-background-image" data-js-bg-source="{{page.feature_image_url}}" data-js-target-opacity="1">
+  <section class="hero is-large has-js-background-image" data-js-bg-source="{{page.feature_image_url}}" data-js-target-opacity="1">
     <div class="post-hero-body">
-      <div class="post-hero-container">
+      <div class="container has-text-centered">
         <a href="{{page.url}}"><h1 class="subtitle is-size-4 is-size-2-tablet has-text-white-ter post-hero-headline">{{page.headline}}</h1></a>
       </div>
     </div>
@@ -58,7 +58,7 @@ layout: default
   <section class="section">
     <div class="container">
       <div class="columns">
-        <div class="column is-8 is-offset-2">
+        <div class="column is-6 is-offset-3">
         {%- if page.date_modified -%}
           <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Updated {{ page.date_modified | date: date_format }}</p>
         {%- else -%}
@@ -72,11 +72,11 @@ layout: default
     <!-- Begin Content -->
     <div class="container">
       <div class="columns is-multiline">
-        <div class="column is-8 is-offset-2 post-content">
+        <div class="column is-6 is-offset-3 post-content">
           {{content}}
           <hr>
         </div>
-        <div class="column is-8 is-offset-2 post-share-footer has-text-centered">
+        <div class="column is-6 is-offset-3 post-share-footer has-text-centered">
           <a id="share-button"
              data-target="share-modal"
              data-share-url="{{page.url | prepend: site.url}}"
