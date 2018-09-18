@@ -13,11 +13,29 @@ window.addDependencyCallback(function () {
         $shareButton.attr('keep-animating', 'false');
       }
     });
+    
+    $('div.post-content .post-cta').each(function(which, el) {
+      var $cta = $(this);
+      $cta.one('inview', function(event, isInView) {
+        $cta.css('opacity', 1);
+        $cta.animateCss(getRandomAttentionGetter());
+      });
+    });
   });
   postPostProcessing();
 });
 
 function animateShareButton() {
+  setTimeout(function() {
+    var $shareButton = $('#share-button');
+    if ($shareButton.attr('keep-animating') === 'false') {
+      return
+    }
+    $shareButton.animateCss(getRandomAttentionGetter(), animateShareButton);
+  }, 1000);
+};
+
+function getRandomAttentionGetter() {
   var attentionGetters = [
     'bounce',
     'flash',
@@ -30,15 +48,8 @@ function animateShareButton() {
     'wobble',
     'jello',
   ];
-  setTimeout(function() {
-    var $shareButton = $('#share-button');
-    if ($shareButton.attr('keep-animating') === 'false') {
-      return
-    }
-    $shareButton.animateCss(attentionGetters[Math.floor(Math.random() * attentionGetters.length)],
-      animateShareButton);
-  }, 1000);
-};
+  return attentionGetters[Math.floor(Math.random() * attentionGetters.length)];
+}
 
 function postPostProcessing() {
   /* Adds a dropcap to the first letter */

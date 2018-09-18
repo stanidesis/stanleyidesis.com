@@ -52,6 +52,18 @@ Without further ado, meet ProSheets.
 
 This free Google Sheets project manager relies on three project management staples: projects, milestones, and tasks. I treat projects as large tasks with tangible outcomes. Beneath them, milestones exist to divide large projects into key accomplishments. Finally, each task belongs to a milestone.
 
+<section class="hero is-small has-text-centered post-cta animated slow">
+  <div class="hero-body">
+    <p class="subtitle is-size-4">Start Using ProSheets Now</p>
+    <a class="button is-primary is-rounded is-outlined" href="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4">
+    <span class="icon">
+      <i class="fas fa-arrow-circle-down"></i>
+    </span>
+    <span>Install ProSheets</span>
+    </a>
+  </div>
+</section>
+
 ## Features
 
 **Sheet-to-Calendar Synchronization**
@@ -134,7 +146,19 @@ To do this nifty trick, edit the summary/title of your task Event in any Calenda
 
 **Menu Not Appearing**
 
-The menu doesn’t always appear immediately when you copy and open ProSheets for the first time. Recommended: refresh your browser a few times until you see ‘ProSheets Menu’ appear in the menu bar. If it fails to appear, make a fresh copy of ProSheets and try again
+The menu doesn’t always appear immediately when you copy and open ProSheets for the first time. Recommended: refresh your browser a few times until you see ‘ProSheets Menu’ appear in the menu bar. If it fails to appear, make a fresh copy of ProSheets and try again.
+
+<section class="hero is-small has-text-centered post-cta animated slow">
+  <div class="hero-body">
+    <p class="subtitle is-size-4">ProSheets is Free <span style="text-decoration: underline;">Forever</span></p>
+    <a class="button is-primary is-rounded is-outlined" href="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4">
+    <span class="icon">
+      <i class="fas fa-arrow-circle-down"></i>
+    </span>
+    <span>Install ProSheets</span>
+    </a>
+  </div>
+</section>
 
 ## Final Words
 
