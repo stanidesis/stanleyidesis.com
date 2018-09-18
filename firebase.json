@@ -11,6 +11,7 @@
       "README.md",
       "ROUTER"
     ],
+    "cleanUrls": true,
     "headers": [{
       "source" : "**/*.@(eot|otf|ttf|ttc|woff|font|css|js|jpg|jpeg|gif|png|mp4|webm|ogg)",
       "headers": [{
@@ -64,7 +65,6 @@
         "destination": "https://stanidesis.github.io/random-okr-generator/",
         "type": 301
       }
-    ],
-    "cleanUrls": true
+    ]
   }
 }
