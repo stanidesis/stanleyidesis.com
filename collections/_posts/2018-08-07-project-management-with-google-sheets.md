@@ -175,3 +175,4 @@ The cutest boy is Kevin, btw, Todd is hideous and I can’t believe you like him
 | August 8, 2018 | * Bug Fix: Now catches an error if you delete a Project+Milestone contact from your contacts.<br /><br />* Bug Fix: Deleting a task event that does not exist now supported |
 | August 20, 2018 | * New: Delete Projects and Milestones safely using the new 'Delete' dropdown option.<br /><br />This removes the generated contact info for Project+Milestones when you no longer want to work on them. Use this method rather than deleting the row yourself to keep your contact info accurate.
 | August 27, 2018 | * New: Project+Milestone List now includes Project titles as well in cases where you want a one-off, Milestone-free task. |
+| September 20, 2018 | * Bug Fix: Race condition created by update script should now stop causing problems. Grrr! |
