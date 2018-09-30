@@ -4,11 +4,11 @@ layout: default
 <!-- JSON-LD -->
 {% include home.schema.html %}
 <!-- Hero Section -->
-<section class="section has-background-primary">
+<section class="section">
   <div class="container">
     <div class="columns is-vcentered">
       <div class="column is-one-third has-text-centered-mobile has-text-right-desktop">
-        <h2 class="title is-4 has-text-light">I think outside the box</h2>
+        <h2 class="title is-4">I think <span class="has-text-underlined-primary">outside the box</span></h2>
       </div>
       <div class="column is-one-third">
         <figure class="image is-2by3">
@@ -16,7 +16,7 @@ layout: default
         </figure>
       </div>
       <div class="column is-one-third has-text-centered-mobile has-text-left-desktop">
-        <h2 class="subtitle is-5 has-text-white">Besides, the box was too small.<br />(stupid box)</h2>
+        <h2 class="subtitle is-5">...for now.<br /><span class="is-size-6 has-text-primary">(stupid box)</span></h2>
       </div>
     </div>
   </div>
@@ -40,53 +40,73 @@ layout: default
 <!-- What is Stanley Idesis section -->
 <section class="section">
   <div class="container">
-    <nav class="level">
+    <nav id="talents-level" class="level is-mobile">
       <div class="level-item has-text-centered">
         <div>
-          <span class="icon is-large">
+          <span class="icon is-large"
+          data-tippy="Content Strategist"
+          data-tippy-arrow="true"
+          data-tippy-size="large"
+          data-tippy-animation="shift-away"
+          data-tippy-inertia="true">
             <i class="fas fa-2x fa-filter"></i>
           </span>
-          <p class="heading">Content Strategist</p>
-          <!-- <p class="title">3,456</p> -->
+          <p class="heading is-hidden-mobile">Content Strategist</p>
         </div>
       </div>
       <div class="level-item has-text-centered">
         <div>
-          <span class="icon is-large">
+          <span class="icon is-large"
+          data-tippy="Copywriter & Author"
+          data-tippy-arrow="true"
+          data-tippy-size="large"
+          data-tippy-animation="shift-away"
+          data-tippy-inertia="true">
             <i class="fas fa-2x fa-pencil-alt"></i>
           </span>
-          <p class="heading">Copywriter & Author</p>
-          <!-- <p class="title">3,456</p> -->
+          <p class="heading is-hidden-mobile">Copywriter & Author</p>
         </div>
       </div>
       <div class="level-item has-text-centered">
         <div>
-          <span class="icon is-large">
+          <span class="icon is-large"
+          data-tippy="Developer"
+          data-tippy-arrow="true"
+          data-tippy-size="large"
+          data-tippy-animation="shift-away"
+          data-tippy-inertia="true">
             <i class="fas fa-2x fa-code"></i>
           </span>
-          <p class="heading">Developer</p>
-          <!-- <p class="title">3,456</p> -->
+          <p class="heading is-hidden-mobile">Developer</p>
         </div>
       </div>
       <div class="level-item has-text-centered">
         <div>
-          <span class="icon is-large">
+          <span class="icon is-large"
+          data-tippy="Educator"
+          data-tippy-arrow="true"
+          data-tippy-size="large"
+          data-tippy-animation="shift-away"
+          data-tippy-inertia="true">
             <i class="fas fa-2x fa-graduation-cap"></i>
           </span>
-          <p class="heading">Educator</p>
-          <!-- <p class="title">3,456</p> -->
+          <p class="heading is-hidden-mobile">Educator</p>
         </div>
       </div>
       <div class="level-item has-text-centered">
         <div>
           <span class="icon is-large">
-            <span class="fa-stack fa-lg">
+            <span class="fa-stack fa-lg"
+            data-tippy="Box Not-Fitter-Inner"
+            data-tippy-arrow="true"
+            data-tippy-size="large"
+            data-tippy-animation="shift-away"
+            data-tippy-inertia="true">
               <i class="fas fa-stack-1x fa-box"></i>
               <i class="fas fa-ban fa-stack-2x has-text-danger"></i>
             </span>
           </span>
-          <p class="heading">Box Not-Fitter-Inner</p>
-          <!-- <p class="title">3,456</p> -->
+          <p class="heading is-hidden-mobile">Box Not-Fitter-Inner</p>
         </div>
       </div>
     </nav>
@@ -129,11 +149,11 @@ layout: default
   </div>
 </section>
 <!-- The book, of course... -->
-<section class="hero is-light is-bold">
+<section class="hero is-bold">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-vcentered">
-        <div class="column is-3 is-offset-one-quarter">
+        <div class="column is-3 is-offset-one-quarter is-hidden-mobile">
           {% assign good_content = site.books | first %}
           <a data-target="book-modal"
             data-url-cover-2x3="{{good_content.url_cover_2x3}}"
@@ -149,7 +169,7 @@ layout: default
           </a>
         </div>
         <div class="column is-one-quarter has-text-justified">
-          <h2 class="title is-5">I Wrote a Book</h2>
+          <p class="title is-size-5">I Wrote a Book</p>
           <p class="has-text-weight-light">Whoopty-frikkin-do, am I right? <em>Good Content</em> presents a content strategy for people who prefer an honest approach to marketing, content, and human interaction.
           <br /><br />I've put quite a bit of my soul into this book (it's a horcrux), so it has everything you expect from Stanley: insight, zero bullshit, and dad jokes. Mostly dad jokes.</p>
           <br />
