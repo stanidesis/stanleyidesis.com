@@ -34,6 +34,7 @@ window.setupBookModal = function() {
     showHideStore($bookModal.find('a.book-modal-kobo-btn'), $link.attr('data-url-kobo'));
     showHideStore($bookModal.find('a.book-modal-paperback-btn'), $link.attr('data-url-paperback'));
     showHideStore($bookModal.find('a.book-modal-bn-btn'), $link.attr('data-url-bn'));
+    showHideStore($bookModal.find('a.book-modal-pdf-mobi-epub-btn'), $link.attr('data-url-pdf-mobi-epub'));
     showHideBookModal(true);
   });
 }

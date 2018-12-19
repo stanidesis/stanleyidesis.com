@@ -7,7 +7,8 @@ data-url-kindle,
 data-url-google-play,
 data-url-kobo,
 data-url-paperback,
-data-url-bn
+data-url-bn,
+data-url-pdf-mobi-epub
 
 In window.dependenciesReady, invoke window.setupBookModal
 
@@ -24,28 +25,32 @@ In window.dependenciesReady, invoke window.setupBookModal
         </div>
         <div class="column is-two-thirds">
           <h2 class="subtitle is-4">How do you like to read?</h2>
-            <a class="button is-medium book-modal-kindle-btn" target="_blank">
+            <a class="button book-modal-kindle-btn" target="_blank">
               <img class="book-modal-store-img" src="/assets/images/book-modal/amazon-icon.png">
-              <span>Kindle</span>
+              <span>Amazon</span>
             </a>
-            <a class="button is-medium book-modal-paperback-btn" target="_blank">
-              <img class="book-modal-store-img" src="/assets/images/book-modal/paperback-icon.png">
-              <span>Paperback</span>
-            </a>
-            <a class="button is-medium book-modal-kobo-btn" target="_blank">
+            <a class="button book-modal-kobo-btn" target="_blank">
               <img class="book-modal-store-img" src="/assets/images/book-modal/kobo-icon.png">
               <span>Kobo</span>
             </a>
-            <a class="button is-medium book-modal-google-play-btn" target="_blank">
+            <a class="button book-modal-google-play-btn" target="_blank">
               <img class="book-modal-store-img" src="/assets/images/book-modal/google-play-books-icon.png">
               <span>Play Books</span>
             </a>
-            <a class="button is-medium book-modal-bn-btn" target="_blank">
+            <a class="button book-modal-bn-btn" target="_blank">
               <img class="book-modal-store-img" src="/assets/images/book-modal/nook-icon.png">
               <span>Nook</span>
             </a>
+            <a class="button book-modal-pdf-mobi-epub-btn" target="_blank">
+              <img class="book-modal-store-img" src="/assets/images/book-modal/pdf-icon.png">
+              <span>PDF/MOBI/ePub</span>
+            </a>
+            <a class="button book-modal-paperback-btn" target="_blank">
+              <img class="book-modal-store-img" src="/assets/images/book-modal/paperback-icon.png">
+              <span>Paperback</span>
+            </a>
+          </div>
         </div>
-      </div>
     </article>
   </div>
   <button class="modal-close is-large" aria-label="close"></button>

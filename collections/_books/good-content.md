@@ -10,6 +10,7 @@ url_google_play: "https://play.google.com/store/books/details/Stanley_Idesis_Goo
 url_kobo: "https://www.kobo.com/us/en/ebook/good-content"
 url_bn: "https://www.barnesandnoble.com/w/good-content-stanley-idesis/1128835152?ean=2940162020660"
 url_paperback: "https://www.amazon.com/dp/B07DFTHHCQ"
+url_pdf_mobi_epub: "https://gum.co/good-content"
 price_kindle: "9.99"
 price_google_play: "20.99"
 price_bn: "20.99"
