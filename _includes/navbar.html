@@ -17,9 +17,9 @@
           Portfolio
         </a>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
+          <span class="navbar-link" style="cursor: default">
             Courses
-          </a>
+          </span>
           <div class="navbar-dropdown is-boxed">
             {% for course in site.courses | sort %}
             <a class="navbar-item" target="_blank" href="{{course.course_url}}">
@@ -29,9 +29,9 @@
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
+          <span class="navbar-link" style="cursor: default">
             Resources
-          </a>
+          </span>
           <div class="navbar-dropdown is-boxed">
             {% for post in site.posts | sort %}
             <a class="navbar-item" href="{{post.permalink}}">
@@ -41,9 +41,9 @@
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
+          <span class="navbar-link" style="cursor: default">
             Books
-          </a>
+          </span>
           <div class="navbar-dropdown is-boxed">
             {% for book in site.books | sort %}
             <a class="navbar-item" href="{{book.id}}">
