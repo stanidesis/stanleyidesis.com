@@ -1,0 +1,8 @@
+.triangle {
+	width: 0;
+	height: 0;
+	border-radius: .3rem;
+	border-style: solid;
+	border-width: 1.2rem .8rem 0 .8rem;
+	border-color: $primary transparent transparent transparent;
+}

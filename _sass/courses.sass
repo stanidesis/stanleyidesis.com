@@ -1,0 +1,51 @@
+#courses-full-story
+    max-height: 0rem
+    overflow: hidden
+    transition: max-height .5s ease-in-out
+
+#courses-full-story-separator
+    cursor: pointer
+
+#courses-full-story-icon
+    @extend .triangle
+    opacity: 0
+    margin-left: auto
+    margin-right: auto
+    transition: transform .25s ease-in-out, opacity 1s ease-in-out
+
+.courses-full-story-icon-rotated
+    -webkit-transform: rotate(180deg)
+    -moz-transform: rotate(180deg)
+    -o-transform: rotate(180deg)
+    -ms-transform: rotate(180deg)
+    transform: rotate(180deg)
+
+.courses-separator-column-left,
+.courses-separator-column-right
+    position: relative
+
+.courses-separator-column-left:after
+    position: absolute
+    left: .75rem
+    top: 50%
+    width: calc(100% - 1.5rem)
+    height: .1rem
+    background: $primary
+    border-color: $primary
+    border-width: .1rem
+    border-radius: .2rem
+    content: ""
+    display: block
+
+.courses-separator-column-right:after
+    position: absolute
+    left: .75rem
+    top: 50%
+    width: calc(100% - 1.5rem)
+    height: .1rem
+    background: $primary
+    border-color: $primary
+    border-width: .1rem
+    border-radius: .2rem
+    content: ""
+    display: block
