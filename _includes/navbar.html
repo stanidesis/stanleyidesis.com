@@ -17,9 +17,9 @@
           Portfolio
         </a>
         <div class="navbar-item has-dropdown is-hoverable">
-          <span class="navbar-link" style="cursor: default">
+          <a class="navbar-link" href="/courses">
             Courses
-          </span>
+          </a>
           <div class="navbar-dropdown is-boxed">
             {% for course in site.courses | sort %}
             <a class="navbar-item" target="_blank" href="{{course.course_url}}">

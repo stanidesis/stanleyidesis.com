@@ -41,15 +41,18 @@ defaults:
       tawk_to: true
 
 collections_dir: collections
+
 collections:
-- books
-- posts
-- works
-- work-clients
-- work-roles
-- work-topics
-- work-types
-- courses
+  books:
+  posts:
+  works:
+  work-clients:
+  work-roles:
+  work-topics:
+  work-types:
+  courses:
+    output: true
+    permalink: /courses/:path/
 
 sass:
   style: compressed
