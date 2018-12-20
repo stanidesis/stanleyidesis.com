@@ -18,19 +18,19 @@ window.addDependencyCallback(function() {
   var $fullStorySeparator = $('#courses-full-story-separator');
   $fullStorySeparator.click(function () {
     if (fullStoryExpanded) {
-      /* Reset rotation icon */
-      $fullStoryIcon.removeClass('courses-full-story-icon-rotated'); 
       $fullStoryIcon.attr('keep-animating', 'true');
+      $fullStoryIcon.text('+');
       animateStoryIcon();
       /* Collapse the story */
       $fullStory.css('max-height', '0');
-      fullStoryExpanded = false;     
+      fullStoryExpanded = false;
+      animateStoryIcon();
     } else {
       /* Rotate the icon */
-      $fullStoryIcon.addClass('courses-full-story-icon-rotated');
       $fullStoryIcon.attr('keep-animating', 'false');
       /* Expand the story */
       $fullStory.css('max-height', $fullStory[0].scrollHeight + 'px');
+      $fullStoryIcon.text('-');
       fullStoryExpanded = true;
     }
   });
@@ -41,6 +41,6 @@ function animateStoryIcon() {
   if (fullStoryExpanded || $fullStoryIcon.attr('keep-animating') === 'false') {
     return;
   }
-  $fullStoryIcon.animateCss('fadeInDown');
+  $fullStoryIcon.animateCss('pulse');
   setTimeout(animateStoryIcon, 3000);
 };
