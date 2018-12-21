@@ -62,6 +62,3 @@ But if you’re more than prepared to handle those requirements, read on.
 
 “Great read, perfect for those getting started and for those that have lost their way”  
 \- F. Idesis (that’s my little brother—technically, he’s people)
-
-“[A] very helpful introduction to content marketing […] I walked away with an expanded view on what it means to market yourself in a virtual, shameless world.”  
-\- M. Dynkin

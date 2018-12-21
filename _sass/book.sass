@@ -7,22 +7,6 @@
   +desktop
     padding: 0 $size-3
 
-.book-nav-background
-  bottom: 0
-  left: 0
-  position: absolute
-  right: 50%
-  top: 0
-  // Don't show on mobile
-  +mobile
-    display: none
-
-.book-nav,
-.book-nav-content,
-.book-nav-background,
-.book-nav-mobile
-  background-color: $white-ter
-
 .book-nav
   padding-top: $size-3
   +mobile
@@ -34,7 +18,7 @@
   padding: 0 1.5rem
   position: relative
   max-width: 14rem
-
+  border-right: .1rem $primary solid
   hr
     background-color: $grey-light
 
@@ -57,7 +41,6 @@
   margin-bottom: $size-7
 
 .book-content
-  background-color: $white
   padding: $size-3 $size-3
   +tablet
     flex-grow: 1
@@ -67,6 +50,8 @@
     padding-left: $size-4
 
 .book-nav-mobile
+  border-top: .1rem $primary solid
+  background-color: $white
   padding: 12px 8px
   position: fixed
   bottom: 0
