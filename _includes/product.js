@@ -24,7 +24,7 @@ window.setupProduct = function() {
     var $navMobile = $('.product-nav-mobile').first();
     if ($navMobile.css('display') !== 'none') {
         /* We're on Mobile */
-        $('product-main').css('padding-bottom', $navMobile.outerHeight());
+        $('.product-main').first().css('padding-bottom', $navMobile.outerHeight());
         /* Change Tawk.To behavior */
         window.onTawkLoad = function() {  
             Tawk_API.hideWidget();
