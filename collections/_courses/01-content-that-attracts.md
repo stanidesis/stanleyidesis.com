@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: course
 slug: content-that-attracts
 title: "Content That Attracts"
 subtitle: "Discover Content Ideas and Grow Your Audience"

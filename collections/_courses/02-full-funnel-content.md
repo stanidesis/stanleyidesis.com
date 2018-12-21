@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: course
 slug: full-funnel-content
 title: "Full-Funnel Content"
 subtitle: "A Data-Driven Content Strategy for Humans"

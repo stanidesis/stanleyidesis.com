@@ -1,20 +1,20 @@
-.book-main
+.product-main
   overflow: hidden
   position: relative
 
-.book-duo
+.product-duo
   display: flex
   +desktop
     padding: 0 $size-3
 
-.book-nav
+.product-nav
   padding-top: $size-3
   +mobile
     display: none
   +tablet
     flex: 0 0 (14rem + 1.5rem)
 
-.book-nav-content
+.product-nav-content
   padding: 0 1.5rem
   position: relative
   max-width: 14rem
@@ -22,25 +22,25 @@
   hr
     background-color: $grey-light
 
-.book-nav-cover
+.product-nav-cover
   margin-bottom: $size-4
   -webkit-box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.45)
   -moz-box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.45)
   box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.45)
 
-.book-nav-button,
-.book-nav-mobile-button
+.product-nav-button,
+.product-nav-mobile-button
   display: block
   .icon
     display: inline
 
-.book-nav-button
+.product-nav-button
   margin-bottom: $size-6
 
-.book-nav-mobile-button:first-child
-  margin-bottom: $size-7
+.product-nav-mobile-button:nth-child(2)
+  margin-top: $size-7
 
-.book-content
+.product-content
   padding: $size-3 $size-3
   +tablet
     flex-grow: 1
@@ -49,11 +49,12 @@
     margin-left: -$size-4
     padding-left: $size-4
 
-.book-nav-mobile
+.product-nav-mobile
   border-top: .1rem $primary solid
   background-color: $white
   padding: 12px 8px
   position: fixed
   bottom: 0
+  width: 100%
   +tablet
     display: none

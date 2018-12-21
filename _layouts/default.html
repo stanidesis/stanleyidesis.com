@@ -9,9 +9,7 @@ layout: compress
     {%- include navbar.html -%}
     {{ content }}
     <!-- Tawk.To API on every page -->
-    {%- if page.tawk_to == true -%}
-      {%- include tawk.to.html -%}
-    {%- endif -%}
+    {%- include tawk.to.html -%}
   </body>
 </html>
 {% include staff-pick-exit-popup.html %}

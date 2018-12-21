@@ -33,12 +33,13 @@ markdown: kramdown
 # Outputting
 timezone: America/Chicago
 
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      tawk_to: true
+# For hiding tawk_to, originally...
+# defaults:
+#   -
+#     scope:
+#       path: ""
+#     values:
+#       tawk_to: visible
 
 collections_dir: collections
 

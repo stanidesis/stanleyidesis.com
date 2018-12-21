@@ -1,0 +1,79 @@
+---
+layout: default
+---
+<main class="product-main">
+  <!-- Content -->
+  <div class="container">
+    <!-- This class wraps the two content panes -->
+    <div class="product-duo">
+      <!-- Left Nav -->
+      <aside class="product-nav">
+        <div class="product-nav-content">
+          <figure class="image is-16x9 product-nav-cover">
+            <img src="/{{page.cover_photo_url}}" alt="{{page.title}} Cover">
+          </figure>
+          <div>
+            <h2 class="title is-5">{{page.title}}</h2>
+            <h3 class="subtitle is-6 has-text-weight-light">{{page.subtitle}}</h3>
+          </div>
+          <hr>
+          <a class="button is-primary is-rounded product-nav-button">
+            <span class="icon is-small">
+              <i class="fas fa-shopping-cart"></i>
+            </span>
+            <span>Buy</span>
+          </a>
+          {%- if page.course_skillshare_url -%}
+          <a class="button is-primary is-rounded is-outlined is-small product-nav-button">
+            <span class="icon is-small">
+              <i class="fas fa-laptop"></i>
+            </span>
+            <span>Watch on Skillshare</span>
+          </a>
+          {%- endif -%}
+        </div>
+      </aside>
+      <div class="product-content columns">
+        <div class="column">
+          <h1 class="title is-2">{{page.title}}</h1>
+          <h3 class="subtitle is-5">{{page.subtitle}}</h3>
+          <div class="content">
+            {{page.content}}
+          </div>
+        </div>
+        <!-- Gutter -->
+        <div class="column is-4 is-hidden-mobile"></div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="container product-nav-mobile">
+    <div class="columns is-mobile is-vcentered">
+      <div class="column is-7">
+        <a class="button is-primary is-rounded product-nav-mobile-button"
+        href="{{page.course_gumroad_url}}">
+          <span class="icon is-small">
+            <i class="fas fa-shopping-cart"></i>
+          </span>
+          <span>Buy</span>
+        </a>
+        {%- if page.course_skillshare_url -%}
+        <a class="button is-primary is-rounded is-outlined is-small product-nav-mobile-button"
+          href="{{page.course_skillshare_url}}">
+          <span class="icon is-small">
+            <i class="fas fa-laptop"></i>
+          </span>
+          <span>Watch on Skillshare</span>
+        </a>
+        {%- endif -%}
+      </div>
+      <div class="column has-text-centered">
+        <a href="javascript:void(0);" onclick="needHelpClick(this);" 
+        class="is-block is-size-7 has-text-centered">Have a Question?</a>
+      </div>
+    </div>
+</div>
+<script type="text/javascript">
+{%- include product.js -%}
+{% include course.js %}
+</script>
