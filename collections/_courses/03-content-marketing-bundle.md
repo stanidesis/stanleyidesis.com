@@ -1,5 +1,6 @@
 ---
 layout: post
+slug: content-marketing-bundle
 title: "Content Marketing Bundle"
 subtitle: "Two Courses Combined Into One"
 course_gumroad_url: "https://gum.co/content-marketing-course-bundle"

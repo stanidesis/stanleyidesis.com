@@ -1,7 +1,9 @@
 ---
 layout: post
+slug: content-that-attracts
 title: "Content That Attracts"
 subtitle: "Discover Content Ideas and Grow Your Audience"
+course_skillshare_staff_pick: true
 course_skillshare_url: "https://skl.sh/2Mgq07r"
 course_gumroad_url: "https://gum.co/content-that-attracts"
 cover_photo_url: "assets/images/collections/courses/content-that-attracts/content-that-attracts-cover-photo.png"

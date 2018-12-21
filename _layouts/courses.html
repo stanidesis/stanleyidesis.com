@@ -111,20 +111,38 @@ layout: default
 </section>
 <section class="section">
     <div class="container">
-        <h2 class="title is-4 has-text-centered">Available Courses</h2><br><br>
+        <h2 class="title is-4 has-text-centered">Courses By Stanley</h2><br><br>
         <div class="columns is-multiline">
-            <div class="column is-one-third is-offset-2 courses-available-course">
-                <a href="/courses/content-that-attracts" style="color: inherit">
+            {%- for course in site.courses -%}
+                {%- assign mod = forloop.index0 | modulo: 2 -%}
+                {%- assign offset_class = "" -%}
+                {%- if mod == 0 -%}
+                    {%- assign offset_class = "is-offset-2" -%}
+                {%- endif -%}
+            <div class="column is-one-third {{ offset_class }} courses-available-course">
+                <div style="position: relative">
                     <figure class="image is-16by9">
-                        <img src="/assets/images/collections/courses/content-that-attracts/content-that-attracts-cover-photo.png">
+                        <img src="/{{course.cover_photo_url}}">
                     </figure>
-                    <p class="has-text-weight-semibold is-size-7" style="margin-top: .8rem">
-                        <em>Content That Attracts: Discover Content Ideas and Grow Your Audience</em></p>
-                    <p class="has-text-weight-light is-size-7">
-                        Great for B2Bs, this course helps you discover content ideas by 
-                        studying search results, your competition, and local trends</p>
-                </a>
+                    <p class="has-text-weight-semibold" style="margin-top: .8rem">
+                        {{course.title}}: {{course.subtitle}}
+                    </p>
+                    <p class="has-text-weight-light">{{course.course_pitch}}</p>
+                    <a href="{{course.id}}" class="courses-course-link"></a>
+                </div>
+                {%- if course.course_skillshare_staff_pick -%}
+                <div class="courses-staff-pick-pill">
+                    <figure class="image is-24x24 courses-staff-pick-pill-figure">
+                        <img src="/assets/images/skillshare-logo.jpg">
+                    </figure>
+                    <span class="is-size-7 has-text-white courses-staff-pick-pill-span">Staff Pick</span>
+                    <a href="https://blog.skillshare.com/resources/what-makes-a-staff-pick"
+                    target="_blank"
+                    class="courses-staff-pick-link"></a>
+                </div>
+                {%- endif -%}
             </div>
+            {%- endfor -%}
         </div>
     </div>
 </section>

@@ -22,8 +22,8 @@
           </a>
           <div class="navbar-dropdown is-boxed">
             {% for course in site.courses | sort %}
-            <a class="navbar-item" target="_blank" href="{{course.course_url}}">
-              <p><span class="icon"><i class="fas fa-external-link-alt"></i></span><em> {{course.title | append: ": " | append: course.subtitle}}</em></p>
+            <a class="navbar-item" href="{{course.id}}">
+              <p><em>{{course.title | append: ": " | append: course.subtitle}}</em></p>
             </a>
             {% endfor %}
           </div>

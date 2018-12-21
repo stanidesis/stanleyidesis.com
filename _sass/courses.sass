@@ -55,13 +55,14 @@
     box-sizing: border-box
     vertical-align: middle
 
+    // Borrowed from https://codepen.io/giana/pen/yYBpVY
     &:after, &:before
         box-sizing: inherit
         content: ''
         position: absolute
         width: 0
         height: 0
-        border: .2rem solid transparent
+        border: .1rem solid transparent
         pointer-events: none
 
     // This covers the top & right borders (expands right, then down)
@@ -89,3 +90,30 @@
         border-bottom-color: $primary // Make borders visible
         border-left-color: $primary
         transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s
+
+.courses-staff-pick-pill
+    position: relative
+    display: inline-block
+    background-color: $skillshare
+    border-radius: 100rem
+    padding: .1rem .5rem
+    margin-top: .5rem
+
+.courses-staff-pick-pill-span
+    display: inline-block
+    vertical-align: middle
+    line-height: normal
+    margin-left: .1rem
+
+.courses-staff-pick-pill-figure
+    display: inline-block
+    vertical-align: middle
+    line-height: normal
+
+.courses-staff-pick-link,
+.courses-course-link
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%

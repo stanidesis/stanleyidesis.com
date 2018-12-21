@@ -1,8 +1,10 @@
 ---
 layout: post
+slug: full-funnel-content
 title: "Full-Funnel Content"
 subtitle: "A Data-Driven Content Strategy for Humans"
 course_skillshare_url: "https://skl.sh/2UaqD6B"
+course_skillshare_staff_pick: true
 course_gumroad_url: "https://gum.co/full-funnel-content"
 cover_photo_url: "assets/images/collections/courses/full-funnel-content/full-funnel-content-cover-photo.png"
 course_pitch: "Want to quit stuffing your content calendar with meaningless blogs? This course introduces a strategy that attracts customers, educates them, and nurtures them for repeat business"

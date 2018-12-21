@@ -52,7 +52,7 @@ collections:
   work-types:
   courses:
     output: true
-    permalink: /courses/:path/
+    permalink: /courses/:slug/
 
 sass:
   style: compressed
