@@ -1,0 +1,31 @@
+
+{% assign exitCourse = site.courses[1] %}
+<div id="exit-popup" class="modal">
+  <div class="modal-background fast"></div>
+  <div class="modal-content fast">
+    <article class="box">
+      <h2 class="subtitle is-3 has-text-centered">I've Done It <span class="has-text-weight-semibold">Again</span></h2>
+      <p>My new course, <em><a href="{{exitCourse.id}}">{{exitCourse.title}}: {{exitCourse.subtitle}}</a></em> was honored to receive a Skillshare staff-pick!</p>
+      <br>
+      <p>To celebrate, I've published both of my classes to Gumroad and created a brand new <a href="/course/">Course Page</a>. 
+        Thank you for your support in making these classes a reality!</p><br>
+      <div class="has-text-centered">
+        <a class="button is-primary is-rounded is-medium" href="/courses">
+          <span class="icon is-medium">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </span>
+          <span>Visit The Brand New Courses Page!</span>
+        </a>
+      </div>
+    </article>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+<script type="text/javascript">
+/* This merely provides the key and expiration date for this specific popup */
+var exitPopupCookie = 'exit-popup-3-12-2018';
+var exitPopupExp = 7;
+var defaultBehavior = true; /* Switch to false to force popup to appear every time*/
+{% include exit-popup.js %}
+</script>
+e

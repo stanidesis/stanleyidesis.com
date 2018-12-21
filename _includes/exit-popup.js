@@ -1,8 +1,7 @@
 /** When using, remember to supply exitPopupCookie and exitPopupExp */
 window.addDependencyCallback(function() {
   loadjs('/js/glio.min.js', function() {
-    window.exitPopupShown = exitPopupCookie &&
-      Cookies.get(exitPopupCookie);
+    window.exitPopupShown = exitPopupCookie && Cookies.get(exitPopupCookie) && defaultBehavior;
     var revealExitPopup = function() {
       if (window.exitPopupShown) {
         return;

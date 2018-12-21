@@ -118,18 +118,27 @@ layout: default
   <div class="hero-body">
     <div class="container">
       <div class="columns is-vcentered">
-        <div class="column is-4 is-offset-2">
+        <div class="column is-4 is-offset-2 has-text-centered">
           <a href="{{content_that_attracts.id}}">
             <figure class="image is-16by9 shadow-large">
               <img src="{{content_that_attracts.cover_photo_url}}" alt="Content That Attracts Cover Photo">
             </figure>
           </a>
-          <p class="is-size-7 has-text-weight-bold has-text-white-ter has-text-right-tablet">
-            <br />
-            <a href="{{content_that_attracts.id}}">
-              <span class="skillshare-pill">A Skillshare Staff Pick</span>
-            </a>
-          </p>
+          <br>
+          <div class="courses-staff-pick-pill"
+              data-tippy="Skillshare offers over 20,000 courses, fewer than 1% become Staff Picks -- Click to learn more"
+              data-tippy-arrow="true"
+              data-tippy-size="large"
+              data-tippy-animation="shift-away"
+              data-tippy-inertia="true">
+              <figure class="image is-24x24 courses-staff-pick-pill-figure">
+                  <img src="/assets/images/skillshare-logo.jpg">
+              </figure>
+              <span class="is-size-7 has-text-white courses-staff-pick-pill-span">A Skillshare Staff Pick</span>
+              <a href="https://blog.skillshare.com/resources/what-makes-a-staff-pick"
+              target="_blank"
+              class="courses-staff-pick-link"></a>
+          </div>
         </div>
         <div class="column is-4">
           <h2 class="subtitle is-5">A Brand New Course for Marketers</h2>

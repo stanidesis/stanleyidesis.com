@@ -12,12 +12,39 @@ layout: default
           <figure class="image is-16x9 product-nav-cover">
             <img src="/{{page.cover_photo_url}}" alt="{{page.title}} Cover">
           </figure>
-          <div>
+          <!-- <div>
             <h2 class="title is-5">{{page.title}}</h2>
             <h3 class="subtitle is-6 has-text-weight-light">{{page.subtitle}}</h3>
+          </div> -->
+          {%- if page.course_props -%}
+          <h4>Included In This Course:</h4>
+          <br>
+          <ul class="is-size-7">
+            {% for property in page.course_props %}
+            <li><span class="has-text-weight-semibold">{{property[1]}}</span> {{property[0] | replace: "-", " "}}</li>
+            {% endfor %}
+          </ul>
+          {%- endif -%}
+          {%- if page.course_skillshare_staff_pick -%}
+          <br>
+          <div class="courses-staff-pick-pill course-staff-pick-pill"
+              data-tippy="Skillshare offers over 20,000 courses, fewer than 1% become Staff Picks -- Click to learn more"
+              data-tippy-arrow="true"
+              data-tippy-size="large"
+              data-tippy-animation="shift-away"
+              data-tippy-inertia="true">
+              <figure class="image is-24x24 courses-staff-pick-pill-figure">
+                  <img src="/assets/images/skillshare-logo.jpg">
+              </figure>
+              <span class="is-size-7 has-text-white courses-staff-pick-pill-span">A Skillshare Staff Pick</span>
+              <a href="https://blog.skillshare.com/resources/what-makes-a-staff-pick"
+              target="_blank"
+              class="courses-staff-pick-link"></a>
           </div>
+          {%- endif -%}
           <hr>
-          <a class="button is-primary is-rounded product-nav-button">
+          <a class="button is-primary is-rounded product-nav-button"
+          href="{{page.course_gumroad_url}}">
             <span class="icon is-small">
               <i class="fas fa-shopping-cart"></i>
             </span>
@@ -35,7 +62,11 @@ layout: default
       </aside>
       <div class="product-content columns">
         <div class="column">
-          <h1 class="title is-2">{{page.title}}</h1>
+          {%- if page.course_preview -%}
+          <div class="youtube-player" data-id="{{page.course_preview}}" data-src="/{{page.preview_thumb}}"></div>
+          <hr>
+          {%- endif -%}
+          <h1 class="title is-3">{{page.title}}</h1>
           <h3 class="subtitle is-5">{{page.subtitle}}</h3>
           <div class="content">
             {{page.content}}
@@ -49,7 +80,7 @@ layout: default
 </main>
 <div class="container product-nav-mobile">
     <div class="columns is-mobile is-vcentered">
-      <div class="column is-7">
+      <div class="column is-6">
         <a class="button is-primary is-rounded product-nav-mobile-button"
         href="{{page.course_gumroad_url}}">
           <span class="icon is-small">
@@ -76,4 +107,5 @@ layout: default
 <script type="text/javascript">
 {%- include product.js -%}
 {% include course.js %}
+{% include youtube-player.js %}
 </script>

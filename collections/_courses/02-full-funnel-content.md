@@ -7,8 +7,15 @@ course_skillshare_url: "https://skl.sh/2UaqD6B"
 course_skillshare_staff_pick: true
 course_gumroad_url: "https://gum.co/full-funnel-content"
 cover_photo_url: "assets/images/collections/courses/full-funnel-content/full-funnel-content-cover-photo.png"
+preview_thumb: "assets/images/collections/courses/full-funnel-content/preview-thumb.png"
 course_pitch: "Want to quit stuffing your content calendar with meaningless blogs? This course introduces a strategy that attracts customers, educates them, and nurtures them for repeat business"
-course_preview: "https://www.youtube.com/watch?v=aSCWlp8Zjww"
+course_preview: "aSCWlp8Zjww"
+course_props:
+    Content-Strategy-Worksheet: "1"
+    Video-Lessons: "10"
+    Minutes-of-Video: "53"
+    Slides: "220"
+    Cool-Person-Points: "∞"
 ---
 If you’ve ever sat down to create a content strategy, you probably came face-to-face with a calendar. Empty, numbered squares demanded you fill them with titles for blogs, infographics, videos, presentations, and podcasts.
 

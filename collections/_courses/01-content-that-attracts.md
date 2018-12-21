@@ -7,8 +7,15 @@ course_skillshare_staff_pick: true
 course_skillshare_url: "https://skl.sh/2Mgq07r"
 course_gumroad_url: "https://gum.co/content-that-attracts"
 cover_photo_url: "assets/images/collections/courses/content-that-attracts/content-that-attracts-cover-photo.png"
+preview_thumb: "assets/images/collections/courses/content-that-attracts/preview-thumb.jpg"
 course_pitch: "Great for B2Bs, this course helps you discover content ideas by studying search results, your competition, and local trends"
-course_preview: "https://www.youtube.com/watch?v=aZA_mprIb2A"
+course_preview: "aZA_mprIb2A"
+course_props:
+    Excel-Keyword-Spreadsheet-With-Formulas: "1"
+    Video-Lessons: "10"
+    Minutes-of-Video: "44"
+    Slides: "99"
+    Love: "All of my"
 ---
 Your future reader sighs as her stomach rumbles, she’s dealing with a problem and she’s too embarrassed to ask someone for help — she has nowhere to turn. So she does what we all do: she opens the Internet. She opens Google.
 
