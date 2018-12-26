@@ -16,6 +16,7 @@ course_props:
     Minutes-of-Video: "44"
     Slides: "99"
     Love: "All of my"
+description: "Great for B2Bs, this course helps you discover content ideas by studying search results, your competition, and local trends. Course includes: 10 video lessons, 44 minutes of video, and 99 slides."
 ---
 Your future reader sighs as her stomach rumbles, she’s dealing with a problem and she’s too embarrassed to ask someone for help — she has nowhere to turn. So she does what we all do: she opens the Internet. She opens Google.
 

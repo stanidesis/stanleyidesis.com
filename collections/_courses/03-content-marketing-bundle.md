@@ -13,5 +13,6 @@ course_props:
     Minutes-of-Video: "97"
     Slides: "319"
     Have: "Everything I"
+descrtiption: "Get both of my marketing courses for the low low price of kinda-cheaper-than-buying-them-separately. Trust me, it's a deal of some kind."
 ---
 This bundle saves you money by combining _[Content That Attracts: Discover Content Ideas and Grow Your Audience](/courses/content-that-attracts)_ with _[Full-Funnel Content: A Data-Driven Content Strategy for Humans](/courses/full-funnel-content)_.

@@ -16,6 +16,7 @@ course_props:
     Minutes-of-Video: "53"
     Slides: "220"
     Cool-Person-Points: "∞"
+description: "Want to quit stuffing your content calendar with meaningless blogs? This course introduces a content strategy that attracts customers, educates them, and nurtures them for repeat business. 10 videos, 53 minutes of video, over 200 slides, and more inside."
 ---
 If you’ve ever sat down to create a content strategy, you probably came face-to-face with a calendar. Empty, numbered squares demanded you fill them with titles for blogs, infographics, videos, presentations, and podcasts.
 
