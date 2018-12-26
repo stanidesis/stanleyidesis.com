@@ -33,14 +33,6 @@ markdown: kramdown
 # Outputting
 timezone: America/Chicago
 
-# For hiding tawk_to, originally...
-# defaults:
-#   -
-#     scope:
-#       path: ""
-#     values:
-#       tawk_to: visible
-
 collections_dir: collections
 
 collections:
@@ -53,7 +45,7 @@ collections:
   work-types:
   courses:
     output: true
-    permalink: /courses/:slug/
+    permalink: /:collection/:title
 
 sass:
   style: compressed
