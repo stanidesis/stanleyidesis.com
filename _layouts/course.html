@@ -38,12 +38,12 @@ layout: default
               </figure>
               <span class="is-size-7 has-text-white courses-staff-pick-pill-span">A Skillshare Staff Pick</span>
               <a href="https://blog.skillshare.com/resources/what-makes-a-staff-pick"
-              target="_blank"
               class="courses-staff-pick-link"></a>
           </div>
           {%- endif -%}
           <hr>
           <a class="button is-primary is-rounded product-nav-button"
+          ga-event-category="{{site.ga.categories.course-purchase-intent}}"
           href="{{page.course_gumroad_url}}">
             <span class="icon is-small">
               <i class="fas fa-shopping-cart"></i>
@@ -51,7 +51,9 @@ layout: default
             <span>Buy</span>
           </a>
           {%- if page.course_skillshare_url -%}
-          <a class="button is-primary is-rounded is-outlined is-small product-nav-button">
+          <a class="button is-primary is-rounded is-outlined is-small product-nav-button"
+          ga-event-category="{{site.ga.categories.course-skillshare-intent}}"
+          href="{{page.course_skillshare_url}}">
             <span class="icon is-small">
               <i class="fas fa-laptop"></i>
             </span>
@@ -82,6 +84,7 @@ layout: default
     <div class="columns is-mobile is-vcentered">
       <div class="column is-6">
         <a class="button is-primary is-rounded product-nav-mobile-button"
+        ga-event-category="{{site.ga.categories.course-purchase-intent}}"
         href="{{page.course_gumroad_url}}">
           <span class="icon is-small">
             <i class="fas fa-shopping-cart"></i>
@@ -90,6 +93,7 @@ layout: default
         </a>
         {%- if page.course_skillshare_url -%}
         <a class="button is-primary is-rounded is-outlined is-small product-nav-mobile-button"
+        ga-event-category="{{site.ga.categories.course-skillshare-intent}}"
           href="{{page.course_skillshare_url}}">
           <span class="icon is-small">
             <i class="fas fa-laptop"></i>

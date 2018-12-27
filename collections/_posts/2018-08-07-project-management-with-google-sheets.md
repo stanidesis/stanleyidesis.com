@@ -55,7 +55,9 @@ This free Google Sheets project manager relies on three project management stapl
 <section class="hero is-small has-text-centered post-cta animated slow">
   <div class="hero-body">
     <p class="subtitle is-size-4">Start Using ProSheets Now</p>
-    <a class="button is-primary is-rounded is-outlined" href="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4">
+    <a class="button is-primary is-rounded is-outlined"
+    ga-event-category="{{site.ga.categories.post-cta}}"
+    href="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4">
     <span class="icon">
       <i class="fas fa-arrow-circle-down"></i>
     </span>
@@ -151,7 +153,9 @@ The menu doesn’t always appear immediately when you copy and open ProSheets fo
 <section class="hero is-small has-text-centered post-cta animated slow">
   <div class="hero-body">
     <p class="subtitle is-size-4">ProSheets is Free <span style="text-decoration: underline;">Forever</span></p>
-    <a class="button is-primary is-rounded is-outlined" href="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4">
+    <a class="button is-primary is-rounded is-outlined" 
+    ga-event-category="{{site.ga.categories.post-cta}}"
+    href="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4">
     <span class="icon">
       <i class="fas fa-arrow-circle-down"></i>
     </span>

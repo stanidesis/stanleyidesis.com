@@ -58,6 +58,15 @@ compress_html:
   profile: false
   startings: [html, head, body]
 
+# Google Analytics Constants
+ga:
+  categories:
+    book-purchase-intent: "Outbound Link (Book)"
+    course-purchase-intent: "Outbound Link (Course)"
+    course-skillshare-intent: "Outbound Link (Skillshare)"
+    exit-popup: "Exit Popup"
+    post-cta: "Post CTA"
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

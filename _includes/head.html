@@ -25,11 +25,25 @@
   <!-- Load Js Dependencies -->
   {%- if site.environment == 'prod' -%}
   <script>
-    loadjs('https://www.googletagmanager.com/gtag/js?id=UA-37480432-6');
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-37480432-6');
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-37480432-6', 'auto');
+
+    ga('require', 'eventTracker');
+    ga('require', 'cleanUrlTracker');
+    ga('require', 'outboundLinkTracker', {
+      events: ['click', 'auxclick', 'contextmenu']
+    });
+    ga('require', 'maxScrollTracker', {
+      maxScrollMetricIndex: 1,
+      timeZone: 'America/Chicago'
+    });
+    ga('require', 'pageVisibilityTracker', {
+      visibleThreshold: 3000,
+      sendInitialPageview: true,
+      visibleMetricIndex: 2,
+      timeZone: 'America/Chicago'
+    });
+    loadjs(['https://www.google-analytics.com/analytics.js', '/js/autotrack.js']);
   </script>
   {%- endif -%}
   <script>

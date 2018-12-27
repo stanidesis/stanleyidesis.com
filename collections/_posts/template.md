@@ -36,7 +36,9 @@ CTAs look like...
   <div class="hero-body">
     <!-- Whatever you want can go in hero-body -->
     <p class="subtitle is-size-4">ProSheets is Free <span style="text-decoration: underline;">Forever</span></p>
-    <a class="button is-primary is-rounded is-outlined" href="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4">
+    <a class="button is-primary is-rounded is-outlined" 
+    ga-event-category="{{site.ga.categories.post-cta}}"
+    href="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4">
       <span class="icon">
         <i class="fas fa-arrow-circle-down"></i>
       </span>
