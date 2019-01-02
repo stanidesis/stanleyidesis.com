@@ -20,7 +20,7 @@ window.setupProduct = function() {
         }
     });
 
-    /* Check for mobile nav, fix it in position if necessary */
+    /* Check for mobile nav */
     var $navMobile = $('.product-nav-mobile').first();
     if ($navMobile.css('display') !== 'none') {
         /* We're on Mobile */

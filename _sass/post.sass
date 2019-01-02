@@ -1,7 +1,23 @@
+.post-main
+  overflow: hidden
+  position: relative
+
+.post-duo
+  display: flex
+  
 .post-nav
+  position: relative
+  +mobile
+    display: none
+  +tablet
+    flex: 0 0 (14rem + 1.5rem)
+
+.post-nav-content
+  position: inherit
   border-right: $primary .1rem solid
-  padding-top: 1.5rem
-  padding-bottom: 1.5rem
+  padding: 1.5rem 0
+  +tablet
+    padding-right: 1.5rem
   
 .post-headline
   transition: color .3s ease-in-out

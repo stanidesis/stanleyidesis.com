@@ -44,26 +44,29 @@ layout: default
   description=page.description
   article_body=post_body
 -%}
-<article>
-  <!-- Header -->
-  <section class="hero is-medium">
-    <figure class="image is-16by9">
-      <img src="{{page.feature_image_url}}">
-    </figure>
+<!-- Header -->
+<section class="hero is-medium">
+    <div class="hero-body has-no-padding">
+      <div class="container">
+        <figure class="image is-16by9">
+          <img src="{{page.feature_image_url}}">
+        </figure>
+      </div>
+    </div>
   </section>
-  <section class="section">
-    <!-- Begin Content -->
-    <div class="container">
-      <div class="columns is-multiline">
-        <!-- Nav Column -->
-        <div class="column is-3">
-          <!-- Actual Nav Content -->
-          <div class="post-nav">
-            Weee
-          </div>
+<section class="section post-main">
+  <!-- Begin Content -->
+  <div class="container">
+    <div class="post-duo">
+      <aside class="post-nav">
+        <!-- Actual Nav Content -->
+        <div class="post-nav-content">
+          <p>Wee Wee Wee Wee Wee Wee Wee Wee Wee Wee Wee Wee Wee Wee Wee</p>
         </div>
+      </aside>
+      <div class="columns is-multiline">
         <!-- Content Column -->
-        <div class="column is-6 post-content-column">
+        <article class="column is-8 post-content-column">
           <a href="{{page.url}}"><h1 class="subtitle is-size-4 is-size-2-tablet has-text-grey-dark post-headline">{{page.headline}}</h1></a>
           <br>
           <!-- Byline and Date -->
@@ -79,23 +82,23 @@ layout: default
             {{content}}
           </div>
           <hr>
-        </div>
+        </article>
         <!-- Share Column -->
-        <div class="column is-6 is-offset-3 post-share-footer has-text-centered">
+        <div class="column is-8 post-share-footer has-text-centered">
           <a id="share-button"
-             data-target="share-modal"
-             data-share-url="{{page.url | prepend: site.url}}"
-             data-share-title="{{page.title}}"
-             data-share-description="{{page.description}}"
-             data-share-image="{{page.social_image_url}}"
-             class="button is-primary is-large is-rounded">Sharing Is…?</a>
+            data-target="share-modal"
+            data-share-url="{{page.url | prepend: site.url}}"
+            data-share-title="{{page.title}}"
+            data-share-description="{{page.description}}"
+            data-share-image="{{page.social_image_url}}"
+            class="button is-primary is-large is-rounded">Sharing Is…?</a>
         </div>
       </div>
     </div>
-  </section>
-</article>
+  </div>
+</section>
 {%- include image-modal.html -%}
 {%- include share-modal.html -%}
 <script>
-{%-include post.js -%}
+{%-include post.js-%}
 </script>

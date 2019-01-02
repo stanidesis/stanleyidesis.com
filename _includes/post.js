@@ -12,7 +12,7 @@ window.addDependencyCallback(function () {
         $shareButton.attr('keep-animating', 'false');
       }
     });
-    
+    /* CTA attention getter */
     $('div.post-content .post-cta').each(function(which, el) {
       var $cta = $(this);
       $cta.one('inview', function(event, isInView) {
@@ -51,6 +51,28 @@ function getRandomAttentionGetter() {
 }
 
 function postPostProcessing() {
+  /* Lock nav in place on Tablet+ */
+  if ($('div.post-nav').css('display') !== 'none') {
+    /* We're on desktop */
+    var $navContent = $('div.post-nav-content').first();
+    var topOfNav = $navContent.offset().top;
+    var rightOfNav = $(window).width() - ($navContent.offset().left + $navContent.outerWidth());
+    var leftOfNav = $navContent.offset().left;
+  
+    $(window).scroll(function() {
+        if($(window).scrollTop() > topOfNav) {
+            $navContent.css('position', 'fixed');
+            $navContent.css('top', '0rem');
+            $navContent.css('left', leftOfNav + 'px');
+            $navContent.css('right', rightOfNav + 'px');
+          } else {
+            $navContent.css('position', 'relative');
+            $navContent.css('top', '');
+            $navContent.css('left', '');
+            $navContent.css('right', '');
+        }
+    });
+  }
   /* Adds a dropcap to the first letter */
   $('.post-content').first().find('p').first().addClass('post-first-paragraph');
   /* Convert images to clickable light-boxes */
