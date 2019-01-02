@@ -14,11 +14,30 @@
 
 .post-nav-content
   position: inherit
-  border-right: $primary .1rem solid
+  border-right: $grey-lighter .1rem solid
   padding: 1.5rem 0
   +tablet
     padding-right: 1.5rem
-  
+
+.post-nav-divider
+  position: relative
+  margin: 1rem 0
+  &:before
+    z-index: -1
+    content: ''
+    position: absolute
+    height: 100%
+    width: 100%
+    border-bottom: $primary .2rem solid
+    transform: translateY(-50%)
+
+.post-nav-divider-icon
+  text-align: center
+  background-color: $white
+  display: block
+  margin: auto auto
+  z-index: 1
+
 .post-headline
   transition: color .3s ease-in-out
   &:hover
