@@ -55,8 +55,10 @@ layout: default
     <!-- Begin Content -->
     <div class="container">
       <div class="columns is-multiline">
-        <div class="column is-6 is-offset-3">
-          <a href="{{page.url}}"><h1 class="subtitle is-size-4 is-size-2-tablet has-text-grey-dark">{{page.headline}}</h1></a>
+        <!-- Nav -->
+        <div class="column is-3 post-nav"></div>
+        <div class="column is-6">
+          <a href="{{page.url}}"><h1 class="subtitle is-size-4 is-size-2-tablet has-text-grey-dark post-headline">{{page.headline}}</h1></a>
           <br>
           <!-- Byline and Date -->
           {%- assign date_format = "%B %-d, %Y" -%}
