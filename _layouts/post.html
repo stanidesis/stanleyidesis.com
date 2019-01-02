@@ -46,34 +46,30 @@ layout: default
 -%}
 <article>
   <!-- Header -->
-  <section class="hero is-large has-js-background-image" data-js-bg-source="{{page.feature_image_url}}" data-js-target-opacity="1">
-    <div class="post-hero-body">
-      <div class="container has-text-centered">
-        <a href="{{page.url}}"><h1 class="subtitle is-size-4 is-size-2-tablet has-text-white-ter post-hero-headline">{{page.headline}}</h1></a>
-      </div>
-    </div>
+  <section class="hero is-medium">
+    <figure class="image is-16by9">
+      <img src="{{page.feature_image_url}}">
+    </figure>
   </section>
-  <!-- Byline and Date -->
-  {%- assign date_format = "%B %-d, %Y" -%}
   <section class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-6 is-offset-3">
-        {%- if page.date_modified -%}
-          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Updated {{ page.date_modified | date: date_format }}</p>
-        {%- else -%}
-          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Published {{ page.date | date: date_format }}</p>
-        {%- endif -%}
-        </div>
-      </div>
-    </div>
-    <br />
-    <br />
     <!-- Begin Content -->
     <div class="container">
       <div class="columns is-multiline">
-        <div class="column is-6 is-offset-3 post-content">
-          {{content}}
+        <div class="column is-6 is-offset-3">
+          <a href="{{page.url}}"><h1 class="subtitle is-size-4 is-size-2-tablet has-text-grey-dark">{{page.headline}}</h1></a>
+          <br>
+          <!-- Byline and Date -->
+          {%- assign date_format = "%B %-d, %Y" -%}
+          {%- if page.date_modified -%}
+          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Updated {{ page.date_modified | date: date_format }}</p>
+          <br>
+          {%- else -%}
+          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Published {{ page.date | date: date_format }}</p>
+          <br>
+          {%- endif -%}
+          <div class="post-content">
+            {{content}}
+          </div>
           <hr>
         </div>
         <div class="column is-6 is-offset-3 post-share-footer has-text-centered">

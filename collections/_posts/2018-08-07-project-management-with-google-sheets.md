@@ -6,6 +6,7 @@ date_modified: "2018-09-27"
 title: "Easy Project Management with Google Sheets (Template Included)"
 
 description: "ProSheets is a free DIY project management template that combines Google Sheets, Google Calendar, and Google Contacts into a project management solution and todo list that you can use on your phone, desktop, tablet, or any device with Calendar access."
+
 headline: "Manage Your Personal Projects in Google Sheets with this Template"
 
 alt_headline: "Free Template: Project Management with Google Sheets, Calendar, and Contacts"

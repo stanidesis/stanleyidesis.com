@@ -1,5 +1,4 @@
 window.addDependencyCallback(function () {
-  loadjs('/js/background-image.js');
   loadjs('/js/jquery.inview.min.js', function() {
     $('#share-button').on('inview', function(event, isInView) {
       var $shareButton = $('#share-button');
