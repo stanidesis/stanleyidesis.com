@@ -54,19 +54,22 @@ function postPostProcessing() {
   /* Lock nav in place on Tablet+ */
   if ($('div.post-nav-content').css('display') !== 'none') {
     /* We're on desktop */
+    var $postMain = $('section.post-main').first();
     var $nav = $('div.post-nav-content').first();
     var topOfNav = $nav.offset().top;
+    var topOfPost = $postMain.offset().top;
     var docked = false;
   
     $(window).scroll(function() {
-        if(!docked && ($(window).scrollTop() > topOfNav)) {
+        if(!docked && ($(window).scrollTop() > topOfPost)) {
           $nav.css('position', 'fixed');
-          $nav.css('top', 0 + 'rem');
+          $nav.css('top', (topOfNav - topOfPost) + 'px');
           docked = true;
-        } else if (docked && ($(window).scrollTop() <= topOfNav)) {
+        } else if (docked && ($(window).scrollTop() <= topOfPost)) {
           $nav.css('position', 'inherit');
           $nav.css('top', '');
           /* Resets the top in case of window size change */
+          topOfPost = $postMain.offset().top;
           topOfNav = $nav.offset().top;
           docked = false;
         }
