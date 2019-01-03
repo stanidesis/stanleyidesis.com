@@ -146,6 +146,39 @@ function postPostProcessing() {
     $shareDropdown.find('a.post-nav-action-dropdown-share-linkedin').attr('href', socialmediaurls['linkedin']);
     $shareDropdown.find('a.post-nav-action-dropdown-share-email').attr('href', socialmediaurls['email']);
   });
+
+  /* Setup MP3 Playback */
+  var $rewindWrapper = $('.post-nav-playback-action-wrapper-rewind');
+  var $rewindIcon = $rewindWrapper.find('.post-nav-playback-action-icon-rewind');
+  var $playPauseWrapper = $('.post-nav-playback-action-wrapper-play-pause');
+  var $playPauseIcon = $playPauseWrapper.find('.post-nav-playback-action-icon-play-pause');
+  var $forwardWrapper = $('.post-nav-playback-action-wrapper-forward');
+  var $forwardIcon = $forwardWrapper.find('.post-nav-playback-action-icon-forward');
+  var $audioPlayer = $('#post-nav-playback-audio');
+  var audioInit = false;
+  var loading = false;
+  $playPauseIcon.click(function() {
+    /* Already loading? */
+    if (loading) {return}
+    if (!audioInit) {
+      loading = true;
+      $audioPlayer.find('source').first().attr('src', $audioPlayer.attr('data-playback-mp3'));
+      var $playPauseFA = $playPauseIcon.find('svg').first();
+      $playPauseFA.toggleClass('fa-play-circle');
+      $playPauseFA.toggleClass('fa-spinner');
+      $playPauseFA.toggleClass('fa-pulse');
+      $audioPlayer[0].addEventListener('canplay', function() {
+        console.log('triggered!');
+        $playPauseFA.toggleClass('fa-spinner');
+        $playPauseFA.toggleClass('fa-pulse');
+        $playPauseFA.toggleClass('fa-pause-circle');
+        $audioPlayer[0].play();
+        audioInit = true;
+        $forwardWrapper.prop('disabled', false);
+        $rewindWrapper.prop('disabled', false);
+      });
+    }
+  });
 }
 
 function revealNavDropdown($dropDown, reveal) {

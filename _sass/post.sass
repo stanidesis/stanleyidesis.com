@@ -22,7 +22,7 @@
 
 .post-nav-divider
   position: relative
-  margin: 1rem 0
+  margin: 2rem 0
   &:before
     z-index: -1
     content: ''
@@ -102,16 +102,28 @@
   margin-top: -2.2rem
 
 .post-nav-playback-action-wrapper[disabled],
-.post-nav-playback-large-action-wrapper[disabled]
+.post-nav-playback-action-wrapper-large[disabled]
   color: $grey-lighter !important
   span
     color: $grey-lighter !important
 
-.post-nav-playback-large-action-wrapper
+.post-nav-playback-action-wrapper-large
   margin: 0 1rem
+
+.post-nav-playback-action-wrapper-play-pause
+  @extend .post-nav-playback-action-wrapper-large
+
+.post-nav-playback-action-wrapper-rewind,
+.post-nav-playback-action-wrapper-forward
+  @extend .post-nav-playback-action-wrapper
 
 .post-nav-playback-action-icon:hover
   cursor: pointer
+
+.post-nav-playback-action-icon-rewind,
+.post-nav-playback-action-icon-play-pause,
+.post-nav-playback-action-icon-forward
+  @extend .post-nav-playback-action-icon
 
 .post-headline
   transition: color .3s ease-in-out
