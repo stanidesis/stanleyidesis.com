@@ -52,24 +52,23 @@ function getRandomAttentionGetter() {
 
 function postPostProcessing() {
   /* Lock nav in place on Tablet+ */
-  if ($('div.post-nav').css('display') !== 'none') {
+  if ($('div.post-nav-content').css('display') !== 'none') {
     /* We're on desktop */
-    var $navContent = $('div.post-nav-content').first();
-    var topOfNav = $navContent.offset().top;
-    var rightOfNav = $(window).width() - ($navContent.offset().left + $navContent.outerWidth());
-    var leftOfNav = $navContent.offset().left;
+    var $nav = $('div.post-nav-content').first();
+    var topOfNav = $nav.offset().top;
+    var docked = false;
   
     $(window).scroll(function() {
-        if($(window).scrollTop() > topOfNav) {
-            $navContent.css('position', 'fixed');
-            $navContent.css('top', '0rem');
-            $navContent.css('left', leftOfNav + 'px');
-            $navContent.css('right', rightOfNav + 'px');
-          } else {
-            $navContent.css('position', 'relative');
-            $navContent.css('top', '');
-            $navContent.css('left', '');
-            $navContent.css('right', '');
+        if(!docked && ($(window).scrollTop() > topOfNav)) {
+          $nav.css('position', 'fixed');
+          $nav.css('top', 0 + 'rem');
+          docked = true;
+        } else if (docked && ($(window).scrollTop() <= topOfNav)) {
+          $nav.css('position', 'inherit');
+          $nav.css('top', '');
+          /* Resets the top in case of window size change */
+          topOfNav = $nav.offset().top;
+          docked = false;
         }
     });
   }
