@@ -116,7 +116,11 @@ layout: default
                 </a>
               </div>
               <!-- Share container -->
-              <div id="post-nav-action-dropdown-share" class="post-nav-action-dropdown">
+              <div id="post-nav-action-dropdown-share" class="post-nav-action-dropdown"
+                data-share-url="{{page.url | prepend: site.url}}"
+                data-share-title="{{page.title}}"
+                data-share-description="{{page.description}}"
+                data-share-image="{{page.social_image_url}}">
                 <div class="post-nav-action-dropdown-caret-table">
                   <div class="post-nav-action-dropdown-caret-empty-cell"></div>
                   <div class="post-nav-action-dropdown-caret-cell"><br></div>
@@ -139,7 +143,7 @@ layout: default
                     </span>
                     <span>linkedin</span>
                   </a>
-                  <a class="button is-rounded is-fullwidth">
+                  <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-email">
                     <span class="icon">
                       <i class="fas fa-at"></i>
                     </span>

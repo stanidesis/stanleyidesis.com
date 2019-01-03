@@ -127,6 +127,25 @@ function postPostProcessing() {
       shareShown = true;
     }
   });
+  /* Setup share buttons */
+  loadjs(['/js/social-share-media.min.js'], function() {
+    var shareUrl = $shareDropdown.attr('data-share-url');
+    var shareTitle = $shareDropdown.attr('data-share-title');
+    var shareDescription = $shareDropdown.attr('data-share-description');
+    var shareImageUrl = $shareDropdown.attr('data-share-image');
+    const socialmedia = GetSocialMediaSites_WithShareLinks_OrderedByPopularity();
+    const socialmediaurls = GetSocialMediaSiteLinks_WithShareLinks({
+      'url': shareUrl,
+      'title': shareTitle,
+      'desc': shareDescription,
+      'image': shareImageUrl
+    });
+
+    $shareDropdown.find('a.post-nav-action-dropdown-share-facebook').attr('href', socialmediaurls['facebook']);
+    $shareDropdown.find('a.post-nav-action-dropdown-share-twitter').attr('href', socialmediaurls['twitter']);
+    $shareDropdown.find('a.post-nav-action-dropdown-share-linkedin').attr('href', socialmediaurls['linkedin']);
+    $shareDropdown.find('a.post-nav-action-dropdown-share-email').attr('href', socialmediaurls['email']);
+  });
 }
 
 function revealNavDropdown($dropDown, reveal) {
