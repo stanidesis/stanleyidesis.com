@@ -36,6 +36,7 @@ timezone: America/Chicago
 collections_dir: collections
 
 collections:
+  categories:
   books:
   posts:
   works:

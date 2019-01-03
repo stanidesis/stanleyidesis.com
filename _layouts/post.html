@@ -152,11 +152,18 @@ layout: default
               </div>
             </div>
           </div>
+          {%- if page.categories -%}
           <div class="post-nav-divider">
             <span class="icon is-medium has-text-primary post-nav-divider-icon">
               <i class="fa-2x far fa-folder-open"></i>
             </span>
           </div>
+          <div class="tags">
+            {%- for category in page.categories -%}
+            <span class="tag is-medium is-rounded">{{category}}</span>
+            {%- endfor -%}
+          </div>
+          {%- endif -%}
         </div>
       </aside>
       <div class="columns is-multiline">
