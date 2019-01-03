@@ -89,4 +89,58 @@ function postPostProcessing() {
     $imageLink.attr('data-image-modal-url', $img.attr('src'));
   });
   window.setupImageModal();
+  /* Setup save & share buttons */
+  var $saveBtn = $('#post-nav-action-save');
+  var $shareBtn = $('#post-nav-action-share');
+  var $saveDropdown = $('#post-nav-action-dropdown-save');
+  var $shareDropdown = $('#post-nav-action-dropdown-share');
+  var saveShown = false, shareShown = false;
+  $saveBtn.click(function() {    
+    if (saveShown) {
+      revealNavDropdown($saveDropdown, false);
+      enableNavAction($saveBtn, false);
+      saveShown = false;
+    } else {
+      if (shareShown) {
+        revealNavDropdown($shareDropdown, false);
+        enableNavAction($shareBtn, false);
+        shareShown = false;
+      }
+      revealNavDropdown($saveDropdown, true);
+      enableNavAction($saveBtn, true);
+      saveShown = true;
+    }
+  });
+  $shareBtn.click(function() {    
+    if (shareShown) {
+      revealNavDropdown($shareDropdown, false);
+      enableNavAction($shareBtn, false);
+      shareShown = false;
+    } else {
+      if (saveShown) {
+        revealNavDropdown($saveDropdown, false);
+        enableNavAction($saveBtn, false);
+        saveShown = false;
+      }
+      revealNavDropdown($shareDropdown, true);
+      enableNavAction($shareBtn, true);
+      shareShown = true;
+    }
+  });
+}
+
+function revealNavDropdown($dropDown, reveal) {
+  if (reveal) {
+    $dropDown.css('display', 'inherit');
+  } else {
+    $dropDown.css('display', 'none');
+  }
+}
+
+function enableNavAction($btn, enable) {
+  if (enable) {
+    $btn.addClass('post-nav-action-button-active');
+  } else {
+    $btn.removeClass('post-nav-action-button-active');
+  }
 }

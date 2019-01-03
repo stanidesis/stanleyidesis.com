@@ -41,7 +41,7 @@
   margin: auto auto
   z-index: 1
 
-.post-nav-action-buttons
+.post-nav-action-button-wrapper
   display: table
   table-layout: fixed
   text-align: center
@@ -54,16 +54,21 @@
   div:first-child
     width: 95% !important
 
-.post-nav-action-dropdowns
+// Add this class to save/share when active
+.post-nav-action-button-active
+  border-color: $white !important
+  color: $grey-dark !important
+
+.post-nav-action-dropdown-wrapper
   display: block
   margin-top: 1.5rem
   margin-bottom: 1rem
 
 .post-nav-action-dropdown
+  display: none
   width: 100%
   border: .1rem $white-ter solid
   padding: 1rem
-
   a
     display: inline-block
     margin-bottom: 1rem
@@ -80,7 +85,7 @@
   color: $linkedin
 
 .post-nav-action-dropdown-caret-table
-  @extend .post-nav-action-buttons
+  @extend .post-nav-action-button-wrapper
 
 .post-nav-action-dropdown-caret-cell,
 .post-nav-action-dropdown-caret-empty-cell
