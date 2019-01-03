@@ -29,13 +29,15 @@
     position: absolute
     height: 100%
     width: 100%
-    border-bottom: $primary .2rem dotted
+    border-bottom: $grey-lighter .2rem dotted
     transform: translateY(-50%)
 
 .post-nav-divider-icon
+  border-left: 2rem $white solid
+  border-right: 2rem $white solid
   text-align: center
   background-color: $white
-  display: block
+  display: flex
   margin: auto auto
   z-index: 1
 
@@ -51,6 +53,48 @@
   padding-right: .1rem
   div:first-child
     width: 95% !important
+
+.post-nav-action-dropdowns
+  display: block
+  margin-top: 1.5rem
+  margin-bottom: 1rem
+
+.post-nav-action-dropdown
+  width: 100%
+  border: .1rem $white-ter solid
+  padding: 1rem
+
+  a
+    display: inline-block
+    margin-bottom: 1rem
+    &:last-child
+      margin-bottom: 0rem
+
+.post-nav-action-dropdown-share-facebook
+  color: $facebook
+
+.post-nav-action-dropdown-share-twitter
+  color: $twitter
+
+.post-nav-action-dropdown-share-linkedin
+  color: $linkedin
+
+.post-nav-action-dropdown-caret-table
+  @extend .post-nav-action-buttons
+
+.post-nav-action-dropdown-caret-cell,
+.post-nav-action-dropdown-caret-empty-cell
+  @extend .post-nav-action-button
+
+.post-nav-action-dropdown-caret-cell
+  width: 35% !important
+
+.post-nav-action-dropdown-caret-cell:before
+  @extend .triangle-up
+  border-color: transparent transparent $white-ter transparent !important
+  content: ''
+  display: inline-block
+  margin-top: -2.2rem
 
 .post-headline
   transition: color .3s ease-in-out
