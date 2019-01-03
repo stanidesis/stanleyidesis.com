@@ -17,7 +17,7 @@
   border-right: $white-ter .1rem solid
   padding: 1.5rem 0
   +tablet
-    max-width: (14rem + 1.5rem)
+    width: (14rem + 1.5rem)
     padding-right: 1.5rem
 
 .post-nav-divider
@@ -38,6 +38,19 @@
   display: block
   margin: auto auto
   z-index: 1
+
+.post-nav-action-buttons
+  display: table
+  table-layout: fixed
+  text-align: center
+  width: 100%
+
+.post-nav-action-button
+  display: table-cell
+  width: 50%
+  padding-right: .1rem
+  div:first-child
+    width: 95% !important
 
 .post-headline
   transition: color .3s ease-in-out
