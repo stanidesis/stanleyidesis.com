@@ -101,8 +101,17 @@
   display: inline-block
   margin-top: -2.2rem
 
-.post-nav-tag
-  border: 1px $primary solid
+.post-nav-playback-action-wrapper[disabled],
+.post-nav-playback-large-action-wrapper[disabled]
+  color: $grey-lighter !important
+  span
+    color: $grey-lighter !important
+
+.post-nav-playback-large-action-wrapper
+  margin: 0 1rem
+
+.post-nav-playback-action-icon:hover
+  cursor: pointer
 
 .post-headline
   transition: color .3s ease-in-out

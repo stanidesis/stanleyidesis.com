@@ -164,6 +164,33 @@ layout: default
             {%- endfor -%}
           </div>
           {%- endif -%}
+          {%- if page.download_mp3 -%}
+          <div class="post-nav-divider">
+            <span class="icon is-medium has-text-primary post-nav-divider-icon">
+              <i class="fa-2x fas fa-headphones-alt"></i>
+            </span>
+          </div>
+          <div class="post-nav-playback-wrapper has-text-centered">
+            <div class="post-nav-playback-action-wrapper has-text-centered is-inline-block" disabled>
+              <span class="post-nav-playback-action-icon icon is-medium has-text-primary is-block">
+                <i class="fa-lg fas fa-undo-alt"></i>
+              </span>
+              <span class="is-block has-text-weight-light">10s</span>
+            </div>
+            <div class="post-nav-playback-large-action-wrapper has-text-centered is-inline-block">
+              <span class="post-nav-playback-action-icon icon is-large has-text-primary is-block">
+                <i class="fa-3x fas fa-play-circle"></i>
+              </span>
+              <span class="is-block has-text-weight-light">play</span>
+            </div>
+            <div class="post-nav-playback-action-wrapper has-text-centered is-inline-block" disabled>
+              <span class="post-nav-playback-action-icon icon is-medium has-text-primary is-block">
+                <i class="fa-lg fas fa-redo-alt"></i>
+              </span>
+              <span class="is-block has-text-weight-light">30s</span>
+            </div>
+          </div>
+          {%- endif -%}
         </div>
       </aside>
       <div class="columns is-multiline">
