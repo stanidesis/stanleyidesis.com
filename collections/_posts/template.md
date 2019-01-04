@@ -24,6 +24,9 @@ download_epub: "/.../...epub"
 download_mobi: "/.../...mobi"
 download_mp3: "/.../...mp3"
 
+# Table of Contents
+toc: true
+
 ---
 Videos look like:
 

@@ -25,6 +25,8 @@ keywords: "google calendar daily tasks, google calendar tasks list, google tasks
 
 categories: [productivity]
 
+toc: true
+
 # Temp mp3
 download_mp3: "https://16683.mc.tritondigital.com/WAITWAIT_PODCAST/media-session/a7730dc0-bd95-4393-8940-6cc5a3d71b62/anon.npr-mp3/npr/waitwait/2018/12/20181229_waitwait_wwdtmpodcast181229.mp3?orgId=1&d=3004&p=344098539&story=680829854&t=podcast&e=680829854&ft=pod&f=344098539"
 ---

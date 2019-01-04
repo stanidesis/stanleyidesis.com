@@ -59,6 +59,9 @@ compress_html:
   profile: false
   startings: [html, head, body]
 
+toc:
+  max_level: 3
+
 # Google Analytics Constants
 ga:
   categories:

@@ -155,7 +155,7 @@ layout: default
           {%- if page.categories -%}
           <div class="post-nav-divider">
             <span class="icon is-medium has-text-primary post-nav-divider-icon">
-              <i class="fa-2x far fa-folder-open"></i>
+              <i class="fa-lg far fa-folder-open"></i>
             </span>
           </div>
           <div class="tags">
@@ -167,7 +167,7 @@ layout: default
           {%- if page.download_mp3 -%}
           <div class="post-nav-divider">
             <span class="icon is-medium has-text-primary post-nav-divider-icon">
-              <i class="fa-2x fas fa-headphones-alt"></i>
+              <i class="fa-lg fas fa-headphones-alt"></i>
             </span>
           </div>
           <audio id="post-nav-playback-audio" class="is-hidden" preload="metadata" data-mp3="{{page.download_mp3}}"></audio>
@@ -192,6 +192,15 @@ layout: default
             </div>
           </div>
           {%- endif -%}
+          <!-- The ToC -->
+          <div class="post-nav-divider">
+            <span class="icon is-medium has-text-primary post-nav-divider-icon">
+              <i class="fa-lg far fa-bookmark"></i>
+            </span>
+          </div>
+          <div class="post-nav-toc content">
+            {{ content | toc_only }}
+          </div>
         </div>
       </aside>
       <div class="columns is-multiline">
@@ -209,7 +218,7 @@ layout: default
           <br>
           {%- endif -%}
           <div class="post-content">
-            {{content}}
+            {{ content | inject_anchors }}
           </div>
           <hr>
         </article>
