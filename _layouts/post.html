@@ -170,27 +170,25 @@ layout: default
               <i class="fa-2x fas fa-headphones-alt"></i>
             </span>
           </div>
-          <audio id="post-nav-playback-audio" controls preload="none" class="is-hidden" data-playback-mp3="{{page.download_mp3}}">
-            <source type="audio/mpeg">
-          </audio>
+          <audio id="post-nav-playback-audio" class="is-hidden" preload="metadata" data-mp3="{{page.download_mp3}}"></audio>
           <div class="post-nav-playback-wrapper has-text-centered" >
             <div class="post-nav-playback-action-wrapper-rewind has-text-centered is-inline-block" disabled>
               <span class="post-nav-playback-action-icon-rewind icon is-medium has-text-primary is-block">
                 <i class="fa-lg fas fa-undo-alt"></i>
               </span>
-              <span class="is-block has-text-weight-light">10s</span>
+              <span class="is-block has-text-weight-light is-unselectable">10s</span>
             </div>
             <div class="post-nav-playback-action-wrapper-play-pause has-text-centered is-inline-block">
               <span class="post-nav-playback-action-icon-play-pause icon is-large has-text-primary is-block">
                 <i class="fa-3x fas fa-play-circle"></i>
               </span>
-              <span class="is-block has-text-weight-light">play</span>
+              <span class="is-block has-text-weight-light is-unselectable">play</span>
             </div>
             <div class="post-nav-playback-action-wrapper-forward has-text-centered is-inline-block" disabled>
               <span class="post-nav-playback-action-icon-forward icon is-medium has-text-primary is-block">
                 <i class="fa-lg fas fa-redo-alt"></i>
               </span>
-              <span class="is-block has-text-weight-light">30s</span>
+              <span class="is-block has-text-weight-light is-unselectable">30s</span>
             </div>
           </div>
           {%- endif -%}

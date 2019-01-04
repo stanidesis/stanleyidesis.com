@@ -148,37 +148,124 @@ function postPostProcessing() {
   });
 
   /* Setup MP3 Playback */
-  var $rewindWrapper = $('.post-nav-playback-action-wrapper-rewind');
-  var $rewindIcon = $rewindWrapper.find('.post-nav-playback-action-icon-rewind');
-  var $playPauseWrapper = $('.post-nav-playback-action-wrapper-play-pause');
-  var $playPauseIcon = $playPauseWrapper.find('.post-nav-playback-action-icon-play-pause');
-  var $forwardWrapper = $('.post-nav-playback-action-wrapper-forward');
-  var $forwardIcon = $forwardWrapper.find('.post-nav-playback-action-icon-forward');
-  var $audioPlayer = $('#post-nav-playback-audio');
-  var audioInit = false;
-  var loading = false;
-  $playPauseIcon.click(function() {
-    /* Already loading? */
-    if (loading) {return}
-    if (!audioInit) {
-      loading = true;
-      $audioPlayer.find('source').first().attr('src', $audioPlayer.attr('data-playback-mp3'));
-      var $playPauseFA = $playPauseIcon.find('svg').first();
-      $playPauseFA.toggleClass('fa-play-circle');
-      $playPauseFA.toggleClass('fa-spinner');
-      $playPauseFA.toggleClass('fa-pulse');
-      $audioPlayer[0].addEventListener('canplay', function() {
-        console.log('triggered!');
-        $playPauseFA.toggleClass('fa-spinner');
-        $playPauseFA.toggleClass('fa-pulse');
-        $playPauseFA.toggleClass('fa-pause-circle');
-        $audioPlayer[0].play();
-        audioInit = true;
-        $forwardWrapper.prop('disabled', false);
-        $rewindWrapper.prop('disabled', false);
-      });
+  var audio = $(SEL_AUDIO)[0];
+  audio.onpause = updateControlsToPaused;
+  audio.onplay = updateControlsToPlaying;
+  audio.onended = updateControlsToPaused;
+  $(SEL_PLAY_PAUSE_WRAPPER).find(SEL_PLAY_PAUSE_CLICK).first().click(function(event) {
+    event.preventDefault();
+    console.log('click');
+    var audio = $(SEL_AUDIO)[0];
+    /* src not set */
+    if (audio.src == '') {
+      console.log('Loading');
+      audio.src = audio.dataset.mp3;
+      updateControlsToLoading();
+      audio.oncanplay = function() {
+        audio.play();
+      };
+      audio.load();
+      return;
+    }
+    /* It's not preloaded, so now we have to load the file */
+    if (audio.readyState != 4) {
+      console.log('Not ready');
+      return;
+    }
+    if (audio.paused) {
+      console.log('Playing');
+      audio.play();
+    } else {
+      console.log('Pausing');
+      audio.pause();
     }
   });
+  $(SEL_FORWARD_WRAPPER).find(SEL_FORWARD_CLICK).click(function(event) {
+    event.preventDefault();
+    var audio = $(SEL_AUDIO)[0];
+    if (isNaN(audio.duration)) {
+      console.log('Can\'t seek forward');
+      return;
+    }
+    if (audio.currentTime + 30 >= audio.duration) {
+      audio.currentTime = 0;
+      audio.pause();
+      return;
+    }
+    audio.currentTime += 30;
+  });
+  $(SEL_REWIND_WRAPPER).find(SEL_REWIND_CLICK).click(function(event) {
+    event.preventDefault();
+    var audio = $(SEL_AUDIO)[0];
+    if (isNaN(audio.duration)) {
+      console.log('Can\'t seek backward');
+      return;
+    }
+    if (audio.currentTime - 10 <= 0) {
+      audio.currentTime = 0;
+      return;
+    }
+    audio.currentTime -= 10;
+  });
+}
+
+/* Freq. Selectors */
+const SEL_AUDIO = '#post-nav-playback-audio';
+const SEL_PLAYBACK_WRAPPER = 'div.post-nav-playback-wrapper';
+const SEL_REWIND_WRAPPER = 'div.post-nav-playback-action-wrapper-rewind';
+const SEL_REWIND_CLICK = 'span.post-nav-playback-action-icon-rewind';
+const SEL_REWIND_ICON = 'span.post-nav-playback-action-icon-rewind svg';
+const SEL_PLAY_PAUSE_WRAPPER = 'div.post-nav-playback-action-wrapper-play-pause';
+const SEL_PLAY_PAUSE_CLICK = 'span.post-nav-playback-action-icon-play-pause';
+const SEL_PLAY_PAUSE_ICON = 'span.post-nav-playback-action-icon-play-pause svg';
+const SEL_PLAY_PAUSE_TEXT = 'span:last-child';
+const SEL_FORWARD_WRAPPER = 'div.post-nav-playback-action-wrapper-forward';
+const SEL_FORWARD_CLICK = 'span.post-nav-playback-action-icon-forward';
+const SEL_FORWARD_ICON = 'span.post-nav-playback-action-icon-forward svg';
+
+/* Set to pause icon, enable forward/reverse */
+function updateControlsToPlaying() {
+  var $playbackWrapper = $(SEL_PLAYBACK_WRAPPER);
+  var $playPauseWrapper = $playbackWrapper.find(SEL_PLAY_PAUSE_WRAPPER);
+  $playPauseWrapper.removeAttr('disabled');
+  $playPauseWrapper.find(SEL_PLAY_PAUSE_TEXT).text('pause');
+  var $playPauseIcon = $playPauseWrapper.find(SEL_PLAY_PAUSE_ICON);
+  $playPauseIcon.removeClass('fa-spinner');
+  $playPauseIcon.removeClass('fa-pulse');
+  $playPauseIcon.removeClass('fa-play-circle');
+  $playPauseIcon.addClass('fa-pause-circle');
+  $playbackWrapper.find(SEL_REWIND_WRAPPER).removeAttr('disabled');
+  $playbackWrapper.find(SEL_FORWARD_WRAPPER).removeAttr('disabled');
+}
+
+/* Set to play icon, disable forward/reverse */
+function updateControlsToPaused() {
+  var $playbackWrapper = $(SEL_PLAYBACK_WRAPPER);
+  var $playPauseWrapper = $playbackWrapper.find(SEL_PLAY_PAUSE_WRAPPER);
+  $playPauseWrapper.removeAttr('disabled');
+  $playPauseWrapper.find(SEL_PLAY_PAUSE_TEXT).text('play');
+  var $playPauseIcon = $playPauseWrapper.find(SEL_PLAY_PAUSE_ICON);
+  $playPauseIcon.removeClass('fa-spinner');
+  $playPauseIcon.removeClass('fa-pulse');
+  $playPauseIcon.removeClass('fa-pause-circle');
+  $playPauseIcon.addClass('fa-play-circle');
+  $playbackWrapper.find(SEL_REWIND_WRAPPER).attr('disabled');
+  $playbackWrapper.find(SEL_FORWARD_WRAPPER).attr('disabled');
+}
+
+/* Set to spinning, disable all buttons */
+function updateControlsToLoading() {
+  var $playbackWrapper = $(SEL_PLAYBACK_WRAPPER);
+  var $playPauseWrapper = $playbackWrapper.find(SEL_PLAY_PAUSE_WRAPPER);
+  $playPauseWrapper.attr('disabled');
+  $playPauseWrapper.find(SEL_PLAY_PAUSE_TEXT).text('…');
+  var $playPauseIcon = $playPauseWrapper.find(SEL_PLAY_PAUSE_ICON);
+  $playPauseIcon.removeClass('fa-pause-circle');
+  $playPauseIcon.removeClass('fa-play-circle');
+  $playPauseIcon.addClass('fa-spinner');
+  $playPauseIcon.addClass('fa-pulse');
+  $playbackWrapper.find(SEL_REWIND_WRAPPER).attr('disabled');
+  $playbackWrapper.find(SEL_FORWARD_WRAPPER).attr('disabled');
 }
 
 function revealNavDropdown($dropDown, reveal) {

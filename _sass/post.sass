@@ -124,6 +124,12 @@
 .post-nav-playback-action-icon-play-pause,
 .post-nav-playback-action-icon-forward
   @extend .post-nav-playback-action-icon
+  transition: transform .1s ease-in-out
+
+.post-nav-playback-action-icon-rewind:active,
+.post-nav-playback-action-icon-play-pause:active,
+.post-nav-playback-action-icon-forward:active
+  transform: scale(1.2)
 
 .post-headline
   transition: color .3s ease-in-out
