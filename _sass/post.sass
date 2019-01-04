@@ -182,3 +182,36 @@
 
 #share-button
   opacity: 0
+
+// This is the super secret mobile nav?
+.post-mobile-nav
+  position: fixed
+  width: 100%
+  height: 100%
+  top: 0
+  +tablet
+    display: none
+
+.post-mobile-nav-fab-wrapper
+  width: 100%
+  display: inline-block
+
+.post-mobile-nav-fab
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: 0 auto
+  width: 4rem
+  height: 4rem
+  background-color: $primary
+  border-radius: 500px
+  color: $white
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
+  transition: all .2s ease-in-out
+  &:active
+    transform: scale(1.1)
+    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)
+    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)
