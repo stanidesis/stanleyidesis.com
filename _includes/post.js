@@ -58,9 +58,9 @@ function postPostProcessing() {
     /* We animate this piece */
     var $fabWrapper = $('div.post-mobile-nav-fab-wrapper');
     $fabWrapper.css('margin-top', 'calc(' + ($(window).outerHeight() - $fabWrapper.outerHeight()) + 'px - 1rem');
-    $(window).on('orientationchange', function() {
+    $(window).resize(function() {
       var $mobileNav = $('div.post-mobile-nav');
-      if (typeof $mobileNav.attr('active') !== typeof undefined) {
+      if (typeof $mobileNav.attr('active') == typeof undefined) {
         var $fabWrapper = $('div.post-mobile-nav-fab-wrapper');
         $fabWrapper.css('margin-top', 'calc(' + ($(window).outerHeight() - $fabWrapper.outerHeight()) + 'px - 1rem');
       }
