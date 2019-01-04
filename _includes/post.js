@@ -52,8 +52,28 @@ function getRandomAttentionGetter() {
 
 function postPostProcessing() {
   /* Lock nav in place on Tablet+ */
-  if ($('div.post-nav-content').css('display') !== 'none') {
-    /* We're on desktop */
+  if ($('aside.post-nav').css('display') == 'none') {
+    /* We're on mobile, move the nav content to a new place */
+    $('div.post-nav-content').detach().appendTo('div.post-mobile-nav-content-wrapper');
+    /* We animate this piece */
+    var $fabWrapper = $('div.post-mobile-nav-fab-wrapper');
+    $fabWrapper.css('margin-top', 'calc(' + ($(window).outerHeight() - $fabWrapper.outerHeight()) + 'px - 1rem');
+    $('div.post-mobile-nav-fab').click(function(event) {
+      event.preventDefault();
+      var $mobileNav = $('div.post-mobile-nav');
+      if (typeof $mobileNav.attr('active') !== typeof undefined) {
+        $mobileNav.removeAttr('active');
+        $fabWrapper.css('margin-top', 'calc(' + ($(window).outerHeight() - $fabWrapper.outerHeight()) + 'px - 1rem');
+      } else {
+        $mobileNav.attr('active', '');
+        $fabWrapper.css('margin-top', '1rem');
+      }
+    });
+    $('div.post-nav-content').find('div.post-nav-toc a').click(function () {
+      $('div.post-mobile-nav-fab').click();
+    })
+  } else {
+    /* We're on tablet+ */    
     var $postMain = $('section.post-main').first();
     var $nav = $('div.post-nav-content').first();
     var topOfNav = $nav.offset().top;
@@ -249,23 +269,23 @@ function updateControlsToPaused() {
   $playPauseIcon.removeClass('fa-pulse');
   $playPauseIcon.removeClass('fa-pause-circle');
   $playPauseIcon.addClass('fa-play-circle');
-  $playbackWrapper.find(SEL_REWIND_WRAPPER).attr('disabled');
-  $playbackWrapper.find(SEL_FORWARD_WRAPPER).attr('disabled');
+  $playbackWrapper.find(SEL_REWIND_WRAPPER).attr('disabled', '');
+  $playbackWrapper.find(SEL_FORWARD_WRAPPER).attr('disabled', '');
 }
 
 /* Set to spinning, disable all buttons */
 function updateControlsToLoading() {
   var $playbackWrapper = $(SEL_PLAYBACK_WRAPPER);
   var $playPauseWrapper = $playbackWrapper.find(SEL_PLAY_PAUSE_WRAPPER);
-  $playPauseWrapper.attr('disabled');
+  $playPauseWrapper.attr('disabled', '');
   $playPauseWrapper.find(SEL_PLAY_PAUSE_TEXT).text('…');
   var $playPauseIcon = $playPauseWrapper.find(SEL_PLAY_PAUSE_ICON);
   $playPauseIcon.removeClass('fa-pause-circle');
   $playPauseIcon.removeClass('fa-play-circle');
   $playPauseIcon.addClass('fa-spinner');
   $playPauseIcon.addClass('fa-pulse');
-  $playbackWrapper.find(SEL_REWIND_WRAPPER).attr('disabled');
-  $playbackWrapper.find(SEL_FORWARD_WRAPPER).attr('disabled');
+  $playbackWrapper.find(SEL_REWIND_WRAPPER).attr('disabled', '');
+  $playbackWrapper.find(SEL_FORWARD_WRAPPER).attr('disabled', '');
 }
 
 function revealNavDropdown($dropDown, reveal) {

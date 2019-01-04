@@ -1,5 +1,4 @@
 .post-main
-  overflow: hidden
   position: relative
 
 .post-duo
@@ -14,9 +13,10 @@
 
 .post-nav-content
   position: relative
-  border-right: $white-ter .1rem solid
+  overflow-y: auto
   padding: 1.5rem 0
   +tablet
+    border-right: $white-ter .1rem solid
     width: (14rem + 1.5rem)
     padding-right: 1.5rem
 
@@ -39,7 +39,6 @@
   background-color: $white
   display: flex
   margin: auto auto
-  z-index: 1
 
 .post-nav-action-button-wrapper
   display: table
@@ -56,6 +55,7 @@
 
 // Add this class to save/share when active
 .post-nav-action-button-active
+  background-color: $white !important
   border-color: $white !important
   color: $grey-dark !important
 
@@ -185,16 +185,23 @@
 
 // This is the super secret mobile nav?
 .post-mobile-nav
+  z-index: 31
   position: fixed
   width: 100%
   height: 100%
   top: 0
+  transition: background-color .2s ease-in-out
   +tablet
     display: none
+
+.post-mobile-nav[active]
+  background-color: rgba(0, 0, 0, .5)
 
 .post-mobile-nav-fab-wrapper
   width: 100%
   display: inline-block
+  margin-top: 200%
+  transition: margin-top .3s ease-in-out
 
 .post-mobile-nav-fab
   display: flex
@@ -209,9 +216,21 @@
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
   -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
-  transition: all .2s ease-in-out
+  transition: all .1s ease-in-out
   &:active
     transform: scale(1.1)
     -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)
     -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)
     box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)
+
+.post-mobile-nav-content-wrapper
+  // 4rem is FAB size, 1rem for margin top, 1rem for FAB margin top
+  height: calc(100% - 4rem - 1rem - 1rem)
+  background-color: $white
+  display: inline-block
+  position: relative
+  overflow-y: scroll
+  padding: 0 1.5rem
+  margin-top: 1rem
+  width: 100%
+  z-index: 1
