@@ -42,7 +42,6 @@ function getRandomAttentionGetter() {
     'rubberBand',
     'shake',
     'swing',
-    'swing',
     'tada',
     'wobble',
     'jello',
