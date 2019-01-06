@@ -54,32 +54,16 @@ function isMobileNavActive($mobileNav) {
   return typeof $mNav.attr('active') !== typeof undefined;
 }
 
-function setTopMarginForMobileNavFab(active) {
-  var $fabWrapper = $(SEL_MOBILE_NAV_FAB_WRAPPER);
-  var calcString = '';
-  if (!active) {
-    /* This subtracts the full height of the window from the height of fab wrapper */
-    calcString = 'calc(' + ($(window).outerHeight() - $fabWrapper.outerHeight()) + 'px - ';
-  }
-  /* 1rem from the top */
-  $fabWrapper.css('margin-top', calcString + '1rem');
-}
-
 function setMobileNavActive(active) {
-  var $mobileNav = $(SEL_MOBILE_NAV);
-  var $mobileNavFab = $(SEL_MOBILE_NAV_FAB);
+  var $canActivate = $(SEL_CAN_ACTIVATE);
   if (active) {
-    $mobileNav.attr('active', '');
-    $mobileNavFab.attr('active', '');
+    $canActivate.attr('active', '');
   } else {
-    $mobileNav.removeAttr('active');
-    $mobileNavFab.removeAttr('active');
+    $canActivate.removeAttr('active');
   }
-  setTopMarginForMobileNavFab(active);
 }
 
 function postPostProcessing() {
-  console.log('Running post Processing');
   if ($('aside.post-nav').css('display') == 'none') {
     /* We're on mobile, move the nav content to a new place */
     $('div.post-nav-content').detach().appendTo('div.post-mobile-nav-content-wrapper');
@@ -87,7 +71,7 @@ function postPostProcessing() {
     setMobileNavActive(false);
     $(window).resize(function() {
       /* Reset the nav on the even of a resize */
-      setMobileNavActive(isMobileNavActive());
+      /*setMobileNavActive(isMobileNavActive());*/
     });
     var toggleMobileNav = function(event) {
       event.preventDefault();
@@ -271,8 +255,10 @@ const SEL_FORWARD_WRAPPER = 'div.post-nav-playback-action-wrapper-forward';
 const SEL_FORWARD_CLICK = 'span.post-nav-playback-action-icon-forward';
 const SEL_FORWARD_ICON = 'span.post-nav-playback-action-icon-forward svg';
 const SEL_MOBILE_NAV = 'div.post-mobile-nav';
+const SEL_MOBILE_NAV_BACKDROP = 'div.post-mobile-nav-backdrop';
 const SEL_MOBILE_NAV_FAB_WRAPPER = 'div.post-mobile-nav-fab-wrapper';
 const SEL_MOBILE_NAV_FAB = 'div.post-mobile-nav-fab';
+const SEL_CAN_ACTIVATE = 'div.can-activate';
 
 /* Set to pause icon, enable forward/reverse */
 function updateControlsToPlaying() {

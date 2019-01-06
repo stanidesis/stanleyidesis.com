@@ -187,33 +187,59 @@
 #share-button
   opacity: 0
 
+.post-mobile-nav-backdrop
+  position: fixed
+  top: 0
+  height: 100vh
+  width: 100vh
+  pointer-events: none
+  background-color: rgba(0, 0, 0, .5)
+  opacity: 0
+  -webkit-transition: opacity .2s ease-in-out
+  -moz-transition: opacity .2s ease-in-out
+  -o-transition: opacity .2s ease-in-out
+  transition: opacity .2s ease-in-out
+  +tablet
+    display: none
+
+.post-mobile-nav-backdrop[active]
+  opacity: 1
+
 // This is the super secret mobile nav?
 .post-mobile-nav
   z-index: 31
   position: fixed
-  width: 100%
-  height: 100%
-  top: 0
-  transition: background-color .2s ease-in-out
+  height: calc(4rem + 1rem + 1rem)
+  top: auto
+  left: 0
+  right: 0
+  bottom: 0
+  padding-top: 1rem
+  -webkit-transition: height .3s ease-in-out
+  -moz-transition: height .3s ease-in-out
+  -o-transition: height .3s ease-in-out
+  transition: height .3s ease-in-out
   pointer-events: none
+  .post-mobile-nav-content-wrapper
+    opacity: 0 !important
   +tablet
     display: none
 
 .post-mobile-nav[active]
-  background-color: rgba(0, 0, 0, .5)
   pointer-events: auto
+  height: 100%
   .post-mobile-nav-fab
     -webkit-transform: rotate(180deg)
     -moz-transform: rotate(180deg)
     -o-transform: rotate(180deg)
     transform: rotate(180deg)
+  .post-mobile-nav-content-wrapper
+    opacity: 1 !important
 
 .post-mobile-nav-fab-wrapper
   pointer-events: auto
   width: 100%
   display: inline-block
-  margin-top: 200%
-  transition: margin-top .3s ease-in-out
 
 .post-mobile-nav-fab
   display: flex
@@ -236,8 +262,8 @@
     box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)
 
 .post-mobile-nav-content-wrapper
-  // 4rem is FAB size, 1rem for margin top, 1rem for FAB margin top
-  height: calc(100% - 4rem - 1rem - 1rem)
+  // 4rem is FAB size, 1rem for padding top
+  height: calc(100% - 4rem - 1rem)
   background-color: $white
   display: inline-block
   position: relative
@@ -246,3 +272,7 @@
   margin-top: 1rem
   width: 100%
   z-index: 1
+  -webkit-transition: opacity .2s ease-in-out
+  -moz-transition: opacity .2s ease-in-out
+  -o-transition: opacity .2s ease-in-out
+  transition: opacity .2s ease-in-out
