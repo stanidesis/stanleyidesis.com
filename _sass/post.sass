@@ -195,13 +195,21 @@
   height: 100%
   top: 0
   transition: background-color .2s ease-in-out
+  pointer-events: none
   +tablet
     display: none
 
 .post-mobile-nav[active]
   background-color: rgba(0, 0, 0, .5)
+  pointer-events: auto
+  .post-mobile-nav-fab
+    -webkit-transform: rotate(180deg)
+    -moz-transform: rotate(180deg)
+    -o-transform: rotate(180deg)
+    transform: rotate(180deg)
 
 .post-mobile-nav-fab-wrapper
+  pointer-events: auto
   width: 100%
   display: inline-block
   margin-top: 200%
@@ -220,7 +228,7 @@
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
   -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
-  transition: all .1s ease-in-out
+  transition: all .1s ease-in-out, -webkit-transform .2s ease-in-out, -moz-transform .2s ease-in-out, -o-transform .2s ease-in-out, transform .2s ease-in-out
   &:active
     transform: scale(1.1)
     -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)

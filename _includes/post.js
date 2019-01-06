@@ -49,37 +49,66 @@ function getRandomAttentionGetter() {
   return attentionGetters[Math.floor(Math.random() * attentionGetters.length)];
 }
 
+function isMobileNavActive($mobileNav) {
+  var $mNav = $mobileNav || $(SEL_MOBILE_NAV);
+  return typeof $mNav.attr('active') !== typeof undefined;
+}
+
+function setTopMarginForMobileNavFab(active) {
+  var $fabWrapper = $(SEL_MOBILE_NAV_FAB_WRAPPER);
+  var calcString = '';
+  if (!active) {
+    /* This subtracts the full height of the window from the height of fab wrapper */
+    calcString = 'calc(' + ($(window).outerHeight() - $fabWrapper.outerHeight()) + 'px - ';
+  }
+  /* 1rem from the top */
+  $fabWrapper.css('margin-top', calcString + '1rem');
+}
+
+function setMobileNavActive(active) {
+  var $mobileNav = $(SEL_MOBILE_NAV);
+  var $mobileNavFab = $(SEL_MOBILE_NAV_FAB);
+  if (active) {
+    $mobileNav.attr('active', '');
+    $mobileNavFab.attr('active', '');
+  } else {
+    $mobileNav.removeAttr('active');
+    $mobileNavFab.removeAttr('active');
+  }
+  setTopMarginForMobileNavFab(active);
+}
+
 function postPostProcessing() {
-  /* Lock nav in place on Tablet+ */
+  console.log('Running post Processing');
   if ($('aside.post-nav').css('display') == 'none') {
     /* We're on mobile, move the nav content to a new place */
     $('div.post-nav-content').detach().appendTo('div.post-mobile-nav-content-wrapper');
-    /* We animate this piece */
-    var $fabWrapper = $('div.post-mobile-nav-fab-wrapper');
-    $fabWrapper.css('margin-top', 'calc(' + ($(window).outerHeight() - $fabWrapper.outerHeight()) + 'px - 1rem');
+    /* On load, the mobile nav is hidden */
+    setMobileNavActive(false);
     $(window).resize(function() {
-      var $mobileNav = $('div.post-mobile-nav');
-      if (typeof $mobileNav.attr('active') == typeof undefined) {
-        var $fabWrapper = $('div.post-mobile-nav-fab-wrapper');
-        $fabWrapper.css('margin-top', 'calc(' + ($(window).outerHeight() - $fabWrapper.outerHeight()) + 'px - 1rem');
-      }
+      /* Reset the nav on the even of a resize */
+      setMobileNavActive(isMobileNavActive());
     });
-    $('div.post-mobile-nav-fab').click(function(event) {
+    var toggleMobileNav = function(event) {
       event.preventDefault();
-      var $mobileNav = $('div.post-mobile-nav');
-      if (typeof $mobileNav.attr('active') !== typeof undefined) {
-        $mobileNav.removeAttr('active');
-        $fabWrapper.css('margin-top', 'calc(' + ($(window).outerHeight() - $fabWrapper.outerHeight()) + 'px - 1rem');
-      } else {
-        $mobileNav.attr('active', '');
-        $fabWrapper.css('margin-top', '1rem');
-      }
-    });
+      setMobileNavActive(!isMobileNavActive());
+    };
+    $(SEL_MOBILE_NAV_FAB).click(toggleMobileNav);
+    /* When the user taps an anchor link, hide the mobile nav */
     $('div.post-nav-content').find('div.post-nav-toc a').click(function () {
-      $('div.post-mobile-nav-fab').click();
-    })
+      setMobileNavActive(false);
+    });
+    /* Change Tawk.To behavior */
+    window.onTawkLoad = function() {  
+      Tawk_API.hideWidget();
+      setupTawkAutohide();
+    };
+    if (Tawk_API && Tawk_API.hideWidget) {
+      Tawk_API.hideWidget();
+      setupTawkAutohide();
+    }
   } else {
-    /* We're on tablet+ */    
+    /* We're on tablet+, lock the nav on scroll */  
     var $postMain = $('section.post-main').first();
     var $nav = $('div.post-nav-content').first();
     var topOfNav = $nav.offset().top;
@@ -180,11 +209,9 @@ function postPostProcessing() {
   audio.onended = updateControlsToPaused;
   $(SEL_PLAY_PAUSE_WRAPPER).find(SEL_PLAY_PAUSE_CLICK).first().click(function(event) {
     event.preventDefault();
-    console.log('click');
     var audio = $(SEL_AUDIO)[0];
     /* src not set */
     if (audio.src == '') {
-      console.log('Loading');
       audio.src = audio.dataset.mp3;
       updateControlsToLoading();
       audio.oncanplay = function() {
@@ -195,14 +222,11 @@ function postPostProcessing() {
     }
     /* It's not preloaded, so now we have to load the file */
     if (audio.readyState != 4) {
-      console.log('Not ready');
       return;
     }
     if (audio.paused) {
-      console.log('Playing');
       audio.play();
     } else {
-      console.log('Pausing');
       audio.pause();
     }
   });
@@ -210,7 +234,6 @@ function postPostProcessing() {
     event.preventDefault();
     var audio = $(SEL_AUDIO)[0];
     if (isNaN(audio.duration)) {
-      console.log('Can\'t seek forward');
       return;
     }
     if (audio.currentTime + 30 >= audio.duration) {
@@ -224,7 +247,6 @@ function postPostProcessing() {
     event.preventDefault();
     var audio = $(SEL_AUDIO)[0];
     if (isNaN(audio.duration)) {
-      console.log('Can\'t seek backward');
       return;
     }
     if (audio.currentTime - 10 <= 0) {
@@ -248,6 +270,9 @@ const SEL_PLAY_PAUSE_TEXT = 'span:last-child';
 const SEL_FORWARD_WRAPPER = 'div.post-nav-playback-action-wrapper-forward';
 const SEL_FORWARD_CLICK = 'span.post-nav-playback-action-icon-forward';
 const SEL_FORWARD_ICON = 'span.post-nav-playback-action-icon-forward svg';
+const SEL_MOBILE_NAV = 'div.post-mobile-nav';
+const SEL_MOBILE_NAV_FAB_WRAPPER = 'div.post-mobile-nav-fab-wrapper';
+const SEL_MOBILE_NAV_FAB = 'div.post-mobile-nav-fab';
 
 /* Set to pause icon, enable forward/reverse */
 function updateControlsToPlaying() {
@@ -308,4 +333,16 @@ function enableNavAction($btn, enable) {
   } else {
     $btn.removeClass('post-nav-action-button-active');
   }
+}
+
+function hideTawk() {
+  console.log('Hiding that widget');
+  Tawk_API.hideWidget();
+}
+
+/* Setup listeners to hide the widget whenever possible */
+function setupTawkAutohide() {
+  Tawk_API.onChatMinimized = hideTawk;
+  Tawk_API.onChatEnded = hideTawk;
+  Tawk_API.onChatMaximized = hideTawk;
 }
