@@ -29,7 +29,6 @@ window.setupProduct = function() {
         window.onTawkLoad = function() {  
             Tawk_API.hideWidget();
             Tawk_API.onChatMinimized = function() {
-                console.log('Hide that shit');
                 Tawk_API.hideWidget();
             };
         };
