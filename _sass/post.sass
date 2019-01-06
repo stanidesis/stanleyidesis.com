@@ -19,8 +19,8 @@
     border-right: $white-ter .1rem solid
     width: (14rem + 1.5rem)
     padding-right: 1.5rem
-    max-height: 100vh
-    overflow-y: auto
+    max-height: calc(100vh - 1.5rem)
+    overflow: auto
 
 .post-nav-divider
   position: relative
@@ -135,6 +135,8 @@
 
 .post-nav-toc .toc-entry
   @extend .is-size-7
+  +mobile
+    font-size: 1rem !important
 
 .post-headline
   transition: color .3s ease-in-out
