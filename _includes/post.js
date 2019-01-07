@@ -69,13 +69,15 @@ function postPostProcessing() {
     $('div.post-nav-content').detach().appendTo('div.post-mobile-nav-content-wrapper');
     /* On load, the mobile nav is hidden */
     setMobileNavActive(false);
-    $(window).resize(function() {
-      /* Reset the nav on the even of a resize */
-      /*setMobileNavActive(isMobileNavActive());*/
-    });
     var toggleMobileNav = function(event) {
       event.preventDefault();
-      setMobileNavActive(!isMobileNavActive());
+      var mobileNavActive = isMobileNavActive();
+      if (ga) {
+        ga('send', 'event', '{{site.ga.categories.resource}}',
+        '{{site.ga.actions.click}}', 
+        mobileNavActive ? '{{site.ga.labels.hide-nav}}' : '{{site.ga.labels.show-nav}}');
+      }
+      setMobileNavActive(!mobileNavActive);
     };
     $(SEL_MOBILE_NAV_FAB).click(toggleMobileNav);
     /* When the user taps an anchor link, hide the mobile nav */
@@ -190,7 +192,13 @@ function postPostProcessing() {
   var audio = $(SEL_AUDIO)[0];
   audio.onpause = updateControlsToPaused;
   audio.onplay = updateControlsToPlaying;
-  audio.onended = updateControlsToPaused;
+  audio.onended = function() {
+    if (ga) {
+      ga('send', 'event', '{{site.ga.categories.playback-resource}}',
+      '{{site.ga.actions.click}}', '{{site.ga.labels.finished}}');
+    }
+    updateControlsToPaused();
+  };
   $(SEL_PLAY_PAUSE_WRAPPER).find(SEL_PLAY_PAUSE_CLICK).first().click(function(event) {
     event.preventDefault();
     var audio = $(SEL_AUDIO)[0];
@@ -208,6 +216,11 @@ function postPostProcessing() {
     if (audio.readyState != 4) {
       return;
     }
+    /* Google Analytics */
+    if (ga) {
+      ga('send', 'event', '{{site.ga.categories.playback-resource}}', '{{site.ga.actions.click}}',
+      audio.paused ? '{{site.ga.labels.play}}' : '{{site.ga.labels.pause}}');
+    }
     if (audio.paused) {
       audio.play();
     } else {
@@ -216,6 +229,10 @@ function postPostProcessing() {
   });
   $(SEL_FORWARD_WRAPPER).find(SEL_FORWARD_CLICK).click(function(event) {
     event.preventDefault();
+    if (ga) {
+      ga('send', 'event', '{{site.ga.categories.playback-resource}}', '{{site.ga.actions.click}}', 
+      '{{site.ga.labels.fast-forward}}');
+    }
     var audio = $(SEL_AUDIO)[0];
     if (isNaN(audio.duration)) {
       return;
@@ -229,6 +246,10 @@ function postPostProcessing() {
   });
   $(SEL_REWIND_WRAPPER).find(SEL_REWIND_CLICK).click(function(event) {
     event.preventDefault();
+    if (ga) {
+      ga('send', 'event', '{{site.ga.categories.playback-resource}}', '{{site.ga.actions.click}}',
+      '{{site.ga.labels.rewind}}');
+    }
     var audio = $(SEL_AUDIO)[0];
     if (isNaN(audio.duration)) {
       return;
