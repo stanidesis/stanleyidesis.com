@@ -36,6 +36,7 @@ timezone: America/Chicago
 collections_dir: collections
 
 collections:
+  categories:
   books:
   posts:
   works:
@@ -58,14 +59,42 @@ compress_html:
   profile: false
   startings: [html, head, body]
 
+toc:
+  max_level: 3
+
 # Google Analytics Constants
 ga:
+  hit-types:
+    social: "social"
+  social-networks:
+    facebook: "Facebook"
+    twitter: "Twitter"
+    linkedin: "LinkedIn"
+    email: "Email"
   categories:
     book-purchase-intent: "Outbound Link (Book)"
     course-purchase-intent: "Outbound Link (Course)"
     course-skillshare-intent: "Outbound Link (Skillshare)"
     exit-popup: "Exit Popup"
     post-cta: "Post CTA"
+    save-resource: "Save Resource"
+    playback-resource: "Playback Resource"
+    share-resource: "Share Resource"
+    resource: "Resource"
+  actions:
+    click: "click"
+  labels:
+    pdf: "pdf"
+    epub: "epub"
+    mobi: "mobi"
+    mp3: "mp3"
+    play: "play"
+    pause: "pause"
+    rewind: "rewind"
+    fast-forward: "fast-forward"
+    finished: "finished"
+    show-nav: "show nav"
+    hide-nav: "hide nav"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

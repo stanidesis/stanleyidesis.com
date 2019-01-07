@@ -20,7 +20,7 @@ window.setupProduct = function() {
         }
     });
 
-    /* Check for mobile nav, fix it in position if necessary */
+    /* Check for mobile nav */
     var $navMobile = $('.product-nav-mobile').first();
     if ($navMobile.css('display') !== 'none') {
         /* We're on Mobile */
@@ -29,7 +29,6 @@ window.setupProduct = function() {
         window.onTawkLoad = function() {  
             Tawk_API.hideWidget();
             Tawk_API.onChatMinimized = function() {
-                console.log('Hide that shit');
                 Tawk_API.hideWidget();
             };
         };

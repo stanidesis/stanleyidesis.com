@@ -44,53 +44,248 @@ layout: default
   description=page.description
   article_body=post_body
 -%}
-<article>
-  <!-- Header -->
-  <section class="hero is-large has-js-background-image" data-js-bg-source="{{page.feature_image_url}}" data-js-target-opacity="1">
-    <div class="post-hero-body">
-      <div class="container has-text-centered">
-        <a href="{{page.url}}"><h1 class="subtitle is-size-4 is-size-2-tablet has-text-white-ter post-hero-headline">{{page.headline}}</h1></a>
+<!-- Header -->
+<section class="hero is-medium">
+    <div class="hero-body has-no-padding">
+      <div class="container">
+        <figure class="image is-16by9">
+          <img src="{{page.feature_image_url}}">
+        </figure>
       </div>
     </div>
   </section>
-  <!-- Byline and Date -->
-  {%- assign date_format = "%B %-d, %Y" -%}
-  <section class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-6 is-offset-3">
-        {%- if page.date_modified -%}
-          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Updated {{ page.date_modified | date: date_format }}</p>
-        {%- else -%}
-          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Published {{ page.date | date: date_format }}</p>
-        {%- endif -%}
+<section class="section post-main">
+  <!-- Begin Content -->
+  <div class="container">
+    <div class="post-duo">
+      <aside class="post-nav">
+        <!-- Actual Nav Content -->
+        <div class="post-nav-content">
+          <!-- Available Resource Actions -->
+          <div class="post-nav-action-container">
+            <!-- Save and Share buttons -->
+            <div class="post-nav-action-button-wrapper">
+              <div class="post-nav-action-button">
+                <div id="post-nav-action-save" class="button is-primary is-rounded is-outlined">
+                  <span class="icon">
+                    <i class="far fa-save"></i>
+                  </span>
+                  <span>save</span>
+                </div>
+              </div>
+              <div class="post-nav-action-button">
+                <div id="post-nav-action-share" class="button is-primary is-rounded is-outlined">
+                  <span class="icon">
+                    <i class="fas fa-share-alt"></i>
+                  </span>
+                  <span>share</span>
+                </div>
+              </div>
+            </div>
+            <!-- Container to reveal the save/share actions -->
+            <div class="post-nav-action-dropdown-wrapper">
+              <!-- Save container -->
+              <div id="post-nav-action-dropdown-save" class="post-nav-action-dropdown">
+                <div class="post-nav-action-dropdown-caret-table">
+                  <div class="post-nav-action-dropdown-caret-cell"><br></div>
+                  <div class="post-nav-action-dropdown-caret-empty-cell"></div>
+                </div>
+                {%- if page.download_pdf -%}
+                <a class="button is-rounded is-fullwidth"
+                href="{{page.download_pdf}}"
+                ga-on="click,auxclick,contextmenu"
+                ga-event-category="{{site.ga.categories.save-resource}}"
+                ga-event-action="{{site.ga.actions.click}}"
+                ga-event-label="{{site.ga.labels.pdf}}">
+                  <span class="icon">
+                    <i class="far fa-file-pdf"></i>
+                  </span>
+                  <span>pdf</span>
+                </a>
+                {%- endif -%}
+                {%- if page.download_epub -%}
+                <a class="button is-rounded is-fullwidth"
+                href="{{page.download_epub}}"
+                ga-on="click,auxclick,contextmenu"
+                ga-event-category="{{site.ga.categories.save-resource}}"
+                ga-event-action="{{site.ga.actions.click}}"
+                ga-event-label="{{site.ga.labels.epub}}">
+                  <span class="icon">
+                    <i class="fas fa-book"></i>
+                  </span>
+                  <span>ePub</span>
+                </a>
+                {%- endif -%}
+                {%- if page.download_mobi -%}
+                <a class="button is-rounded is-fullwidth"
+                href="{{page.download_mobi}}"
+                ga-on="click,auxclick,contextmenu"
+                ga-event-category="{{site.ga.categories.save-resource}}"
+                ga-event-action="{{site.ga.actions.click}}"
+                ga-event-label="{{site.ga.labels.mobi}}">
+                  <span class="icon">
+                    <i class="fab fa-amazon"></i>
+                  </span>
+                  <span>mobi</span>
+                </a>
+                {%- endif -%}
+                {%- if page.download_mp3 -%}
+                <a class="button is-rounded is-fullwidth"
+                href="{{page.download_mp3}}"
+                ga-on="click,auxclick,contextmenu"
+                ga-event-category="{{site.ga.categories.save-resource}}"
+                ga-event-action="{{site.ga.actions.click}}"
+                ga-event-label="{{site.ga.labels.mp3}}">
+                  <span class="icon">
+                    <i class="fas fa-headphones-alt"></i>
+                  </span>
+                  <span>mp3</span>
+                </a>
+                {%- endif -%}
+              </div>
+              <!-- Share container -->
+              <div id="post-nav-action-dropdown-share" class="post-nav-action-dropdown"
+                data-share-url="{{page.url | prepend: site.url}}"
+                data-share-title="{{page.title}}"
+                data-share-description="{{page.description}}"
+                data-share-image="{{page.social_image_url}}">
+                <div class="post-nav-action-dropdown-caret-table">
+                  <div class="post-nav-action-dropdown-caret-empty-cell"></div>
+                  <div class="post-nav-action-dropdown-caret-cell"><br></div>
+                </div>
+                <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-facebook"
+                  ga-on="click"
+                  ga-event-category="{{site.ga.categories.share-resource}}"
+                  ga-event-action="{{site.ga.actions.click}}"
+                  ga-event-label="{{site.ga.social-networks.facebook}}">
+                    <span class="icon">
+                      <i class="fab fa-facebook"></i>
+                    </span>
+                    <span>facebook</span>
+                  </a>
+                  <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-twitter"
+                  ga-on="click"
+                  ga-event-category="{{site.ga.categories.share-resource}}"
+                  ga-event-action="{{site.ga.actions.click}}"
+                  ga-event-label="{{site.ga.social-networks.twitter}}">
+                    <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                    </span>
+                    <span>twitter</span>
+                  </a>
+                  <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-linkedin"
+                  ga-on="click"
+                  ga-event-category="{{site.ga.categories.share-resource}}"
+                  ga-event-action="{{site.ga.actions.click}}"
+                  ga-event-label="{{site.ga.social-networks.linkedin}}">
+                    <span class="icon">
+                      <i class="fab fa-linkedin"></i>
+                    </span>
+                    <span>linkedin</span>
+                  </a>
+                  <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-email"
+                  ga-on="click"
+                  ga-event-category="{{site.ga.categories.share-resource}}"
+                  ga-event-action="{{site.ga.actions.click}}"
+                  ga-event-label="{{site.ga.social-networks.email}}">
+                    <span class="icon">
+                      <i class="fas fa-at"></i>
+                    </span>
+                    <span>email</span>
+                  </a>
+              </div>
+            </div>
+          </div>
+          {%- if page.categories -%}
+          <div class="post-nav-divider">
+            <span class="icon is-medium has-text-primary post-nav-divider-icon">
+              <i class="fa-lg far fa-folder-open"></i>
+            </span>
+          </div>
+          <div class="tags">
+            {%- for category in page.categories -%}
+            <span class="tag is-medium is-rounded">{{category}}</span>
+            {%- endfor -%}
+          </div>
+          {%- endif -%}
+          {%- if page.download_mp3 -%}
+          <div class="post-nav-divider">
+            <span class="icon is-medium has-text-primary post-nav-divider-icon">
+              <i class="fa-lg fas fa-headphones-alt"></i>
+            </span>
+          </div>
+          <audio id="post-nav-playback-audio" class="is-hidden" preload="metadata" data-mp3="{{page.download_mp3}}"></audio>
+          <div class="post-nav-playback-wrapper has-text-centered" >
+            <div class="post-nav-playback-action-wrapper-rewind has-text-centered is-inline-block" disabled>
+              <span class="post-nav-playback-action-icon-rewind icon is-medium has-text-primary is-block">
+                <i class="fa-lg fas fa-undo-alt"></i>
+              </span>
+              <span class="is-block has-text-weight-light is-unselectable">10s</span>
+            </div>
+            <div class="post-nav-playback-action-wrapper-play-pause has-text-centered is-inline-block">
+              <span class="post-nav-playback-action-icon-play-pause icon is-large has-text-primary is-block">
+                <i class="fa-3x fas fa-play-circle"></i>
+              </span>
+              <span class="is-block has-text-weight-light is-unselectable">play</span>
+            </div>
+            <div class="post-nav-playback-action-wrapper-forward has-text-centered is-inline-block" disabled>
+              <span class="post-nav-playback-action-icon-forward icon is-medium has-text-primary is-block">
+                <i class="fa-lg fas fa-redo-alt"></i>
+              </span>
+              <span class="is-block has-text-weight-light is-unselectable">30s</span>
+            </div>
+          </div>
+          {%- endif -%}
+          <!-- The ToC -->
+          <div class="post-nav-divider">
+            <span class="icon is-medium has-text-primary post-nav-divider-icon">
+              <i class="fa-lg far fa-bookmark"></i>
+            </span>
+          </div>
+          <div class="post-nav-toc content">
+            {{ content | toc_only }}
+          </div>
         </div>
-      </div>
-    </div>
-    <br />
-    <br />
-    <!-- Begin Content -->
-    <div class="container">
+      </aside>
       <div class="columns is-multiline">
-        <div class="column is-6 is-offset-3 post-content">
-          {{content}}
+        <!-- Content Column -->
+        <article class="column is-8 post-content-column">
+          <a href="{{page.url}}"><h1 class="subtitle is-size-4 is-size-2-tablet has-text-grey-dark post-headline">{{page.headline}}</h1></a>
+          <br>
+          <!-- Byline and Date -->
+          {%- assign date_format = "%B %-d, %Y" -%}
+          {%- if page.date_modified -%}
+          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Updated {{ page.date_modified | date: date_format }}</p>
+          <br>
+          {%- else -%}
+          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Published {{ page.date | date: date_format }}</p>
+          <br>
+          {%- endif -%}
+          <div class="post-content">
+            {{ content | inject_anchors }}
+          </div>
           <hr>
-        </div>
-        <div class="column is-6 is-offset-3 post-share-footer has-text-centered">
-          <a id="share-button"
-             data-target="share-modal"
-             data-share-url="{{page.url | prepend: site.url}}"
-             data-share-title="{{page.title}}"
-             data-share-description="{{page.description}}"
-             data-share-image="{{page.social_image_url}}"
-             class="button is-primary is-large is-rounded">Sharing Is…?</a>
-        </div>
+        </article>
       </div>
     </div>
-  </section>
-</article>
+  </div>
+</section>
+<!-- Background that dims the content while active -->
+<div class="post-mobile-nav-backdrop can-activate"></div>
+<div class="post-mobile-nav can-activate">
+  <!-- Begins with a FAB -->
+  <div class="post-mobile-nav-fab-wrapper">
+    <div class="post-mobile-nav-fab can-activate">
+      <span class="post-mobile-nav-fab-icon icon is-medium">
+        <i class="fa-2x far fa-thumbs-up"></i>
+      </span>
+    </div>
+  </div>
+  <div class="post-mobile-nav-content-wrapper">
+    <!-- Move content to here? -->
+  </div>
+</div>
 {%- include image-modal.html -%}
-{%- include share-modal.html -%}
 <script>
-{%-include post.js -%}
+{%-include post.js-%}
 </script>

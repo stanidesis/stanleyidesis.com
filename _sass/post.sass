@@ -1,11 +1,151 @@
-.post-hero-body
-  @extend .hero-body
-  background: transparentize($black, .5)
-  // background: linear-gradient(transparent 60%, transparentize($pink, .3))
-  background-clip: padding-box
+.post-main
+  position: relative
 
-.post-hero-headline
-  text-shadow: 0px 1px 2px rgba(150, 150, 150, 1)
+.post-duo
+  display: flex
+  
+.post-nav
+  position: relative
+  +mobile
+    display: none
+  +tablet
+    flex: 0 0 (14rem + 1.5rem)
+    overflow: hidden
+
+.post-nav-content
+  position: relative
+  padding: 1.5rem 0
+  +tablet
+    border-right: $white-ter .1rem solid
+    width: (14rem + 1.5rem)
+    padding-right: 1.5rem
+    max-height: calc(100vh - 1.5rem)
+    overflow: auto
+
+.post-nav-divider
+  position: relative
+  margin: 2rem 0
+  &:before
+    z-index: -1
+    content: ''
+    position: absolute
+    height: 100%
+    width: 100%
+    border-bottom: $grey-lighter .2rem dotted
+    transform: translateY(-50%)
+
+.post-nav-divider-icon
+  border-left: 2rem $white solid
+  border-right: 2rem $white solid
+  text-align: center
+  background-color: $white
+  display: flex
+  margin: auto auto
+
+.post-nav-action-button-wrapper
+  display: table
+  table-layout: fixed
+  text-align: center
+  width: 100%
+
+.post-nav-action-button
+  display: table-cell
+  width: 50%
+  padding-right: .1rem
+  div:first-child
+    width: 95% !important
+
+// Add this class to save/share when active
+.post-nav-action-button-active
+  background-color: $white !important
+  border-color: $white !important
+  color: $grey-dark !important
+
+.post-nav-action-dropdown-wrapper
+  display: block
+  margin-top: 1.5rem
+  margin-bottom: 1rem
+
+.post-nav-action-dropdown
+  display: none
+  width: 100%
+  border: .1rem $white-ter solid
+  padding: 1rem
+  a
+    display: inline-block
+    margin-bottom: 1rem
+    &:last-child
+      margin-bottom: 0rem
+
+.post-nav-action-dropdown-share-facebook
+  color: $facebook
+
+.post-nav-action-dropdown-share-twitter
+  color: $twitter
+
+.post-nav-action-dropdown-share-linkedin
+  color: $linkedin
+
+.post-nav-action-dropdown-caret-table
+  @extend .post-nav-action-button-wrapper
+
+.post-nav-action-dropdown-caret-cell,
+.post-nav-action-dropdown-caret-empty-cell
+  @extend .post-nav-action-button
+
+.post-nav-action-dropdown-caret-cell
+  width: 35% !important
+
+.post-nav-action-dropdown-caret-cell:before
+  @extend .triangle-up
+  border-color: transparent transparent $white-ter transparent !important
+  content: ''
+  display: inline-block
+  margin-top: -2.2rem
+
+.post-nav-playback-action-wrapper[disabled],
+.post-nav-playback-action-wrapper-large[disabled]
+  color: $grey-lighter !important
+  span
+    color: $grey-lighter !important
+
+.post-nav-playback-action-wrapper-large
+  margin: 0 1rem
+
+.post-nav-playback-action-wrapper-play-pause
+  @extend .post-nav-playback-action-wrapper-large
+
+.post-nav-playback-action-wrapper-rewind,
+.post-nav-playback-action-wrapper-forward
+  @extend .post-nav-playback-action-wrapper
+
+.post-nav-playback-action-icon:hover
+  cursor: pointer
+
+.post-nav-playback-action-icon-rewind,
+.post-nav-playback-action-icon-play-pause,
+.post-nav-playback-action-icon-forward
+  @extend .post-nav-playback-action-icon
+  transition: transform .1s ease-in-out
+
+.post-nav-playback-action-icon-rewind:active,
+.post-nav-playback-action-icon-play-pause:active,
+.post-nav-playback-action-icon-forward:active
+  transform: scale(1.2)
+
+.post-nav-toc .toc-entry
+  @extend .is-size-7
+  +mobile
+    font-size: 1rem !important
+
+.post-headline
+  transition: color .3s ease-in-out
+  &:hover
+    color: $primary !important
+
+.post-content-column
+  +tablet
+    margin-left: 1.5rem
 
 .post-content
   @extend .content
@@ -46,3 +186,94 @@
 
 #share-button
   opacity: 0
+
+.post-mobile-nav-backdrop
+  z-index: 31
+  position: fixed
+  top: 0
+  height: 100vh
+  width: 100vh
+  pointer-events: none
+  background-color: rgba(0, 0, 0, .5)
+  opacity: 0
+  -webkit-transition: opacity .2s ease-in-out
+  -moz-transition: opacity .2s ease-in-out
+  -o-transition: opacity .2s ease-in-out
+  transition: opacity .2s ease-in-out
+  +tablet
+    display: none
+
+.post-mobile-nav-backdrop[active]
+  opacity: 1
+
+// This is the super secret mobile nav?
+.post-mobile-nav
+  z-index: 31
+  position: fixed
+  height: calc(4rem + 1rem + 1rem)
+  top: auto
+  left: 0
+  right: 0
+  bottom: 0
+  padding-top: 1rem
+  -webkit-transition: height .3s ease-in-out
+  -moz-transition: height .3s ease-in-out
+  -o-transition: height .3s ease-in-out
+  transition: height .3s ease-in-out
+  pointer-events: none
+  .post-mobile-nav-content-wrapper
+    opacity: 0 !important
+  +tablet
+    display: none
+
+.post-mobile-nav[active]
+  pointer-events: auto
+  height: 100%
+  .post-mobile-nav-fab
+    -webkit-transform: rotate(180deg)
+    -moz-transform: rotate(180deg)
+    -o-transform: rotate(180deg)
+    transform: rotate(180deg)
+  .post-mobile-nav-content-wrapper
+    opacity: 1 !important
+
+.post-mobile-nav-fab-wrapper
+  pointer-events: auto
+  width: 100%
+  display: inline-block
+
+.post-mobile-nav-fab
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: 0 auto
+  width: 4rem
+  height: 4rem
+  background-color: $primary
+  border-radius: 500px
+  color: $white
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
+  transition: all .1s ease-in-out, -webkit-transform .2s ease-in-out, -moz-transform .2s ease-in-out, -o-transform .2s ease-in-out, transform .2s ease-in-out
+  &:active
+    transform: scale(1.1)
+    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)
+    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)
+
+.post-mobile-nav-content-wrapper
+  // 4rem is FAB size, 1rem for padding top
+  height: calc(100% - 4rem - 1rem)
+  background-color: $white
+  display: inline-block
+  position: relative
+  overflow-y: scroll
+  padding: 0 1.5rem
+  margin-top: 1rem
+  width: 100%
+  z-index: 1
+  -webkit-transition: opacity .2s ease-in-out
+  -moz-transition: opacity .2s ease-in-out
+  -o-transition: opacity .2s ease-in-out
+  transition: opacity .2s ease-in-out

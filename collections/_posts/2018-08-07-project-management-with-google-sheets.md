@@ -1,11 +1,15 @@
 ---
+# Jekyll
 layout: post
+categories: [productivity]
 
+# SEO
 date_modified: "2018-09-27"
 
 title: "Easy Project Management with Google Sheets (Template Included)"
 
 description: "ProSheets is a free DIY project management template that combines Google Sheets, Google Calendar, and Google Contacts into a project management solution and todo list that you can use on your phone, desktop, tablet, or any device with Calendar access."
+
 headline: "Manage Your Personal Projects in Google Sheets with this Template"
 
 alt_headline: "Free Template: Project Management with Google Sheets, Calendar, and Contacts"
@@ -21,6 +25,16 @@ genre: "Project Management"
 permalink: /project-management-with-google-sheets-free-template
 
 keywords: "google calendar daily tasks, google calendar tasks list, google tasks google calendar, tasks for google calendar, using tasks in google calendar, diy task, diy tasks, diy things to do, diy to do list, diy to do list template, diy todo list, project management google sheets, project management google sheets template, project management in google sheets, project management using google sheets, project management with google sheets, google tasks on calendar, google sheets task list, google sheets task list template, google sheets task management template, google sheets task manager, google sheets tasks, google sheets todo list, google sheets todo list template"
+
+
+# TOC
+toc: true
+
+# Downloadables
+download_pdf: "https://drive.google.com/uc?export=download&id=1ccVx-IZaP0iyc5OCSF_xohFy3m72Hfkn"
+download_epub: "https://drive.google.com/uc?export=download&id=1zbQ1QI5Z4cmhqexgBSH9PmN-6CDa1Lld"
+download_mobi: "https://drive.google.com/uc?export=download&id=1NCXY6CnETwsWzLW__G9it8MA-QLHiKop"
+download_mp3: "https://drive.google.com/uc?export=download&id=19v6B5qM0g70l9GJ_yHDCU_xx9_ziFqIK"
 ---
 It all began with money problems. I went from juggling a handful of consistently well-paying tasks to suddenly working on several potentially worthless projects overnight, projects I needed to track immediately. But if you’re anything like me, your problem with project management tools and to-do list apps is that you can’t stick to any of them. Sooner or later, you grow weary of upkeep and you forget about ticking off boxes or dragging tiles along your little Kanban board.
 
