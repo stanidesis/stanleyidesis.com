@@ -90,30 +90,38 @@ layout: default
                   <div class="post-nav-action-dropdown-caret-cell"><br></div>
                   <div class="post-nav-action-dropdown-caret-empty-cell"></div>
                 </div>
-                <a class="button is-rounded is-fullwidth">
+                {%- if page.download_pdf -%}
+                <a class="button is-rounded is-fullwidth" href="{{page.download_pdf}}">
                   <span class="icon">
                     <i class="far fa-file-pdf"></i>
                   </span>
                   <span>pdf</span>
                 </a>
-                <a class="button is-rounded is-fullwidth">
+                {%- endif -%}
+                {%- if page.download_epub -%}
+                <a class="button is-rounded is-fullwidth" href="{{page.download_epub}}">
                   <span class="icon">
                     <i class="fas fa-book"></i>
                   </span>
                   <span>ePub</span>
                 </a>
-                <a class="button is-rounded is-fullwidth">
+                {%- endif -%}
+                {%- if page.download_mobi -%}
+                <a class="button is-rounded is-fullwidth" href="{{page.download_mobi}}">
                   <span class="icon">
                     <i class="fab fa-amazon"></i>
                   </span>
                   <span>mobi</span>
                 </a>
-                <a class="button is-rounded is-fullwidth">
+                {%- endif -%}
+                {%- if page.download_mp3 -%}
+                <a class="button is-rounded is-fullwidth" href="{{page.download_mp3}}">
                   <span class="icon">
                     <i class="fas fa-headphones-alt"></i>
                   </span>
                   <span>mp3</span>
                 </a>
+                {%- endif -%}
               </div>
               <!-- Share container -->
               <div id="post-nav-action-dropdown-share" class="post-nav-action-dropdown"
