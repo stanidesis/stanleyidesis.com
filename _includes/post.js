@@ -72,7 +72,7 @@ function postPostProcessing() {
     var toggleMobileNav = function(event) {
       event.preventDefault();
       var mobileNavActive = isMobileNavActive();
-      if (ga) {
+      if (isGaAvailable()) {
         ga('send', 'event', '{{site.ga.categories.resource}}',
         '{{site.ga.actions.click}}', 
         mobileNavActive ? '{{site.ga.labels.hide-nav}}' : '{{site.ga.labels.show-nav}}');
@@ -193,7 +193,7 @@ function postPostProcessing() {
   audio.onpause = updateControlsToPaused;
   audio.onplay = updateControlsToPlaying;
   audio.onended = function() {
-    if (ga) {
+    if (isGaAvailable()) {
       ga('send', 'event', '{{site.ga.categories.playback-resource}}',
       '{{site.ga.actions.click}}', '{{site.ga.labels.finished}}');
     }
@@ -217,7 +217,7 @@ function postPostProcessing() {
       return;
     }
     /* Google Analytics */
-    if (ga) {
+    if (isGaAvailable()) {
       ga('send', 'event', '{{site.ga.categories.playback-resource}}', '{{site.ga.actions.click}}',
       audio.paused ? '{{site.ga.labels.play}}' : '{{site.ga.labels.pause}}');
     }
@@ -229,7 +229,7 @@ function postPostProcessing() {
   });
   $(SEL_FORWARD_WRAPPER).find(SEL_FORWARD_CLICK).click(function(event) {
     event.preventDefault();
-    if (ga) {
+    if (isGaAvailable()) {
       ga('send', 'event', '{{site.ga.categories.playback-resource}}', '{{site.ga.actions.click}}', 
       '{{site.ga.labels.fast-forward}}');
     }
@@ -246,7 +246,7 @@ function postPostProcessing() {
   });
   $(SEL_REWIND_WRAPPER).find(SEL_REWIND_CLICK).click(function(event) {
     event.preventDefault();
-    if (ga) {
+    if (isGaAvailable()) {
       ga('send', 'event', '{{site.ga.categories.playback-resource}}', '{{site.ga.actions.click}}',
       '{{site.ga.labels.rewind}}');
     }
@@ -352,4 +352,9 @@ function setupTawkAutohide() {
   Tawk_API.onChatMinimized = hideTawk;
   Tawk_API.onChatEnded = hideTawk;
   Tawk_API.onChatMaximized = hideTawk;
+}
+
+/* Quick check for Google Analytics */
+function isGaAvailable() {
+  return typeof ga != "undefined";
 }
