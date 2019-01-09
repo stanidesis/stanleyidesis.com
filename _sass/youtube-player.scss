@@ -6,7 +6,8 @@
     overflow: hidden;
     max-width: 100%;
     background: $white;
-    margin: 5px;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .youtube-player iframe {
@@ -15,7 +16,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: 30;
     background: transparent;
 }
 
