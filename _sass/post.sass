@@ -88,6 +88,9 @@
 
 .post-nav-action-dropdown-caret-table
   @extend .post-nav-action-button-wrapper
+  // Move the triangle up, pad the first button
+  margin-top: -2.2rem
+  margin-bottom: 1rem
 
 .post-nav-action-dropdown-caret-cell,
 .post-nav-action-dropdown-caret-empty-cell
@@ -98,10 +101,10 @@
 
 .post-nav-action-dropdown-caret-cell:before
   @extend .triangle-up
+  // Changes color to $white-ter
   border-color: transparent transparent $white-ter transparent !important
   content: ''
   display: inline-block
-  margin-top: -2.2rem
 
 .post-nav-playback-action-wrapper[disabled],
 .post-nav-playback-action-wrapper-large[disabled]
