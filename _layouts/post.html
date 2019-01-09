@@ -45,15 +45,17 @@ layout: default
   article_body=post_body
 -%}
 <!-- Header -->
+{%- if page.feature_image_url -%}
 <section class="hero is-medium">
-    <div class="hero-body has-no-padding">
-      <div class="container">
-        <figure class="image is-16by9">
-          <img src="{{page.feature_image_url}}">
-        </figure>
-      </div>
+  <div class="hero-body has-no-padding">
+    <div class="container">
+      <figure class="image is-16by9">
+        <img src="{{page.feature_image_url}}">
+      </figure>
     </div>
-  </section>
+  </div>
+</section>
+{%- endif -%}
 <section class="section post-main">
   <!-- Begin Content -->
   <div class="container">
