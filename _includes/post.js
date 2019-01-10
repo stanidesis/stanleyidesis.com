@@ -190,6 +190,13 @@ function postPostProcessing() {
 
   /* Setup MP3 Playback */
   var audio = $(SEL_AUDIO)[0];
+  if (audio) {
+    setupMp3Playback(audio);
+  }
+}
+
+/* Accepts the Audio dom object */
+function setupMp3Playback(audio) {
   audio.onpause = updateControlsToPaused;
   audio.onplay = updateControlsToPlaying;
   audio.onended = function() {
