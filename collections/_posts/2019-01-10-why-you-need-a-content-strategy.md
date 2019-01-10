@@ -4,19 +4,19 @@ layout: post
 categories: [content marketing]
 
 # SEO
-date_modified: "2019-01-09"
+# date_modified: "2019-01-09"
 
 title: "Why You Need a Content Marketing Strategy"
 
-description: "If you're asking yourself, 'why do I need a content marketing strategy?' then you've come to the right place. Discover what a content marketing strategy is for and how it can help you write meaningful content that delivers results."
+description: "If you're asking yourself, 'why do I need a content marketing strategy?' then you're not alone. I was forced to ask the same question, and I discovered the purpose of content marketing strategies and how they can help us produce meaningful content that delivers results."
 
 headline: "A Content Marketing Strategy: You Totally Need One Right This Second"
 
 alt_headline: "You Don't Need a Content Strategy, But A Runner Doesn't Need Shoes Either"
 
-# feature_image_url: "/assets/images/collections/posts/"
+feature_image_url: "/assets/images/collections/posts/2019-01-09-why-you-need-a-content-strategy/why-you-need-a-content-marketing-strategy.png"
 
-# social_image_url: "/assets/images/collections/posts/"
+social_image_url: "/assets/images/collections/posts/2019-01-09-why-you-need-a-content-strategy/why-you-need-a-content-marketing-strategy.png"
 
 author: "Stanley Idesis"
 
@@ -31,10 +31,10 @@ keywords: "content marketing, content strategy, why i need a content strategy, w
 toc: true
 
 # Downloadables
-# download_pdf: ""
-# download_epub: ""
-# download_mobi: ""
-# download_mp3: ""
+download_pdf: "https://drive.google.com/uc?export=download&id=1zm78UMKnDx8YT3IzXjt4MCdRLt_2HT9t"
+download_epub: "https://drive.google.com/uc?export=download&id=1jb-6vj-J8m3UnyLDzLGb5IMZxvtI7ovB"
+download_mobi: "https://drive.google.com/uc?export=download&id=1ybiru-4hHIWxbtKKgSgu2ewICLbZiZZt"
+download_mp3: "https://drive.google.com/uc?export=download&id=1wjViOcamIhiEDliXWy-fQIiMe5ImBUe_"
 ---
 Actually, you *don’t*. Was that title misleading? I apologize, but leading you on was my goal, so that puts me in a sorry-not-sorry situation. So… sorry? I don’t think it’s honest to claim that you nor anyone *needs* a content strategy. Like most things, a content strategy is not something the human body depends on such as air, water, and a steady stream of Netflix. But **a content strategy can help prevent you from creating meaningless content.**
 
