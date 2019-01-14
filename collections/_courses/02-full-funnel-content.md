@@ -1,7 +1,8 @@
 ---
 layout: course
 slug: full-funnel-content
-title: "Full-Funnel Content"
+title: "Full-Funnel Content: A Data-Driven Content Strategy for Humans"
+main_title: "Full-Funnel Content"
 subtitle: "A Data-Driven Content Strategy for Humans"
 course_skillshare_url: "https://skl.sh/2UaqD6B"
 course_skillshare_staff_pick: true

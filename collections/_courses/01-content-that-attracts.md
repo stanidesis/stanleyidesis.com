@@ -1,7 +1,8 @@
 ---
 layout: course
 slug: content-that-attracts
-title: "Content That Attracts"
+title: "Content That Attracts: Discover Content Ideas and Grow Your Audience"
+main_title: "Content That Attracts"
 subtitle: "Discover Content Ideas and Grow Your Audience"
 course_skillshare_staff_pick: true
 course_skillshare_url: "https://skl.sh/2Mgq07r"

@@ -91,8 +91,10 @@ layout: default
             <img src="{{book.url_cover_2x3}}" alt="{{book.title}} Cover">
           </figure>
           <div>
-            <h2 class="title is-5">{{book.title}}</h2>
+            <h2 class="title is-5">{{book.main_title}}</h2>
+            {%- if book.subtitle -%}
             <h3 class="subtitle is-6 has-text-weight-light">{{book.subtitle}}</h3>
+            {%- endif -%}
           </div>
           <hr>
           <a class="button is-primary is-rounded product-nav-button" data-target="book-modal"
@@ -111,7 +113,7 @@ layout: default
           <a class="button is-primary is-rounded is-outlined is-small product-nav-button"
             data-target="sample-modal"
             data-url-img-2x3="{{book.url_cover_2x3}}"
-            data-title="{{book.title}}"
+            data-title="{{book.main_title}}"
             data-type="book">
             <span class="icon is-small">
               <i class="fas fa-file-pdf"></i>
@@ -122,8 +124,10 @@ layout: default
       </aside>
       <div class="product-content columns">
         <div class="column">
-          <h1 class="title is-2">{{book.title}}</h1>
+          <h1 class="title is-2">{{book.main_title}}</h1>
+          {%- if book.subtitle -%}
           <h3 class="subtitle is-5">{{book.subtitle}}</h3>
+          {%- endif -%}
           <div class="content">
             {{book.content}}
           </div>

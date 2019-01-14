@@ -12,10 +12,6 @@ layout: default
           <figure class="image is-16x9 product-nav-cover">
             <img src="/{{page.cover_photo_url}}" alt="{{page.title}} Cover">
           </figure>
-          <!-- <div>
-            <h2 class="title is-5">{{page.title}}</h2>
-            <h3 class="subtitle is-6 has-text-weight-light">{{page.subtitle}}</h3>
-          </div> -->
           {%- if page.course_props -%}
           <h4>Included In This Course:</h4>
           <br>
@@ -68,8 +64,10 @@ layout: default
           <div class="youtube-player" data-id="{{page.course_preview}}" data-src="/{{page.preview_thumb}}"></div>
           <hr>
           {%- endif -%}
-          <h1 class="title is-3">{{page.title}}</h1>
+          <h1 class="title is-3">{{page.main_title}}</h1>
+          {%- if page.subtitle -%}
           <h3 class="subtitle is-5">{{page.subtitle}}</h3>
+          {%- endif -%}
           <div class="content">
             {{page.content}}
           </div>

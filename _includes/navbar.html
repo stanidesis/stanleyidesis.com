@@ -23,7 +23,7 @@
           <div class="navbar-dropdown is-boxed">
             {% for course in site.courses | sort %}
             <a class="navbar-item" href="{{course.id}}">
-              <p><em>{{course.title | append: ": " | append: course.subtitle}}</em></p>
+              <p><em>{{course.title}}</em></p>
             </a>
             {% endfor %}
           </div>

@@ -1,7 +1,8 @@
 ---
 layout: course
 slug: content-marketing-bundle
-title: "Content Marketing Bundle"
+title: "Content Marketing Bundle: Two Courses Combined Into One"
+main_title: "Content Marketing Bundle"
 subtitle: "Two Courses Combined Into One"
 course_gumroad_url: "https://gum.co/content-marketing-course-bundle"
 cover_photo_url: "assets/images/collections/courses/content-marketing-bundle/content-marketing-bundle-cover.png"
