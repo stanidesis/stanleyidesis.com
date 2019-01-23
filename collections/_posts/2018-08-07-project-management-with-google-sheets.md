@@ -4,7 +4,7 @@ layout: post
 categories: [productivity]
 
 # SEO
-date_modified: "2018-09-27"
+date_modified: "2019-01-23"
 
 title: "Easy Project Management with Google Sheets (Template Included)"
 
@@ -26,7 +26,6 @@ permalink: /project-management-with-google-sheets-free-template
 
 keywords: "google calendar daily tasks, google calendar tasks list, google tasks google calendar, tasks for google calendar, using tasks in google calendar, diy task, diy tasks, diy things to do, diy to do list, diy to do list template, diy todo list, project management google sheets, project management google sheets template, project management in google sheets, project management using google sheets, project management with google sheets, google tasks on calendar, google sheets task list, google sheets task list template, google sheets task management template, google sheets task manager, google sheets tasks, google sheets todo list, google sheets todo list template"
 
-
 # TOC
 toc: true
 
@@ -36,6 +35,7 @@ download_epub: "https://drive.google.com/uc?export=download&id=1zbQ1QI5Z4cmhqexg
 download_mobi: "https://drive.google.com/uc?export=download&id=1NCXY6CnETwsWzLW__G9it8MA-QLHiKop"
 download_mp3: "https://drive.google.com/uc?export=download&id=19v6B5qM0g70l9GJ_yHDCU_xx9_ziFqIK"
 ---
+
 It all began with money problems. I went from juggling a handful of consistently well-paying tasks to suddenly working on several potentially worthless projects overnight, projects I needed to track immediately. But if you’re anything like me, your problem with project management tools and to-do list apps is that you can’t stick to any of them. Sooner or later, you grow weary of upkeep and you forget about ticking off boxes or dragging tiles along your little Kanban board.
 
 ## I’ve Tried Everything
@@ -60,7 +60,6 @@ Without further ado, meet ProSheets.
   <iframe src="https://www.youtube.com/embed/v84x2bxw0HU">
   </iframe>
 </div>
-
 
 # ProSheets v1.0: A Template for Project Management in Google Sheets
 
@@ -109,6 +108,7 @@ Rather than getting lost in your backlog, ongoing tasks rollover to the next day
 ProSheets identifies open tasks by preceding their title with the following symbol: ‘⭕.’ Conversely, completed tasks are preceded by a ‘✅.’ You can customize these characters by opening up ProSheet’s scripts and editing the `Constants.gs` file.
 
 ## How-To Guide
+
 Watch [this video](https://www.youtube.com/watch?v=v84x2bxw0HU) (embedded above) or refer to the guide below.
 
 ### Install
@@ -188,10 +188,11 @@ The cutest boy is Kevin, btw, Todd is hideous and I can’t believe you like him
 
 #### Changelog
 
-| **Date** | **Update** |
-| :--: | :-- |
-| August 8, 2018 | * Bug Fix: Now catches an error if you delete a Project+Milestone contact from your contacts.<br /><br />* Bug Fix: Deleting a task event that does not exist now supported |
-| August 20, 2018 | * New: Delete Projects and Milestones safely using the new 'Delete' dropdown option.<br /><br />This removes the generated contact info for Project+Milestones when you no longer want to work on them. Use this method rather than deleting the row yourself to keep your contact info accurate.
-| August 27, 2018 | * New: Project+Milestone List now includes Project titles as well in cases where you want a one-off, Milestone-free task. |
-| September 20, 2018 | * Bug Fix: Race condition created by update script should now stop causing problems. Grrr! |
-| September 27, 2018 | * Bug Fix: Accurate dates pulled from calendar again...<br /><br />* Improvement: Delete on calendar now deletes the task row<br /><br />* Improvement: Opening/Closing a task from your calendar updates the estimate to the current date (before, the estimate stayed the same even if you completed the task earlier than estimated) |
+| **Date**           | **Update**                                                                                                                                                                                                                                                                                                                                 |
+| :----------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| August 8, 2018     | \* Bug Fix: Now catches an error if you delete a Project+Milestone contact from your contacts.<br /><br />\* Bug Fix: Deleting a task event that does not exist now supported                                                                                                                                                              |
+| August 20, 2018    | \* New: Delete Projects and Milestones safely using the new 'Delete' dropdown option.<br /><br />This removes the generated contact info for Project+Milestones when you no longer want to work on them. Use this method rather than deleting the row yourself to keep your contact info accurate.                                         |
+| August 27, 2018    | \* New: Project+Milestone List now includes Project titles as well in cases where you want a one-off, Milestone-free task.                                                                                                                                                                                                                 |
+| September 20, 2018 | \* Bug Fix: Race condition created by update script should now stop causing problems. Grrr!                                                                                                                                                                                                                                                |
+| September 27, 2018 | \* Bug Fix: Accurate dates pulled from calendar again...<br /><br />\* Improvement: Delete on calendar now deletes the task row<br /><br />\* Improvement: Opening/Closing a task from your calendar updates the estimate to the current date (before, the estimate stayed the same even if you completed the task earlier than estimated) |
+| January 23, 2019   | \* Improvement: ProSheets now uses built-in functions to generate the Project and ProjectMilestone ranges, no longer relies on spotty formulas. :)                                                                                                                                                                                         |
