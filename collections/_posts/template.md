@@ -26,29 +26,20 @@ download_mp3: "/.../...mp3"
 
 # Table of Contents
 toc: true
-
 ---
-Videos look like:
 
-<div class="post-video-wrapper">
-  <iframe src="https://www.youtube.com/embed/v84x2bxw0HU">
-  </iframe>
-</div>
+# Videos look like:
 
-CTAs look like...
+{%
+  include post-video.html
+  url="https://www.youtube.com/embed/v84x2bxw0HU"
+%}
 
-<section class="hero is-small has-text-centered post-cta animated slow">
-  <div class="hero-body">
-    <!-- Whatever you want can go in hero-body -->
-    <p class="subtitle is-size-4">ProSheets is Free <span style="text-decoration: underline;">Forever</span></p>
-    <a class="button is-primary is-rounded is-outlined" 
-    ga-event-category="{{site.ga.categories.post-cta}}"
-    href="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4">
-      <span class="icon">
-        <i class="fas fa-arrow-circle-down"></i>
-      </span>
-      <span>Install ProSheets</span>
-    </a>
-    <!-- Fun ends here -->
-  </div>
-</section>
+# CTAs look like...
+
+{%
+ include post-cta.html
+ tagline="Enough Blabbing, Give Me That Worksheet!"
+ button="Download"
+ url="https://docs.google.com/document/d/1u3Mvp0wE6ZLvEXvmiSr-nhFs2a4CUQhEhSBtyrzCb-8/edit"
+%}

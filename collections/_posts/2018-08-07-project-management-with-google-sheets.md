@@ -56,28 +56,21 @@ The Google Calendar API. By connecting my spreadsheet to Google Calendar, ProShe
 
 Without further ado, meet ProSheets.
 
-<div class="post-video-wrapper">
-  <iframe src="https://www.youtube.com/embed/v84x2bxw0HU">
-  </iframe>
-</div>
+{%
+  include post-video.html
+  url="https://www.youtube.com/embed/v84x2bxw0HU"
+%}
 
 # ProSheets v1.0: A Template for Project Management in Google Sheets
 
 This free Google Sheets project manager relies on three project management staples: projects, milestones, and tasks. I treat projects as large tasks with tangible outcomes. Beneath them, milestones exist to divide large projects into key accomplishments. Finally, each task belongs to a milestone.
 
-<section class="hero is-small has-text-centered post-cta animated slow">
-  <div class="hero-body">
-    <p class="subtitle is-size-4">Start Using ProSheets Now</p>
-    <a class="button is-primary is-rounded is-outlined"
-    ga-event-category="{{site.ga.categories.post-cta}}"
-    href="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4">
-    <span class="icon">
-      <i class="fas fa-arrow-circle-down"></i>
-    </span>
-    <span>Install ProSheets</span>
-    </a>
-  </div>
-</section>
+{%
+ include post-cta.html
+ tagline="Start Using ProSheets Now"
+ button="Install ProSheets"
+ url="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4"
+%}
 
 ## Features
 
@@ -164,19 +157,12 @@ To do this nifty trick, edit the summary/title of your task Event in any Calenda
 
 The menu doesn’t always appear immediately when you copy and open ProSheets for the first time. Recommended: refresh your browser a few times until you see ‘ProSheets Menu’ appear in the menu bar. If it fails to appear, make a fresh copy of ProSheets and try again.
 
-<section class="hero is-small has-text-centered post-cta animated slow">
-  <div class="hero-body">
-    <p class="subtitle is-size-4">ProSheets is Free <span style="text-decoration: underline;">Forever</span></p>
-    <a class="button is-primary is-rounded is-outlined" 
-    ga-event-category="{{site.ga.categories.post-cta}}"
-    href="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4">
-    <span class="icon">
-      <i class="fas fa-arrow-circle-down"></i>
-    </span>
-    <span>Install ProSheets</span>
-    </a>
-  </div>
-</section>
+{%
+ include post-cta.html
+ tagline="ProSheets is Free <span style=\"text-decoration: underline;\">Forever</span>"
+ button="Install ProSheets"
+ url="https://drive.google.com/open?id=17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4"
+%}
 
 ## Final Words
 
