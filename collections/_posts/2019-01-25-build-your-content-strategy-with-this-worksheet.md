@@ -8,11 +8,11 @@ categories: [content marketing]
 
 title: "Build Your Content Strategy With This Worksheet"
 
-description: ""
+description: "Are you pulling your hair out trying to come up with content ideas? Sometimes a quiet brainstorm is all you need. Use this worksheet time and again to help break writer's block and discover brand new ideas for your content strategy."
 
 headline: "Build Your Content Strategy With This Worksheet"
 
-alt_headline: ""
+alt_headline: "Quit struggling to come up with content ideas, use this worksheet instead!"
 
 feature_image_url: "/assets/images/collections/posts/2019-01-25-build-your-content-strategy-with-this-worksheet/build-your-content-strategy-with-this-worksheet-cover.png"
 
