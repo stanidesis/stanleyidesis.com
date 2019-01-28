@@ -35,9 +35,16 @@
     content="{{ favicon_url | append: '/mstile-144x144.png' }}"
   />
 
-  {%- include seo.html -%}
-  <link rel="stylesheet" href="/assets/main-v3.css" />
-  {%- feed_meta -%}
+  {%- include seo.html -%} {%- feed_meta -%}
+
+  <!-- CSS Preload to avoid above-the-fold blocks -->
+  <link
+    rel="preload"
+    href="/assets/main-v4.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript><link rel="stylesheet" href="/assets/main-v4.css"/></noscript>
 
   <!-- Loadjs: the only embedded js dependency -->
   <script src="/js/loadjs.min.js"></script>
@@ -69,7 +76,9 @@
     });
     loadjs([
       "https://www.google-analytics.com/analytics.js",
-      "/js/autotrack.js"
+      "https://use.fontawesome.com/releases/v5.1.0/js/all.js",
+      "/js/autotrack.js",
+      "/js/cssrelpreload.js"
     ]);
   </script>
   {%- endif -%}
@@ -80,19 +89,17 @@
     };
     loadjs(
       [
-        "https://use.fontawesome.com/releases/v5.1.0/js/all.js",
         "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js",
-        "/js/js.cookie.js"
+        "/js/js.cookie.js",
+        "/js/animate.css.jquery.js"
       ],
       /* Load Animate jQuery Plugin after jQuery */
       function() {
-        loadjs(["/js/animate.css.jquery.js"], function() {
-          if (window.dependencyCallbacks.length > 0) {
-            for (var i = 0; i < window.dependencyCallbacks.length; i++) {
-              window.dependencyCallbacks[i]();
-            }
+        if (window.dependencyCallbacks.length > 0) {
+          for (var i = 0; i < window.dependencyCallbacks.length; i++) {
+            window.dependencyCallbacks[i]();
           }
-        });
+        }
       }
     );
   </script>
