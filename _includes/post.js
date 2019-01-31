@@ -12,16 +12,20 @@ window.addDependencyCallback(function() {
         "/js/sharers/twitter.js"
       ],
       function() {
+        var sharers = [
+          window.HighlightShareViaTwitter,
+          window.HighlightShareViaFacebook,
+          window.HighlightShareViaLinkedIn,
+          window.HighlightShareViaReddit,
+          window.HighlightShareViaEmail,
+          window.HighlightShareViaCopy
+        ];
+        for (var sharer of sharers) {
+          sharer.action = handleSelectionShareAction;
+        }
         var selectionShare = window.HighlightShare({
           selector: "article",
-          sharers: [
-            window.HighlightShareViaTwitter,
-            window.HighlightShareViaFacebook,
-            window.HighlightShareViaLinkedIn,
-            window.HighlightShareViaReddit,
-            window.HighlightShareViaEmail,
-            window.HighlightShareViaCopy
-          ]
+          sharers: sharers
         });
         selectionShare.init();
       }
@@ -39,6 +43,20 @@ window.addDependencyCallback(function() {
   });
   postPostProcessing();
 });
+
+function handleSelectionShareAction(event, item) {
+  /** Send GA **/
+  if (!isGaAvailable()) {
+    return;
+  }
+  ga(
+    "send",
+    "event",
+    "{{site.ga.categories.share-resource-quote}}",
+    "{{site.ga.actions.click}}",
+    this.name
+  );
+}
 
 function getRandomAttentionGetter() {
   var attentionGetters = [

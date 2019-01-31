@@ -25,7 +25,7 @@ logo_width: "144"
 logo_height: "144"
 rss: "/feed.xml"
 twitter_username: stanleyidesis
-github_username:  stanidesis
+github_username: stanidesis
 
 # Build settings
 markdown: kramdown
@@ -80,6 +80,7 @@ ga:
     save-resource: "Save Resource"
     playback-resource: "Playback Resource"
     share-resource: "Share Resource"
+    share-resource-quote: "Share Resource Quote"
     resource: "Resource"
   actions:
     click: "click"
