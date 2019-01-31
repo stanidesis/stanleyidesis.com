@@ -12,8 +12,6 @@ window.addDependencyCallback(function() {
         "/js/sharers/twitter.js"
       ],
       function() {
-        console.log(window.HighlightShare, "Success?");
-
         var selectionShare = window.HighlightShare({
           selector: "article",
           sharers: [
