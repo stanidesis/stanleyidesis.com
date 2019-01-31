@@ -1,0 +1,39 @@
+.highlight-share-popover
+  -webkit-animation: anim-custom-popover 0.3s ease
+  animation: anim-custom-popover 0.3s ease
+
+.highlight-share-popover:before
+  margin: 0.3rem -0.5rem
+  border-color: $primary transparent
+
+.highlight-share-popover > ul 
+  background: $primary
+  color: $white
+
+.highlight-share-popover > ul > li 
+  width: 3rem
+  height: 3rem
+  line-height: 3rem
+
+.highlight-share-popover > ul > li > a
+  padding: .55rem
+
+@-webkit-keyframes anim-custom-popover
+  0%
+    -webkit-transform: translateY(-1.5em)
+    opacity: 0
+  80%
+    -webkit-transform: translateY(0.25em)
+    opacity: 1
+  to
+    -webkit-transform: translateY(0)
+
+@keyframes anim-custom-popover
+  0%
+    transform: translateY(-1.5em)
+    opacity: 0
+  80%
+    transform: translateY(0.25em)
+    opacity: 1
+  to
+    transform: translateY(0)
