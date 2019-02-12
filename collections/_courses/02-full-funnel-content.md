@@ -4,21 +4,22 @@ slug: full-funnel-content
 title: "Full-Funnel Content: A Data-Driven Content Strategy for Humans"
 main_title: "Full-Funnel Content"
 subtitle: "A Data-Driven Content Strategy for Humans"
-course_skillshare_url: "https://skl.sh/2UaqD6B"
 course_skillshare_staff_pick: true
+course_skillshare_url: "https://skl.sh/2UaqD6B"
 course_gumroad_url: "https://gum.co/full-funnel-content"
 cover_photo_url: "assets/images/collections/courses/full-funnel-content/full-funnel-content-cover-photo.png"
 preview_thumb: "assets/images/collections/courses/full-funnel-content/preview-thumb.png"
-course_pitch: "Want to quit stuffing your content calendar with meaningless blogs? This course introduces a strategy that attracts customers, educates them, and nurtures them for repeat business"
+course_pitch: "Discover a strategy that uses content to attract customers, educate them, and nurture them for repeat business"
 course_preview: "aSCWlp8Zjww"
 course_props:
-    Content-Strategy-Worksheet: "1"
-    Video-Lessons: "10"
-    Minutes-of-Video: "53"
-    Slides: "220"
-    Cool-Person-Points: "∞"
+  Content-Strategy-Worksheet: "1"
+  Video-Lessons: "10"
+  Minutes-of-Video: "53"
+  Slides: "220"
+  Cool-Person-Points: "∞"
 description: "Want to quit stuffing your content calendar with meaningless blogs? This course introduces a content strategy that attracts customers, educates them, and nurtures them for repeat business. 10 videos, 53 minutes of video, over 200 slides, and more inside."
 ---
+
 If you’ve ever sat down to create a content strategy, you probably came face-to-face with a calendar. Empty, numbered squares demanded you fill them with titles for blogs, infographics, videos, presentations, and podcasts.
 
 After hours of bouncing ideas around, you lined up the authors, settled the titles, and most importantly: filled those desperate little squares. You breathe easy, the square-filling-gods accepted your sacrifice… for now.
@@ -56,8 +57,9 @@ At each stage, you will learn to measure the return on your investment for every
 **Materials**
 
 - [Slides](https://drive.google.com/open?id=1g40Gsdye3lFKKGEQsUVS4gmKV7LZaw797xnjw_aIsXI)
-    - This combined slide deck covers every lesson and includes clickable links
-    - Free to access forever
+
+  - This combined slide deck covers every lesson and includes clickable links
+  - Free to access forever
 
 - [Worksheet](https://drive.google.com/open?id=1u3Mvp0wE6ZLvEXvmiSr-nhFs2a4CUQhEhSBtyrzCb-8)
-    - This Google Doc will help you complete the homework and formulate your content plan as you watch the lessons
+  - This Google Doc will help you complete the homework and formulate your content plan as you watch the lessons
