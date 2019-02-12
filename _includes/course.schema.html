@@ -1,7 +1,7 @@
 {%- if page.canonical -%} {%- assign canonical = page.canonical -%} {%- else -%}
 {%- assign canonical = page.url | prepend: site.url -%} {%- endif -%}
 <script type="application/ld+json">
-  ({
+  {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
@@ -18,7 +18,9 @@
         "item": "{{canonical}}"
       }
     ]
-  },
+  }
+</script>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -29,5 +31,5 @@
       "name": "Stanley Idesis",
       "sameAs": "https://www.stanleyidesis.com"
     }
-  })
+  }
 </script>
