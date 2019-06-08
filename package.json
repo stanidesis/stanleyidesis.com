@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "deploy": "jekyll build && firebase deploy",
+    "deploy": "bundle exec jekyll build && firebase deploy",
     "start": "bundle exec jekyll s --config \"_config.yml,_config_dev.yml\" --host 0.0.0.0"
   },
   "devDependencies": {
