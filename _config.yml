@@ -44,9 +44,6 @@ collections:
   work-roles:
   work-topics:
   work-types:
-  courses:
-    output: true
-    permalink: /:collection/:title
 
 sass:
   style: compressed
@@ -73,9 +70,6 @@ ga:
     email: "Email"
   categories:
     book-purchase-intent: "Outbound Link (Book)"
-    course-purchase-intent: "Outbound Link (Course)"
-    course-skillshare-intent: "Outbound Link (Skillshare)"
-    exit-popup: "Exit Popup"
     post-cta: "Post CTA"
     save-resource: "Save Resource"
     playback-resource: "Playback Resource"

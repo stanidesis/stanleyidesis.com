@@ -1,7 +1,7 @@
 {
   "scripts": {
     "deploy": "jekyll build && firebase deploy",
-    "dev": "jekyll s --config _config.yml,_config_dev.yml --host 0.0.0.0"
+    "start": "bundle exec jekyll s --config \"_config.yml,_config_dev.yml\" --host 0.0.0.0"
   },
   "devDependencies": {
     "firebase-tools": "^6.2.2"

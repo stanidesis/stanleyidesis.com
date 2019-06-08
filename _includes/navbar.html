@@ -2,7 +2,8 @@
   <nav class="navbar is-transparent is-spaced">
     <div class="navbar-brand">
       <a class="navbar-item" href="/" title="Stanley Idesis: The Out-of-Boxer-Thinker-Er">
-        <img src="/assets/images/stanley-idesis-logo-256x256.png" alt="Stanley Idesis: The Out-of-Boxer-Thinker-Er..." width="28" height="28">
+        <img src="/assets/images/stanley-idesis-logo-256x256.png" alt="Stanley Idesis: The Out-of-Boxer-Thinker-Er..."
+          width="28" height="28">
       </a>
       <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
         <span></span>
@@ -16,18 +17,6 @@
         <a class="navbar-item" href="/portfolio">
           Portfolio
         </a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="/courses">
-            Courses
-          </a>
-          <div class="navbar-dropdown is-boxed">
-            {% for course in site.courses | sort %}
-            <a class="navbar-item" href="{{course.id}}">
-              <p><em>{{course.title}}</em></p>
-            </a>
-            {% endfor %}
-          </div>
-        </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <span class="navbar-link" style="cursor: default">
             Resources
@@ -69,5 +58,5 @@
 </div>
 <!-- Activate the hamburger menu after loading the nav bar -->
 <script type="text/javascript">
-{%- include navbar.js -%}
+  {%- include navbar.js -%}
 </script>

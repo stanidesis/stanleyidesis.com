@@ -12,13 +12,17 @@
       "ROUTER"
     ],
     "cleanUrls": true,
-    "headers": [{
-      "source" : "**/*.@(eot|otf|ttf|ttc|woff|font|css|js|jpg|jpeg|gif|png|mp4|webm|ogg)",
-      "headers": [{
-        "key" : "Cache-Control",
-        "value" : "max-age=2628000"
-      }]
-    }],
+    "headers": [
+      {
+        "source": "**/*.@(eot|otf|ttf|ttc|woff|font|css|js|jpg|jpeg|gif|png|mp4|webm|ogg)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=2628000"
+          }
+        ]
+      }
+    ],
     "redirects": [
       {
         "source": "/entertains",
@@ -63,6 +67,36 @@
       {
         "source": "/random-okr-generator*",
         "destination": "https://stanidesis.github.io/random-okr-generator/",
+        "type": 301
+      },
+      {
+        "source": "/courses/content-that-attracts",
+        "destination": "https://www.upfrontmarketer.com/resources/content-that-attracts-discover-content-ideas.html",
+        "type": 301
+      },
+      {
+        "source": "/courses/full-funnel-content",
+        "destination": "https://www.upfrontmarketer.com/resources/full-funnel-content-data-driven-content-strategy.html",
+        "type": 301
+      },
+      {
+        "source": "/courses/*",
+        "destination": "https://www.upfrontmarketer.com/resources/",
+        "type": 301
+      },
+      {
+        "source": "/content-strategy-worksheet",
+        "destination": "https://www.upfrontmarketer.com/resources/",
+        "type": 301
+      },
+      {
+        "source": "/b2b-content-marketing-defined",
+        "destination": "https://www.upfrontmarketer.com/resources/",
+        "type": 301
+      },
+      {
+        "source": "/why-need-a-content-marketing-strategy",
+        "destination": "https://www.upfrontmarketer.com/resources/",
         "type": 301
       }
     ]

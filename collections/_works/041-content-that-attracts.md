@@ -4,12 +4,13 @@ subtitle: "Discover Content Ideas and Grow Your Audience"
 thumbnail_3x2: "/assets/images/collections/works/041-content-that-attracts/3x2.jpg"
 banner_16x9: "/assets/images/collections/works/041-content-that-attracts/16x9.png"
 client: "000"
-roles: ["000","002","008","009","011","013"]
-topics: ["027","028","029","030"]
-types: ["006","004","009"]
-url_play: "https://skl.sh/2Mgq07r"
-url_visit: "https://skl.sh/2Mgq07r"
+roles: ["000", "002", "008", "009", "011", "013"]
+topics: ["027", "028", "029", "030"]
+types: ["006", "004", "009"]
+url_play: "https://www.upfrontmarketer.com/resources/content-that-attracts-discover-content-ideas.html"
+url_visit: "https://www.upfrontmarketer.com/resources/content-that-attracts-discover-content-ideas.html"
 ---
+
 Your future reader sighs as her stomach rumbles, she’s dealing with a problem and she’s too embarrassed to ask someone for help — she has nowhere to turn. So she does what we all do: she opens the Internet. She opens Google.
 
 She desperately pounds her search in one letter at a time: "[lack toast and tolerant symptoms](https://www.reddit.com/r/funny/comments/su6ok/lack_toast_and_tolerant/),” and slams the return key. Sure, she may not know the term is actually lactose intolerant, but your content won’t judge her, and neither will you.
