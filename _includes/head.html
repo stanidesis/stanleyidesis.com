@@ -6,45 +6,22 @@
   {%- assign favicon_url = site.url -%} {%- if site.environment == 'dev' -%} {%-
   assign favicon_url = '' -%} {%- endif -%}
 
-  <link
-    rel="apple-touch-icon-precomposed"
-    sizes="144x144"
-    href="{{ favicon_url | append: '/apple-touch-icon-144x144.png' }}"
-  />
-  <link
-    rel="apple-touch-icon-precomposed"
-    sizes="152x152"
-    href="{{ favicon_url | append: '/apple-touch-icon-152x152.png' }}"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    href="{{ favicon_url | append: '/favicon-32x32.png' }}"
-    sizes="32x32"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    href="{{ favicon_url | append: '/favicon-16x16.png' }}"
-    sizes="16x16"
-  />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144"
+    href="{{ favicon_url | append: '/apple-touch-icon-144x144.png' }}" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152"
+    href="{{ favicon_url | append: '/apple-touch-icon-152x152.png' }}" />
+  <link rel="icon" type="image/png" href="{{ favicon_url | append: '/favicon-32x32.png' }}" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{{ favicon_url | append: '/favicon-16x16.png' }}" sizes="16x16" />
   <meta name="application-name" content="Stanley Idesis" />
   <meta name="msapplication-TileColor" content="#FFFFFF" />
-  <meta
-    name="msapplication-TileImage"
-    content="{{ favicon_url | append: '/mstile-144x144.png' }}"
-  />
+  <meta name="msapplication-TileImage" content="{{ favicon_url | append: '/mstile-144x144.png' }}" />
 
   {%- include seo.html -%} {%- feed_meta -%}
 
   <!-- CSS Preload to avoid above-the-fold blocks -->
-  <link
-    rel="preload"
-    href="/assets/main-v5.css"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
-  />
-  <noscript><link rel="stylesheet" href="/assets/main-v5.css"/></noscript>
+  <link rel="preload" href="/assets/main-v6.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="/assets/main-v6.css" /></noscript>
 
   <!-- Loadjs: the only embedded js dependency -->
   <script src="/js/loadjs.min.js"></script>
@@ -53,7 +30,7 @@
   <script>
     window.ga =
       window.ga ||
-      function() {
+      function () {
         (ga.q = ga.q || []).push(arguments);
       };
     ga.l = +new Date();
@@ -83,7 +60,7 @@
   {%- endif -%}
   <script>
     window.dependencyCallbacks = [];
-    window.addDependencyCallback = function(callback) {
+    window.addDependencyCallback = function (callback) {
       window.dependencyCallbacks.push(callback);
     };
     loadjs(
@@ -93,8 +70,8 @@
         "/js/js.cookie.js"
       ],
       /* Load Animate jQuery Plugin after jQuery */
-      function() {
-        loadjs("/js/animate.css.jquery.js", function() {
+      function () {
+        loadjs("/js/animate.css.jquery.js", function () {
           if (window.dependencyCallbacks.length > 0) {
             for (var i = 0; i < window.dependencyCallbacks.length; i++) {
               window.dependencyCallbacks[i]();

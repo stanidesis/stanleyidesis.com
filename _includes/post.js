@@ -59,17 +59,7 @@ function handleSelectionShareAction(event, item) {
 }
 
 function getRandomAttentionGetter() {
-  var attentionGetters = [
-    "bounce",
-    "flash",
-    "pulse",
-    "rubberBand",
-    "shake",
-    "swing",
-    "tada",
-    "wobble",
-    "jello"
-  ];
+  var attentionGetters = ["fadeInUp"];
   return attentionGetters[Math.floor(Math.random() * attentionGetters.length)];
 }
 

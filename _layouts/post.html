@@ -7,10 +7,10 @@ layout: default
 {%- assign all_quoted_keywords = "[" -%}
 {%- assign all_keywords = page.keywords | split: "," -%}
 {%- for keyword in all_keywords -%}
-  {%- capture quoted_keyword -%}
-  "{{keyword | lstrip | rstrip}}",
-  {%- endcapture -%}
-  {%- assign all_quoted_keywords = all_quoted_keywords | append: quoted_keyword -%}
+{%- capture quoted_keyword -%}
+"{{keyword | lstrip | rstrip}}",
+{%- endcapture -%}
+{%- assign all_quoted_keywords = all_quoted_keywords | append: quoted_keyword -%}
 {%- endfor -%}
 {%- assign length = all_quoted_keywords | size | minus: 1 -%}
 {%- assign all_quoted_keywords = all_quoted_keywords | slice: 0, length -%}
@@ -19,9 +19,9 @@ layout: default
 {%- assign post_wordcount = page.content | number_of_words -%}
 <!-- Canonical URL -->
 {%- if page.canonical -%}
-  {%- assign canonical_url = page.canonical -%}
+{%- assign canonical_url = page.canonical -%}
 {%- else -%}
-  {%- assign canonical_url = page.url | prepend: site.url -%}
+{%- assign canonical_url = page.url | prepend: site.url -%}
 {%- endif -%}
 <!-- Article body -->
 {%- assign post_body = page.content | strip_html -%}
@@ -67,7 +67,12 @@ layout: default
           <div class="post-nav-action-container">
             <!-- Save and Share buttons -->
             <div class="post-nav-action-button-wrapper">
-              <div class="post-nav-action-button">
+              <!-- Should we hide the save button? -->
+              {%- assign hideSave = "is-hidden" -%}
+              {%- if page.download_pdf or page.download_mobi or page.download_epub or page.download_mp3 -%}
+              {%- assign hideSave = "" -%}
+              {%- endif -%}
+              <div class="post-nav-action-button {{hideSave}}">
                 <div id="post-nav-action-save" class="button is-primary is-rounded is-outlined">
                   <span class="icon">
                     <i class="far fa-save"></i>
@@ -93,12 +98,9 @@ layout: default
                   <div class="post-nav-action-dropdown-caret-empty-cell"></div>
                 </div>
                 {%- if page.download_pdf -%}
-                <a class="button is-rounded is-fullwidth"
-                href="{{page.download_pdf}}"
-                ga-on="click,auxclick,contextmenu"
-                ga-event-category="{{site.ga.categories.save-resource}}"
-                ga-event-action="{{site.ga.actions.click}}"
-                ga-event-label="{{site.ga.labels.pdf}}">
+                <a class="button is-rounded is-fullwidth" href="{{page.download_pdf}}"
+                  ga-on="click,auxclick,contextmenu" ga-event-category="{{site.ga.categories.save-resource}}"
+                  ga-event-action="{{site.ga.actions.click}}" ga-event-label="{{site.ga.labels.pdf}}">
                   <span class="icon">
                     <i class="far fa-file-pdf"></i>
                   </span>
@@ -106,12 +108,9 @@ layout: default
                 </a>
                 {%- endif -%}
                 {%- if page.download_epub -%}
-                <a class="button is-rounded is-fullwidth"
-                href="{{page.download_epub}}"
-                ga-on="click,auxclick,contextmenu"
-                ga-event-category="{{site.ga.categories.save-resource}}"
-                ga-event-action="{{site.ga.actions.click}}"
-                ga-event-label="{{site.ga.labels.epub}}">
+                <a class="button is-rounded is-fullwidth" href="{{page.download_epub}}"
+                  ga-on="click,auxclick,contextmenu" ga-event-category="{{site.ga.categories.save-resource}}"
+                  ga-event-action="{{site.ga.actions.click}}" ga-event-label="{{site.ga.labels.epub}}">
                   <span class="icon">
                     <i class="fas fa-book"></i>
                   </span>
@@ -119,12 +118,9 @@ layout: default
                 </a>
                 {%- endif -%}
                 {%- if page.download_mobi -%}
-                <a class="button is-rounded is-fullwidth"
-                href="{{page.download_mobi}}"
-                ga-on="click,auxclick,contextmenu"
-                ga-event-category="{{site.ga.categories.save-resource}}"
-                ga-event-action="{{site.ga.actions.click}}"
-                ga-event-label="{{site.ga.labels.mobi}}">
+                <a class="button is-rounded is-fullwidth" href="{{page.download_mobi}}"
+                  ga-on="click,auxclick,contextmenu" ga-event-category="{{site.ga.categories.save-resource}}"
+                  ga-event-action="{{site.ga.actions.click}}" ga-event-label="{{site.ga.labels.mobi}}">
                   <span class="icon">
                     <i class="fab fa-amazon"></i>
                   </span>
@@ -132,12 +128,9 @@ layout: default
                 </a>
                 {%- endif -%}
                 {%- if page.download_mp3 -%}
-                <a class="button is-rounded is-fullwidth"
-                href="{{page.download_mp3}}"
-                ga-on="click,auxclick,contextmenu"
-                ga-event-category="{{site.ga.categories.save-resource}}"
-                ga-event-action="{{site.ga.actions.click}}"
-                ga-event-label="{{site.ga.labels.mp3}}">
+                <a class="button is-rounded is-fullwidth" href="{{page.download_mp3}}"
+                  ga-on="click,auxclick,contextmenu" ga-event-category="{{site.ga.categories.save-resource}}"
+                  ga-event-action="{{site.ga.actions.click}}" ga-event-label="{{site.ga.labels.mp3}}">
                   <span class="icon">
                     <i class="fas fa-headphones-alt"></i>
                   </span>
@@ -147,54 +140,44 @@ layout: default
               </div>
               <!-- Share container -->
               <div id="post-nav-action-dropdown-share" class="post-nav-action-dropdown"
-                data-share-url="{{page.url | prepend: site.url}}"
-                data-share-title="{{page.title}}"
-                data-share-description="{{page.description}}"
-                data-share-image="{{page.social_image_url}}">
+                data-share-url="{{page.url | prepend: site.url}}" data-share-title="{{page.title}}"
+                data-share-description="{{page.description}}" data-share-image="{{page.social_image_url}}">
                 <div class="post-nav-action-dropdown-caret-table">
                   <div class="post-nav-action-dropdown-caret-empty-cell"></div>
                   <div class="post-nav-action-dropdown-caret-cell"><br></div>
                 </div>
-                <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-facebook"
-                  ga-on="click"
-                  ga-event-category="{{site.ga.categories.share-resource}}"
-                  ga-event-action="{{site.ga.actions.click}}"
+                <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-facebook" ga-on="click"
+                  ga-event-category="{{site.ga.categories.share-resource}}" ga-event-action="{{site.ga.actions.click}}"
                   ga-event-label="{{site.ga.social-networks.facebook}}">
-                    <span class="icon">
-                      <i class="fab fa-facebook"></i>
-                    </span>
-                    <span>facebook</span>
-                  </a>
-                  <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-twitter"
-                  ga-on="click"
-                  ga-event-category="{{site.ga.categories.share-resource}}"
-                  ga-event-action="{{site.ga.actions.click}}"
+                  <span class="icon">
+                    <i class="fab fa-facebook"></i>
+                  </span>
+                  <span>facebook</span>
+                </a>
+                <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-twitter" ga-on="click"
+                  ga-event-category="{{site.ga.categories.share-resource}}" ga-event-action="{{site.ga.actions.click}}"
                   ga-event-label="{{site.ga.social-networks.twitter}}">
-                    <span class="icon">
-                      <i class="fab fa-twitter"></i>
-                    </span>
-                    <span>twitter</span>
-                  </a>
-                  <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-linkedin"
-                  ga-on="click"
-                  ga-event-category="{{site.ga.categories.share-resource}}"
-                  ga-event-action="{{site.ga.actions.click}}"
+                  <span class="icon">
+                    <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>twitter</span>
+                </a>
+                <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-linkedin" ga-on="click"
+                  ga-event-category="{{site.ga.categories.share-resource}}" ga-event-action="{{site.ga.actions.click}}"
                   ga-event-label="{{site.ga.social-networks.linkedin}}">
-                    <span class="icon">
-                      <i class="fab fa-linkedin"></i>
-                    </span>
-                    <span>linkedin</span>
-                  </a>
-                  <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-email"
-                  ga-on="click"
-                  ga-event-category="{{site.ga.categories.share-resource}}"
-                  ga-event-action="{{site.ga.actions.click}}"
+                  <span class="icon">
+                    <i class="fab fa-linkedin"></i>
+                  </span>
+                  <span>linkedin</span>
+                </a>
+                <a class="button is-rounded is-fullwidth post-nav-action-dropdown-share-email" ga-on="click"
+                  ga-event-category="{{site.ga.categories.share-resource}}" ga-event-action="{{site.ga.actions.click}}"
                   ga-event-label="{{site.ga.social-networks.email}}">
-                    <span class="icon">
-                      <i class="fas fa-at"></i>
-                    </span>
-                    <span>email</span>
-                  </a>
+                  <span class="icon">
+                    <i class="fas fa-at"></i>
+                  </span>
+                  <span>email</span>
+                </a>
               </div>
             </div>
           </div>
@@ -216,8 +199,9 @@ layout: default
               <i class="fa-lg fas fa-headphones-alt"></i>
             </span>
           </div>
-          <audio id="post-nav-playback-audio" class="is-hidden" preload="metadata" data-mp3="{{page.download_mp3}}"></audio>
-          <div class="post-nav-playback-wrapper has-text-centered" >
+          <audio id="post-nav-playback-audio" class="is-hidden" preload="metadata"
+            data-mp3="{{page.download_mp3}}"></audio>
+          <div class="post-nav-playback-wrapper has-text-centered">
             <div class="post-nav-playback-action-wrapper-rewind has-text-centered is-inline-block" disabled>
               <span class="post-nav-playback-action-icon-rewind icon is-medium has-text-primary is-block">
                 <i class="fa-lg fas fa-undo-alt"></i>
@@ -252,15 +236,19 @@ layout: default
       <div class="columns is-multiline">
         <!-- Content Column -->
         <article class="column is-8 post-content-column">
-          <a href="{{page.url}}"><h1 class="subtitle is-size-4 is-size-2-tablet has-text-grey-dark post-headline">{{page.headline}}</h1></a>
+          <a href="{{page.url}}">
+            <h1 class="subtitle is-size-4 is-size-2-tablet has-text-grey-dark post-headline">{{page.headline}}</h1>
+          </a>
           <br>
           <!-- Byline and Date -->
           {%- assign date_format = "%B %-d, %Y" -%}
           {%- if page.date_modified -%}
-          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Updated {{ page.date_modified | date: date_format }}</p>
+          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Updated
+            {{ page.date_modified | date: date_format }}</p>
           <br>
           {%- else -%}
-          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Published {{ page.date | date: date_format }}</p>
+          <p class="has-text-weight-light has-text-grey-light">{{page.author}} • Published
+            {{ page.date | date: date_format }}</p>
           <br>
           {%- endif -%}
           <div class="content post-content">
@@ -292,5 +280,5 @@ layout: default
 </div>
 {%- include image-modal.html -%}
 <script>
-{%- include post.js -%}
+  {%- include post.js -%}
 </script>
