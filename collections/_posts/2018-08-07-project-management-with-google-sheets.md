@@ -281,7 +281,7 @@ In your backup, run the setup and make sure to connect to the same Google calend
  include prosheets-cta-download.html
  tagline="ProSheets is Free <span style=\"text-decoration: underline;\">Forever</span>"
  button="Install ProSheets"
- url="https://docs.google.com/spreadsheets/d/17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4/copy"
+ url="https://docs.google.com/spreadsheets/d/171hB7AStZWJml6ZfCXHaABqxRZukq5izwsMJdEWTm-Q/copy"
 %}
 
 ## Known Issues
@@ -324,5 +324,5 @@ The cutest boy is Kevin, btw, Todd is hideous and I can’t believe you like him
  include prosheets-cta-download.html
  tagline="Last Chance..."
  button="Not Really (Install ProSheets)"
- url="https://docs.google.com/spreadsheets/d/17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4/copy"
+ url="https://docs.google.com/spreadsheets/d/171hB7AStZWJml6ZfCXHaABqxRZukq5izwsMJdEWTm-Q/copy"
 %}
