@@ -1,20 +1,16 @@
 <section class="hero is-small has-text-centered post-cta animated">
   <div class="hero-body">
     <p class="subtitle is-size-4">{{ include.tagline }}</p>
-    <div class="field is-grouped" style="justify-content: center;">
-      <p class="control">
-        <a class="button is-primary is-rounded is-outlined" ga-event-category="{{ site.ga.categories.post-cta }}"
-          href="{{ include.url }}" rel="nofollow noopener">
-          <span class="icon"> <i class="fas fa-arrow-circle-down"></i></span>
-          <span>{{include.button}}</span>
-        </a>
-      </p>
-      <p class="control">
-        <a class="button is-rounded is-outlined" href="#customize-prosheets-cta">
-          <span class="icon"> <i class="far fa-file-code"></i></span>
-          <span>Customize It</span>
-        </a>
-      </p>
+    <div class="buttons" style="justify-content: center;">
+      <a class="button is-primary is-rounded is-outlined" ga-event-category="{{ site.ga.categories.post-cta }}"
+        href="{{ include.url }}" rel="nofollow noopener">
+        <span class="icon"> <i class="fas fa-arrow-circle-down"></i></span>
+        <span>{{include.button}}</span>
+      </a>
+      <a class="button is-rounded is-outlined" href="#customize-prosheets-cta">
+        <span class="icon"> <i class="far fa-file-code"></i></span>
+        <span>Customize It</span>
+      </a>
     </div>
   </div>
 </section>
