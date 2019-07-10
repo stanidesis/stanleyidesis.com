@@ -51,10 +51,10 @@ sass:
 compress_html:
   clippings: all
   comments: all
-  endings: all
+  # endings: all
+  # startings: all
   blanklines: false
   profile: false
-  startings: [html, head, body]
 
 toc:
   max_level: 3

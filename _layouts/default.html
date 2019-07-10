@@ -2,12 +2,14 @@
 layout: compress
 ---
 
-<!DOCTYPE html> {%- include organization.schema.html -%}
+<!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
 {%- include head.html -%}
 
 <body>
-  {%- include screen.html -%} {%- include navbar.html -%} {{ content }}
+  {%- include screen.html -%} {%- include navbar.html -%}
+  {{ content }}
   <!-- Tawk.To API on every page -->
   {%- include tawk.to.html -%}
   <!-- Instant.page -->

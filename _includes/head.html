@@ -1,10 +1,13 @@
 <head>
+  {%- include organization.schema.html -%}
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  {%- assign favicon_url = site.url -%} {%- if site.environment == 'dev' -%} {%-
-  assign favicon_url = '' -%} {%- endif -%}
+  {%- assign favicon_url = site.url -%}
+  {%- if site.environment == 'dev' -%}
+  {%- assign favicon_url = '' -%}
+  {%- endif -%}
 
   <link rel="apple-touch-icon-precomposed" sizes="144x144"
     href="{{ favicon_url | append: '/apple-touch-icon-144x144.png' }}" />
@@ -16,7 +19,8 @@
   <meta name="msapplication-TileColor" content="#FFFFFF" />
   <meta name="msapplication-TileImage" content="{{ favicon_url | append: '/mstile-144x144.png' }}" />
 
-  {%- include seo.html -%} {%- feed_meta -%}
+  {%- include seo.html -%}
+  {%- feed_meta -%}
 
   <!-- CSS Preload to avoid above-the-fold blocks -->
   <link rel="preload" href="/assets/main-v6.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
