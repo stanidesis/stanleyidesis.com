@@ -130,7 +130,7 @@ Watch [this video](https://www.youtube.com/watch?v=v84x2bxw0HU){:rel="nofollow n
 
 ### Install
 
-[Navigate to ProSheets](https://docs.google.com/spreadsheets/d/17SR7QjBOcWB691iOyTZ2CCdFJppaCIlpr91hilLpJg4/copy){:rel="nofollow noopener"} and make a copy of the Google Sheet to your own Google Drive. In your copy, click on the ProSheets Menu item and then click Setup to begin the setup process. Complete each step in the process, otherwise ProSheets may fail to function as designed.
+[Navigate to ProSheets](https://docs.google.com/spreadsheets/d/171hB7AStZWJml6ZfCXHaABqxRZukq5izwsMJdEWTm-Q/copy){:rel="nofollow noopener"} and make a copy of the Google Sheet to your own Google Drive. In your copy, click on the ProSheets Menu item and then click Setup to begin the setup process. Complete each step in the process, otherwise ProSheets may fail to function as designed.
 
 ### Add Projects
 
@@ -289,6 +289,10 @@ In your backup, run the setup and make sure to connect to the same Google calend
 **Menu Not Appearing**
 
 The menu doesn’t always appear immediately when you copy and open ProSheets for the first time. I recommend you refresh your browser a few times until you see ‘ProSheets Menu’ appear in the menu bar. If it fails to appear, make a fresh copy of ProSheets and try again.
+
+**Infinite Upgrade Loop**
+
+In the first iteration of V1.1, some of you may have been caught in an infinite upgrade loop (whoops!). I have fixed this issue and Version 1.1 no longer checks for upgrades.
 
 <span id="customize-prosheets-cta"></span>
 
