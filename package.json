@@ -1,9 +1,15 @@
 {
+  "name": "stanley-idesis-site",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "deploy": "bundle exec jekyll build && firebase deploy",
-    "start": "bundle exec jekyll s --config \"_config.yml,_config_dev.yml\" --host 0.0.0.0"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "devDependencies": {
-    "firebase-tools": "^6.2.2"
+  "dependencies": {
+    "next": "9.4.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   }
 }
