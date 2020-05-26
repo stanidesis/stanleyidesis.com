@@ -1,0 +1,18 @@
+// The tallest mobile viewport dimension (iPhone XS Max)
+$var__breakpoint__mobileHeight: 896px;
+// The widest mobile viewport dimension (Samsung Note 5)
+$var__breakpoint__mobileWidth: 480px;
+
+$var__breakpoint__mobileDimensions: $var__breakpoint__mobileHeight,
+  $var__breakpoint__mobileWidth;
+
+// The tallest tablet viewport dimension (iPad Pro)
+$var__breakpoint__tabletHeight: 1024px;
+// The widest tablet viewport dimension (iPad Pro)
+$var__breakpoint__tabletWidth: 768px;
+
+$var__breakpoint__tabletDimensions: $var__breakpoint__tabletHeight,
+  $var__breakpoint__tabletWidth;
+
+// The widest laptop ( & small desktop ) viewport dimension
+$var__breakpoint__laptopWidth: 1920px;

@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  width: 100%;
+  max-width: $var__layout__maxWidth;
+
+  @include util__breakpoint__widerThanMaxWidth {
+    width: $var__layout__maxWidth;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

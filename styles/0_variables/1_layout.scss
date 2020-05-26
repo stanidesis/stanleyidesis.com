@@ -1,0 +1,15 @@
+// The maximum logical width of page content, regardless of screen size.
+$var__layout__maxWidth: 1280px;
+
+/* Padding & Margin */
+
+// Standard Distance
+$var__layout__baseDistance: 2.5rem;
+// Three-Quarter Distance
+$var__layout__threeQuarterDistance: $var__layout__baseDistance / 4 * 3;
+// Half Distance
+$var__layout__halfDistance: $var__layout__baseDistance / 2;
+// Quarter Distance
+$var__layout__quarterDistance: $var__layout__baseDistance / 4;
+// Eight Distance
+$var__layout__eightDistance: $var__layout__baseDistance / 8;

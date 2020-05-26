@@ -1,0 +1,56 @@
+/* Typefaces */
+
+$var__typeface__ExtraLight: 'ExtraLight';
+$var__typeface__Light: 'Light';
+$var__typeface__UltraLight: 'UltraLight';
+$var__typeface__Thin: 'Thin';
+$var__typeface__Regular: 'Regular';
+$var__typeface__Medium: 'Medium';
+$var__typeface__SemiBold: 'SemiBold';
+$var__typeface__Bold: 'Bold';
+$var__typeface__ExtraBold: 'ExtraBold';
+$var__typeface__Black: 'Black';
+
+$var__typeface__primary__fontFamily: RobotoSlab, Times, 'Times New Roman',
+  Palatino, sans-serif;
+$var__typeface__secondary__fontFamily: PublicaPlay, Verdana, Tahoma, Helvetica,
+  Arial, sans-serif;
+
+$var__typeface__primary__weights: (
+  $var__typeface__ExtraLight: 100,
+  $var__typeface__Thin: 200,
+  $var__typeface__Light: 300,
+  $var__typeface__Regular: 400,
+  $var__typeface__Medium: 500,
+  $var__typeface__SemiBold: 600,
+  $var__typeface__Bold: 700,
+  $var__typeface__ExtraBold: 800,
+  $var__typeface__Black: 900
+);
+
+$var__typeface__secondary__weights: (
+  $var__typeface__ExtraLight: 100,
+  $var__typeface__Thin: 200,
+  $var__typeface__UltraLight: 300,
+  $var__typeface__Light: 400,
+  $var__typeface__Regular: 500,
+  $var__typeface__Medium: 600,
+  $var__typeface__Bold: 700,
+  $var__typeface__ExtraBold: 800,
+  $var__typeface__Black: 900
+);
+
+/* Font Sizes */
+
+// Small screens and smaller
+$var__typeface__body__size__--s: 10px;
+// Larger than small screens (for now)
+$var__typeface__body__size__s--: 16px;
+
+// Headings
+$var__typeface__heading__size__base: 4.25rem;
+$var__typeface__heading__lineHeight__base: 5.125rem;
+
+// Headings Mobile
+$var__typeface__heading__size__baseMobile: 1.875rem;
+$var__typeface__heading__lineHeight__baseMobile: 2.265rem;

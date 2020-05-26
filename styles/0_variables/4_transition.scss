@@ -1,0 +1,11 @@
+$var__transition__duration__short: 'Short';
+$var__transition__duration__medium: 'Medium';
+$var__transition__duration__long: 'Long';
+$var__transition__duration__extraLong: 'ExtraLong';
+
+$var__transition__durations: (
+  $var__transition__duration__short: 100ms,
+  $var__transition__duration__medium: 250ms,
+  $var__transition__duration__long: 500ms,
+  $var__transition__duration__extraLong: 1000ms
+);

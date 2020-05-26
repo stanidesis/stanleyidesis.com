@@ -1,0 +1,27 @@
+@mixin util__transition($property, $options: ()) {
+  transition-property: $property;
+  @if map-has-key($options, 'timing-function') {
+    transition-timing-function: map-get($options, 'timing-function');
+  } @else {
+    transition-timing-function: ease-in-out;
+  }
+  @if map-has-key($options, 'delay') {
+    transition-delay: map-get(
+      $var__transition__durations,
+      map-get($options, 'duration')
+    );
+  } @else {
+    transition-delay: 0ms;
+  }
+  @if map-has-key($options, 'duration') {
+    transition-duration: map-get(
+      $var__transition__durations,
+      map-get($options, 'duration')
+    );
+  } @else {
+    transition-duration: map-get(
+      $var__transition__durations,
+      $var__transition__duration__medium
+    );
+  }
+}

@@ -1,0 +1,66 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include util__typeface(
+    false,
+    (
+      weight: 'Regular'
+    )
+  );
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+h1 {
+  color: $var__color__brand__diablo;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $var__color__white__85;
+}
+
+:root {
+  --headings-size-base: #{$var__typeface__heading__size__base};
+  --headings-lineHeight-base: #{$var__typeface__heading__lineHeight__base};
+  @include util__breakpoint__mobile {
+    --headings-size-base: #{$var__typeface__heading__size__baseMobile};
+    --headings-lineHeight-base: #{$var__typeface__heading__lineHeight__baseMobile};
+  }
+}
+
+h1 {
+  font-size: var(--headings-size-base);
+  line-height: var(--headings-lineHeight-base);
+}
+
+h2 {
+  font-size: calc(var(--headings-size-base) * 0.75);
+  line-height: calc(var(--headings-lineHeight-base) * 0.75);
+}
+
+h3 {
+  font-size: calc(var(--headings-size-base) * 0.585);
+  line-height: calc(var(--headings-lineHeight-base) * 0.585);
+}
+
+h4 {
+  font-size: calc(var(--headings-size-base) * 0.565);
+  line-height: calc(var(--headings-lineHeight-base) * 0.565);
+}
+
+h5 {
+  font-size: calc(var(--headings-size-base) * 0.415);
+  line-height: calc(var(--headings-lineHeight-base) * 0.415);
+}
+
+h6 {
+  font-size: calc(var(--headings-size-base) * 0.375);
+  line-height: calc(var(--headings-lineHeight-base) * 0.375);
+}

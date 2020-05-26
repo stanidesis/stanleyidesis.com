@@ -1,0 +1,56 @@
+.Button {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 2px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  padding: 1rem $var__layout__threeQuarterDistance;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  @include util__transition(all);
+  @include util__typeface(
+    false,
+    (
+      weight: 'Regular'
+    )
+  );
+
+  &.--OnLight {
+    color: $var__color__type__light__primary;
+    background: transparentize(
+      $color: $var__color__brand__astros,
+      $amount: 0.25
+    );
+    border: 1px solid $var__color__brand__diablo;
+    box-shadow: 0px 5px 30px 0px transparent;
+    &:hover {
+      background: $var__color__brand__astros;
+    }
+  }
+
+  &.--OnDark {
+    color: $var__color__type__light__primary;
+    background: transparent;
+    border: 1px solid $var__color__brand__astros;
+    box-shadow: 0px 5px 30px 0px transparent;
+    &:hover {
+      background: $var__color__brand__diablo;
+      box-shadow: 0px 5px 30px 0px $var__color__black__25;
+    }
+
+    &.--Disabled {
+      background: $var__color__black__15;
+      pointer-events: none;
+      border: none;
+      color: $var__color__type__light__tertiary;
+    }
+  }
+
+  &.--Wide {
+    width: 100%;
+  }
+}
