@@ -1,0 +1,43 @@
+{
+  "routes": [
+    { "src": "/portfolio", "status": 301, "headers": { "Location": "/" } },
+    {
+      "src": "/courses",
+      "status": 301,
+      "headers": { "Location": "https://www.skillshare.com/user/stanleyidesis" }
+    },
+    {
+      "src": "/courses/full-funnel-content",
+      "status": 301,
+      "headers": {
+        "Location": "https://www.skillshare.com/classes/Full-Funnel-Content-A-Data-Driven-Content-Strategy-For-Humans/689748753"
+      }
+    },
+    {
+      "src": "/courses/content-that-attracts",
+      "status": 301,
+      "headers": {
+        "Location": "https://www.skillshare.com/classes/Content-That-Attracts-Discover-Content-Ideas-and-Grow-Your-Audience/1588728061"
+      }
+    },
+    {
+      "src": "/books/good-content",
+      "status": 301,
+      "headers": { "Location": "/" }
+    },
+    {
+      "src": "/random-okr-generator",
+      "status": 301,
+      "headers": {
+        "Location": "https://stanidesis.github.io/random-okr-generator/"
+      }
+    },
+    {
+      "src": "/project-management-with-google-sheets-free-template.*",
+      "status": 301,
+      "headers": {
+        "Location": "https://docs.google.com/document/d/e/2PACX-1vS60uyrEBR-Uz6bA23jKxLzDwfkCwOKI2FytoT4F8PBvGZezn8a6egfEsYzHYbBQotejmXuiRHsVbql/pub"
+      }
+    }
+  ]
+}
