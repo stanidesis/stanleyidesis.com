@@ -1,0 +1,83 @@
+.ContentItem {
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+
+  border-style: solid;
+  border-width: 0.75px;
+  border-color: $var__color__brand__astros;
+  border-top-left-radius: 0.625rem;
+  border-bottom-right-radius: 0.625rem;
+
+  padding-right: $var__layout__halfDistance;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @include util__transition(all);
+  &:hover {
+    border-color: $var__color__brand__diablo;
+  }
+
+  &__Cover {
+    width: 14%;
+    align-self: stretch;
+    border-top-left-radius: 0.625rem;
+    border-bottom-right-radius: 0.625rem;
+    opacity: 0.65;
+    object-fit: cover;
+
+    @include util__breakpoint__touch {
+      position: absolute;
+      opacity: 0.15;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__Text {
+    margin: $var__layout__halfDistance;
+
+    &__Title {
+      color: $var__color__white__85;
+      @include util__breakpoint__mobile {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+        margin-bottom: $var__layout__quarterDistance;
+      }
+    }
+    &__Description,
+    &__Date {
+      @include util__typeface(
+        true,
+        (
+          'weight': 'Light'
+        )
+      );
+      color: $var__color__white__85;
+      font-size: 0.875rem;
+      line-height: 1.1875rem;
+      margin-top: $var__layout__eightDistance;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+    &__Date {
+      color: $var__color__white__35;
+    }
+  }
+
+  &__TouchToVisit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+  }
+}

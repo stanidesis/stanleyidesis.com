@@ -1,0 +1,9 @@
+/* 
+  Sets the base font-size to use on small screens vs small++.
+  It must be set at HTML level to work with `rem` units.
+ */
+html {
+  font-size: $var__typeface__body__size__s--;
+  background-color: $var__color__brand__deepGray;
+  scroll-behavior: smooth;
+}

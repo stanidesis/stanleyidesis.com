@@ -1,3 +1,0 @@
----
-name: "Screencast Recorder"
----

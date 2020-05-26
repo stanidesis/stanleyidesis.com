@@ -1,3 +1,0 @@
----
-name: "Mobile Development"
----

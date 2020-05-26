@@ -1,0 +1,50 @@
+@keyframes SbBackgroundGallery__Image--In {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.15;
+  }
+}
+
+@keyframes SbBackgroundGallery__Image--Out {
+  from {
+    opacity: 0.15;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.SbBackgroundGallery {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+
+  &__Image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation-duration: map-get(
+      $map: $var__transition__durations,
+      $key: $var__transition__duration__extraLong
+    );
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+
+    &.--In {
+      animation-name: SbBackgroundGallery__Image--In;
+    }
+
+    &.--Out {
+      animation-name: SbBackgroundGallery__Image--Out;
+    }
+  }
+}

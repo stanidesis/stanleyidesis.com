@@ -1,0 +1,35 @@
+/* Add a typeface to any CSS selector
+ * How-to: pass 'true' for $primary to get the primary font, false for secondary
+ * Options are a map object with the following possible keys:
+ *    'weight', String, one of (ExtraLight, Light, Thin...), defaults to 'normal'
+ *    'italic', any, to set italic style; defaults to 'normal'
+*/
+@mixin util__typeface($primary: true, $options: ()) {
+  @if $primary {
+    font-family: $var__typeface__primary__fontFamily;
+  } @else {
+    font-family: $var__typeface__secondary__fontFamily;
+  }
+
+  @if map-has-key($options, 'weight') {
+    @if $primary {
+      font-weight: map-get(
+        $var__typeface__primary__weights,
+        map-get($options, 'weight')
+      );
+    } @else {
+      font-weight: map-get(
+        $var__typeface__secondary__weights,
+        map-get($options, 'weight')
+      );
+    }
+  } @else {
+    font-weight: normal;
+  }
+
+  @if map-has-key($options, 'italic') {
+    font-style: italic;
+  } @else {
+    font-style: normal;
+  }
+}

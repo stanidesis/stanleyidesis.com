@@ -1,0 +1,66 @@
+/* Base Colors */
+
+// Blacks
+$var__color__black: rgba(0, 0, 0, 1);
+$var__color__black__95: rgba(0, 0, 0, 0.95);
+$var__color__black__90: rgba(0, 0, 0, 0.9);
+$var__color__black__85: rgba(0, 0, 0, 0.85);
+$var__color__black__80: rgba(0, 0, 0, 0.8);
+$var__color__black__75: rgba(0, 0, 0, 0.75);
+$var__color__black__70: rgba(0, 0, 0, 0.7);
+$var__color__black__65: rgba(0, 0, 0, 0.65);
+$var__color__black__60: rgba(0, 0, 0, 0.6);
+$var__color__black__55: rgba(0, 0, 0, 0.55);
+$var__color__black__50: rgba(0, 0, 0, 0.5);
+$var__color__black__45: rgba(0, 0, 0, 0.45);
+$var__color__black__40: rgba(0, 0, 0, 0.4);
+$var__color__black__35: rgba(0, 0, 0, 0.35);
+$var__color__black__30: rgba(0, 0, 0, 0.3);
+$var__color__black__25: rgba(0, 0, 0, 0.25);
+$var__color__black__20: rgba(0, 0, 0, 0.2);
+$var__color__black__15: rgba(0, 0, 0, 0.15);
+$var__color__black__10: rgba(0, 0, 0, 0.1);
+$var__color__black__05: rgba(0, 0, 0, 0.05);
+
+// Whites
+$var__color__white: rgba(255, 255, 255, 1);
+$var__color__white__95: rgba(255, 255, 255, 0.95);
+$var__color__white__90: rgba(255, 255, 255, 0.9);
+$var__color__white__85: rgba(255, 255, 255, 0.85);
+$var__color__white__80: rgba(255, 255, 255, 0.8);
+$var__color__white__75: rgba(255, 255, 255, 0.75);
+$var__color__white__70: rgba(255, 255, 255, 0.7);
+$var__color__white__65: rgba(255, 255, 255, 0.65);
+$var__color__white__60: rgba(255, 255, 255, 0.6);
+$var__color__white__55: rgba(255, 255, 255, 0.55);
+$var__color__white__50: rgba(255, 255, 255, 0.5);
+$var__color__white__45: rgba(255, 255, 255, 0.45);
+$var__color__white__40: rgba(255, 255, 255, 0.4);
+$var__color__white__35: rgba(255, 255, 255, 0.35);
+$var__color__white__30: rgba(255, 255, 255, 0.3);
+$var__color__white__25: rgba(255, 255, 255, 0.25);
+$var__color__white__20: rgba(255, 255, 255, 0.2);
+$var__color__white__15: rgba(255, 255, 255, 0.15);
+$var__color__white__10: rgba(255, 255, 255, 0.1);
+$var__color__white__05: rgba(255, 255, 255, 0.05);
+
+/* Typography Colors */
+
+// Type Dark
+$var__color__type__dark__primary: $var__color__black__85;
+$var__color__type__dark__secondary: $var__color__black__65;
+$var__color__type__dark__tertiary: $var__color__black__50;
+
+// Type Light
+$var__color__type__light__primary: $var__color__white__95;
+$var__color__type__light__secondary: $var__color__white__75;
+$var__color__type__light__tertiary: $var__color__white__35;
+
+/* Brand Colors */
+$var__color__brand__deepGray: rgb(51, 51, 51);
+$var__color__brand__lightGray: rgb(217, 217, 217);
+$var__color__brand__astros: rgb(165, 114, 5);
+$var__color__brand__diablo: rgb(209, 171, 16);
+
+/* Status */
+$var__color__status__error: rgba(209, 16, 16, 0.85);

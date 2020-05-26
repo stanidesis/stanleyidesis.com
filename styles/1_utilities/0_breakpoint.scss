@@ -1,0 +1,98 @@
+// Mobile Portrait
+@mixin util__breakpoint__mobile__portrait {
+  @media screen and (orientation: portrait) and (max-width: min($var__breakpoint__mobileDimensions...)) {
+    @content;
+  }
+}
+
+// Mobile Landscape
+@mixin util__breakpoint__mobile__landscape {
+  @media screen and (orientation: landscape) and (max-width: max($var__breakpoint__mobileDimensions...)) {
+    @content;
+  }
+}
+
+// Mobile
+@mixin util__breakpoint__mobile {
+  @include util__breakpoint__mobile__portrait {
+    @content;
+  }
+  @include util__breakpoint__mobile__landscape {
+    @content;
+  }
+}
+
+// Tablet Portrait
+@mixin util__breakpoint__tablet__portrait {
+  @media screen and (orientation: portrait) and (min-width: min($var__breakpoint__mobileDimensions...) + 1) and (max-width: min($var__breakpoint__tabletDimensions...)) {
+    @content;
+  }
+}
+
+// Tablet Landscape
+@mixin util__breakpoint__tablet__landscape {
+  @media screen and (orientation: landscape) and (min-width: max($var__breakpoint__mobileDimensions...) + 1) and (max-width: max($var__breakpoint__tabletDimensions...)) {
+    @content;
+  }
+}
+
+// Tablet
+@mixin util__breakpoint__tablet {
+  @include util__breakpoint__tablet__portrait {
+    @content;
+  }
+  @include util__breakpoint__tablet__landscape {
+    @content;
+  }
+}
+
+// All Touch
+@mixin util__breakpoint__touch {
+  @include util__breakpoint__mobile() {
+    @content;
+  }
+  @include util__breakpoint__tablet {
+    @content;
+  }
+}
+
+// Laptop and small desktops
+@mixin util__breakpoint__laptop {
+  @media screen and (orientation: portrait) and (min-width: min($var__breakpoint__tabletDimensions...) + 1) and (max-width: $var__breakpoint__laptopWidth) {
+    @content;
+  }
+  @media screen and (orientation: landscape) and (min-width: max($var__breakpoint__tabletDimensions...) + 1) and (max-width: $var__breakpoint__laptopWidth) {
+    @content;
+  }
+}
+
+// Desktop
+@mixin util__breakpoint__desktop {
+  @media screen and (min-width: $var__breakpoint__laptopWidth + 1) {
+    @content;
+  }
+}
+
+// All Click
+@mixin util__breakpoint__click {
+  @include util__breakpoint__laptop {
+    @content;
+  }
+  @include util__breakpoint__desktop {
+    @content;
+  }
+}
+
+// Narrower than Max Width
+@mixin util__breakpoint__narrowerThanMaxWidth {
+  @media screen and (max-width: $var__layout__maxWidth) {
+    @content;
+  }
+}
+
+// Wider than Max Width
+@mixin util__breakpoint__widerThanMaxWidth {
+  @media screen and (min-width: $var__layout__maxWidth + 1) {
+    @content;
+  }
+}

@@ -1,0 +1,49 @@
+.isHiddenMobile,
+.isHiddenMobilePortrait {
+  @include util__breakpoint__mobile__portrait {
+    display: none !important;
+  }
+}
+
+.isHiddenMobile,
+.isHiddenMobileLandscape {
+  @include util__breakpoint__mobile__landscape {
+    display: none !important;
+  }
+}
+
+.isHiddenTablet,
+.isHiddenTabletPortrait {
+  @include util__breakpoint__tablet__portrait {
+    display: none !important;
+  }
+}
+
+.isHiddenTablet,
+.isHiddenTabletLandscape {
+  @include util__breakpoint__tablet__landscape {
+    display: none !important;
+  }
+}
+
+.isHiddenLaptop {
+  @include util__breakpoint__laptop {
+    display: none !important;
+  }
+}
+
+.isHiddenDesktop {
+  @include util__breakpoint__desktop {
+    display: none !important;
+  }
+}
+
+.isHiddenTouch {
+  @extend .isHiddenMobile;
+  @extend .isHiddenTablet;
+}
+
+.isHiddenClick {
+  @extend .isHiddenLaptop;
+  @extend .isHiddenDesktop;
+}

@@ -1,0 +1,95 @@
+.home {
+  // Set an animation delay
+  --animate-delay: 0.25s;
+
+  min-height: 100vh;
+  background-image: linear-gradient(
+    transparent 0%,
+    transparentize($var__color__brand__deepGray, 0.85) 55vh,
+    $var__color__brand__deepGray 95vh
+  );
+
+  @include util__breakpoint__mobile__portrait {
+    background-image: linear-gradient(
+      transparent 0%,
+      transparentize($var__color__brand__deepGray, 0.85) 15vh,
+      $var__color__brand__deepGray 45vh
+    );
+  }
+  @include util__breakpoint__mobile__landscape {
+    background-image: linear-gradient(
+      transparent 0%,
+      transparentize($var__color__brand__deepGray, 0.85) 60vh,
+      $var__color__brand__deepGray 95vh
+    );
+  }
+  @include util__breakpoint__tablet {
+    background-image: linear-gradient(
+      transparent 0%,
+      transparentize($var__color__brand__deepGray, 0.85) 30vh,
+      $var__color__brand__deepGray 80vh
+    );
+  }
+
+  &__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    opacity: 0.15;
+  }
+
+  &__ContentColumn {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: stretch;
+    width: 50%;
+
+    &__MarginGap {
+      display: block;
+      height: 15.625rem;
+    }
+
+    &__SectionGap {
+      display: block;
+      height: 2.5rem;
+    }
+
+    &__Description {
+      @include util__typeface(
+        true,
+        (
+          'weight': 'Light'
+        )
+      );
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      color: $var__color__white__85;
+      white-space: pre-wrap;
+    }
+
+    &__Actions {
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 40%;
+      margin: $var__layout__baseDistance 0;
+    }
+
+    hr {
+      width: 100%;
+      border-top: 0.75px solid $var__color__brand__diablo;
+      border-bottom: 0px;
+      margin-bottom: $var__layout__baseDistance;
+    }
+
+    @include util__breakpoint__narrowerThanMaxWidth {
+      width: 100%;
+      padding: 0 $var__layout__halfDistance;
+    }
+  }
+}

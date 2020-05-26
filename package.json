@@ -1,9 +1,23 @@
 {
+  "name": "stanley-idesis-site",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "deploy": "bundle exec jekyll build && firebase deploy",
-    "start": "bundle exec jekyll s --config \"_config.yml,_config_dev.yml\" --host 0.0.0.0"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.0",
+    "datejs": "^1.0.0-rc3",
+    "next": "9.4.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "storyblok-js-client": "^2.5.0",
+    "storyblok-react": "0.0.10"
   },
   "devDependencies": {
-    "firebase-tools": "^6.2.2"
+    "node-sass": "^4.14.1",
+    "styled-jsx-plugin-sass": "^1.0.0"
   }
 }

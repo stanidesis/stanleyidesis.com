@@ -1,0 +1,27 @@
+.CircleButton {
+  max-width: 3.625rem;
+  max-height: 3.625rem;
+  min-width: 3.625rem;
+  min-height: 3.625rem;
+  border-radius: 10rem;
+  border: 0.75px solid $var__color__brand__astros;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  img {
+    opacity: 0.55;
+    width: auto;
+    height: 1.5rem;
+    @include util__transition(all);
+  }
+
+  @include util__transition(all);
+
+  &:hover {
+    border-color: $var__color__brand__diablo;
+    img {
+      opacity: 1;
+    }
+  }
+}
