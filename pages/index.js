@@ -1,6 +1,7 @@
 import React from 'react'
 import StoryblokService from '../utils/storyblok-service'
 import Head from '../components/Head'
+import CircleButton, { IconOptions } from '../components/CircleButton'
 import SbBook from '../components/SbComponents/SbBook'
 import SbArticle from '../components/SbComponents/SbArticle'
 
@@ -9,7 +10,10 @@ const Schema = {
     Title: 'Title',
     Subtitle: 'Subtitle',
     Introduction: 'Introduction',
-    BackgroundImage: 'Background_Image'
+    BackgroundImage: 'Background_Image',
+    Twitter: 'Twitter',
+    LinkedIn: 'LinkedIn',
+    Email: 'Email'
   }
 }
 
@@ -17,9 +21,9 @@ export default class extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
-    // if (!process.env.production) console.log(props.settings.data)
+    if (!process.env.production) console.log(props.settings.data)
     // if (!process.env.production) console.log(props.books.data.stories)
-    if (!process.env.production) console.log(props.archives)
+    // if (!process.env.production) console.log(props.archives)
   }
 
   static async getInitialProps({ query }) {
@@ -44,6 +48,8 @@ export default class extends React.Component {
     const settings = this.props.settings.data.story.content
     const books = this.props.books.data.stories
     const archives = this.props.archives.data.stories
+
+    const { Twitter, LinkedIn, Email } = settings
     return (
       <>
         <Head content={settings} />
@@ -64,6 +70,32 @@ export default class extends React.Component {
               <p className="home__ContentColumn__Description animate__animated animate__fadeInUp animate__delay-3s">
                 {settings[Schema.Settings.Introduction]}
               </p>
+              <div className="home__ContentColumn__Actions animate__animated animate__fadeInUp animate__delay-4s">
+                {LinkedIn && LinkedIn.cached_url.length > 0 ? (
+                  <CircleButton
+                    iconOption={IconOptions.LinkedIn}
+                    url={LinkedIn.cached_url}
+                  />
+                ) : (
+                  ''
+                )}
+                {Twitter && Twitter.cached_url.length > 0 ? (
+                  <CircleButton
+                    iconOption={IconOptions.Twitter}
+                    url={Twitter.cached_url}
+                  />
+                ) : (
+                  ''
+                )}
+                {Email && Email.email.length > 0 ? (
+                  <CircleButton
+                    iconOption={IconOptions.Email}
+                    url={`mailto:${Email.email}`}
+                  />
+                ) : (
+                  ''
+                )}
+              </div>
               {/* Begin Authored By */}
               <div className="animate__animated animate__fadeInUp animate__delay-4s">
                 <h3>Authored By Stanley</h3>

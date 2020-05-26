@@ -71,6 +71,15 @@
       white-space: pre-wrap;
     }
 
+    &__Actions {
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 40%;
+      margin: $var__layout__baseDistance 0;
+    }
+
     hr {
       width: 100%;
       border-top: 0.75px solid $var__color__brand__diablo;
